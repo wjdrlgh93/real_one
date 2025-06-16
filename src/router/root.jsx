@@ -15,14 +15,7 @@ const root = createBrowserRouter([
         path: '',
         element: <Suspense fallback={Loading}><IndexPage /></Suspense>
     },
-    {
-        path: '/JGH_tmp',
-        element: <Suspense fallback={Loading}><JGHPage /></Suspense>
-    },
-    {
-        path: 'Yj',
-        element: <Suspense fallback={Loading}><Yj_tmp /></Suspense>
-    }
+
 ])
 
 
