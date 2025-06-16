@@ -1,0 +1,20 @@
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.loading {
+    width: 100px;
+    height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2vmax;
+}

@@ -1,0 +1,136 @@
+/* header.css */
+@import url('https://fonts.googleapis.com/css2?family=Exile&family=Share+Tech&display=swap');
+
+/* header */
+.header {
+    width: 100%;
+    height: auto;
+    padding: 1vw;
+
+    background-color: #00aeff;
+
+    /* border: 1px solid; */
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+
+    position: sticky;
+    top: 0;
+
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    position: sticky;
+    top: 0;
+    /* margin: 0px; */
+
+}
+
+.header .nav {
+    flex: 0 1 1200px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #382aff, #5a00c9eb);
+
+    border: 1px solid #c80032;
+
+}
+
+.header .nav h1.logo {
+    flex: 0 0 120px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* 이미지 -> 2:1 비율로 해야됨 */
+.header .nav h1.logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+.header .nav .gnb {
+    /* border: 1px solid; */
+    padding: 16px;
+    box-sizing: border-box;
+
+}
+
+.header .nav .gnb>ul {
+    display: flex;
+    box-sizing: border-box;
+
+    /* border: 1px solid #ff1c60; */
+    justify-content: space-between;
+
+    padding: 2px;
+
+    background-color: #ffffff8d;
+}
+
+.header .nav .gnb>ul>li {
+    line-height: 40px;
+    /* 
+    border: 1px solid blue; */
+    box-sizing: border-box;
+
+    list-style: 50px;
+
+    transition: all 1s;
+
+    font-size: 1.5vw;
+}
+
+/* .header .nav .gnb>ul>li :any-link {
+    list-style: inherit;
+    background-color: aliceblue;
+} */
+
+.header .nav .gnb>ul>li>a {
+
+    display: block;
+    line-height: 40px;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+    font-size: inherit;
+}
+
+.header .nav .gnb ul li:hover {
+    background-color: #b9ff38f3;
+    color: red;
+}
+
+@media screen and (max-width:1024px) {}
+
+/* 모바일 최대 768 */
+/* li -> 8행 1열 */
+@media screen and (max-width:768px) {
+    .header {
+        /* background-color: azure; */
+        padding: 2px 1vw !important;
+    }
+
+    .header .nav .gnb>ul>li {
+        font-size: 3vw;
+    }
+
+    .header .nav h1.logo {
+        flex: 0 1 80px;
+    }
+}

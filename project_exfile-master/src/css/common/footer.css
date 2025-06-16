@@ -1,0 +1,23 @@
+/* footer */
+.footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+.footer .footer-con {
+    flex: 0 1 1600px;
+    height: 80px;
+
+    background: linear-gradient(to left, rgb(186, 0, 46), rgb(255, 0, 255));
+    color: aliceblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: sticky;
+    bottom: 0;
+}
