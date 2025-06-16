@@ -13,7 +13,11 @@ const root = createBrowserRouter([
         path: '',
         element: <Suspense fallback={Loading}><IndexPage /></Suspense>
     }
-
+    // 임시 링킹 path
+    {
+        path: '/JGH_tmp',
+        element:<
+    }
 ])
 
 
