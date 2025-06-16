@@ -5,7 +5,10 @@ import { createBrowserRouter } from 'react-router-dom'
 const Loading = <div className='loading'>Loading...</div>
 
 const IndexPage = lazy(() => import(`../pages/index/IndexPage`))
-const JPage = lazy(() => import('../pages/tmp/JGH_tmp'))
+
+const JGHPage = lazy(() => import(`../pages/tmp/JGH_tmp`))
+const Yj_tmp = lazy(() => import('../pages/tmp/Yj_tmp'))
+
 
 const root = createBrowserRouter([
     {
@@ -13,8 +16,12 @@ const root = createBrowserRouter([
         element: <Suspense fallback={Loading}><IndexPage /></Suspense>
     },
     {
-        path: '/JGHtmp',
-        element: <Suspense fallback={Loading}><JPage /></Suspense>
+        path: '/JGH_tmp',
+        element: <Suspense fallback={Loading}><JGHPage /></Suspense>
+    },
+    {
+        path: 'Yj',
+        element: <Suspense fallback={Loading}><Yj_tmp /></Suspense>
     }
 ])
 
