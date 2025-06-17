@@ -1,0 +1,21 @@
+.auth-login {
+    width: 100%;
+    height: 100vh;
+}
+
+.auth-login .auth-login-con {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #a5a5ff;
+
+
+}
+
+
+.auth-login .auth-login-con h1 {}

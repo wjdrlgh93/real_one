@@ -13,6 +13,7 @@ const IndexPage = () => {
             <div className="index-con">
 
                 <Link to={'/shop_list'}>S H O P</Link>
+
             </div>
         </div>
     )
