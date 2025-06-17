@@ -5,9 +5,10 @@ import { createBrowserRouter } from 'react-router-dom'
 const Loading = <div className='loading'>Loading...</div>
 
 const IndexPage = lazy(() => import(`../pages/index/IndexPage`))
-
-const JGHPage = lazy(() => import(`../pages/tmp/JGH_tmp`))
-const Yj_tmp = lazy(() => import('../pages/tmp/Yj_tmp'))
+const AuthPage = lazy(() => import(`../pages/auth/AuthPage`))
+const ShopPage = lazy(() => import(`../pages/shop/ShopPage`))
+const CartPage = lazy(() => import(`../pages/cart/CartPage`))
+const AdminPage = lazy(() => import(`../pages/admin/AdminPage`))
 
 
 const root = createBrowserRouter([
@@ -15,6 +16,16 @@ const root = createBrowserRouter([
         path: '',
         element: <Suspense fallback={Loading}><IndexPage /></Suspense>
     },
+    {
+        //Auth -> 로그인, 조인 페이지 > Admin
+        path: 'auth',
+        element: <Suspense fallback={Loading}><AuthPage /></Suspense>
+    },
+    {
+        // 숍리스트  -> cart
+        path: 'shop_list',
+        element: <Suspense fallback={Loading}><ShopPage /></Suspense>
+    }
 
 ])
 
