@@ -2,60 +2,50 @@ import { current } from '@reduxjs/toolkit';
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-// {
-// function createLoopingText(el) {
-//     const lerp = (current, target, factor) => current * (1 - factor) * target * factor;
 
-//     const state = {
-//         el,
-//         lerp: {
-//             current: 0,
-//             target: 0
-//         },
-//         interpolationFactor: 0.1,
-//         speed: 0.2,
-//         direction: -1
-//     };
-
-//     state.el.style.cssText = 'position: relative; display: inline-flex; white-space: nowrap;';
-//     state.el.children[1].style.cssText = `position: absolute; left: ${100 * -state.direction}%;`;
-
-//     function animate() {
-//         state.lerp.target += state.speed;
-//         state.lerp.current = lerp(state.lerp.current, state.lerp.target, state.interpolationFactor);
-
-//         if (state.lerp.target > 100) {
-//             state.lerp.current -= state.lerp.target;
-//             state.lerp.target = 0;
-//         }
-
-//         const x = state.lerp.current * state.direction;
-//         state.el.style.trasnform = `translateX(${x}%)`;
-//     }
-
-//     function render() {
-//         animate();
-//         window.requestAnimationFrame(render);
-//     }
-
-//     render();
-//     return state;
-// }
-// const test = document.querySelectorAll('.auth-join .loop-test').forEach(el => createLoopingText(el));
-// }
 const AuthJoin = () => {
+    // const wrapTag = document.querySelector('.wrap');
+    // const txtTag = document.querySelector('.txt'),
+    //     txt = 'Everything about the pet you want'.split('');
+
+    // txt.push(...txt)
+    // for (let i = 0; i < txt.length; i++) {
+    //     txtTag.innerText += `${txt[i]}\u00A0\u00A0`
+    // }
+
+    // let xVal = 0;
+    // if (xVal > txtTag.scrollWidth / 2) {
+    //     txtTag.style.transform = 'translateX(0)'
+    //     xVal = 0;
+    // }
+    // txtTag.style.transform = `translateX(${xVal}px)`
+
+    // const marqueenTxt = (xVal, el, dir) => {
+    //     if (xVal > el.scrollWidth / 2) {
+    //         el.style.transform = 'translateX(0)'
+    //         xVal = 0;
+    //     }
+    //     el.style.transform = `translateX(${xVal * dir}px)`
+    //     return xVal
+    // }
+    // const animate = () => {
+    //     xVal += 2;
+    //     xVal = marqueenTxt(xVal, txtTag, -1)
+
+    //     requestAnimationFrame(animate)
+    // }
+    // animate();
     const Navigate = useNavigate()
-    // test();
+
 
     return (
         <div className="auth-join">
-            {/* <section className='hero-section'>
-                <div className='loop-text'>test test test&nbsp;</div>
-                <div className='loop-text'>test test test&nbsp;</div>
-            </section> */}
+            {/* <div className="wrap">
+                <p className="text"></p>
+            </div> */}
             <div className="auth-join-con">
-                <h1>SIGN UP</h1>
                 <ul>
+                    <h1>SIGN UP</h1>
                     <li>
                         <input type='email' name='userEmail' id='userEmail'
                             placeholder='EMAIL' />
