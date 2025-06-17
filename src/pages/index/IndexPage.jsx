@@ -1,17 +1,33 @@
 import React from 'react'
 import Footer from '../../components/common/Footer'
 import Header from '../../components/common/Header'
-
+import { Link } from 'react-router-dom'
 
 const IndexPage = () => {
 
     return (
         <>
-        <Header/>
-        <div>IndexPage</div>
-        
-        <Footer/>
+         <div className="index">
+            <video className='bg_v' autoPlay muted loop>
+                <source src="./videos/dgbg.mp4" type="video/mp4" />
+            </video>
+            <div className="index-title">
+                <h1> EVERYTHING ABOUT PET</h1>
+            </div>
+            <div className="index-con">
+
+                <Link to={'/shop_list'}>S H O P</Link>
+
+            </div>
+        </div>
         </>
+        
+        
+        
+
+       
+        
+        
         
     )
 }
