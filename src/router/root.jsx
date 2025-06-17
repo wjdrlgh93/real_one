@@ -1,13 +1,18 @@
 import React, { lazy, Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
+import toShopRouter from './toShopRouter'
+import toAuthRouter from './toAuthRouter'
 
 
 const Loading = <div className='loading'>Loading...</div>
 
 const IndexPage = lazy(() => import(`../pages/index/IndexPage`))
+const AuthPage = lazy(() => import(`../pages/auth/AuthPage`))
+const CartPage = lazy(() => import(`../pages/cart/CartPage`))
+const AdminPage = lazy(() => import(`../pages/admin/AdminPage`))
 
-const JGHPage = lazy(() => import(`../pages/tmp/JGH_tmp`))
-const Yj_tmp = lazy(() => import('../pages/tmp/Yj_tmp'))
+const AuthLayout = lazy(() => import('../layout/AuthLayout'))
+const ShopLayout = lazy(() => import(`../layout/ShopLayout`))
 
 
 const root = createBrowserRouter([
@@ -15,6 +20,18 @@ const root = createBrowserRouter([
         path: '',
         element: <Suspense fallback={Loading}><IndexPage /></Suspense>
     },
+    {
+        //Auth -> 로그인, 조인 페이지 > Admin
+        path: 'auth',
+        element: <Suspense fallback={Loading}><AuthLayout /></Suspense>,
+        children: toAuthRouter()
+    },
+    {
+        // 숍리스트  -> cart
+        path: 'shop_list',
+        element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
+        children: toShopRouter()
+    }
 
 ])
 
