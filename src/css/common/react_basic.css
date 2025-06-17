@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+/* For Hidden ScrollBar */
+body::-webkit-scrollbar {
+    display: none;
+}
+
 html,
 body {
     width: 100%;
