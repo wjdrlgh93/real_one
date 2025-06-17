@@ -1,1 +1,7 @@
+@import url(css/common/react_basic.css);
+/* IndexPage */
 @import url(css/index/index.css);
+
+/* AuthPage */
+@import url(css/auth/authlogin.css);
+@import url(css/auth/authJoin.css);

@@ -5,9 +5,9 @@
             "userEmail": "alwaysused@email.com",
             "userPw": "11",
             "userName": "KHJlI",
-            "age": "20",
+            "age": 27,
             "address": "서울",
-            "role": "ROLE_MEMBER"
+            "role": "ADMIN"
         },
         {
             "id": "2",
@@ -16,12 +16,12 @@
             "userName": "DJ",
             "age": 35,
             "address": "의정부",
-            "role": "ROLE_MEMBER"
+            "role": "AMDIN"
         },
         {
             "id": "0857",
             "userEmail": "a1@email.com",
-            "userPw": "11",
+            "userPw": 11,
             "userName": "탕후",
             "age": "302222",
             "address": "서울시 노원구",
@@ -32,7 +32,7 @@
             "userEmail": "a5@email.com",
             "userPw": "123123121",
             "userName": "군맛밤",
-            "age": "22",
+            "age": 22,
             "address": "울산시 ",
             "role": "ROLE_MEMBER"
         },
@@ -41,19 +41,16 @@
             "userEmail": "a2@email.com",
             "userPw": "iljkljkl",
             "userName": "jkljkljkl",
-            "age": "20",
+            "age": 20,
             "address": "서울시 노원구",
             "role": "ROLE_MEMBER"
-        },
-        {
-            "id": "e8b2"
         },
         {
             "id": "32a8",
             "userEmail": "yyk65911@email.com",
             "userPw": "11",
             "userName": "11",
-            "age": 0,
+            "age": 40,
             "address": "11",
             "role": "ROLE_MEMBER"
         }
