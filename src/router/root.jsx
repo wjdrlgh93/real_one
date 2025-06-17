@@ -31,6 +31,12 @@ const root = createBrowserRouter([
         path: 'shop_list',
         element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
         children: toShopRouter()
+    },
+    {
+        // 숍리스트  -> cart
+        path: 'shop',
+        element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
+        children: toShopRouter()
     }
 
 ])
