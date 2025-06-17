@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
+import toShopRouter from './toShopRouter'
 
 
 const Loading = <div className='loading'>Loading...</div>
@@ -9,6 +10,8 @@ const AuthPage = lazy(() => import(`../pages/auth/AuthPage`))
 const ShopPage = lazy(() => import(`../pages/shop/ShopPage`))
 const CartPage = lazy(() => import(`../pages/cart/CartPage`))
 const AdminPage = lazy(() => import(`../pages/admin/AdminPage`))
+
+const ShopLayout = lazy(() => import(`../layout/ShopLayout`))
 
 
 const root = createBrowserRouter([
@@ -24,7 +27,8 @@ const root = createBrowserRouter([
     {
         // 숍리스트  -> cart
         path: 'shop_list',
-        element: <Suspense fallback={Loading}><ShopPage /></Suspense>
+        element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
+        children: toShopRouter()
     }
 
 ])

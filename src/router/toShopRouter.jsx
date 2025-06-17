@@ -1,0 +1,38 @@
+import React, { lazy, Suspense } from 'react'
+import { Navigate } from 'react-router-dom'
+
+const Loading = <div className='loading'>Loading...</div>
+
+const ShopFood = lazy(() => import(`../components/container/shop/ShopFoodContainer`))
+const ShopSnack = lazy(() => import(`../components/container/shop/ShopSnackContainer`))
+const ShopToy = lazy(() => import(`../components/container/shop/ShopToyContainer`))
+
+const toShopRouter = () => {
+    return (
+        [
+            {
+                // /shop,
+                path: '',
+                element: <Navigate replace to={'food'} />
+            },
+            {
+                // shop/food
+                path: 'food',
+                element: <Suspense fallback={Loading}><ShopFood /></Suspense>
+            },
+            {
+                // shop/snack
+                path: 'snack',
+                element: <Suspense fallback={Loading}><ShopSnack /></Suspense>
+            },
+            {
+                // shop/toy
+                path: 'toy',
+                element: <Suspense fallback={Loading}><ShopToy /></Suspense>
+            }
+
+        ]
+    )
+}
+
+export default toShopRouter
