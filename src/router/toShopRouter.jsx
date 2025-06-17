@@ -6,6 +6,9 @@ const Loading = <div className='loading'>Loading...</div>
 const ShopFood = lazy(() => import(`../components/container/shop/ShopFoodContainer`))
 const ShopSnack = lazy(() => import(`../components/container/shop/ShopSnackContainer`))
 const ShopToy = lazy(() => import(`../components/container/shop/ShopToyContainer`))
+const ShopBath = lazy(() => import(`../components/container/shop/ShopBathContainer`))
+const ShopHouse = lazy(() => import(`../components/container/shop/ShopHouseContainer`))
+const ShopFashion = lazy(() => import(`../components/container/shop/ShopFashionContainer`))
 
 const toShopRouter = () => {
     return (
@@ -29,7 +32,22 @@ const toShopRouter = () => {
                 // shop/toy
                 path: 'toy',
                 element: <Suspense fallback={Loading}><ShopToy /></Suspense>
-            }
+            },
+            {
+                // shop/toy
+                path: 'bath',
+                element: <Suspense fallback={Loading}><ShopBath /></Suspense>
+            },
+            {
+                // shop/toy
+                path: 'house',
+                element: <Suspense fallback={Loading}><ShopHouse /></Suspense>
+            },
+            {
+                // shop/toy
+                path: 'fashion',
+                element: <Suspense fallback={Loading}><ShopFashion /></Suspense>
+            },
 
         ]
     )
