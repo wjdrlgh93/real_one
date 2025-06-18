@@ -1,21 +1,27 @@
-#root {
-  width: 100%;
-  /* 최소 height 100vh, 100vh 초과시 자동으로 조절 */
-  min-height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.loading {
-  width: 100%;
-  height: 100vh;
+/* For Hidden ScrollBar */
+body::-webkit-scrollbar {
+    display: none;
+}
 
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 0;
+html,
+body {
+    width: 100%;
+    height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: #c4bec9;
+}
 
-  font-size: 2vmax;
+a {
+    text-decoration: none;
+    color: #25003d;
+}
+
+ul,
+li {
+    list-style: none;
 }

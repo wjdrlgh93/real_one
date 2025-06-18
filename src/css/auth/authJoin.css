@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&display=swap');
+
+
+.auth-join {
+    width: 100%;
+    height: auto;
+
+    background: url(../../../public/images/doggo.jpg)no-repeat 50%/cover;
+    /* filter: grayscale(1); */
+
+}
+
+.wrap {
+    display: flex;
+    width: 104vw;
+    position: relative;
+    left: -2vw;
+
+    background-size: auto 100%;
+    margin-top: 10rem;
+    padding-top: 8rem;
+    transform: rotate(-5deg);
+}
+
+.txt {
+    display: flex;
+    padding: 3rem 0;
+    font-size: 5rem;
+    white-space: nowrap;
+    color: purple;
+    mix-blend-mode: multiply;
+}
+
+.auth-join .auth-join-con {
+    width: 100%;
+    min-height: 100vh;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+
+.auth-join .auth-join-con h1 {
+    padding: 15px;
+    font-family: "Alumni Sans SC", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 4rem;
+
+    background-color: rgb(0, 136, 255);
+}
+
+.auth-join .auth-join-con ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(172, 216, 255);
+    padding: 10px;
+}
