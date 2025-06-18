@@ -1,5 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { Navigate } from 'react-router-dom'
+import toToyRouter from './toToyRouter'
+import ToyLayout from '../layout/ToyLayout'
 
 const Loading = <div className='loading'>Loading...</div>
 
@@ -31,7 +33,8 @@ const toShopRouter = () => {
             {
                 // shop/toy
                 path: 'toy',
-                element: <Suspense fallback={Loading}><ShopToy /></Suspense>
+                element: <Suspense fallback={Loading}><ToyLayout/></Suspense>,
+                children: toToyRouter()
             },
             {
                 // shop/toy
