@@ -28,7 +28,13 @@ const root = createBrowserRouter([
     },
     {
         // 숍리스트  -> cart
-        path: 'shop_list',
+        path: 'shop',
+        element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
+        children: toShopRouter()
+    },
+    {
+        // 숍리스트  -> shop
+        path: 'cart',
         element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
         children: toShopRouter()
     }
