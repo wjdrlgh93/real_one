@@ -9,8 +9,8 @@ const Loading = <div className='loading'>Loading...</div>
 const IndexPage = lazy(() => import(`../pages/index/IndexPage`))
 const AuthPage = lazy(() => import(`../pages/auth/AuthPage`))
 const CartPage = lazy(() => import(`../pages/cart/CartPage`))
-const AdminPage = lazy(() => import(`../pages/admin/AdminPage`))
 
+const AdminLayout = lazy(() => import(`../layout/AdminLayout`))
 const AuthLayout = lazy(() => import('../layout/AuthLayout'))
 const ShopLayout = lazy(() => import(`../layout/ShopLayout`))
 
