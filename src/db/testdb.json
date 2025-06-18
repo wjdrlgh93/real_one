@@ -62,6 +62,15 @@
       "age": "33",
       "address": "경기도 의정부시 ",
       "role": "ROLE_ADMIN"
+    },
+    {
+      "id": "be61",
+      "userEmail": "A11@gmail.com",
+      "userPw": "112233",
+      "userName": "",
+      "age": "25",
+      "address": "경기도 양주시",
+      "role": "ROLE_MEMBER"
     }
   ]
 }

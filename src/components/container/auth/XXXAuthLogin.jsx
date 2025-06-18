@@ -11,12 +11,8 @@ const loginData = {
 
 const AuthLogin = () => {
 
-    const Navigate = useNavigate();
-
 
     const [login, setLogin] = useState(loginData)
-
-
 
     const isLogin = useSelector(state => state.auth.isLogin)
 

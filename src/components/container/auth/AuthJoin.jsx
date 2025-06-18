@@ -1,65 +1,78 @@
 import { current } from '@reduxjs/toolkit';
-import React, { useCallback, useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { getMemberSelectorApi } from '../../../API/authAPI'
+import { loginUserFn } from '../../../slices/authSlice';
 import axios from 'axios';
 
 const joinData = {
     userEmail: '',
     userPw: '',
     userName: '',
-    age: 0,
+    age: '',
     address: '',
     role: 'ROLE_MEMBER'
 }
 
+const loginData = {
+    userEmail: '',
+    userPw: ''
+}
+
+
 const AuthJoin = () => {
-    // const wrapTag = document.querySelector('.wrap');
-    // const txtTag = document.querySelector('.txt'),
-    //     txt = 'Everything about the pet you want'.split('');
 
-    // txt.push(...txt)
-    // for (let i = 0; i < txt.length; i++) {
-    //     txtTag.innerText += `${txt[i]}\u00A0\u00A0`
-    // }
+    const [login, setLogin] = useState(loginData)
 
-    // let xVal = 0;
-    // if (xVal > txtTag.scrollWidth / 2) {
-    //     txtTag.style.transform = 'translateX(0)'
-    //     xVal = 0;
-    // }
-    // txtTag.style.transform = `translateX(${xVal}px)`
-
-    // const marqueenTxt = (xVal, el, dir) => {
-    //     if (xVal > el.scrollWidth / 2) {
-    //         el.style.transform = 'translateX(0)'
-    //         xVal = 0;
-    //     }
-    //     el.style.transform = `translateX(${xVal * dir}px)`
-    //     return xVal
-    // }
-    // const animate = () => {
-    //     xVal += 2;
-    //     xVal = marqueenTxt(xVal, txtTag, -1)
-
-    //     requestAnimationFrame(animate)
-    // }
-    // animate();
-
+    const dispatch = useDispatch()
+    const containerRef = useRef(null);
     const Navigate = useNavigate()
     const [join, setjoin] = useState(joinData)
 
     const isLogin = useSelector(state => state.auth.isLogin)
 
+    const onLoginchangeFn = (e) => {
+        const name = e.target.name
+        const value = e.target.value
+        setLogin({ ...login, [name]: value })
+    }
     const onInputchangeFn = (e) => {
         const name = e.target.name;
         const value = e.target.value
         setjoin({ ...join, [name]: value })
     }
+    const onLoginFn = ((e) => {
+        e.preventDefault();
+        const loginAxiosFn = async () => {
+            try {
+                alert(`로그인을 시도합니다...`)
+                const resAPI = await getMemberSelectorApi()
+
+                const num = resAPI.findIndex(el => {
+                    return el.userEmail === login.userEmail && el.userPw === login.userPw
+                })
+                const isVal = resAPI.filter(el => {
+                    return el.userEmail === login.userEmail && el.userPw === login.userPw
+                })
+
+                if (isVal.length > 0) {
+                    alert(`로그인에 성공하였습니다`)
+                    dispatch(loginUserFn(isVal[0]))
+                    Navigate('/shop')
+
+                } else {
+                    alert(`이메일 또는 비밀번호가 일치하지 않습니다.`)
+                }
+            } catch (err) {
+                alert(err)
+            }
+        }
+        loginAxiosFn()
+    })
 
     const onJoinFn = (e) => {
-
+        e.preventDefault();
         const dataURL = `http://localhost:3001/members`
         if (!join.userEmail) {
             alert("이메일을 입력해 주세요.");
@@ -70,7 +83,7 @@ const AuthJoin = () => {
             alert("비밀번호를 입력해 주세요.");
             return;
         }
-        if (!join.userEmail || !join.userPw || !join.userName || !join.age || !join.address) {
+        if (!join.userEmail || !join.userPw || !join.address || !join.age) {
             alert("입력한 정보가 유효하지 않습니다. 다시 확인해 주세요.");
             return;
         }
@@ -94,7 +107,7 @@ const AuthJoin = () => {
                 // after Join Move LoginPage
                 const joinOK = await axios.post(`${dataURL}`, join) //add account
                 alert(`회원가입이 완료되었습니다. 로그인페이지로 이동합니다. `)
-                Navigate(`/auth/login`)
+                Navigate(`/auth`)
             } catch (err) {
                 alert(`회원가입에 실패하였습니다 :: ` + err)
             }
@@ -103,58 +116,138 @@ const AuthJoin = () => {
     }
 
     useEffect(() => {
+
         if (isLogin) {
             alert(`이미 로그인이 되어있습니다, 이전 페이지로 이동합니다`)
-            Navigate(`/`)
+            // Navigate(`/`)
+        }
+        const container = containerRef.current;
+        if (container) {
+            setTimeout(() => {
+                container.classList.add('sign-in');
+            }, 200);
         }
     }, [])
 
-    return (
-        <div className="auth-join">
-            <video className='bg_v' autoPlay muted loop>
-                <source src="/videos/dogiBG.mp4" type="video/mp4" />
-            </video>
-            <div className="auth-join-con">
-                <ul>
-                    <h1>SIGN UP</h1>
-                    <li>
-                        <input type='email' name='userEmail' id='userEmail'
-                            placeholder='EMAIL' value={join.userEmail} onChange={onInputchangeFn} />
-                    </li>
-                    <li>
-                        <input type="password" name="userPw" id="userPw"
-                            placeholder='PASSWORD' value={join.userPw} onChange={onInputchangeFn} />
-                    </li>
-                    <li>
-                        <input type="text" name="userName" id="userName"
-                            placeholder='NAME' value={join.userName} onChange={onInputchangeFn} />
-                    </li>
-                    <li>
-                        <input type="text" name="age" id="age"
-                            placeholder='age' value={join.age} onChange={onInputchangeFn} />
-                    </li>
-                    <li>
-                        <input type="text" name="address" id="address"
-                            placeholder='Address' value={join.address} onChange={onInputchangeFn} />
-                    </li>
-                    <li>
-                        <label htmlFor="role">ROLE</label>
-                        <select name="role" id="role"
-                            value={join.role} onChange={onInputchangeFn}>
-                            <option value="ROLE_MEMBER" defaultValue >MEMBER</option>
-                            <option value="ROLE_ADMIN">ADMIN</option>
-                        </select>
-                    </li>
-                    <li className='button_li'>
-                        <button onClick={onJoinFn}>SIGNUP</button>
-                        <button onClick={() => { Navigate('/auth/login') }}>LOGIN</button>
-                        <button onClick={() => { Navigate('/') }}>HOME</button>
+    const toggle = () => {
+        const container = containerRef.current;
+        if (container) {
+            container.classList.toggle('sign-in');
+            container.classList.toggle('sign-up');
+        }
+    };
 
-                    </li>
-                </ul>
+    return (
+
+        <div className="container" ref={containerRef}>
+            <video className='bg_v' autoPlay muted loop>
+                <source src="./videos/dgbg.mp4" type="video/mp4" />
+            </video>
+            <div className="row">
+                <div className="col align-items-center flex-col sign-up">
+                    <div className="form-wrapper align-items-center">
+                        <div className="form sign-up">
+                            <form>
+                                {/* 회원가입 */}
+                                <div className="input-group">
+                                    <i className='bx bx-mail-send'></i>
+                                    <input type="email" name="userEmail" id="userEmail" placeholder='EMAIL'
+                                        value={join.userEmail} onChange={onInputchangeFn} />
+                                </div>
+                                <div className="input-group">
+                                    <i className='bx bxs-lock-alt'></i>
+                                    <input type="password" name="userPw" id="userPw" placeholder='PASSOWORD'
+                                        value={join.userPw} onChange={onInputchangeFn} />
+                                </div>
+                                <div className="input-group">
+                                    <i className='bx bxs-lock-alt'></i>
+                                    <input type="text" name="age" id="age" placeholder='AGE'
+                                        value={join.age} onChange={onInputchangeFn} />
+                                </div>
+                                <div className="input-group">
+                                    <i className='bx bxs-lock-alt'></i>
+                                    <input type="text" name="address" id="address" placeholder='ADDRESS'
+                                        value={join.address} onChange={onInputchangeFn} />
+                                </div>
+                                <button onClick={onJoinFn}> Sign up </button>
+                                <p><span>Already have an account? </span>
+                                    <b onClick={toggle} className="pointer">
+                                        Sign in here</b></p>
+                                {/* (!join.userEmail || !join.userPw || !join.userName || !join.age) */}
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className="col align-items-center flex-col sign-in">
+                    <div className="form-wrapper align-items-center">
+                        <div className="form sign-in">
+                            <form>
+                                <div className="input-group">
+                                    <i className='bx bxs-user'></i>
+                                    <input type="email" name="userEmail" id="userEmail" placeholder='EMAIL'
+                                        value={login.userEmail} onChange={onLoginchangeFn} />
+                                </div>
+                                <div className="input-group">
+                                    <i className='bx bxs-lock-alt'></i>
+                                    <input type="password" name="userPw" id="userPw" placeholder='PASSWORD'
+                                        value={login.userPw} onChange={onLoginchangeFn} />
+                                </div>
+                                <button onClick={onLoginFn}> LOGIN</button>
+                                <p>
+                                    <b>
+                                        Forgot password?
+                                    </b>
+                                </p>
+                                <p>
+                                    <span> Don't have an account?
+                                    </span>
+                                    <b onClick={toggle} className="pointer">
+                                        Sign up here
+                                    </b>
+                                </p>
+                            </form>
+                        </div>
+
+                    </div>
+                    <div className="form-wrapper">
+                    </div>
+
+                </div>
             </div>
-        </div>
-    )
-}
+
+            <div className="row content-row">
+                <div className="col align-items-center flex-col">
+                    <div className="text sign-in">
+                        <h2>
+                            Welcome <br />
+                            LOGIN
+                        </h2>
+
+                    </div>
+                    <div className="img sign-in">
+
+                    </div>
+                </div>
+
+                <div className="col align-items-center flex-col">
+                    <div className="img sign-up">
+
+                    </div>
+                    <div className="text sign-up">
+                        <h2>
+                            Join with us <br />
+                            Sing Up
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+        </div >
+
+
+    );
+};
 
 export default AuthJoin
