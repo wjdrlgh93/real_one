@@ -5,6 +5,7 @@ import toBathRouter from './toBathRouter'
 
 const Loading = <div className='loading'>Loading...</div>
 
+const ShopMain = lazy(() => import(`../components/container/shop/ShopMainContainer`))
 const ShopFood = lazy(() => import(`../components/container/shop/ShopFoodContainer`))
 const ShopSnack = lazy(() => import(`../components/container/shop/ShopSnackContainer`))
 const ShopToy = lazy(() => import(`../components/container/shop/ShopToyContainer`))
@@ -22,7 +23,11 @@ const toShopRouter = () => {
             {
                 // /shop,
                 path: '',
-                element: <Navigate replace to={'food'} />
+                element: <Navigate replace to={'main'} />
+            },
+            {
+                path: 'main',
+                element: <Suspense fallback={Loading}><ShopMain /></Suspense>
             },
             {
                 // shop/food
@@ -37,7 +42,7 @@ const toShopRouter = () => {
             {
                 // shop/toy
                 path: 'toy',
-                element: <Suspense fallback={Loading}><ToyLayout/></Suspense>,
+                element: <Suspense fallback={Loading}><ShopToy /></Suspense>,
                 children: toToyRouter()
             },
             {

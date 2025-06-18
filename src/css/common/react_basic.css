@@ -34,7 +34,7 @@ body {
     width: 100%;
     height: 100%;
 
-    background-color: #c4bec9;
+    /* background-color: #c4bec9; */
 }
 
 a {
@@ -44,21 +44,28 @@ a {
 
 ul,
 li {
-    list-style: none;
+    list-style: none;}
+    
+=========
+#root {
+  width: 100%;
+  /* 최소 height 100vh, 100vh 초과시 자동으로 조절 */
+  min-height: 100vh;
 }
 
-@font-face {
-    font-family: 'KBO Dia Gothic_bold';
-    src: url('../../font/KBO\ Dia\ Gothic_bold.ttf')
-    format('truetype');
-  }
-  @font-face {
-    font-family: 'KBO Dia Gothic_light';
-    src: url('../../font/KBO\ Dia\ Gothic_light.ttf')
-    format('truetype');
-  }
-  @font-face {
-    font-family: 'KBO Dia Gothic_medium';
-    src: url('../../font/KBO\ Dia\ Gothic_medium.ttf')
-    format('truetype');
-  }
+.loading {
+  width: 100%;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2vmax;
+>>>>>>>>> Temporary merge branch 2
+}
