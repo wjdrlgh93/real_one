@@ -14,9 +14,9 @@ const ShopToyContainer = () => {
         // .catch(err => console.log(err))
     },[])
     
-    const [hoveredId, setHoveredId] = useState(null)
-    const mouseHoverIn = id => {setHoveredId(id)}
-    const mouseHoverOut = () => {setHoveredId(null)}
+    // const [hoveredId, setHoveredId] = useState(null)
+    // const mouseHoverIn = id => {setHoveredId(id)}
+    // const mouseHoverOut = () => {setHoveredId(null)}
 
     return (
             <div className="toyList">
