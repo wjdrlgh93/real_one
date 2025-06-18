@@ -7,22 +7,22 @@ const ToyLayout = () => {
       <div className="toy-con">
           <div className="toy-wrap">
               <div className="head-title">
-                  <h1>장난감</h1>
+                  <h1><Link to={'/shop/toy'}>TOY</Link></h1>
               </div>
               <div className="toy-filter">
                   <div className="toy-filter-type">
                       <ul>
                           <li>
-                              <Link to={'/shop/toy'}>전체</Link>
+                              <Link to={'/shop/toy'}>ALL</Link>
                           </li>
                           <li>
-                              <Link to={'/shop/toy/ball'}>공</Link>
+                              <Link to={'/shop/toy/ball'}>Ball</Link>
                           </li>
                           <li>
-                              <Link to={'/shop/toy/tug'}>터그장난감</Link>
+                              <Link to={'/shop/toy/tug'}>Tug toy</Link>
                           </li>
                           <li>
-                              <Link to={'/shop/toy/stuffed'}>인형</Link>
+                              <Link to={'/shop/toy/stuffed'}>Stuffed toy</Link>
                           </li>
                       </ul>
                   </div>

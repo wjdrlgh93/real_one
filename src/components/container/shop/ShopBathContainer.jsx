@@ -1,8 +1,35 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const ShopBathContainer = () => {
+    const [bathList, setBathList] = useState()
+
+    useEffect(() => {
+        const url = `http://localhost:3001/grooming`
+
+        fetch(url)
+        .then(res => res.json())
+        .then(jsonData => setBathList(jsonData))
+        // .catch(err => console.log(err))
+    },[])
+    
     return (
-        <div>ShopBathContainer</div>
+            <div className="toyList">
+                <ul>
+                {bathList && bathList.map((el)=>{
+                    return (
+                        <li>
+                            <div className="top">
+                                <img src={`/images/${el.img}`} alt={el.title} />
+                            </div>
+                            <div className="bottom">
+                                <span className="title">{el.title}</span>
+                                <span className="price">￦{el.price}</span>
+                            </div>                            
+                        </li>
+                    )
+                })}
+                </ul>
+            </div>
     )
 }
 

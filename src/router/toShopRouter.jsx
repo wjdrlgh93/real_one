@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { Navigate } from 'react-router-dom'
 import toToyRouter from './toToyRouter'
-import ToyLayout from '../layout/ToyLayout'
+import toBathRouter from './toBathRouter'
 
 const Loading = <div className='loading'>Loading...</div>
 
@@ -11,6 +11,10 @@ const ShopToy = lazy(() => import(`../components/container/shop/ShopToyContainer
 const ShopBath = lazy(() => import(`../components/container/shop/ShopBathContainer`))
 const ShopHouse = lazy(() => import(`../components/container/shop/ShopHouseContainer`))
 const ShopFashion = lazy(() => import(`../components/container/shop/ShopFashionContainer`))
+
+// 연준
+const ToyLayout = lazy(() => import('../layout/ToyLayout'))
+const BathLayout = lazy(() => import('../layout/BathLayout'))
 
 const toShopRouter = () => {
     return (
@@ -37,9 +41,10 @@ const toShopRouter = () => {
                 children: toToyRouter()
             },
             {
-                // shop/toy
+                // shop/bath
                 path: 'bath',
-                element: <Suspense fallback={Loading}><ShopBath /></Suspense>
+                element: <Suspense fallback={Loading}><BathLayout /></Suspense>,
+                children: toBathRouter()
             },
             {
                 // shop/toy
