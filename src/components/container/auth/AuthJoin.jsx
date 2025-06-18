@@ -1,7 +1,16 @@
 import { current } from '@reduxjs/toolkit';
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 
+const joinData = {
+    userEmail: '',
+    uwserPw: '',
+    userName: '',
+    age: 0,
+    address: '',
+    role: 'ROLE_MEMBER'
+}
 
 const AuthJoin = () => {
     // const wrapTag = document.querySelector('.wrap');
@@ -35,7 +44,11 @@ const AuthJoin = () => {
     //     requestAnimationFrame(animate)
     // }
     // animate();
+
     const Navigate = useNavigate()
+    const [join, setjoin] = useState(joinData)
+
+    const isLogin = useSelector(state => state.auth.isLogin)
 
 
     return (
