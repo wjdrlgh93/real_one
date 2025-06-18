@@ -5,6 +5,7 @@
   font-size: 14px;
   border: 1px solid;
   box-sizing: border-box;
+
 }
 
 .footer-top {
@@ -20,7 +21,7 @@
 }
 
 .footer-con {
-  flex: 2 1 1 1;
+  flex: 1 1;
   min-width: 200px;
   border: 1px solid;
   box-sizing: border-box;

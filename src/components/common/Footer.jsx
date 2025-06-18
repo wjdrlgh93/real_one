@@ -41,7 +41,6 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
-
             <div className="footer-bottom">
                 <p>&copy; 2025 코딩어렵조컴퍼니. All rights reserved.</p>
             </div>
