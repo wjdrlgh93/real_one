@@ -12,16 +12,16 @@ const toBathRouter = () => {
   return (
     [
       {
-        path: '',
-        element: <Suspense fallback={Loading}><ShopBath/></Suspense>
+        path: 'bath',
+        element: <Suspense fallback={Loading}><ShopBath /></Suspense>
       },
       {
-        path:'shampoo',
-        element:<Suspense fallback={Loading}><ShopBathShampoo/></Suspense>
+        path: 'shampoo',
+        element: <Suspense fallback={Loading}><ShopBathShampoo /></Suspense>
       },
       {
-        path:'comb',
-        element:<Suspense fallback={Loading}><ShopBathComb/></Suspense>
+        path: 'comb',
+        element: <Suspense fallback={Loading}><ShopBathComb /></Suspense>
       }
     ]
   )
