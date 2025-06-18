@@ -221,7 +221,7 @@ const AuthJoin = () => {
                 <div className="col align-items-center flex-col">
                     <div className="text sign-in">
                         <h2>
-                            Welcome <br />
+
                             LOGIN
                         </h2>
 
@@ -237,7 +237,6 @@ const AuthJoin = () => {
                     </div>
                     <div className="text sign-up">
                         <h2>
-                            Join with us <br />
                             Sing Up
                         </h2>
 
