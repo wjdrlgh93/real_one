@@ -1,58 +1,76 @@
 {
-    "members": [
-        {
-            "id": "1",
-            "userEmail": "alwaysused@email.com",
-            "userPw": "11",
-            "userName": "KHJlI",
-            "age": 27,
-            "address": "서울",
-            "role": "ADMIN"
-        },
-        {
-            "id": "2",
-            "userEmail": "naverused@email.com",
-            "userPw": "222222",
-            "userName": "DJ",
-            "age": 35,
-            "address": "의정부",
-            "role": "AMDIN"
-        },
-        {
-            "id": "0857",
-            "userEmail": "a1@email.com",
-            "userPw": 11,
-            "userName": "탕후",
-            "age": "302222",
-            "address": "서울시 노원구",
-            "role": "ROLE_MEMBER"
-        },
-        {
-            "id": "5c41",
-            "userEmail": "a5@email.com",
-            "userPw": "123123121",
-            "userName": "군맛밤",
-            "age": 22,
-            "address": "울산시 ",
-            "role": "ROLE_MEMBER"
-        },
-        {
-            "id": "1378",
-            "userEmail": "a2@email.com",
-            "userPw": "iljkljkl",
-            "userName": "jkljkljkl",
-            "age": 20,
-            "address": "서울시 노원구",
-            "role": "ROLE_MEMBER"
-        },
-        {
-            "id": "32a8",
-            "userEmail": "yyk65911@email.com",
-            "userPw": "11",
-            "userName": "11",
-            "age": 40,
-            "address": "11",
-            "role": "ROLE_MEMBER"
-        }
-    ]
+  "members": [
+    {
+      "id": "1",
+      "userEmail": "alwaysused@email.com",
+      "userPw": "11",
+      "userName": "KHJlI",
+      "age": 27,
+      "address": "서울",
+      "role": "ADMIN"
+    },
+    {
+      "id": "2",
+      "userEmail": "naverused@email.com",
+      "userPw": "222222",
+      "userName": "DJ",
+      "age": 35,
+      "address": "의정부",
+      "role": "AMDIN"
+    },
+    {
+      "id": "0857",
+      "userEmail": "a1@email.com",
+      "userPw": 11,
+      "userName": "탕후",
+      "age": "302222",
+      "address": "서울시 노원구",
+      "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "5c41",
+      "userEmail": "a5@email.com",
+      "userPw": "123123121",
+      "userName": "군맛밤",
+      "age": 22,
+      "address": "울산시 ",
+      "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "1378",
+      "userEmail": "a2@email.com",
+      "userPw": "iljkljkl",
+      "userName": "jkljkljkl",
+      "age": 20,
+      "address": "서울시 노원구",
+      "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "32a8",
+      "userEmail": "yyk65911@email.com",
+      "userPw": "11",
+      "userName": "11",
+      "age": 40,
+      "address": "11",
+      "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "035b",
+      "userEmail": "mario115@naver.com",
+      "userPw": "112233",
+      "userName": "정기호 ",
+      "age": "33",
+      "address": "경기도 의정부시 ",
+      "role": "ROLE_ADMIN"
+    },
+    {
+      "id": "be61",
+      "userEmail": "A11@gmail.com",
+      "userPw": "112233",
+      "userName": "",
+      "age": "25",
+      "address": "경기도 양주시",
+      "role": "ROLE_MEMBER"
+    }
+  ]
 }

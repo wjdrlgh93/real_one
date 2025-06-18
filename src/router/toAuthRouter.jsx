@@ -3,7 +3,6 @@ import { Navigate } from 'react-router-dom'
 
 const Loading = <div className='loading'>Loading...</div>
 
-const AuthLogin = lazy(() => import('../components/container/auth/AuthLogin'))
 const AuthJoin = lazy(() => import('../components/container/auth/AuthJoin'))
 const AuthDetail = lazy(() => import('../components/container/auth/AuthDetail'))
 const AuthMemberList = lazy(() => import('../components/container/auth/AuthMemberList'))
@@ -17,18 +16,13 @@ const toAuthRouter = () => {
             {
                 // /Auth,
                 path: '',
-                element: <Navigate replace to={'login'} />
+                element: <Navigate replace to={'laj'} />
             },
             {
-                // /auth/login
-                path: 'login',
-                element: <Suspense fallback={Loading}><AuthLogin /></Suspense>
-
-            },
-            {
-                // /auth/join
-                path: 'join',
+                // /auth/login&join
+                path: 'laj',
                 element: <Suspense fallback={Loading}><AuthJoin /></Suspense>
+
             },
             {
                 // auth/detail/userid

@@ -1,20 +1,19 @@
 import axios from 'axios'
-import React from 'react'
 
-const API_SERVER_URL = 'http://localhost:3000/members'
+const API_SERVER_URL = 'http://localhost:3001/members'
 
+//login
 export const getMemberSelectorApi = async () => {
     try {
         const ServerURL = await axios.get(`${API_SERVER_URL}`)
-
-        console.log(typeof ServerURL, ServerURL) // search 
-        console.log(typeof ServerURL.data, ServerURL.data) // search 
         return ServerURL.data
     } catch (err) {
         alert(err)
     }
 }
 
+
+//join
 export const insertMemberApi = async (user) => {
     try {
         const ServerURLForJoin = await axios.get(`${API_SERVER_URL}`, user) // join
@@ -24,6 +23,3 @@ export const insertMemberApi = async (user) => {
         alert(err)
     }
 }
-
-
-export default authAPI
