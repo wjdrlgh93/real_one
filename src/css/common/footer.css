@@ -1,22 +1,29 @@
 .footer {
   background-color: #5c5c5c;
   color: #f1f1f1;
-  padding: 40px 20px;
+  padding: 20px 10px;
   font-size: 14px;
+  border: 1px solid;
+  box-sizing: border-box;
 }
 
 .footer-top {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 30px;
+  gap: 15px;
   max-width: 1200px;
   margin: 0 auto 30px auto;
+
+  border: 1px solid;
+  box-sizing: border-box;
 }
 
 .footer-con {
-  flex: 0 1 220px;
+  flex: 2 1 1 1;
   min-width: 200px;
+  border: 1px solid;
+  box-sizing: border-box;
 }
 
 .footer-con h3 {
@@ -26,22 +33,16 @@
 }
 
 .footer-con p,
-.footer-con li {
+.footer-con li,
+.footer-con a {
   margin-bottom: 8px;
   color: #cccccc;
   text-decoration: none;
   line-height: 1.6;
 }
 
-.footer-con a {
-  margin-bottom: 8px;
-  color: #ffffff; 
-  text-decoration: none;
-  line-height: 1.6;
-}
-
 .footer-con a:hover {
-  color: #cccccc; 
+  color: #ffffff; 
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -58,9 +59,10 @@
 }
 
 .footer-bottom {
-  border-top: 1px solid #333333;
   text-align: center;
-  padding-top: 15px;
   font-size: 13px;
   color: #aaaaaa;
+
+  border: 1px solid;
+  box-sizing: border-box;
 }

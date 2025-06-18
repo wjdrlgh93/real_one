@@ -6,12 +6,12 @@ const Footer = () => {
             <div className="footer-top">
                 <div className="footer-con">
                     <h3>회사 정보</h3>
-                    <p>상호명: (주)예시컴퍼니</p>
+                    <p>상호명: (주)코딩어렵조컴퍼니</p>
                     <p>대표자: 홍길동</p>
                     <p>주소: 서울특별시 노원구 상계로3길 21, 화일빌딩 3층</p>
                     <p>사업자등록번호: 123-45-67890</p>
                     <p>통신판매업신고: 제2025-서울노원-0000호</p>
-                    <p>이메일: contact@example.com</p>
+                    <p>이메일: sungwoo@example.com</p>
                 </div>
 
                 <div className="footer-con">
@@ -34,16 +34,16 @@ const Footer = () => {
                 <div className="footer-con">
                     <h3>Follow Us</h3>
                     <ul className="social">
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-                        <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Facebook</a></li><br/>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li><br/>
+                        <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li><br/>
                         <li><a href="#" target="_blank" rel="noopener noreferrer">YouTube</a></li>
                     </ul>
                 </div>
             </div>
 
             <div className="footer-bottom">
-                <p>&copy; 2025 예시컴퍼니. All rights reserved.</p>
+                <p>&copy; 2025 코딩어렵조컴퍼니. All rights reserved.</p>
             </div>
         </footer>
     );

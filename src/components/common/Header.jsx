@@ -25,7 +25,7 @@ const Header = () => {
                 <div className="nav-middle-con">
                 <h1 className="logo2">
                     <a href="/" target='self'>
-                    <img src="images/logo.png" alt="LOGO" width="300" height="150"/></a>
+                    <img src="images/logo.png" alt="LOGO" width="200" height="150"/></a>
                 </h1>
                 </div>
                 
