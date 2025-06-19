@@ -10,6 +10,19 @@
 /* AdminPage */
 @import url(css/admin/adminpage.css);
 
+@import url(css/shop/shopToy.css);
+
+
+@font-face {
+    font-family: 'KBO Dia Gohtic_bold';
+    src: url('./font/KBO Dia Gothic_bold.ttf')
+    format('truetype');
+  }
+  @font-face {
+    font-family: 'KBO Dia Gothic_light';
+    src: url('./font/KBO Dia Gothic_light.ttf')
+    format('truetype');
+  }
 @font-face {
     font-family: "KBO Dia Gothic_medium";
     font-weight: normal;

@@ -12,7 +12,7 @@ const toBathRouter = () => {
   return (
     [
       {
-        path: 'bath',
+        path: '',
         element: <Suspense fallback={Loading}><ShopBath /></Suspense>
       },
       {
