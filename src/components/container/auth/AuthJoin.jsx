@@ -73,7 +73,7 @@ const AuthJoin = () => {
 
     const onJoinFn = (e) => {
         e.preventDefault();
-        const dataURL = `http://localhost:3001/members`
+        const dataURL = `http://localhost:3000/members`
         if (!join.userEmail) {
             alert("이메일을 입력해 주세요.");
             return;
@@ -91,6 +91,7 @@ const AuthJoin = () => {
             try {
                 alert(`회원가입을 신청합니다. 잠시만 기다려주세요...`)
                 const resAPI = await getMemberSelectorApi()
+
                 if (resAPI === null) {
                     alert('회원가입에 실패했습니다. 나중에 다시 시도해 주세요..')
                     return
@@ -103,11 +104,23 @@ const AuthJoin = () => {
                     alert(`이미 존재하는 이메일 입니다. 다른 이메일로 시도해주세요`)
                     return
                 }
+
+                // DB Primary KEY id 
+                const maxId = resAPI.reduce((max, item) => {
+                    const idNum = parseInt(item.id, 10);
+                    return idNum > max ? idNum : max
+                }, 0)
+
+                const newId = { ...join, id: (maxId + 1).toString() }
+
+
+
+
                 // axios> POST > JOINPage
                 // after Join Move LoginPage
-                const joinOK = await axios.post(`${dataURL}`, join) //add account
+                const joinOK = await axios.post(`${dataURL}`, newId) //add account
                 alert(`회원가입이 완료되었습니다. 로그인페이지로 이동합니다. `)
-                Navigate(`/log`)
+                Navigate(`/auth`)
             } catch (err) {
                 alert(`회원가입에 실패하였습니다 :: ` + err)
             }
