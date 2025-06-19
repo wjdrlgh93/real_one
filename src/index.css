@@ -6,6 +6,8 @@
 /* AuthPage */
 @import url(css/auth/authlogin.css);
 @import url(css/auth/authJoin.css);
+/* AdminPage */
+@import url(css/admin/adminpage.css);
 
 @font-face {
     font-family: "KBO Dia Gothic_medium";

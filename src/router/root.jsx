@@ -1,20 +1,17 @@
 import React, { lazy, Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import toShopRouter from './toShopRouter'
-import toAuthRouter from './toAuthRouter'
 import toLoginOutRouter from './toLoginOutRouter'
+import toAdminRouter from './toAdminRouter'
 
 
 const Loading = <div className='loading'>Loading...</div>
 
 const IndexPage = lazy(() => import(`../pages/index/IndexPage`))
-const AuthPage = lazy(() => import(`../pages/auth/AuthPage`))
-const CartPage = lazy(() => import(`../pages/cart/CartPage`))
 
-const AdminLayout = lazy(() => import(`../layout/AdminLayout`))
-const AuthLayout = lazy(() => import('../layout/AuthLayout'))
 const LoginLayout = lazy(() => import('../layout/LogInLayout'))
 const ShopLayout = lazy(() => import(`../layout/ShopLayout`))
+const AdminLayout = lazy(() => import('../layout/AdminLayout'))
 
 
 const root = createBrowserRouter([
@@ -40,8 +37,13 @@ const root = createBrowserRouter([
         path: 'cart',
         element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
         children: toShopRouter()
+    },
+    {
+        //admin ( if ROLE : admin)
+        path: 'admin',
+        element: <Suspense fallback={Loading}><AdminLayout /></Suspense>,
+        children: toAdminRouter()
     }
-
 ])
 
 
