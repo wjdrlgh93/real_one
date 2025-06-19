@@ -14,8 +14,8 @@ const ShopHouse = lazy(() => import(`../components/container/shop/ShopHouseConta
 const ShopFashion = lazy(() => import(`../components/container/shop/ShopFashionContainer`))
 
 // 연준
-const ToyLayout = lazy(() => import('../layout/ToyLayout'))
-const BathLayout = lazy(() => import('../layout/BathLayout'))
+const ToyLayout = lazy(() => import('../components/container/shop/toy-yyj/ToyLayout'))
+const BathLayout = lazy(() => import('../components/container/shop/bath-yyj/BathLayout'))
 
 const toShopRouter = () => {
     return (
@@ -42,7 +42,7 @@ const toShopRouter = () => {
             {
                 // shop/toy
                 path: 'toy',
-                element: <Suspense fallback={Loading}><ShopToy /></Suspense>,
+                element: <Suspense fallback={Loading}><ToyLayout /></Suspense>,
                 children: toToyRouter()
             },
             {
