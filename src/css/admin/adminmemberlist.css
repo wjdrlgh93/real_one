@@ -1,31 +1,24 @@
-.admin-memberList {
-    width: 100%;
-    height: calc(100vh - 60px - 2vw);
-    display: flex;
+.admin-memberList-con {
+
+    width: inherit;
+    height: auto;
+
     justify-content: center;
-
-    padding: 0 1vw;
     box-sizing: border-box;
-}
-
-.admin-memberList .admin-memberList-con {
-    flex: 0 1 1600px;
-
-    /* background-color: antiquewhite; */
-
 
 }
 
-.admin-memberList .admin-memberList-con h1 {
+.adminTitle {
 
-    background-color: rgb(191, 193, 193);
+    background-color: #e3e3e3;
     font-size: 20px;
-    padding: 1vw;
+    padding: 2vw;
     box-sizing: border-box;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 
@@ -34,17 +27,23 @@ th,
 td {
     border-collapse: collapse;
     border: 1px solid #cccccc;
+
 }
 
-.admin-memberList .admin-memberList-con table {
+.admin-memberList-con tbody {
+
+
 
     width: 100%;
-    height: auto;
-    background-color: rgb(232, 228, 235);
-    table-layout: fixed;
+    height: inherit;
+    background-color: #e8e4eb;
+    /* table-layout: fixed; */
+    padding: 20px;
+
+
 }
 
-.admin-memberList .admin-memberList-con table th {
+.admin-memberList-con th {
 
     background-color: tomato;
     color: #ffffff;
@@ -54,22 +53,22 @@ td {
     word-break: break-all;
 }
 
-.admin-memberList .admin-memberList-con table td {
+.admin-memberList-con td {
 
     text-align: center;
 
-    padding: 2vw;
+    padding: 1.5vw;
     font-size: 12px;
     word-break: break-all;
 }
 
-.admin-memberList .admin-memberList-con .modal-td:hover {
+.admin-memberList-con .modal-td:hover {
     color: blue;
     transform: scale(1.2);
 
 }
 
-.admin-memberList .admin-memberList-con table button {
+.admin-memberList-con table button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,14 +83,63 @@ td {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.5);
+    background: #142f3c80;
 }
 
 .modal-content {
     background-color: #ffffffdc;
-    width: 250px;
-    height: 150px;
-    padding: 30px;
+    width: 40%;
+    height: 45%;
+    padding: 35px;
 
     border-radius: 25px;
+    font-size: 1.3rem;
+    color: #0077d8;
+    text-align: center;
+    word-break: break-all;
+
+
+
+}
+
+.modal-content .memInfo {
+    font-size: 0.9rem;
+    padding: 10px;
+
+}
+
+.modal-content .memberListShow {
+    /* font-size: 1.2rem; */
+    color: black;
+    padding: 10px;
+    gap: 10px;
+
+    text-align: start;
+
+}
+
+.modal-content .memberListShow .rf {
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.modal-content .memberListShow .rs {
+    padding: 5px;
+    font-size: 1.08rem;
+}
+
+.modal-content .memberListShow .rt {
+    padding: 5px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.modal-content .modal-close-btn {
+
+    background: linear-gradient(to right, #00b7ff, #035fdf);
+    color: #ffffff;
+
+    width: 25%;
+    height: 10%;
+
 }

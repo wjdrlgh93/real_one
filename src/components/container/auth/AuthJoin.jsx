@@ -132,7 +132,7 @@ const AuthJoin = () => {
 
         if (isLogin) {
             alert(`이미 로그인이 되어있습니다, 이전 페이지로 이동합니다`)
-            // Navigate(`/`)
+            Navigate(`/shop`)
         }
         const container = containerRef.current;
         if (container) {
@@ -181,6 +181,11 @@ const AuthJoin = () => {
                                     <i className='bx bxs-lock-alt'></i>
                                     <input type="text" name="address" id="address" placeholder='ADDRESS'
                                         value={join.address} onChange={onInputchangeFn} />
+                                </div>
+                                <div className="input-group">
+                                    <i className='bx bxs-lock-alt'></i>
+                                    <input type="text" name="userName" id="userName" placeholder='NAME'
+                                        value={join.userName} onChange={onInputchangeFn} />
                                 </div>
                                 <button onClick={onJoinFn}> Sign up </button>
                                 <p><span>Already have an account? </span>
