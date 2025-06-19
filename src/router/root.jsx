@@ -24,7 +24,7 @@ const root = createBrowserRouter([
     },
     {
         //Auth -> 로그인, 조인 페이지 > Admin
-        path: 'log',
+        path: 'auth',
         element: <Suspense fallback={Loading}><LoginLayout /></Suspense>,
         children: toLoginOutRouter()
 

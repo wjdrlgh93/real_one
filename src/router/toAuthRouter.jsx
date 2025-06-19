@@ -16,13 +16,7 @@ const toAuthRouter = () => {
             {
                 // /Auth,
                 path: '',
-                element: <Navigate replace to={'laj'} />
-            },
-            {
-                // /auth/login&join
-                path: 'laj',
-                element: <Suspense fallback={Loading}><AuthJoin /></Suspense>
-
+                element: <Navigate replace to={''} />
             },
             {
                 // auth/detail/userid
