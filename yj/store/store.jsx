@@ -1,11 +1,11 @@
-// import { configureStore } from '@reduxjs/toolkit'
-// import React from 'react'
+import { configureStore } from '@reduxjs/toolkit'
+import React from 'react'
 
-// const store = configureStore({
+const store = configureStore({
 
-//   reducer: {
-    
-//   }
-// })
+    reducer: {
 
-// export default store
+    }
+})
+
+export default store

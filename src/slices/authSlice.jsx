@@ -1,26 +1,37 @@
-import { createSlice } from '@reduxjs/toolkit'
-import React from 'react'
+import { createAsyncThunk, createSlice, isRejectedWithValue } from '@reduxjs/toolkit'
+import React, { useState } from 'react'
+
+
 
 
 // Login vaild check share store
-const initState = {
+const initialState = {
     isLogin: false,
-    isUser: {}
+    isUser: null,
+    isLoggedIn: false,
 }
+
 const authSlice = createSlice({
     name: 'auth',
-    initialState: initState,
+    initialState,
     reducers: {
         loginUserFn: (state, action) => {
-            state.isLogin = true
             state.isUser = action.payload
+            localStorage.setItem("isLoggedIn", "1");
+            state.isLoggedIn = true;
+            state.isLogin = true;
+            //when login, Turn State >> True
+
         },
-        logOutUserFn: (state, action) => {
-            state.isLogin = false;
+        logOutUserFn: (state) => {
             state.isUser = null
+            state.isLogin = false;
+            state.isLoggedIn = false;
+            localStorage.removeItem("isLoggedIn");
         }
     }
 })
 
 export const { loginUserFn, logOutUserFn } = authSlice.actions
+
 export default authSlice
