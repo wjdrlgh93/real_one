@@ -5,6 +5,7 @@ import { getMemberSelectorApi } from '../../../API/authAPI'
 import { loginUserFn, logOutUserFn } from '../../../slices/authSlice';
 import axios from 'axios';
 
+
 const joinData = {
     userEmail: '',
     userPw: '',
@@ -19,9 +20,9 @@ const loginData = {
     userPw: '',
 }
 
-
 const AuthJoin = () => {
 
+    // let checkRolestate = useSelector((state) => { return state })
     const [login, setLogin] = useState(loginData)
 
     const dispatch = useDispatch()
@@ -30,14 +31,9 @@ const AuthJoin = () => {
     const [join, setjoin] = useState(joinData)
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-
-
     // Login vaild Function
     const isLogin = useSelector(state => state.auth.isLogin)
     const isAuthenticated = isLogin || isLoggedIn;
-
-
-
     const storedUserLoggedInformation = localStorage.getItem("isLoggedIn")
 
     const loginHandler = (userEmail, userPw) => {
@@ -46,7 +42,6 @@ const AuthJoin = () => {
         setIsLoggedIn(true)
         console.log(isLoggedIn)
     }
-
     const navi = () => {
         Navigate('/shop')
     }
@@ -71,6 +66,7 @@ const AuthJoin = () => {
                     return el.userEmail === login.userEmail && el.userPw === login.userPw
                 })
                 const isVal = resAPI.filter(el => {
+
                     return el.userEmail === login.userEmail && el.userPw === login.userPw
                 })
 

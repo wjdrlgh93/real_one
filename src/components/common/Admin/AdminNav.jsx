@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { logOutUserFn } from '../../../slices/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { getMemberSelectorApi } from '../../../API/authAPI';
+import axios from 'axios';
 
 
 
@@ -10,11 +12,13 @@ import { Navigate, useNavigate } from 'react-router-dom';
 const AdminNav = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const isLogin = useSelector(state => state.auth.isLogin)
+    const isLogin = useSelector(state => state.auth.isLogin);
+    const [memberObj, setMemberObj] = useState({}); // object init
 
 
     const storedUserLoggedInformation = localStorage.getItem("isLoggedIn")
     const dispatch = useDispatch();
+
 
     const handleLogout = () => {
 
@@ -25,6 +29,7 @@ const AdminNav = () => {
 
 
     const nav = useNavigate()
+
 
     useEffect(() => {
 
@@ -44,16 +49,18 @@ const AdminNav = () => {
 
         <>
             {
-                storedUserLoggedInformation === '1' ?
+                !storedUserLoggedInformation === '1' || !memberObj.role === "ADMIN" ?
                     // !isAuthenticated ?
                     (
+
+                        nav('/auth')
+
+
+                    ) : (
                         <>
                             <div className="admin_nav" onClick={handleLogout}> LOGOUT </div>
                             <div className="admin-nav-con"> 관리페이지 </div>
                         </>
-
-                    ) : (
-                        nav('/auth')
                     )
             }
         </>

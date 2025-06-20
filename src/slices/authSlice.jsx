@@ -5,11 +5,13 @@ import React, { useState } from 'react'
 
 
 // Login vaild check share store
+
 const initialState = {
     isLogin: false,
     isUser: null,
     isLoggedIn: false,
 }
+
 
 const authSlice = createSlice({
     name: 'auth',
@@ -34,4 +36,4 @@ const authSlice = createSlice({
 
 export const { loginUserFn, logOutUserFn } = authSlice.actions
 
-export default authSlice
+export default authSlice 

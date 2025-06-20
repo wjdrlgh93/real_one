@@ -21,7 +21,7 @@
     {
       "id": "3",
       "userEmail": "a1@email.com",
-      "userPw": 11,
+      "userPw": "11",
       "userName": "탕후루",
       "age": "302222",
       "address": "서울시 노원구",
