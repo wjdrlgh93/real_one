@@ -3,16 +3,15 @@ import React from 'react'
 
 const initState = {
   items: [],
-  paymentItems: []
+  paymentItems:[]
 }
-
 const cartSlice = createSlice({
-  name: 'cartSlice',
+  name: 'cart',
   initialState: initState,
   reducers: {
-    addCart: (state, action) => {
+    addCart:(state, action) => {
       const num = state.items.findIndex(el => {
-        console.log(action.payload, 'action')
+        console.log(action.payload)
         return el.id === action.payload.id && el.title === action.payload.title
       })
       if (num === -1) {
@@ -22,18 +21,31 @@ const cartSlice = createSlice({
       }
     },
     deleteCart: (state, action) => {
-      const idx = state.itemsfindIndex(el => {
-        return el.id === action.payload
+      const idx = state.items.findIndex(el => {
+        return el.id ===action.payload
       })
       if (idx === -1) {
-        return
+        alert('삭제할 상품이 없습니다.')
       } else {
-        alert('선택하신 상품을 삭제합니다.')
+        alert('상품을 삭제합니다')
+        state.items.splice(idx,1)
       }
+    },
+    increaseCount(state,action) {
+      let num = state.items.findIndex((obj) => {
+        return obj.id === action.payload;
+      });
+      state.items[num].count += 1;
+    },
+    decreaseCount(state,action) {
+      let num = state.items.findIndex((obj) => {
+        return obj.id === action.payload;
+      });
+      if (state.items[num].count === 1) state.items[num].count =1
+      else state.items[num].count -= 1;
     }
   }
 })
 
-
-export const { addCart, deleteCart } = cartSlice.actions
+export const {deleteCart, addCart, increaseCount, decreaseCount} = cartSlice.actions
 export default cartSlice

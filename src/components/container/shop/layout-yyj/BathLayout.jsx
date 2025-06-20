@@ -1,11 +1,16 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
+import Header from '../../../common/Header'
+import Footer from '../../../common/Footer'
 
 
 const BathLayout = () => {
   return (
     <>
-    
+    <div className="header">
+
+    <Header/>
+    </div>
     <div className="toy">
       <div className="toy-con">
           <div className="toy-wrap">
@@ -31,7 +36,10 @@ const BathLayout = () => {
           </div>
         </div>
     </div>
-    
+    <div className="footer">
+
+    <Footer/>
+    </div>
     </>
   )
 }

@@ -14,8 +14,8 @@ const ShopHouse = lazy(() => import(`../components/container/shop/ShopHouseConta
 const ShopFashion = lazy(() => import(`../components/container/shop/ShopFashionContainer`))
 
 // 연준
-const ToyLayout = lazy(() => import('../components/container/shop/toy-yyj/ToyLayout'))
-const BathLayout = lazy(() => import('../components/container/shop/bath-yyj/BathLayout'))
+const ToyLayout = lazy(() => import('../components/container/shop/layout-yyj/ToyLayout'))
+const BathLayout = lazy(() => import('../components/container/shop/layout-yyj/BathLayout'))
 
 const toShopRouter = () => {
     return (

@@ -8,6 +8,8 @@ const ShopBath = lazy(() => import('../components/container/shop/ShopBathContain
 const ShopBathShampoo = lazy(() => import('../components/container/shop/bath-yyj/ShopBath_combContainer'))
 const ShopBathComb = lazy(() => import('../components/container/shop/bath-yyj/ShopBath_combContainer'))
 
+const BathDetail = lazy(() => import('../components/container/shop/bath-yyj/BathDetail'))
+
 const toBathRouter = () => {
   return (
     [
@@ -22,6 +24,10 @@ const toBathRouter = () => {
       {
         path: 'comb',
         element: <Suspense fallback={Loading}><ShopBathComb /></Suspense>
+      },
+      {
+        path: 'detail/:id',
+        element: <Suspense fallback={Loading}><BathDetail/></Suspense>
       }
     ]
   )
