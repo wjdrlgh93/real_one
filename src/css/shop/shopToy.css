@@ -1,6 +1,7 @@
 .toy {
   width: 100%;
   height: auto;
+  padding-top: 300px;
 }
 
 .toy .toy-con .toy-wrap {
