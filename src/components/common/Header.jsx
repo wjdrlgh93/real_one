@@ -30,7 +30,7 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to={"/auth/memberlist"}>회원목록</Link>
+                    <Link to={"/admin/members"}>회원목록</Link>
                   </li>
                   {`관리자권한` && (
                     <li>
@@ -38,20 +38,17 @@ const Header = () => {
                     </li>
                   )}
                   <li>
-                    <Link to={"/auth/detail/userid"}>개인정보</Link>
+                    <Link to={"/auth/detail"}>개인정보</Link>
                   </li>
                 </>
               ) : (
                 <>
                   <li>
-                    <Link to={"/auth"}>LOGIN</Link>
+                    <Link to={"/auth"}>LOGIN / 회원가입</Link>
                   </li>
                 </>
               )}
 
-              <li>
-                <Link to={"/auth"}>회원가입</Link>
-              </li>
               <li>
                 <Link to={"/shop"}>주문내역</Link>
               </li>
@@ -67,7 +64,7 @@ const Header = () => {
         <div className="nav-middle-con">
           <h1 className="logo2">
             <Link to={"/shop"}>
-              <img src="images/logo.png" alt="LOGO" width="200" height="150" />
+              <img src="/images/logo.png" alt="LOGO" width="200" height="150" />
             </Link>
           </h1>
         </div>

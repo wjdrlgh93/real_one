@@ -1,25 +1,31 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
-const BathLayout = () => {
+
+const ToyLayout = () => {
   return (
+    <>
+    
     <div className="toy">
       <div className="toy-con">
           <div className="toy-wrap">
               <div className="head-title">
-                  <h1><Link to={'/shop/bath'}>GROOMING</Link></h1>
+                  <h1><Link to={'/shop/toy'}>TOY</Link></h1>
               </div>
               <div className="toy-filter">
                   <div className="toy-filter-type">
                       <ul>
                           <li>
-                              <Link to={'/shop/bath'}>ALL</Link>
+                              <Link to={'/shop/toy'}>ALL</Link>
                           </li>
                           <li>
-                              <Link to={'/shop/bath/shampoo'}>Shampoo</Link>
+                              <Link to={'/shop/toy/ball'}>Ball</Link>
                           </li>
                           <li>
-                              <Link to={'/shop/bath/comb'}>Comb & Brush</Link>
+                              <Link to={'/shop/toy/tug'}>Tug toy</Link>
+                          </li>
+                          <li>
+                              <Link to={'/shop/toy/stuffed'}>Stuffed toy</Link>
                           </li>
                       </ul>
                   </div>
@@ -28,7 +34,9 @@ const BathLayout = () => {
           </div>
         </div>
     </div>
+    
+    </>
   )
 }
 
-export default BathLayout
+export default ToyLayout
