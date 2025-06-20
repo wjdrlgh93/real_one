@@ -8,7 +8,8 @@ const Loading = <div className='loading'>Loading...</div>
 const ShopMain = lazy(() => import(`../components/container/shop/ShopMainContainer`))
 const ShopFood = lazy(() => import(`../components/container/shop/ShopFoodContainer`))
 const ShopSnack = lazy(() => import(`../components/container/shop/ShopSnackContainer`))
-
+const ShopToy = lazy(() => import(`../components/container/shop/ShopToyContainer`))
+const ShopBath = lazy(() => import(`../components/container/shop/ShopBathContainer`))
 const ShopHouse = lazy(() => import(`../components/container/shop/ShopHouseContainer`))
 const ShopFashion = lazy(() => import(`../components/container/shop/ShopFashionContainer`))
 
