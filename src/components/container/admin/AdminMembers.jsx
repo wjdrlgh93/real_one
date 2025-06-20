@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 import { useFormState } from 'react-dom'
+import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const AdminMembers = () => {
@@ -9,6 +10,11 @@ const AdminMembers = () => {
     const [memberList, setMemberList] = useState([])    //Array Init
     const [modlaOpen, setModalOpen] = useState(false);
     const modalBackground = useRef();
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const isLogin = useSelector(state => state.auth.isLogin)
+    const isAuthenticated = isLogin || isLoggedIn;
+
 
     // Link to > admin/memberList/(Modal)=>user.id
     const param = useParams()
@@ -30,6 +36,7 @@ const AdminMembers = () => {
     }, [])
     return (
         // router Linking
+
         <>
             <h1 className='adminTitle'>회원목록</h1>
             <table className="admin-memberList-con">

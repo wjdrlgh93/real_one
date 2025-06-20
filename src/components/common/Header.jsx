@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { logOutUserFn } from "../../slices/authSlice";
+import { Link, useNavigate } from "react-router-dom";
+import { logOutUserFn, loginUserFn } from "../../slices/authSlice";
 
 const Header = () => {
   const isLogin = useSelector((state) => state.auth.isLogin);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+ 
+  useEffect(() => {
+    const storedLogin = localStorage.getItem("isLoggedIn") === "1";
+    if (storedLogin && !isLogin) {
+      dispatch(loginUserFn()); 
+    }
+  }, [dispatch, isLogin]);
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    dispatch(logOutUserFn());        
+    localStorage.removeItem("isLoggedIn"); 
+    alert("로그아웃 되었습니다.");
+    navigate("/");                 
+  };
 
   return (
     <div className="header">
@@ -19,20 +36,16 @@ const Header = () => {
               {isLogin ? (
                 <>
                   <li>
-                    <Link
-                      onClick={(e) => {
-                        e.preventDefault();
-                        alert("로그아웃");
-                        dispatch(logOutUserFn());
-                      }}
-                    >
+                 
+                    <Link to="#" onClick={handleLogout}>
                       LOGOUT
                     </Link>
                   </li>
                   <li>
                     <Link to={"/admin/members"}>회원목록</Link>
                   </li>
-                  {`관리자권한` && (
+                 
+                  {true && (
                     <li>
                       <Link to={"/admin"}>ADMIN</Link>
                     </li>
@@ -48,7 +61,6 @@ const Header = () => {
                   </li>
                 </>
               )}
-
               <li>
                 <Link to={"/shop"}>주문내역</Link>
               </li>

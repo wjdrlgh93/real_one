@@ -32,12 +32,12 @@ const root = createBrowserRouter([
         element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
         children: toShopRouter()
     },
-    // {
-    //     // 숍리스트  -> shop
-    //     path: 'cart',
-    //     element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
-    //     children: toShopRouter()
-    // },
+    {
+        // 숍리스트  -> shop
+        path: 'cart',
+        element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
+        children: toShopRouter()
+    },
     {
         //admin ( if ROLE : admin)
         path: 'admin',

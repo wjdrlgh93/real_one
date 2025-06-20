@@ -1,9 +1,8 @@
-import { current } from '@reduxjs/toolkit';
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { getMemberSelectorApi } from '../../../API/authAPI'
-import { loginUserFn } from '../../../slices/authSlice';
+import { loginUserFn, logOutUserFn } from '../../../slices/authSlice';
 import axios from 'axios';
 
 const joinData = {
@@ -17,7 +16,7 @@ const joinData = {
 
 const loginData = {
     userEmail: '',
-    userPw: ''
+    userPw: '',
 }
 
 
@@ -29,9 +28,28 @@ const AuthJoin = () => {
     const containerRef = useRef(null);
     const Navigate = useNavigate()
     const [join, setjoin] = useState(joinData)
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+
+
+    // Login vaild Function
     const isLogin = useSelector(state => state.auth.isLogin)
+    const isAuthenticated = isLogin || isLoggedIn;
 
+
+
+    const storedUserLoggedInformation = localStorage.getItem("isLoggedIn")
+
+    const loginHandler = (userEmail, userPw) => {
+        localStorage.setItem("isLoggedIn", "1");
+        //when login, Turn State >> True
+        setIsLoggedIn(true)
+        console.log(isLoggedIn)
+    }
+
+    const navi = () => {
+        Navigate('/shop')
+    }
     const onLoginchangeFn = (e) => {
         const name = e.target.name
         const value = e.target.value
@@ -59,7 +77,9 @@ const AuthJoin = () => {
                 if (isVal.length > 0) {
                     alert(`로그인에 성공하였습니다`)
                     dispatch(loginUserFn(isVal[0]))
-                    Navigate('/shop')
+                    // Navigate('/shop')
+                    loginHandler(num.userEmail, num.userPw)
+                    console.log(loginData)
 
                 } else {
                     alert(`이메일 또는 비밀번호가 일치하지 않습니다.`)
@@ -129,10 +149,18 @@ const AuthJoin = () => {
     }
 
     useEffect(() => {
+        if (storedUserLoggedInformation === "1") {
+            setIsLoggedIn(true);
+            console.log(`YOU ARE ALREADY LOGGED IN`)
+        }
+        if (localStorage.getItem("isLoggedIn")) {
+            // Navigate("/shop");
+
+        }
 
         if (isLogin) {
-            alert(`이미 로그인이 되어있습니다, 이전 페이지로 이동합니다`)
-            Navigate(`/shop`)
+            // alert(`이미 로그인이 되어있습니다, 이전 페이지로 이동합니다`)
+            // Navigate(`/shop`)
         }
         const container = containerRef.current;
         if (container) {
@@ -140,7 +168,7 @@ const AuthJoin = () => {
                 container.classList.add('sign-in');
             }, 200);
         }
-    }, [])
+    }, [isLogin])
 
     const toggle = () => {
         const container = containerRef.current;
@@ -151,119 +179,182 @@ const AuthJoin = () => {
     };
 
     return (
+        <>
 
-        <div className="container" ref={containerRef}>
-            <video className='bg_v' autoPlay muted loop>
-                <source src="./videos/dgbg.mp4" type="video/mp4" />
-            </video>
-            <div className="row">
-                <div className="col align-items-center flex-col sign-up">
-                    <div className="form-wrapper align-items-center">
-                        <div className="form sign-up">
-                            <form>
-                                {/* 회원가입 */}
-                                <div className="input-group">
-                                    <i className='bx bx-mail-send'></i>
-                                    <input type="email" name="userEmail" id="userEmail" placeholder='EMAIL'
-                                        value={join.userEmail} onChange={onInputchangeFn} />
+            {!isAuthenticated ? (
+                <>
+                    < div className="container" ref={containerRef} >
+                        <div className="row">
+                            <div className="col align-items-center flex-col sign-up">
+                                <div className="form-wrapper align-items-center">
+                                    <div className="form sign-up">
+                                        <form>
+                                            {/* 회원가입 */}
+                                            <div className="input-group">
+                                                <i className='bx bx-mail-send'></i>
+                                                <input type="email" name="userEmail" id="userEmail" placeholder='EMAIL'
+                                                    value={join.userEmail} onChange={onInputchangeFn} />
+                                            </div>
+                                            <div className="input-group">
+                                                <i className='bx bxs-lock-alt'></i>
+                                                <input type="password" name="userPw" id="userPw" placeholder='PASSOWORD'
+                                                    value={join.userPw} onChange={onInputchangeFn} />
+                                            </div>
+                                            <div className="input-group">
+                                                <i className='bx bxs-lock-alt'></i>
+                                                <input type="text" name="age" id="age" placeholder='AGE'
+                                                    value={join.age} onChange={onInputchangeFn} />
+                                            </div>
+                                            <div className="input-group">
+                                                <i className='bx bxs-lock-alt'></i>
+                                                <input type="text" name="address" id="address" placeholder='ADDRESS'
+                                                    value={join.address} onChange={onInputchangeFn} />
+                                            </div>
+                                            <div className="input-group">
+                                                <i className='bx bxs-lock-alt'></i>
+                                                <input type="text" name="userName" id="userName" placeholder='NAME'
+                                                    value={join.userName} onChange={onInputchangeFn} />
+                                            </div>
+
+                                            <li>
+                                                <label htmlFor="role">ROLE</label>
+                                                <select name="role" id="role"
+                                                    value={join.role} onChange={onInputchangeFn}>
+                                                    <option value='ROLE_MEMBER' defaultValue>MEMBER</option>
+                                                    <option value="ADMIN">ADMIN</option>
+                                                </select>
+                                            </li>
+
+                                            <button onClick={onJoinFn}> Sign up </button>
+                                            <p><span>Already have an account? </span>
+                                                <b onClick={toggle} className="pointer">
+                                                    Sign in here</b></p>
+                                            {/* (!join.userEmail || !join.userPw || !join.userName || !join.age) */}
+                                        </form>
+                                    </div>
                                 </div>
-                                <div className="input-group">
-                                    <i className='bx bxs-lock-alt'></i>
-                                    <input type="password" name="userPw" id="userPw" placeholder='PASSOWORD'
-                                        value={join.userPw} onChange={onInputchangeFn} />
+                            </div>
+
+                            <div className="col align-items-center flex-col sign-in">
+                                <div className="form-wrapper align-items-center">
+                                    <div className="form sign-in">
+                                        <form>
+                                            <div className="input-group">
+                                                <i className='bx bxs-user'></i>
+                                                <input type="email" name="userEmail" id="userEmail" placeholder='EMAIL'
+                                                    value={login.userEmail} onChange={onLoginchangeFn} />
+                                            </div>
+                                            <div className="input-group">
+                                                <i className='bx bxs-lock-alt'></i>
+                                                <input type="password" name="userPw" id="userPw" placeholder='PASSWORD'
+                                                    value={login.userPw} onChange={onLoginchangeFn} />
+                                            </div>
+
+                                            <button onClick={onLoginFn}> LOGIN</button>
+                                            <p>
+                                                <b>
+                                                    Forgot password?
+                                                </b>
+                                            </p>
+                                            <p>
+                                                <span> Don't have an account?
+                                                </span>
+                                                <b onClick={toggle} className="pointer">
+                                                    Sign up here
+                                                </b>
+                                            </p>
+                                        </form>
+                                    </div>
+
                                 </div>
-                                <div className="input-group">
-                                    <i className='bx bxs-lock-alt'></i>
-                                    <input type="text" name="age" id="age" placeholder='AGE'
-                                        value={join.age} onChange={onInputchangeFn} />
+                                <div className="form-wrapper">
                                 </div>
-                                <div className="input-group">
-                                    <i className='bx bxs-lock-alt'></i>
-                                    <input type="text" name="address" id="address" placeholder='ADDRESS'
-                                        value={join.address} onChange={onInputchangeFn} />
-                                </div>
-                                <div className="input-group">
-                                    <i className='bx bxs-lock-alt'></i>
-                                    <input type="text" name="userName" id="userName" placeholder='NAME'
-                                        value={join.userName} onChange={onInputchangeFn} />
-                                </div>
-                                <button onClick={onJoinFn}> Sign up </button>
-                                <p><span>Already have an account? </span>
-                                    <b onClick={toggle} className="pointer">
-                                        Sign in here</b></p>
-                                {/* (!join.userEmail || !join.userPw || !join.userName || !join.age) */}
-                            </form>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div className="row content-row">
+                            <div className="col align-items-center flex-col">
+                                <div className="text sign-in">
+                                    <h2>
+                                        LOGIN
+                                    </h2>
 
+                                </div>
+                                <div className="img sign-in">
 
-                <div className="col align-items-center flex-col sign-in">
-                    <div className="form-wrapper align-items-center">
-                        <div className="form sign-in">
-                            <form>
-                                <div className="input-group">
-                                    <i className='bx bxs-user'></i>
-                                    <input type="email" name="userEmail" id="userEmail" placeholder='EMAIL'
-                                        value={login.userEmail} onChange={onLoginchangeFn} />
                                 </div>
-                                <div className="input-group">
-                                    <i className='bx bxs-lock-alt'></i>
-                                    <input type="password" name="userPw" id="userPw" placeholder='PASSWORD'
-                                        value={login.userPw} onChange={onLoginchangeFn} />
+                            </div>
+
+                            <div className="col align-items-center flex-col">
+                                <div className="img sign-up">
+
                                 </div>
-                                <button onClick={onLoginFn}> LOGIN</button>
-                                <p>
-                                    <b>
-                                        Forgot password?
-                                    </b>
-                                </p>
-                                <p>
-                                    <span> Don't have an account?
-                                    </span>
-                                    <b onClick={toggle} className="pointer">
-                                        Sign up here
-                                    </b>
-                                </p>
-                            </form>
+                                <div className="text sign-up">
+                                    <h2>
+                                        Sing Up
+                                    </h2>
+
+                                </div>
+                            </div>
                         </div>
+                    </div >
+                </>
+            ) : (
+                <>
+                    < div className="container" ref={containerRef} >
+                        <div className="row">
+                            <div className="col align-items-center flex-col sign-up">
+                                <div className="form-wrapper align-items-center">
+                                </div>
+                            </div>
+                            <div className="col align-items-center flex-col sign-in">
+                                <div className="form-wrapper align-items-center">
+                                    <div className="form sign-in">
+                                        <form>
+                                            <button className='logout-btn' onClick={navi}> SHOP</button>
+                                            <button className='logout-btn' onClick={() => {
+                                                dispatch(logOutUserFn());
+                                                localStorage.removeItem("isLoggedIn");
+                                                setIsLoggedIn(false);
+                                                Navigate('/auth');  // 로그아웃 후 로그인 페이지로 이동
+                                            }}> LOGOUT</button>
+                                            <p> <span> Enjoy your Shopping !!</span> </p>
+                                        </form>
+                                    </div>
 
-                    </div>
-                    <div className="form-wrapper">
-                    </div>
+                                </div>
+                                <div className="form-wrapper">
+                                </div>
 
-                </div>
-            </div>
+                            </div>
+                        </div >
+                        <div className="row content-row">
+                            <div className="col align-items-center flex-col">
+                                <div className="text sign-in">
+                                    <h2>
+                                        LOGIN
+                                    </h2>
+                                </div>
+                                <div className="img sign-in">
 
-            <div className="row content-row">
-                <div className="col align-items-center flex-col">
-                    <div className="text sign-in">
-                        <h2>
+                                </div>
+                            </div>
 
-                            LOGIN
-                        </h2>
+                            <div className="col align-items-center flex-col">
+                                <div className="img sign-up">
 
-                    </div>
-                    <div className="img sign-in">
+                                </div>
+                                <div className="text sign-up">
+                                    <h2>
+                                        Sing Up
+                                    </h2>
 
-                    </div>
-                </div>
-
-                <div className="col align-items-center flex-col">
-                    <div className="img sign-up">
-
-                    </div>
-                    <div className="text sign-up">
-                        <h2>
-                            Sing Up
-                        </h2>
-
-                    </div>
-                </div>
-            </div>
-        </div >
-
-
+                                </div>
+                            </div>
+                        </div>
+                    </div >
+                </>
+            )}
+        </>
     );
 };
 
