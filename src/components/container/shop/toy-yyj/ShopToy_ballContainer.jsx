@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ShopToy_ballContainer = () => {
 
@@ -6,7 +7,7 @@ const ShopToy_ballContainer = () => {
 
   useEffect(() => {
     
-    fetch(`http://localhost:3001/toys`)
+    fetch(`http://localhost:3001/toy`)
     .then((res) => {return res.json()})
     .then((jsonData )=> {setToyList(jsonData)})
     
@@ -29,6 +30,7 @@ const ShopToy_ballContainer = () => {
                 <ul>
                 {ballList && ballList.map((el)=>{
                     return (
+                      <Link to={`/shop/toy/detail/${el.id}`}>                        
                         <li>
                             <div className="top">
                                 <img src={`/images/${el.img}`} alt={el.title} />
@@ -38,6 +40,7 @@ const ShopToy_ballContainer = () => {
                                 <span className="price">￦{el.price}</span>
                             </div>                         
                         </li>
+                      </Link>
                     )
                 })}
                 </ul>

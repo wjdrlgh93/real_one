@@ -15,7 +15,7 @@ const Header = () => {
                             <li><Link to={'#'}>로그인</Link></li>
                             <li><Link to={'#'}>회원가입</Link></li>
                             <li><Link to={'#'}>주문내역</Link></li>
-                            <li><Link to={'#'}>장바구니</Link></li>
+                            <li><Link to={'/cart'}>장바구니</Link></li>
                         </ul>
                     </div>
                 </div>
