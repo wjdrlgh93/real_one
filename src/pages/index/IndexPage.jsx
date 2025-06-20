@@ -1,9 +1,13 @@
 import React from 'react'
+import Footer from '../../components/common/Footer'
+import Header from '../../components/common/Header'
 import { Link } from 'react-router-dom'
 
 const IndexPage = () => {
+
     return (
-        <div className="index">
+        <>
+         <div className="index">
             <video className='bg_v' autoPlay muted loop>
                 <source src="./videos/dgbg.mp4" type="video/mp4" />
             </video>
@@ -16,6 +20,15 @@ const IndexPage = () => {
 
             </div>
         </div>
+        </>
+        
+        
+        
+
+       
+        
+        
+        
     )
 }
 

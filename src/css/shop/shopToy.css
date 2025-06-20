@@ -1,21 +1,6 @@
-@font-face {
-  font-family: 'KBO Dia Gothic_bold';
-  src: url('../../font/KBO Dia Gothic_bold.ttf')
-  format('truetype');
-}
-@font-face {
-  font-family: 'KBO Dia Gothic_light';
-  src: url('../../font/KBO Dia Gothic_light.ttf')
-  format('truetype');
-}
-@font-face {
-  font-family: 'KBO Dia Gothic_medium';
-  src: url('../../font/KBO Dia Gothic_medium.ttf')
-  format('truetype');
-}
 .toy {
   width: 100%;
-  min-height: calc(100ch - 80px - 80px);
+  height: auto;
 }
 
 .toy .toy-con .toy-wrap {
@@ -53,7 +38,6 @@
   font-size: 2.5vmin;
   font-family: 'KBO Dia Gothic_light';
 }
-
 .toy .toy-con .toyList {
   width: 100%;
   height: auto;
@@ -77,6 +61,11 @@
   display: block;
   width: 100%;
 }
+
+.toy .toy-con .toyList ul li .top img:hover {
+  background-image: '';
+}
+
 .toy .toy-con .toyList ul li .bottom {
   display: flex;
   flex-direction: column;
@@ -104,4 +93,22 @@
   .toy .toy-con .toyList>ul {
     grid-template-columns: repeat(1, 1fr);
   } 
+}
+
+
+
+@font-face {
+  font-family: 'KBO Dia Gothic_bold';
+  src: url('../../font/KBO Dia Gothic_bold.ttf')
+  format('truetype');
+}
+@font-face {
+  font-family: 'KBO Dia Gothic_light';
+  src: url('../../font/KBO Dia Gothic_light.ttf')
+  format('truetype');
+}
+@font-face {
+  font-family: 'KBO Dia Gothic_medium';
+  src: url('../../font/KBO Dia Gothic_medium.ttf')
+  format('truetype');
 }

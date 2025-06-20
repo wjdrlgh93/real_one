@@ -10,27 +10,29 @@ const ShopToyStuffed = lazy(() => import(`../components/container/shop/toy-yyj/S
 
 const toToyRouter = () => {
   return (
-    [ 
+    [
       {
-        path: '',        
-        element: <Suspense fallback={Loading}><ShopToy/></Suspense>
+
+        path: '',
+        element: <Suspense fallback={Loading}><ShopToy /></Suspense>
       },
       {
+        // shop/toy
         path: 'ball',
-        element: <Suspense fallback={Loading}><ShopToyBall/></Suspense>
+        element: <Suspense fallback={Loading}><ShopToyBall /></Suspense>
       },
       {
         // tug
         path: 'tug',
-        element: <Suspense fallback={Loading}><ShopToyTug/></Suspense>
+        element: <Suspense fallback={Loading}><ShopToyTug /></Suspense>
       },
       {
         // ball
         path: 'stuffed',
-        element: <Suspense fallback={Loading}><ShopToyStuffed/></Suspense>
+        element: <Suspense fallback={Loading}><ShopToyStuffed /></Suspense>
       }
     ]
-    
+
   )
 }
 

@@ -1,21 +1,32 @@
 import React, { useEffect, useState } from 'react'
 
-const ShopBathContainer = () => {
-    const [bathList, setBathList] = useState()
+const ShopBath_combContainer = () => {
+
+  const [bathList, setBathList] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:3001/grooming`
-
-        fetch(url)
-        .then(res => res.json())
+        
+        fetch(`http://localhost:3001/grooming`)
+        .then((res) => res.json())
         .then(jsonData => setBathList(jsonData))
         // .catch(err => console.log(err))
     },[])
+
+    const [combList, setCombList] = useState([])
+    useEffect(() => {
+      const combFn = () => {
+        const combArr = bathList.filter(el => {
+          return el.category === 'bath-comb'
+        })
+        setCombList(combArr)
+      }
+      combFn()
+    },[bathList])
     
     return (
             <div className="toyList">
                 <ul>
-                {bathList && bathList.map((el)=>{
+                {combList && combList.map((el)=>{
                     return (
                         <li>
                             <div className="top">
@@ -33,4 +44,4 @@ const ShopBathContainer = () => {
     )
 }
 
-export default ShopBathContainer
+export default ShopBath_combContainer
