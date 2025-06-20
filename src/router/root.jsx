@@ -12,7 +12,9 @@ const IndexPage = lazy(() => import(`../pages/index/IndexPage`))
 const LoginLayout = lazy(() => import('../layout/LogInLayout'))
 const ShopLayout = lazy(() => import(`../layout/ShopLayout`))
 const AdminLayout = lazy(() => import('../layout/AdminLayout'))
+const CartLayout = lazy(() => import('../layout/CartLayout'))
 
+const CartList = lazy(() => import('../components/container/cart/CartList'))
 
 const root = createBrowserRouter([
     {
@@ -35,8 +37,13 @@ const root = createBrowserRouter([
     {
         // 숍리스트  -> shop
         path: 'cart',
-        element: <Suspense fallback={Loading}><ShopLayout /></Suspense>,
-        children: toShopRouter()
+        element: <Suspense fallback={Loading}><CartLayout /></Suspense>,
+        children: [
+            {
+                path:'cart',
+                element:<Suspense fallback={Loading}><CartList/></Suspense>
+            }
+        ]
     },
     {
         //admin ( if ROLE : admin)

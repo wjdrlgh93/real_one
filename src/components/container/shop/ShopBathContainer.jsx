@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ShopBathContainer = () => {
     const [bathList, setBathList] = useState()
@@ -18,13 +19,15 @@ const ShopBathContainer = () => {
                 {bathList && bathList.map((el)=>{
                     return (
                         <li>
-                            <div className="top">
-                                <img src={`/images/${el.img}`} alt={el.title} />
-                            </div>
-                            <div className="bottom">
-                                <span className="title">{el.title}</span>
-                                <span className="price">￦{el.price}</span>
-                            </div>                            
+                            <Link to={`detail/${el.id}`}>                            
+                                <div className="top">
+                                    <img src={`/images/${el.img}`} alt={el.title} />
+                                </div>
+                                <div className="bottom">
+                                    <span className="title">{el.title}</span>
+                                    <span className="price">￦{el.price}</span>
+                                </div>                            
+                             </Link>
                         </li>
                     )
                 })}

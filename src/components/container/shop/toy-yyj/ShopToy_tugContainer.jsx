@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ShopToy_tugContainer = () => {
 
@@ -6,7 +7,7 @@ const ShopToy_tugContainer = () => {
 
   useEffect(() => {
     
-    fetch(`http://localhost:3001/toys`)
+    fetch(`http://localhost:3001/toy`)
     .then((res) => {return res.json()})
     .then((jsonData )=> {setToyList(jsonData)})
     
@@ -29,6 +30,7 @@ const ShopToy_tugContainer = () => {
                 <ul>
                 {tugList && tugList.map((el)=>{
                     return (
+                      <Link to={`/shop/toy/detail/${el.id}`}>                        
                         <li>
                             <div className="top">
                                 <img src={`/images/${el.img}`} alt={el.title} />
@@ -38,6 +40,7 @@ const ShopToy_tugContainer = () => {
                                 <span className="price">￦{el.price}</span>
                             </div>               
                         </li>
+                      </Link>
                     )
                 })}
                 </ul>
