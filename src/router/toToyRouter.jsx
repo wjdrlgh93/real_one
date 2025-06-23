@@ -1,12 +1,14 @@
 import React, { lazy, Suspense } from 'react'
 
-
 const Loading = <div className='loading'>Loading...</div>
 // toy 세부
 const ShopToy = lazy(() => import('../components/container/shop/ShopToyContainer'))
 const ShopToyBall = lazy(() => import(`../components/container/shop/toy-yyj/ShopToy_ballContainer`))
 const ShopToyTug = lazy(() => import(`../components/container/shop/toy-yyj/ShopToy_tugContainer`))
 const ShopToyStuffed = lazy(() => import(`../components/container/shop/toy-yyj/ShopToy_stuffedContainer`))
+
+// 상세정보
+const ToyDetail = lazy(() => import(`../components/container/shop/toy-yyj/ToyDetail`))
 
 const toToyRouter = () => {
   return (
@@ -30,6 +32,10 @@ const toToyRouter = () => {
         // ball
         path: 'stuffed',
         element: <Suspense fallback={Loading}><ShopToyStuffed /></Suspense>
+      },
+      {
+        path: 'detail/:id',
+        element: <Suspense fallback={Loading}><ToyDetail/></Suspense>
       }
     ]
 

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 const ShopBath_combContainer = () => {
 
   const [bathList, setBathList] = useState([])
 
+  // const navigate = useNavigate()
     useEffect(() => {
         
         fetch(`http://localhost:3001/grooming`)
@@ -28,8 +30,10 @@ const ShopBath_combContainer = () => {
                 <ul>
                 {combList && combList.map((el)=>{
                     return (
-                        <li>
+                    <Link to={`/shop/bath/detail/${el.id}`}>
+                      <li>
                             <div className="top">
+                             
                                 <img src={`/images/${el.img}`} alt={el.title} />
                             </div>
                             <div className="bottom">
@@ -37,6 +41,8 @@ const ShopBath_combContainer = () => {
                                 <span className="price">￦{el.price}</span>
                             </div>                            
                         </li>
+                    </Link>
+                        
                     )
                 })}
                 </ul>
