@@ -92,12 +92,23 @@
     },
     {
       "id": "11",
-      "userEmail": "a100@email.com",
-      "userPw": "11223344",
-      "userName": "김재주",
-      "age": "33",
-      "address": "경기도 수영",
-      "role": "ADMIN"
+
+      "userEmail": "a12@email.com",
+      "userPw": "11",
+      "userName": "a12",
+      "age": "11",
+      "address": "서울",
+      "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "12",
+      "userEmail": "7777@email.com",
+      "userPw": "1234",
+      "userName": "1234",
+      "age": "1234",
+      "address": "1234",
+      "role": "ROLE_MEMBER"
+
     }
   ]
 }

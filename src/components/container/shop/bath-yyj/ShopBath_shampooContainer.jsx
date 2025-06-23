@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ShopBath_shampooContainer = () => {
 
@@ -28,6 +29,7 @@ const ShopBath_shampooContainer = () => {
                 <ul>
                 {shampooList && shampooList.map((el)=>{
                     return (
+                      <Link to={`/shop/bath/detail/${el.id}`}>                        
                         <li>
                             <div className="top">
                                 <img src={`/images/${el.img}`} alt={el.title} />
@@ -37,6 +39,7 @@ const ShopBath_shampooContainer = () => {
                                 <span className="price">￦{el.price}</span>
                             </div>                            
                         </li>
+                      </Link>
                     )
                 })}
                 </ul>
