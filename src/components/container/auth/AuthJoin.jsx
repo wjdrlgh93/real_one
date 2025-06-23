@@ -49,7 +49,13 @@ const AuthJoin = () => {
     const onInputchangeFn = (e) => {
         const name = e.target.name;
         const value = e.target.value
-        setjoin({ ...join, [name]: value })
+        // 로그인 입력이면 login 상태 변경
+        if (name === "userEmail" || name === "userPw") {
+            setLogin(prev => ({ ...prev, [name]: value }));
+        } else {
+            // 그 외는 회원가입
+            setjoin(prev => ({ ...prev, [name]: value }));
+        }
     }
     const onLoginFn = ((e) => {
         e.preventDefault();
@@ -141,6 +147,7 @@ const AuthJoin = () => {
     }
 
     useEffect(() => {
+        setLogin({ userEmail: '', userPw: '' });
         if (storedUserLoggedInformation === "1") {
             setIsLoggedIn(true);
             console.log(`YOU ARE ALREADY LOGGED IN`)

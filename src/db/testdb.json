@@ -3,17 +3,17 @@
     {
       "id": "1",
       "userEmail": "alwaysused@email.com",
-      "userPw": "11",
+      "userPw": "1111",
       "userName": "KHJlI",
-      "age": 27,
-      "address": "서울",
+      "age": "27",
+      "address": "서울 중계동",
       "role": "ADMIN"
     },
     {
       "id": "2",
       "userEmail": "naverused@email.com",
       "userPw": "222222",
-      "userName": "DJ",
+      "userName": "DJJ",
       "age": 35,
       "address": "의정부",
       "role": "ADMIN"
@@ -21,7 +21,7 @@
     {
       "id": "3",
       "userEmail": "a1@email.com",
-      "userPw": "11",
+      "userPw": "1111",
       "userName": "탕후루",
       "age": "302222",
       "address": "서울시 노원구",
@@ -92,7 +92,6 @@
     },
     {
       "id": "11",
-
       "userEmail": "a12@email.com",
       "userPw": "11",
       "userName": "a12",
@@ -108,7 +107,6 @@
       "age": "1234",
       "address": "1234",
       "role": "ROLE_MEMBER"
-
     }
   ],
   "toys": [
@@ -323,6 +321,56 @@
       "category": "bath-comb",
       "price": 12000,
       "img": ""
+    }
+  ],
+  "shopList": [
+    {
+      "id": "1",
+      "name": "노원점",
+      "address": "서울 노원구 상계동 593-1",
+      "subway": "4,7호선",
+      "bus": " 146",
+      "phone": "02-6953-2002",
+      "fax": "010-000-0000",
+      "bg": "https://nowon.greenart.co.kr/upimage/new_campus/20220318180010.jpg",
+      "x": "127.06227580591",
+      "y": "37.6572131271659"
+    },
+    {
+      "id": "2",
+      "name": "강남점",
+      "address": "서울 강남구 역삼동 635-10",
+      "subway": "2,7호선",
+      "bus": " 146",
+      "phone": "02-3481-1005",
+      "fax": "010-000-0000",
+      "bg": "https://gangnam.greenart.co.kr/upimage/new_campus/20220405160748.png",
+      "x": "127.02907088439586",
+      "y": "37.50017190761103"
+    },
+    {
+      "id": "3",
+      "name": "종로점",
+      "address": "서울 종로구 관수동 20",
+      "subway": "1,2,4호선",
+      "bus": " 111",
+      "phone": "02-722-2111",
+      "fax": "010-000-0000",
+      "bg": "https://jongro.greenart.co.kr/upimage/new_campus/20220318163137.jpg",
+      "x": "126.989979979848",
+      "y": "37.5697431315274"
+    },
+    {
+      "id": "4",
+      "name": "부천점",
+      "address": "경기 부천시 원미구 심곡동 172-15",
+      "subway": "7호선",
+      "bus": " 146",
+      "phone": "032-654-2111",
+      "fax": "010-000-0000",
+      "bg": "https://bucheon.greenart.co.kr/upimage/new_campus/20220401175450.jpg",
+      "x": "126.783496521561",
+      "y": "37.4844401485066"
     }
   ]
 }

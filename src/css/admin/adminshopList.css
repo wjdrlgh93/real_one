@@ -1,0 +1,42 @@
+.adminshopList {
+    background-color: #e3e3e3;
+    font-size: 20px;
+    padding: 2vw;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.adminshopList-con th {
+
+    background-color: #578FCA;
+    color: #ffffff;
+
+    font-size: 13px;
+    padding: 0.5vw;
+    word-break: break-all;
+}
+
+.adminshopList-con td {
+
+    text-align: center;
+
+    padding: 1.5vw;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.adminshopList-con .modal-td:hover {
+    color: blue;
+    transform: scale(1.2);
+
+}
+
+.adminshopList-con table button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
