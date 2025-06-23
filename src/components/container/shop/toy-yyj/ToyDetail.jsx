@@ -16,19 +16,13 @@ const ProductDetail = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const addToCart = () => {
-    const item = {id: product.id, title: product.title, price:product.price, count:1}
-    
-    dispatch(addCart(item))
-    navigate('/cart');
-  }
-
-
+  
+  
   const [product, setProduct] = useState([])
-
+  
   useEffect(() => {
     const productURL = `http://localhost:3001/toy`
-
+    
     const productFn = async (id) => {
       try{
         const res = await axios.get(`${productURL}?id=${param.id}`)
@@ -42,12 +36,19 @@ const ProductDetail = () => {
     }
     productFn(param)
   }, [])
-
-
+  
+  const addToCart = () => {
+    const item = {id: product.id, title: product.title, price:product.price, img: product.img, count:1}
+    console.log(item.img)
+    dispatch(addCart(item))
+    navigate('/cart');
+  }
+  
   product && console.log(product)
+  
   return (
     <ShopDetailLayout
-    img={product.img}
+    img={`/images/${product.img}`}
     title={product.title}
     price={product.price}
     onAddToCart={addToCart}>

@@ -27,8 +27,9 @@ const cartSlice = createSlice({
       if (idx === -1) {
         alert('삭제할 상품이 없습니다.')
       } else {
-        alert('상품을 삭제합니다')
-        state.items.splice(idx,1)
+        // alert('상품을 삭제합니다')
+        // state.items.splice(idx,1)
+        window.confirm('선택하신 상품을 삭제하겠습니까?') && state.items.splice(idx,1)
       }
     },
     increaseCount(state,action) {

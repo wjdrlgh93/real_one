@@ -23,8 +23,8 @@
     padding: 80px;
 }
 
-li:not(:first-child):hover {
+/* li:not(:first-child):hover {
     color: blue;
     transform: scale(1.07);
 
-}
+} */
