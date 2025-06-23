@@ -5,7 +5,7 @@ const ShopBathContainer = () => {
     const [bathList, setBathList] = useState()
 
     useEffect(() => {
-        const url = `http://localhost:3001/grooming`
+        const url = `http://192.168.23.209:3001/grooming`
 
         fetch(url)
         .then(res => res.json())
