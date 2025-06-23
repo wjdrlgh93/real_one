@@ -92,6 +92,7 @@
     },
     {
       "id": "11",
+
       "userEmail": "a12@email.com",
       "userPw": "11",
       "userName": "a12",
@@ -107,6 +108,7 @@
       "age": "1234",
       "address": "1234",
       "role": "ROLE_MEMBER"
+
     }
   ]
 }
