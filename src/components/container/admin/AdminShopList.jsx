@@ -17,7 +17,7 @@ const AdminShopList = () => {
 
     useEffect(() => {
 
-        window.kakao.maps.load(() => {
+        const kakao = window.kakao.maps.load(() => {
             const container = document.getElementById('map');
             const options = {
                 center: new window.kakao.maps.LatLng(37.5665, 126.9780), // 서울
@@ -31,7 +31,7 @@ const AdminShopList = () => {
             });
             marker.setMap(map);
         });
-
+        kakao()
         const shopListFn = async () => {
             const dataURL = `http://localhost:3001/shopList`
             try {
