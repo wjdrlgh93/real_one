@@ -45,11 +45,7 @@ const AuthJoin = () => {
     const navi = () => {
         Navigate('/shop')
     }
-    const onLoginchangeFn = (e) => {
-        const name = e.target.name
-        const value = e.target.value
-        setLogin({ ...login, [name]: value })
-    }
+
     const onInputchangeFn = (e) => {
         const name = e.target.name;
         const value = e.target.value
@@ -238,12 +234,12 @@ const AuthJoin = () => {
                                             <div className="input-group">
                                                 <i className='bx bxs-user'></i>
                                                 <input type="email" name="userEmail" id="userEmail" placeholder='EMAIL'
-                                                    value={login.userEmail} onChange={onLoginchangeFn} />
+                                                    value={login.userEmail} onChange={onInputchangeFn} />
                                             </div>
                                             <div className="input-group">
                                                 <i className='bx bxs-lock-alt'></i>
                                                 <input type="password" name="userPw" id="userPw" placeholder='PASSWORD'
-                                                    value={login.userPw} onChange={onLoginchangeFn} />
+                                                    value={login.userPw} onChange={onInputchangeFn} />
                                             </div>
 
                                             <button onClick={onLoginFn}> LOGIN</button>
