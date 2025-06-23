@@ -1,17 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
-import { useFormState } from 'react-dom'
-import { useSelector } from 'react-redux'
-import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
-const joinData = {
-    userEmail: '',
-    userPw: '',
-    userName: '',
-    age: '',
-    address: '',
-    role: 'ROLE_MEMBER'
-}
+import { Navigate, useNavigate, useParams } from 'react-router-dom'
 
 
 const AdminMembers = () => {
@@ -19,11 +9,9 @@ const AdminMembers = () => {
     const [memberObj, setMemberObj] = useState({}) // Object init
     const [memberList, setMemberList] = useState([])    //Array Init
     const [modlaOpen, setModalOpen] = useState(false);
-    const [join, setjoin] = useState(joinData)
+    // const [join, setjoin] = useState(joinData)
     const modalBackground = useRef();
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const isLogin = useSelector(state => state.auth.isLogin)
 
     const navigate = useNavigate()
 
@@ -31,7 +19,7 @@ const AdminMembers = () => {
     const onInputchangeFn = (e) => {
         const name = e.target.name;
         const value = e.target.value
-        setjoin({ ...join, [name]: value })
+        setMemberObj(prev => ({ ...prev, [name]: value }));
     }
 
 
@@ -40,13 +28,15 @@ const AdminMembers = () => {
     const param = useParams()
 
     useEffect(() => {
-        const onAdminMemberListFn = async () => {
+        const onAdminMemberListFn = async (memberId) => {
             // get Member match by User
             const dataURL = `http://localhost:3001/members`
             try {
                 const res = await axios.get(`${dataURL}`)
+                const res2 = await axios.get(`${dataURL}?id=${memberId}`)
+
                 setMemberList(res.data)
-                setMemberObj(res.data[0])
+                setMemberObj(res2.data[0])
 
             } catch (err) {
                 alert(err)
@@ -55,7 +45,8 @@ const AdminMembers = () => {
         onAdminMemberListFn(param.id)
     }, [])
 
-    const updateOkFn = async () => {
+    const updateOkFn = async (e) => {
+
         const dataURL = `http://localhost:3001/members`
 
         const updateAxiosFn = async (updateData) => {
@@ -71,8 +62,8 @@ const AdminMembers = () => {
                 }
                 alert(`try fix Member Info...`)
                 const res = await axios.put(`${dataURL}/${updateData.id}`, updateData)
-                navigate('/admin/members')
-
+                navigate('/admin')
+                console.log(res + ' <<< 회원 수정 res')
             } catch (err) { }
         }
         updateAxiosFn(memberObj)
@@ -80,6 +71,23 @@ const AdminMembers = () => {
 
     const deleteOkFn = (e) => {
         const dataURL = `http://localhost:3001/members`
+
+        const deleteAxiosFn = async (memberId) => {
+            try {
+                const res1 = await axios.get(`{dataURL}`)  // Index Search
+                const num = res1.data.findIndex(el => {
+                    return el.id === memberObj.id
+                })
+                if (num === -1) {
+                    alert(`Member does not exist!`)
+                    return
+                }
+                alert(`Delete Member`)
+                const res = await axios.delete(`${dataURL}/${memberId}`)
+                navigate(`/admin/members`)
+            } catch (err) { }
+        }
+        deleteAxiosFn(memberObj.id)
     }
 
 
