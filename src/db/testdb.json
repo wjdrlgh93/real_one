@@ -89,6 +89,15 @@
       "age": "33",
       "address": "경기도 의정부시",
       "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "11",
+      "userEmail": "a100@email.com",
+      "userPw": "11223344",
+      "userName": "김재주",
+      "age": "33",
+      "address": "경기도 수영",
+      "role": "ADMIN"
     }
   ]
 }
