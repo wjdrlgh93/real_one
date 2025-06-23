@@ -45,7 +45,7 @@ td {
 
 .admin-memberList-con th {
 
-    background-color: tomato;
+    background-color: #3674B5;
     color: #ffffff;
 
     font-size: 13px;
@@ -73,6 +73,8 @@ td {
     justify-content: center;
     align-items: center;
 }
+
+/* modal  */
 
 .modal-container {
     width: 100%;
@@ -142,4 +144,13 @@ td {
     width: 25%;
     height: 10%;
 
+}
+
+.modal-content .modal-btn {
+
+    background: linear-gradient(to right, #578FCA, #FADA7A);
+    color: #ffffff;
+
+    width: 40%;
+    height: 10%;
 }
