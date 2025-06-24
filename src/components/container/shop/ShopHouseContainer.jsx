@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function HouseList() {
   const [houses, setHouses] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(null); // 선택된 아이템
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [showMap, setShowMap] = useState(false); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:3001/house')
@@ -17,10 +20,12 @@ function HouseList() {
 
   const openModal = (item) => {
     setSelectedItem(item);
+    setShowMap(false); 
   };
 
   const closeModal = () => {
     setSelectedItem(null);
+    setShowMap(false);
   };
 
   return (
@@ -64,13 +69,34 @@ function HouseList() {
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <img src={`http://localhost:3001${selectedItem.img}`} alt={selectedItem.title} />
-            <h2> {selectedItem.category}</h2>
-            <p>size: {selectedItem.size.toLocaleString()}</p>
+            <h2>{selectedItem.title}</h2>
+            <p>size: {selectedItem.size?.toLocaleString()}</p>
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
-            <button onClick={closeModal} className="modal-close">CLOSE</button>
-            <a href="/cart" className="cart">
-            <img src="/images/cart.png" alt="장바구니로 이동"/>
-        </a>
+            <button onClick={closeModal} className="modal-close" style={{ marginTop: '1rem' }}>
+              CLOSE
+            </button>
+
+            <a href="/cart" className="cart" style={{ marginLeft: '1rem' }}>
+              <img src="/images/cart.png" alt="장바구니로 이동" />
+            </a>
+            <div className="button">
+              <div className="kakaoMap">
+                    
+              </div>
+              <button onClick={() => navigate('/admin/order')}
+              className="admin-button"
+              style={{
+              // marginTop: '1rem',
+              padding: '1vw',
+              backgroundColor: '#4CAF50',
+              color: 'white',
+              border: 'none',
+              borderRadius: '5px',
+              cursor: 'pointer',
+              marginLeft: '0'
+    }}>주문처로 이동
+  </button>
+            </div>
           </div>
         </div>
       )}
