@@ -40,7 +40,7 @@ const root = createBrowserRouter([
         element: <Suspense fallback={Loading}><CartLayout /></Suspense>,
         children: [
             {
-                path:'cart',
+                path:'',
                 element:<Suspense fallback={Loading}><CartList/></Suspense>
             }
         ]

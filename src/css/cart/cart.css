@@ -3,5 +3,122 @@
   min-height: calc(100vh - 200px);
   overflow-y: scroll;
   overflow: visible;
+  display: flex;
+  justify-content: center;
+
   
+}
+.cartList .cartList-con {
+  flex: 0 1 1600px;
+  padding: 0 15vw;
+}
+.cartList .cartList-con .title {
+  border-bottom: 2px solid #acacac;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 1vw;
+  box-sizing: border-box;
+  
+  font-size: 25px;
+  font-family: 'KBO Dia Gothic_bold';
+}
+.cartList .cartList-con ul {
+}
+.cartList .cartList-con ul li{
+  
+}
+.cartList .cartList-con ul li .cartItem {
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1vw;
+  box-sizing: border-box;
+
+  position: relative;
+
+  font-family: 'KBO Dia Gothic_light';
+}
+
+.cartList .cartList-con ul li .top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1vw;
+  width: 50%;
+}
+
+.cartList .cartList-con ul li img {
+  display: block;
+  width: 30%;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+}
+
+.cartList .cartList-con ul li .bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1vw;
+}
+
+.cartList .cartList-con ul li .bottom .cartCount {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1vw;
+}
+
+.cartItem .top .top-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 5px;
+}
+
+.cartItem .top .top-con span.top-price {
+  font-size: smaller;
+  color: #484747;
+}
+
+.cartList .cartList-con ul li .bottom .cartCount button {
+  border: none;
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 15px;
+  background-color: #FADA7A;
+  border-radius:100%;
+}
+
+.cartList .cartList-con ul li .bottom .cartCount button:hover {
+  cursor: pointer;
+  background-color: #578FCA;
+  color: #ffffff;
+}
+
+.cartList .cartList-con ul li .bottom .delete-cart span {
+  display: flex;
+  align-items: flex-start;
+}
+
+.cartList .cartList-con ul li .bottom .delete-cart span img {
+  display: block;
+  width: 17px;
+  border: none;
+  position: absolute;
+  top: 1em;
+  
+}
+
+.cartList .cartList-con ul li .bottom .delete-cart span:hover {
+  cursor: pointer;
 }
