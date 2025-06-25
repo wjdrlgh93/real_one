@@ -32,6 +32,9 @@ const AdminShopList = () => {
             marker.setMap(map);
         });
         kakao()
+
+
+
         const shopListFn = async () => {
             const dataURL = `http://localhost:3001/shopList`
             try {
