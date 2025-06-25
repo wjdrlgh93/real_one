@@ -19,14 +19,15 @@
   padding-top: 0.5vw;
 }
 
-.ShopHouseContainer-top,
-.ShopHouseContainer-middle,
-.ShopHouseContainer-bottom {
+.ShopHouseContainer .ShopHouseContainer-top,
+.ShopHouseContainer .ShopHouseContainer-middle,
+.ShopHouseContainer .ShopHouseContainer-bottom {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1vw;
   margin-bottom: 40px;
   padding: 1vw;
+  width: 80%;
 }
 
 .house-item {
@@ -41,13 +42,13 @@
 
 .house-item img {
   width: 100%;
-  height: auto;
+  height: 300px;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 10px;
 }
 
-.modal {
+.ShopHouseContainer .modal {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.6);
@@ -57,72 +58,92 @@
   z-index: 999;
 }
 
-.modal-content {
+.ShopHouseContainer .modal .modal-content {
   position: relative;
   background: #fff;
-  padding: 20px 40px 80px;
+  padding: 24px 32px;
   border-radius: 8px;
-  width: 90%;
-  max-width: 1000px;
-  height: 70vh;
+  width: 800px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow-y: auto;
   text-align: center;
+  background-color: rgb(233, 247, 255);
 }
 
-.modal-content img {
-  width: 60%;
-  max-height: 40%;
+.ShopHouseContainer .modal .modal-content img {
+  width: 100%;
+  max-height: 400px;
   object-fit: contain;
   border-radius: 6px;
+  margin-bottom: 16px;
 }
 
-.right-buttons {
+.ShopHouseContainer .modal .modal-content h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: #000000;
+  
+}
+
+.ShopHouseContainer .modal .modal-content p {
+  font-size: 20px;
+  color: rgb(255, 72, 48);
+  padding-top: 20px;
+  margin-bottom: 8px;
+}
+
+/* 오른쪽 하단 버튼 */
+.ShopHouseContainer .modal .modal-content .right-buttons {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 16px;
+  right: 16px;
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 
-.admin-button {
-  padding: 8px 16px;
+.ShopHouseContainer .modal .modal-content .right-buttons .admin-button {
+  padding: 8px 14px;
+  font-size: 14px;
   background: rgb(0, 201, 60);
   color: #fff;
   border: none;
   border-radius: 4px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
 }
 
-.cart-button {
-  width: 30px;
-  height: 40px;
+.ShopHouseContainer .modal .modal-content .right-buttons .cart-button {
+  width: 28px;
+  height: 36px;
 }
 
-.cart-button img {
+.ShopHouseContainer .modal .modal-content .right-buttons .cart-button img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.center-close-button {
+/* 중앙 하단 닫기 버튼 */
+.ShopHouseContainer .modal .modal-content .close-button {
   position: absolute;
-  bottom: 20px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
+  width: max-content;
 }
 
-.modal-close {
-  padding: 12px 24px;
+.ShopHouseContainer .modal .modal-content .close-button .modal-close {
+  padding: 10px 20px;
+  font-size: 14px;
   background: #333;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  font-weight: 600;
+  border-radius: 4px;
+  font-weight: 500;
   cursor: pointer;
 }

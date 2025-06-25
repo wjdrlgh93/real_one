@@ -12,6 +12,7 @@ const AdminPayments = lazy(() => import('../components/container/admin/AdminPaym
 const AdminProduct = lazy(() => import('../components/container/admin/AdminProducts'))
 const AdminProductAdd = lazy(() => import('../components/container/admin/AdminProductAdd'))
 const AdminShopList = lazy(() => import('../components/container/admin/AdminShopList'))
+const AdminOrderList = lazy(() => import('../components/container/admin/AdminOrderList'))
 
 const toAdminRouter = () => {
     return (

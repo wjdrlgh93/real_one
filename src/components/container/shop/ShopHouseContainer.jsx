@@ -67,16 +67,14 @@ function HouseList() {
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <img src={`http://localhost:3001${selectedItem.img}`} alt={selectedItem.title} />
             <h2>{selectedItem.title}</h2>
-            <p>size: {selectedItem.size?.toLocaleString()}</p>
+            <p>{selectedItem.size?.toLocaleString()}</p>
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
 
             {/* 오른쪽 하단 버튼 그룹 */}
             <div className="right-buttons">
               <button
                 onClick={() => navigate('/admin/order')}
-                className="admin-button"
-              >
-                주문처로 이동
+                className="admin-button" >주문처로 이동
               </button>
 
               <a href="/cart" className="cart-button">
@@ -85,7 +83,7 @@ function HouseList() {
             </div>
 
             {/* 모달 하단 중앙 닫기 버튼 */}
-            <div className="center-close-button">
+            <div className="close-button">
               <button onClick={closeModal} className="modal-close">닫기</button>
             </div>
           </div>
