@@ -17,10 +17,12 @@ const AdminPayments = () => {
             });
             marker.setMap(map);
         });
-    }, [])
+    }, []);
+
     return (
         <>
             <h3>카카오맵API</h3>
+
             <div
                 id="map"
                 style={{
@@ -28,6 +30,7 @@ const AdminPayments = () => {
                     height: '50vh',
                 }}
             ></div>
+
         </>
     )
 }
