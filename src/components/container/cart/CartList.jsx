@@ -7,6 +7,7 @@ import { decreaseCount, deleteCart, increaseCount } from '../../../slices/cartSl
 const CartList = () => {
   const cartItems = useSelector(state => state.cart.items)
   console.log(cartItems)
+  console.log(cartItems.img)
   const dispatch = useDispatch()
   return (
     <div className="cartList">
@@ -19,27 +20,31 @@ const CartList = () => {
               <li key={el.id}>
               <div className="cartItem" key={idx}>
                 <div className="top">
-                  <div className="id">
+                  {/* <div className="id">
                     -
+                  </div> */}
+                  <img src={`/images/${el.img}`} alt={el.img} />
+                  <div className="top-con">
+                    <span> {el.title}</span>
+                    <span className="top-price">{el.price}원</span>
                   </div>
-                  <img src={el.img} alt={el.img} />
                 </div>
                 <div className="bottom">
-                  <span>상품명: {el.title}</span>
-                  <span>가격: {el.price}</span>
                   <div className="cartCount">
                     <button onClick={() => {
                       dispatch(decreaseCount(el.id))
-                    }}>-</button>
-                    <span className="count">수량: {el.count}</span>
+                    }}>－</button>
+                    <span className="count"> {el.count} </span>
                     <button onClick={() => {
                       dispatch(increaseCount(el.id))
-                    }}>+</button>
+                    }}>＋</button>
+                  <span>{el.count * el.price}원</span>
                   </div>
-                  <span>총금액: {el.count * el.price}</span>
-                  <span className="delete-cart" onClick={() => {
+                  <div className="delete-cart">
+                     <span onClick={() => {
                     dispatch(deleteCart(el.id))
-                  }}>X</span>
+                  }} ><img src='/images/delete.png'/></span>
+                  </div>
                 </div>
               </div>
             </li>

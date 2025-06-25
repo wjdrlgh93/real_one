@@ -5,8 +5,8 @@
       "userEmail": "alwaysused@email.com",
       "userPw": "1111",
       "userName": "KHJlI",
-      "age": "27",
       "address": "서울 중계동",
+      "age": 27,
       "role": "ADMIN"
     },
     {
@@ -230,6 +230,7 @@
       "img": ""
     }
   ],
+  
   "grooming": [
     {
       "id": 18,
@@ -374,14 +375,14 @@
     }
   ],
   "house": [
-    {"id":1,"category":"DogHouse", "size":"소형","img":"/images/DogHouse1.jpg", "title":"외부형플라스틱 하우스","price": 19900},
+    {"id":1,"category":"DogHouse", "size":"소형","img":"/images/DogHouse1.jpg", "title":"플라스틱 하우스","price": 19900},
     {"id":2,"category":"DogHouse", "size":"중형","img":"/images/DogHouse2.jpg", "title":"천막형 하우스","price": 21900 },
     {"id":3,"category":"DogHouse", "size":"소형","img":"/images/DogHouse3.png", "title":"러블리 하우스","price": 20900 },
     {"id":4,"category":"DogHouse", "size":"소형","img":"/images/DogHouse4.png", "title":"휴식 하우스","price": 29900 },
     {"id":5,"category":"DogHouse", "size":"중형","img":"/images/DogHouse5.png", "title":"원목가공형 하우스","price": 26900 },
     {"id":6,"category":"DogHouse", "size":"대형","img":"/images/DogHouse6.png", "title":"심플원목 하우스","price": 39900 },
     {"id":7,"category":"DogHouse", "size":"중형","img":"/images/DogHouse7.png", "title":"세련된원목 하우스","price": 34900 },
-    {"id":8,"category":"DogHouse", "size":"대형","img":"/images/DogHouse8.png", "title":"원목가공형 하우스(대형)","price": 49900 },
+    {"id":8,"category":"DogHouse", "size":"대형","img":"/images/DogHouse8.png", "title":"원목가공형 하우스","price": 49900 },
     {"id":9,"category":"CatHouse", "size":"대형","img":"/images/CatHouse1.png", "title":"통나무 하우스","price": 10000 },
     {"id":10,"category":"CatHouse", "size":"대형","img":"/images/CatHouse2.png", "title":"포근 하우스","price": 19000 },
     {"id":11,"category":"CatHouse", "size":"중형","img":"/images/CatHouse3.jpg", "title":"박스 하우스","price": 21900 },
@@ -389,13 +390,13 @@
     {"id":13,"category":"CatHouse", "size":"중형","img":"/images/CatHouse5.png", "title":"미니통나무 하우스","price": 25900 },
     {"id":14,"category":"CatHouse", "size":"중형","img":"/images/CatHouse6.png", "title":"스크래쳐형 하우스","price": 27900 },
     {"id":15,"category":"CatHouse", "size":"소형","img":"/images/CatHouse7.png", "title":"외부형솜털 하우스","price": 29900 },
-    {"id":16,"category":"CatHouse", "size":"중형","img":"/images/CatHouse8.png", "title":"아트형 나무하우스 세트","price": 30900 },
-    {"id":17,"category":"CatHouse", "size":"대형","img":"/images/CatHouse9.png", "title":"별장형 스크래쳐나무 하우스","price": 33000 },
-    {"id":18,"category":"CatHouse", "size":"소형","img":"/images/CatHouse10.png", "title":"부드러운이불형 하우스","price": 31900 },
+    {"id":16,"category":"CatHouse", "size":"중형","img":"/images/CatHouse8.png", "title":"아트형 나무하우스 ","price": 30900 },
+    {"id":17,"category":"CatHouse", "size":"대형","img":"/images/CatHouse9.png", "title":"스크래쳐 하우스","price": 33000 },
+    {"id":18,"category":"CatHouse", "size":"소형","img":"/images/CatHouse10.png", "title":"이불형 하우스","price": 31900 },
     {"id":19,"category":"Pethouse", "size":"소형","img":"/images/PetHouse1.png", "title":"도치 하우스","price": 9900 },
     {"id":20,"category":"Pethouse", "size":"소형","img":"/images/PetHouse2.png", "title":"래트 하우스","price": 14900 },
-    {"id":21,"category":"Pethouse", "size":"소형","img":"/images/PetHouse3.png", "title":"햄스터 하우스 플라스틱형","price": 13900 },
-    {"id":22,"category":"Pethouse", "size":"소형","img":"/images/PetHouse4.png", "title":"햄스터 하우스 원목형","price": 29900 }
+    {"id":21,"category":"Pethouse", "size":"소형","img":"/images/PetHouse3.png", "title":"햄스터 하우스1 ","price": 13900 },
+    {"id":22,"category":"Pethouse", "size":"소형","img":"/images/PetHouse4.png", "title":"햄스터 하우스2","price": 29900 }
   ],
   "fashion": [
     {"id":1, "category":"cloth", "img":"/images/cloth1.png", "title":"강아지신사 슈트","price":14900},
@@ -430,16 +431,5 @@
     {"id":30, "category":"tie", "img":"/images/tie6.png", "title":"레드리본 넥타이","price":17900},
     {"id":31, "category":"tie", "img":"/images/tie7.png", "title":"심플black 넥타이","price":7900},
     {"id":32, "category":"tie", "img":"/images/tie8.png", "title":"알록달록무늬 넥타이","price":3900}
-  ],
-  "shoplist2": [
-    {
-      "id": "1",
-      "name": "제이제이애견미용학원",
-      "address": "서울 노원구 상계로3길 21 화일빌딩 5층 502호 (우)01693",
-      "subway": "노원역 9번 출구에서 107m도보 3분",
-      "phone": "02-6080-8083",
-      "lat": "126.989979979848",
-      "lng": "37.5697431315274"
-    }
   ]
 }

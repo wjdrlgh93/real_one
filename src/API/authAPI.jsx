@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const API_SERVER_URL = 'http://localhost:3001/members'
-// const API_SERVER_URL = 'http://192.168.23.209:3001/members'
-// const API_SERVER_URL = 'http://localhost:3001/members'
+
+
 
 //login
 export const getMemberSelectorApi = async () => {

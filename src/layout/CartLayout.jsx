@@ -6,7 +6,7 @@ import Footer from '../components/common/Footer'
 const CartLayout = () => {
   return (
     <>
-    <Header/>
+    {/* <Header/> */}
     <Outlet/>
     <Footer/>
     </>

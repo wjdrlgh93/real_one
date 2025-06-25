@@ -36,7 +36,7 @@ const ShopToy_stuffedContainer = () => {
                             </div>
                             <div className="bottom">
                                 <span className="title">{el.title}</span>
-                                <span className="price">￦{el.price}</span>
+                                <span className="pricej">￦{el.price}</span>
                             </div>               
                         </li>
                       </Link>
