@@ -1,6 +1,8 @@
 @import url(../admin/adminIndex.css);
 @import url(../admin//adminmemberlist.css);
 @import url(../admin/adminshopList.css);
+@import url(../admin/adminItemList.css);
+@import url(../admin/adminProductAdd.css);
 
 .layoutRoot {
     display: flex;
