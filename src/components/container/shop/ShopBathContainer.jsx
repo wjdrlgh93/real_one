@@ -5,7 +5,7 @@ const ShopBathContainer = () => {
     const [bathList, setBathList] = useState()
 
     useEffect(() => {
-        const url = `http://192.168.23.209:3001/grooming`
+        const url = `http://localhost:3001/grooming`
 
         fetch(url)
         .then(res => res.json())
@@ -13,21 +13,25 @@ const ShopBathContainer = () => {
         // .catch(err => console.log(err))
     },[])
     
+    const [isHovered, setIsHovered] = useState(null)
+
     return (
             <div className="toyList">
                 <ul>
                 {bathList && bathList.map((el)=>{
                     return (
-                        <li>
+                        <li key={el.id}>
                             <Link to={`detail/${el.id}`}>                            
-                                <div className="top">
-                                    <img src={`/images/${el.img}`} alt={el.title} />
+                                <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
+                                    <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
                                 </div>
+                             </Link>
                                 <div className="bottom">
+                                <Link to={`detail/${el.id}`}> 
                                     <span className="title">{el.title}</span>
+                                </Link>
                                     <span className="pricej">￦{el.price}</span>
                                 </div>                            
-                             </Link>
                         </li>
                     )
                 })}

@@ -23,23 +23,27 @@ const ShopBath_shampooContainer = () => {
       }
       combFn()
     },[bathList])
+
+    const [isHovered, setIsHovered] = useState(null)
     
     return (
             <div className="toyList">
                 <ul>
                 {shampooList && shampooList.map((el)=>{
                     return (
-                      <Link to={`/shop/bath/detail/${el.id}`}>                        
-                        <li>
-                            <div className="top">
-                                <img src={`/images/${el.img}`} alt={el.title} />
+                      <li>
+                          <Link to={`/shop/bath/detail/${el.id}`}>                        
+                            <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
+                                <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
                             </div>
+                          </Link>
                             <div className="bottom">
+                            <Link to={`/shop/bath/detail/${el.id}`}>
                                 <span className="title">{el.title}</span>
+                              </Link>
                                 <span className="pricej">￦{el.price}</span>
                             </div>                            
                         </li>
-                      </Link>
                     )
                 })}
                 </ul>

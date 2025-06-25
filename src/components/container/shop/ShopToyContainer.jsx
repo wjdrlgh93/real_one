@@ -14,30 +14,25 @@ const ShopToyContainer = () => {
         // .catch(err => console.log(err))
     },[])
     
-    // const [hoveredId, setHoveredId] = useState(null)
-    // const mouseHoverIn = id => {setHoveredId(id)}
-    // const mouseHoverOut = () => {setHoveredId(null)}
+    const [isHovered, setIsHovered] = useState(null)
 
     return (
             <div className="toyList">
                 <ul>
                 {toyList && toyList.map((el)=>{
                     return (
-                        <li>
+                        <li key={el.id}>
                             <Link to={`detail/${el.id}`}>                            
-                                <div className="top">
-                                    {/* <img src={hoveredId === el.id ? el.img[0].hoverimg : el.img[0].defaultimg}
-                                    onMouseEnter = {() => mouseHoverIn(el.id)}
-                                    onMouseLeave={mouseHoverOut}
-                                    alt={el.title}/>
-                                    // <img src={`/images/${el.img}`} alt={el.title} /> */}
-                                    <img src={`/images/${el.img}`} alt={el.title}/>
+                                <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
+                                    <img src={el.hoverImg && isHovered === el.id ?`/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title}/>
                                 </div>
+                            </Link>
                                 <div className="bottom">
+                                <Link to={`detail/${el.id}`}>
                                     <span className="title">{el.title}</span>
+                                </Link>
                                     <span className="pricej">￦{el.price}</span>
                                 </div>                            
-                            </Link>
                         </li>
                     )
                 })}

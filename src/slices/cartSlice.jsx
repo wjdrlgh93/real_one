@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit'
-import React from 'react'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import axios from 'axios'
 
 const initState = {
   items: [],
@@ -25,7 +25,7 @@ const cartSlice = createSlice({
         return el.id ===action.payload
       })
       if (idx === -1) {
-        alert('삭제할 상품이 없습니다.')
+        alert('선택된 상품이 없습니다.')
       } else {
         // alert('상품을 삭제합니다')
         // state.items.splice(idx,1)
@@ -44,9 +44,58 @@ const cartSlice = createSlice({
       });
       if (state.items[num].count === 1) state.items[num].count =1
       else state.items[num].count -= 1;
+    },
+    deleteItem(state, action) {
+      let num = state.items.findIndex((obj) => {
+        return obj.id === action.payload;
+      });
+      state.items.splice(num, 1);
+    },
+    deleteAllCart(state, action) {
+      state.items.length = 0
+    },
+    checkedChange(state, action) {
+      let num = state.items.findIndex((obj) => {
+        return obj.id === action.payload;
+      });
+      state.items[num].checked = !state.items[num].checked;
+    },
+    allCheckedTrue(state, action) {
+      state.items.forEach((obj) => {
+        obj.checked = true;
+      })
+    },
+    allCheckedFalse(state, action) {
+      state.items.forEach((obj) => {
+        obj.checked = false;  
+      });
     }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(asyncAdminCartsFetch.pending, (state, action) => {
+      state.status = 'pending'
+    })
+    builder.addCase(asyncAdminCartsFetch.fulfilled, (state, action) => {
+      console.log('--------- asyncAdmingCartsFetch')
+      console.log(action.payload)
+      state.paymentItems = action.payload
+      state.status = 'Complete'
+    })
+    builder.addCase(asyncAdminCartsFetch.rejected, (state, action) => {
+      state.status ='Failed'
+    })
   }
 })
 
-export const {deleteCart, addCart, increaseCount, decreaseCount} = cartSlice.actions
+export const asyncAdminCartsFetch = createAsyncThunk('cart/asyncAdminCartsFetch',
+  async () => {
+    // const res = await axios.get(`${API_SERVER_HOST}/payment`)
+    // const data = res.data
+    // const arrData = data.filter(el => el.paymentResult)
+    // console.log(arrData,' arrData')
+    // return data
+  }
+)
+
+export const {deleteCart, addCart, increaseCount, decreaseCount, deleteAllCart, deleteItem, checkedChange, allCheckedFalse, allCheckedTrue } = cartSlice.actions
 export default cartSlice
