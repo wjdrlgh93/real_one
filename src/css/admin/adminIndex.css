@@ -23,6 +23,7 @@
     padding: 80px;
 }
 
+<<<<<<<<< Temporary merge branch 1
 .adminheader li:not(:first-child):hover {
     color: blue;
     transform: scale(1.07);
