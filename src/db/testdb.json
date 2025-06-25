@@ -4,10 +4,7 @@
       "id": "1",
       "userEmail": "alwaysused@email.com",
       "userPw": "1111",
-      "userPw": "1111",
       "userName": "KHJlI",
-      "age": "27",
-      "address": "서울 중계동",
       "age": "27",
       "address": "서울 중계동",
       "role": "ADMIN"
@@ -17,7 +14,6 @@
       "userEmail": "naverused@email.com",
       "userPw": "222222",
       "userName": "DJJ",
-      "userName": "DJJ",
       "age": 35,
       "address": "의정부",
       "role": "ADMIN"
@@ -25,7 +21,6 @@
     {
       "id": "3",
       "userEmail": "a1@email.com",
-      "userPw": "1111",
       "userPw": "1111",
       "userName": "탕후루",
       "age": "302222",
@@ -114,221 +109,6 @@
       "role": "ROLE_MEMBER"
     }
   ],
-  "toys": [
-    {
-      "id": 1,
-      "title": "멍멍 축구공 장난감",
-      "category": "toy-ball",
-      "price": 4900,
-      "img": "ledball.jpg"
-    },
-    {
-      "id": 2,
-      "title": "강아지 토이볼 레드",
-      "category": "toy-ball",
-      "price": 1900,
-      "img": ""
-    },
-    {
-      "id": 3,
-      "title": "반려견 테니스공 장난감",
-      "category": "toy-ball",
-      "price": 1600,
-      "img": ""
-    },
-    {
-      "id": 4,
-      "title": "포포펫 삑삑이 장난감 공",
-      "category": "toy-ball",
-      "price": 2600,
-      "img": ""
-    },
-    {
-      "id": 5,
-      "title": "나나펫 강아지 컬러 볼 세트",
-      "category": "toy-ball",
-      "price": 6000,
-      "img": ""
-    },
-    {
-      "id": 6,
-      "title": "강아지 라텍스 공 장난감",
-      "category": "toy-ball",
-      "price": 2300,
-      "img": ""
-    },
-    {
-      "id": 7,
-      "title": "플레이독 점프볼 장난감",
-      "category": "toy-ball",
-      "price": 9800,
-      "img": ""
-    },
-    {
-      "id": 8,
-      "title": "댕댕월드 꽈배기 볼 장난감",
-      "category": "toy-ball",
-      "price": 2500,
-      "img": ""
-    },
-    {
-      "id": 9,
-      "title": "럭키펫 간식 공",
-      "category": "toy-ball",
-      "price": 5000,
-      "img": ""
-    },
-    {
-      "id": 10,
-      "title": "터그 놀이",
-      "category": "toy-tug",
-      "price": 4900,
-      "img": ""
-    },
-    {
-      "id": 11,
-      "title": "터그 놀이",
-      "category": "toy-tug",
-      "price": 4900,
-      "img": ""
-    },
-    {
-      "id": 12,
-      "title": "터그 놀이",
-      "category": "toy-tug",
-      "price": 4900,
-      "img": ""
-    },
-    {
-      "id": 13,
-      "title": "터그 놀이",
-      "category": "toy-tug",
-      "price": 4900,
-      "img": ""
-    },
-    {
-      "id": 14,
-      "title": "인형",
-      "category": "toy-stuffed",
-      "price": 4900,
-      "img": ""
-    },
-    {
-      "id": 15,
-      "title": "인형",
-      "category": "toy-stuffed",
-      "price": 4900,
-      "img": ""
-    },
-    {
-      "id": 16,
-      "title": "인형",
-      "category": "toy-stuffed",
-      "price": 4900,
-      "img": ""
-    },
-    {
-      "id": 17,
-      "title": "인형",
-      "category": "toy-stuffed",
-      "price": 4900,
-      "img": ""
-    }
-  ],
-  
-  "grooming": [
-    {
-      "id": 18,
-      "title": "포에버 베이비 파우더향 샴푸",
-      "category": "bath-shampoo",
-      "price": 7600,
-      "img": ""
-    },
-    {
-      "id": 19,
-      "title": "포에버 오트밀 샴푸",
-      "category": "bath-shampoo",
-      "price": 7600,
-      "img": ""
-    },
-    {
-      "id": 20,
-      "title": "하이솝 카밍 샴푸",
-      "category": "bath-shampoo",
-      "price": 6300,
-      "img": ""
-    },
-    {
-      "id": 21,
-      "title": "하이솝 모이스쳐 샴푸",
-      "category": "bath-shampoo",
-      "price": 6300,
-      "img": ""
-    },
-    {
-      "id": 22,
-      "title": "힐링도그 오가닉 샴푸",
-      "category": "bath-shampoo",
-      "price": 8500,
-      "img": ""
-    },
-    {
-      "id": 23,
-      "title": "인형",
-      "category": "bath-shampoo",
-      "price": 4900,
-      "img": ""
-    },
-    {
-      "id": 24,
-      "title": "룰루도기 스마일 참빗",
-      "category": "bath-comb",
-      "price": 4900,
-      "img": ""
-    },
-    {
-      "id": 25,
-      "title": "러브독 미용 빗",
-      "category": "bath-comb",
-      "price": 5200,
-      "img": ""
-    },
-    {
-      "id": 26,
-      "title": "러브독 얼굴 빗",
-      "category": "bath-comb",
-      "price": 4500,
-      "img": ""
-    },
-    {
-      "id": 27,
-      "title": "룰로도기 스마일 슬리커 브러쉬",
-      "category": "bath-comb",
-      "price": 6300,
-      "img": ""
-    },
-    {
-      "id": 28,
-      "title": "쉐드킬러 털 제거 브러쉬",
-      "category": "bath-comb",
-      "price": 9800,
-      "img": ""
-    },
-    {
-      "id": 29,
-      "title": "헬로독 슬리커",
-      "category": "bath-comb",
-      "price": 8300,
-      "img": ""
-    },
-    {
-      "id": 30,
-      "title": "하너디 소프트 브러쉬",
-      "category": "bath-comb",
-      "price": 12000,
-      "img": ""
-    }
-  ],
   "shopList": [
     {
       "id": "1",
@@ -379,28 +159,218 @@
       "y": "37.4844401485066"
     }
   ],
-  "house": [
-    {"id":1,"category":"DogHouse", "size":"소형","img":"/images/DogHouse1.jpg", "title":"모델1","price": 19900 },
-    {"id":2,"category":"DogHouse", "size":"중형","img":"/images/DogHouse2.jpg", "title":"모델2","price": 21900 },
-    {"id":3,"category":"DogHouse", "size":"소형","img":"/images/DogHouse3.png", "title":"모델3","price": 20900 },
-    {"id":4,"category":"DogHouse", "size":"소형","img":"/images/DogHouse4.png", "title":"모델4","price": 29900 },
-    {"id":5,"category":"DogHouse", "size":"중형","img":"/images/DogHouse5.png", "title":"모델5","price": 26900 },
-    {"id":6,"category":"DogHouse", "size":"대형","img":"/images/DogHouse6.png", "title":"모델6","price": 39900 },
-    {"id":7,"category":"DogHouse", "size":"중형","img":"/images/DogHouse7.png", "title":"모델7","price": 34900 },
-    {"id":8,"category":"DogHouse", "size":"대형","img":"/images/DogHouse8.png", "title":"모델8","price": 49900 },
-    {"id":9,"category":"CatHouse", "size":"대형","img":"/images/CatHouse1.png", "title":"모델1","price": 10000 },
-    {"id":10,"category":"CatHouse", "size":"대형","img":"/images/CatHouse2.png", "title":"모델2","price": 19000 },
-    {"id":11,"category":"CatHouse", "size":"중형","img":"/images/CatHouse3.jpg", "title":"모델3","price": 21900 },
-    {"id":12,"category":"CatHouse", "size":"중형","img":"/images/CatHouse4.jpg", "title":"모델4","price": 23900 },
-    {"id":13,"category":"CatHouse", "size":"중형","img":"/images/CatHouse5.png", "title":"모델5","price": 25900 },
-    {"id":14,"category":"CatHouse", "size":"중형","img":"/images/CatHouse6.png", "title":"모델6","price": 27900 },
-    {"id":15,"category":"CatHouse", "size":"소형","img":"/images/CatHouse7.png", "title":"모델7","price": 29900 },
-    {"id":16,"category":"CatHouse", "size":"중형","img":"/images/CatHouse8.png", "title":"모델8","price": 30900 },
-    {"id":17,"category":"CatHouse", "size":"대형","img":"/images/CatHouse9.png", "title":"모델9","price": 33000 },
-    {"id":18,"category":"CatHouse", "size":"소형","img":"/images/CatHouse10.png", "title":"모델10","price": 31900 },
-    {"id":19,"category":"Pethouse", "size":"소형","img":"/images/PetHouse1.png", "title":"동물하우스1","price": 10000 },
-    {"id":20,"category":"Pethouse", "size":"소형","img":"/images/PetHouse2.png", "title":"동물하우스2","price": 10000 },
-    {"id":21,"category":"Pethouse", "size":"소형","img":"/images/PetHouse3.png", "title":"동물하우스3","price": 10000 },
-    {"id":22,"category":"Pethouse", "size":"소형","img":"/images/PetHouse4.png", "title":"동물하우스4","price": 10000 }
+  "products": [
+    {
+      "id": 1,
+      "title": "멍멍 축구공 장난감",
+      "category": "toy",
+      "price": 4900,
+      "img": "ledball.jpg",
+      "hoverImg": "ledBallHover.png"
+    },
+    {
+      "id": 2,
+      "title": "우프 강아지 토이볼 레드",
+      "category": "toy",
+      "price": 1900,
+      "img": "redBall.jpg"
+    },
+    {
+      "id": 3,
+      "title": "반려견 테니스공 장난감",
+      "category": "toy",
+      "price": 1600,
+      "img": "tennisBall.jpg",
+      "hoverImg": "tennisBallHover.jpg"
+    },
+    {
+      "id": 4,
+      "title": "포포펫 삑삑이 장난감 공",
+      "category": "toy",
+      "price": 2600,
+      "img": "soundBall.jpg"
+    },
+    {
+      "id": 5,
+      "title": "나나펫 강아지 컬러 볼 세트",
+      "category": "toy",
+      "price": 6000,
+      "img": "colorBallSet.jpg"
+    },
+    {
+      "id": 6,
+      "title": "강아지 라텍스 공 장난감",
+      "category": "toy",
+      "price": 2300,
+      "img": "yellowBall.png"
+    },
+    {
+      "id": 7,
+      "title": "플레이독 점프볼 장난감",
+      "category": "toy",
+      "price": 9800,
+      "img": ""
+    },
+    {
+      "id": 8,
+      "title": "댕댕월드 꽈배기 볼 장난감",
+      "category": "toy",
+      "price": 2500,
+      "img": "ropeBall.jpg"
+    },
+    {
+      "id": 9,
+      "title": "럭키펫 간식 공",
+      "category": "toy",
+      "price": 5000,
+      "img": ""
+    },
+    {
+      "id": 10,
+      "title": "알록 터그 장난감",
+      "category": "toy",
+      "price": 4900,
+      "img": "tugRYB.jpg"
+    },
+    {
+      "id": 11,
+      "title": "love dog 원형 터그 장난감",
+      "category": "toy",
+      "price": 4900,
+      "img": "tugRound.jpg"
+    },
+    {
+      "id": 12,
+      "title": "터그 놀이",
+      "category": "toy",
+      "price": 4900,
+      "img": ""
+    },
+    {
+      "id": 13,
+      "title": "터그 놀이",
+      "category": "toy",
+      "price": 4900,
+      "img": ""
+    },
+    {
+      "id": 14,
+      "title": "인형",
+      "category": "toy",
+      "price": 4900,
+      "img": ""
+    },
+    {
+      "id": 15,
+      "title": "인형",
+      "category": "toy",
+      "price": 4900,
+      "img": ""
+    },
+    {
+      "id": 16,
+      "title": "인형",
+      "category": "toy",
+      "price": 4900,
+      "img": ""
+    },
+    {
+      "id": 17,
+      "title": "인형",
+      "category": "toy",
+      "price": 4900,
+      "img": ""
+    },
+    {
+      "id": 18,
+      "title": "포에버 베이비 파우더향 샴푸",
+      "category": "bath",
+      "price": 7600,
+      "img": ""
+    },
+    {
+      "id": 19,
+      "title": "포에버 오트밀 샴푸",
+      "category": "bath",
+      "price": 7600,
+      "img": "oatmealShampoo.jpg"
+    },
+    {
+      "id": 20,
+      "title": "하이솝 카밍 샴푸",
+      "category": "bath",
+      "price": 6300,
+      "img": ""
+    },
+    {
+      "id": 21,
+      "title": "하이솝 모이스쳐 샴푸",
+      "category": "bath",
+      "price": 6300,
+      "img": ""
+    },
+    {
+      "id": 22,
+      "title": "힐링도그 오가닉 샴푸",
+      "category": "bath",
+      "price": 8500,
+      "img": ""
+    },
+    {
+      "id": 23,
+      "title": "인형",
+      "category": "bath",
+      "price": 4900,
+      "img": ""
+    },
+    {
+      "id": 24,
+      "title": "룰루도기 스마일 참빗",
+      "category": "bath",
+      "price": 4900,
+      "img": ""
+    },
+    {
+      "id": 25,
+      "title": "러브독 미용 빗",
+      "category": "bath",
+      "price": 5200,
+      "img": ""
+    },
+    {
+      "id": 26,
+      "title": "러브독 얼굴 빗",
+      "category": "bath",
+      "price": 4500,
+      "img": ""
+    },
+    {
+      "id": 27,
+      "title": "룰로도기 스마일 슬리커 브러쉬",
+      "category": "bath",
+      "price": 6300,
+      "img": ""
+    },
+    {
+      "id": 28,
+      "title": "쉐드킬러 털 제거 브러쉬",
+      "category": "bath",
+      "price": 9800,
+      "img": ""
+    },
+    {
+      "id": 29,
+      "title": "헬로독 슬리커",
+      "category": "bath",
+      "price": 8300,
+      "img": ""
+    },
+    {
+      "id": 30,
+      "title": "하너디 소프트 브러쉬",
+      "category": "bath",
+      "price": 12000,
+      "img": ""
+    }
   ]
 }
