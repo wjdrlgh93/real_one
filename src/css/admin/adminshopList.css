@@ -40,3 +40,26 @@
     justify-content: center;
     align-items: center;
 }
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 10px;
+    gap: 5px;
+}
+
+.modal-container .modalmap {
+    width: 50%;
+    height: 50%;
+
+    position: relative;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
+}

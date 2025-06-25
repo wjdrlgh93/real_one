@@ -10,30 +10,15 @@ const AdminShopList = () => {
 
     const [shoplist, setshoplist] = useState()
     const [modlaOpen, setModalOpen] = useState(false);
+    // for modalSelectMap
+    const [selectedShop, setSelectedShop] = useState(null);
 
     const modalBackground = useRef();
+    const mapRef = useRef(null);
 
 
 
     useEffect(() => {
-
-        const kakao = window.kakao.maps.load(() => {
-            const container = document.getElementById('map');
-            const options = {
-                center: new window.kakao.maps.LatLng(37.5665, 126.9780), // 서울
-                level: 3,
-            };
-            const map = new window.kakao.maps.Map(container, options);
-            // 마커 추가
-            const markerPosition = new window.kakao.maps.LatLng(37.5665, 126.9780);
-            const marker = new window.kakao.maps.Marker({
-                position: markerPosition,
-            });
-            marker.setMap(map);
-        });
-        kakao()
-
-
 
         const shopListFn = async () => {
             const dataURL = `http://localhost:3001/shopList`
@@ -47,7 +32,36 @@ const AdminShopList = () => {
         }
         shopListFn()
 
-    }, [])
+        if (!modlaOpen || !selectedShop) return;
+
+        // kakaomap load check
+        if (window.kakao && window.kakao.maps) {
+            window.kakao.maps.load(() => {
+                const container = mapRef.current;
+                if (!container) {
+                    console.warn("mapRef가 아직 DOM에 연결되지 않았습니다.");
+                    return;
+                }
+
+                // 주소가 아니라 위경도 기반으로 설정해야 정확함 (좌표 변환 추가 가능)
+                const geocoder = new window.kakao.maps.services.Geocoder();
+                geocoder.addressSearch(selectedShop.address, (result, status) => {
+                    if (status === window.kakao.maps.services.Status.OK) {
+                        const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
+                        const map = new window.kakao.maps.Map(container, {
+                            center: coords,
+                            level: 3
+                        });
+
+                        const marker = new window.kakao.maps.Marker({ position: coords });
+                        marker.setMap(map);
+                    } else {
+                        console.warn("카카오맵이 아직 로드되지 않았습니다.");
+                    }
+                })
+            });
+        }
+    }, [modlaOpen, selectedShop])
 
 
     return (
@@ -74,6 +88,7 @@ const AdminShopList = () => {
                                 <td className={'modal-td'}
                                     onClick={() => {
                                         setModalOpen(true)
+                                        setSelectedShop(el)
                                     }}>Detail</td>
                             </tr>
                         )
@@ -81,25 +96,28 @@ const AdminShopList = () => {
                 </tbody>
             </table >
             {
-                modlaOpen &&
+                modlaOpen && selectedShop &&
                 <div className={'modal-container'} ref={modalBackground} onClick={e => {
                     if (e.target === modalBackground.current) {
                         setModalOpen(false);
+                        setSelectedShop(null);
                     }
                 }}>
-
                     <div className={'modal-content'}>
-                        <div className={'memInfo'}> === SHOP INFO ===</div><br />
-                        <div
-                            id="map"
-                            style={{
-                                width: '35%',
-                                height: '35%',
-                            }} ></div>
+                        <div className={'memInfo'}> === SHOP INFO ===</div>
+                        <div>점포명 : {selectedShop.name}</div>
+                        <div>주소 : {selectedShop.address}</div>
+                        <div>전화번호 : {selectedShop.phone}</div>
+                        <div className='info'>팩스번호 : {selectedShop.fax}</div><br />
+                        <div className='modalmap' ref={mapRef} ></div>
 
-                        <button className={'modal-close-btn'} onClick={() => setModalOpen(false)}>
+                        <button className={'modal-close-btn'} onClick={() => {
+                            setModalOpen(false);
+                            setSelectedShop(null);
+                        }}>
                             닫기
                         </button>
+
                     </div>
                 </div >
             }
