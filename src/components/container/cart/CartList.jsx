@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { allCheckedFalse, allCheckedTrue, checkedChange, decreaseCount, deleteCart, increaseCount } from '../../../slices/cartSlice'
+import { allCheckedFalse, allCheckedTrue, checkedChange, decreaseCount, deleteCart, increaseCount,setPaymentItems } from '../../../slices/cartSlice'
 import { useNavigate } from 'react-router-dom'
+import LoginModalYyj from '../shop/layout-yyj/LoginModalYyj'
 
 
 const CartList = () => {
@@ -13,7 +14,6 @@ const CartList = () => {
   console.log(Array.isArray(cartItems)); // true여야 함
 
   console.log(cartItems)
-  console.log(cartItems.img)
   
   const checkedList = cartItems.filter((item) => item.checked === true)
 
@@ -63,6 +63,26 @@ const CartList = () => {
   checkedList.forEach((item) => {
     totalSelectedAmount += item.count
   })
+
+  // 로그인 여부
+  const isLogin = useSelector(state => state.auth.isLogin)
+  const [loginModal, setLoginModal] = useState(false)
+
+  const payBtn = () => {
+    // if (!isLogin) {
+    //   setLoginModal(true)
+    //   return
+    // }
+    if (checkedList.length === 0) {
+      alert('선택된 상품이 없습니다.')
+      return
+    }
+      window.confirm('주문을 진행하겠습니까?')
+      dispatch(setPaymentItems(checkedList))
+      navigate('/payment')
+    }
+    
+    console.log(setPaymentItems(checkedList))
   
   return (
     <div className="cartList">
@@ -125,12 +145,7 @@ const CartList = () => {
                 <div className="sum-price">총 상품금액: {checkedList.length > 0 ? totalSelectedPrice : totalPrice } 원</div>
                 <span>상품수량: {checkedList.length > 0 ? totalSelectedAmount : totalAmount} 개</span>
                 <div className="order-result">
-                  <button 
-                  // onClick={(e) => {
-                  //   e.preventDefault()
-                  //   haderModalFn('paymentPre')
-                  // }}
-                  >구매하기</button>
+                  <button onClick={payBtn}>주문하기</button>
                 </div>
               </div>
             </div>
@@ -146,6 +161,7 @@ const CartList = () => {
           }
         </div>
       </div>
+      {/* {loginModal && <LoginModalYyj onClose={() => setLoginModal(false)}/>} */}
     </div>
   )
 }

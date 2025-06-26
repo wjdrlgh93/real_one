@@ -1,14 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import React from 'react'
 
 const payment = {
   paymentData: [],
+  paymentItems: [],
   paymentMemberData: []
 }
 
 const paymentSlice = createSlice({
   name:'payment',
-  initialStae: payment,
+  initialState: payment,
   reducers: {
     addPayment(state, action) {
       const num = state.paymentData.findIndex(el => {
@@ -20,10 +20,13 @@ const paymentSlice = createSlice({
       } else {
         state.paymentData[num] = action.payload
       }
+    },
+    setPaymentItems(state, action) {
+      state.paymentItems = action.payload
     }
   }
 })
 
 // export const asyncAdminPaymentsFetch = createAsyncThunk('admin/asyncAdmin')
-export const {addPayment} = paymentSlice.actions
+export const { addPayment, setPaymentItems } = paymentSlice.actions
 export default paymentSlice

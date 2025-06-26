@@ -289,7 +289,7 @@ const AuthJoin = () => {
                                 </div>
                                 <div className="text sign-up">
                                     <h2>
-                                        Sing Up
+                                        Sign Up
                                     </h2>
 
                                 </div>
