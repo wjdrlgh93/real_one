@@ -112,27 +112,37 @@
   "shopList": [
     {
       "id": "1",
-      "name": "노원점",
-      "address": "서울 노원구 상계동 593-1",
-      "subway": "4,7호선",
-      "bus": " 146",
-      "phone": "02-6953-2002",
+      "name": "상계역점",
+      "address": "서울특별시 노원구 중계동 586 상가동 1층 109호",
+      "subway": "4호선",
+      "bus": [
+        "405",
+        "409",
+        "433",
+        "456"
+      ],
+      "phone": "010-8676-2093",
       "fax": "010-000-0000",
-      "bg": "https://nowon.greenart.co.kr/upimage/new_campus/20220318180010.jpg",
-      "x": "127.06227580591",
-      "y": "37.6572131271659"
+      "bg": "https://postfiles.pstatic.net/MjAyNDA4MDFfMTk5/MDAxNzIyNTIwMzMwOTk0.UOtuAUN1osjKZzOCIri2dxu-2ptoJobEG5BcQ6_X53Ug.jrh8J8uaiiUzhrHGf24WtzvY3YyFiy6lUSAraYVRdwQg.JPEG/SE-b733a119-9a72-4a56-b103-8bf8d8b7bbc8.jpg?type=w966",
+      "x": "37.662805",
+      "y": "127.076091"
     },
     {
       "id": "2",
-      "name": "강남점",
-      "address": "서울 강남구 역삼동 635-10",
-      "subway": "2,7호선",
-      "bus": " 146",
+      "name": "쌍문점",
+      "address": "서울특별시 도봉구 도봉로110길 39-4",
+      "subway": "4호선",
+      "bus": [
+        "405",
+        "409",
+        "433",
+        "456"
+      ],
       "phone": "02-3481-1005",
       "fax": "010-000-0000",
-      "bg": "https://gangnam.greenart.co.kr/upimage/new_campus/20220405160748.png",
-      "x": "127.02907088439586",
-      "y": "37.50017190761103"
+      "bg": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.blog.naver.com%2Falsxmcb%2F222717256758&psig=AOvVaw1q9yqKtuXjzoYYRETlVCvj&ust=1750996769345000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKDgiLmZjo4DFQAAAAAdAAAAABAE",
+      "x": "37.646514",
+      "y": "127.035664"
     },
     {
       "id": "3",

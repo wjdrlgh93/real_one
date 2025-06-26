@@ -80,7 +80,7 @@ const AdminProducts = () => {
                         <th>가격</th>
                         <th>상세보기</th>
                     </tr>
-                    {/* {itemList && itemList.map((el, idx) => { */}
+                    {/* {itemList && itemList.slice(startPost-1, endPost).map((el, idx) => { */}
                     {getCurrentItems().map((el, idx) => {
                         return (
                             <tr key={el.id}>
