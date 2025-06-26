@@ -1,0 +1,83 @@
+.LineC {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    gap: 10px;
+    margin: 10px;
+}
+
+.LineC-con {
+    padding: 15px;
+    width: 85%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.LineC h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    padding: 10px;
+}
+
+.LineC-con canvas {
+
+
+    background-color: #f2f2f2;
+    margin: 1vmax;
+    padding: 15px;
+
+    border-radius: 15px;
+
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 여기까지 라인챠트  */
+
+
+.PieChart {
+    padding: 25px;
+}
+
+.PieChart-con {
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    gap: 20px;
+
+
+}
+
+.PieChart-con canvas {
+    height: 60%;
+    width: 60%;
+
+    background-color: #f2f2f2;
+    margin: 1vmax;
+    padding: 15px;
+
+    border-radius: 15px;
+
+}
