@@ -13,9 +13,12 @@ const ShopBath = lazy(() => import(`../components/container/shop/ShopBathContain
 const ShopHouse = lazy(() => import(`../components/container/shop/ShopHouseContainer`))
 const ShopFashion = lazy(() => import(`../components/container/shop/ShopFashionContainer`))
 
-// 연준
+// yj
 const ToyLayout = lazy(() => import('../components/container/shop/layout-yyj/ToyLayout'))
 const BathLayout = lazy(() => import('../components/container/shop/layout-yyj/BathLayout'))
+// yj-상세정보
+const ToyDetail = lazy(() => import(`../components/container/shop/toy-yyj/ToyDetail`))
+const BathDetail = lazy(() => import('../components/container/shop/bath-yyj/BathDetail'))
 
 const toShopRouter = () => {
     return (
@@ -46,10 +49,18 @@ const toShopRouter = () => {
                 children: toToyRouter()
             },
             {
+              path: 'toy/detail/:id',
+              element: <Suspense fallback={Loading}><ToyDetail/></Suspense>
+            },
+            {
                 // shop/bath
                 path: 'bath',
                 element: <Suspense fallback={Loading}><BathLayout /></Suspense>,
                 children: toBathRouter()
+            },
+            {
+              path: 'bath/detail/:id',
+              element: <Suspense fallback={Loading}><BathDetail/></Suspense>
             },
             {
                 // shop/toy

@@ -24,6 +24,8 @@ const Header = () => {
     navigate("/");
   };
 
+  const items = useSelector(state => state.cart.items)
+
   return (
     <div className="header">
       <div className="nav-top">
@@ -65,7 +67,10 @@ const Header = () => {
                 <Link to={"/shop"}>주문내역</Link>
               </li>
               <li>
-                <Link to={"/cart"}>장바구니</Link>
+                {items.length > 0 ? <span> {items.length} </span> : <></>}
+                <Link to={"/cart"}>
+                <img src="/images/shoppingCart.png" alt="cart" />
+                </Link>
               </li>
             </ul>
           </div>

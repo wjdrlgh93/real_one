@@ -7,22 +7,28 @@ import ShopDetailLayout from '../layout-yyj/ShopDetailLayout'
 
 const BathDetail = () => {
   const param = useParams()
-
   console.log(param.id, typeof(param.id))
-
-
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const addToCart = () => {
-    const item = {id: product.id, title: product.title, price:product.price, img:product.img, count:1}
+    const item = {id: product.id, title: product.title, price:product.price, img:product.img, hoverImg: product.hoverImg, count:count}
     
     dispatch(addCart(item))
     navigate('/cart');
   }
 
-
+  const [count, setCount] = useState(1)
   const [product, setProduct] = useState([])
+
+  const onIncrease = () => {
+    setCount(count + 1)
+  }
+  const onDecrease = () => {
+    if (count > 1) {
+      setCount(count - 1)
+    }
+  }
 
   useEffect(() => {
     const productURL = `http://localhost:3001/grooming`
@@ -38,7 +44,7 @@ const BathDetail = () => {
         alert(err)
       }
     }
-    productFn(param)
+    productFn(param.id)
   }, [])
 
 
@@ -46,9 +52,13 @@ const BathDetail = () => {
   return (
     <ShopDetailLayout
     img={`/images/${product.img}`}
+    hoverImg={product.hoverImg && product.hoverImg !== '' ? `/images/${product.hoverImg}` : null}
     title={product.title}
     price={product.price}
+    count={count}
     onAddToCart={addToCart}
+    onIncrease={onIncrease}
+    onDecrease={onDecrease}
     >
 
     </ShopDetailLayout>

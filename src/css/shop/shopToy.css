@@ -1,15 +1,15 @@
 .toy {
-  padding-top: 200px;
+  padding-top: 270px;
   width: 100%;
   min-height: calc(100vh - 200px);
-  overflow-y: scroll;
-  overflow: visible;
+  /* overflow-y: scroll; */
+  /* overflow: visible; */
   background-color: #f7f3d4;
 }
 
 .toy .toy-con {
   height: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 10vw;
 
 }
@@ -93,14 +93,16 @@
   padding: 2vmax;
 }
 
-.toy .toy-con .toyList ul li .bottom>span.title {
+.toy .toy-con .toyList ul li .bottom a>span.title {
   font-family: 'KBO Dia Gothic_light';
   font-size: 2vmin;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .toy .toy-con .toyList ul li .bottom>span.pricej {
+  font-size: 1.5vmin;
   font-family: 'KBO Dia Gothic_light';
+  color: #5e5e5e;
 }
 
 
