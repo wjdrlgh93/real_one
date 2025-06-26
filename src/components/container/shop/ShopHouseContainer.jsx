@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function HouseList() {
   const [houses, setHouses] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(null); // 선택된 아이템
+  const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:3001/house')
@@ -64,13 +66,26 @@ function HouseList() {
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <img src={`http://localhost:3001${selectedItem.img}`} alt={selectedItem.title} />
-            <h2> {selectedItem.category}</h2>
-            <p>size: {selectedItem.size.toLocaleString()}</p>
+            <h2>{selectedItem.title}</h2>
+            <p>{selectedItem.size?.toLocaleString()}</p>
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
-            <button onClick={closeModal} className="modal-close">CLOSE</button>
-            <a href="/cart" className="cart">
-            <img src="/images/cart.png" alt="장바구니로 이동"/>
-        </a>
+
+            {/* 오른쪽 하단 버튼 그룹 */}
+            <div className="right-buttons">
+              <button
+                onClick={() => navigate('/admin/order')}
+                className="admin-button" >주문처로 이동
+              </button>
+
+              <a href="/cart" className="cart-button">
+                <img src="/images/cart.png" alt="장바구니로 이동" />
+              </a>
+            </div>
+
+            {/* 모달 하단 중앙 닫기 버튼 */}
+            <div className="close-button">
+              <button onClick={closeModal} className="modal-close">닫기</button>
+            </div>
           </div>
         </div>
       )}

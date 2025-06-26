@@ -1,4 +1,4 @@
-.ShopHouseContainer {
+.ShopFashionContainer {
   padding-top: 400px;
   width: 100%;
   display: flex;
@@ -8,20 +8,21 @@
   background-color: bisque;
 }
 
-.ShopHouseContainer h2 {
+.ShopFashionContainer h2 {
   padding-top: 20px;
   font-size: 40px;
   color: black;
 }
 
-.ShopHouseContainer p {
+.ShopFashionContainer p {
   color: rgb(255, 53, 53);
   padding-top: 0.5vw;
 }
 
-.ShopHouseContainer .ShopHouseContainer-top,
-.ShopHouseContainer .ShopHouseContainer-middle,
-.ShopHouseContainer .ShopHouseContainer-bottom {
+.ShopFashionContainer .ShopFashionContainer-top,
+.ShopFashionContainer .ShopFashionContainer-middle,
+.ShopFashionContainer .ShopFashionContainer-bottom,
+.ShopFashionContainer .ShopFashionContainer-bottoms {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1vw;
@@ -30,7 +31,7 @@
   width: 80%;
 }
 
-.house-item {
+.Fashion-item {
   text-align: center;
   background: #f9f9f9;
   padding: 15px;
@@ -40,7 +41,7 @@
   cursor: pointer;
 }
 
-.house-item img {
+.Fashion-item img {
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -48,7 +49,7 @@
   margin-bottom: 10px;
 }
 
-.ShopHouseContainer .modal {
+.ShopFashionContainer .modal {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.6);
@@ -58,7 +59,7 @@
   z-index: 999;
 }
 
-.ShopHouseContainer .modal .modal-content {
+.ShopFashionContainer .modal .modal-content {
   position: relative;
   background: #fff;
   padding: 24px 32px;
@@ -74,7 +75,7 @@
   background-color: rgb(233, 247, 255);
 }
 
-.ShopHouseContainer .modal .modal-content img {
+.ShopFashionContainer .modal .modal-content img {
   width: 100%;
   max-height: 400px;
   object-fit: contain;
@@ -82,14 +83,14 @@
   margin-bottom: 16px;
 }
 
-.ShopHouseContainer .modal .modal-content h2 {
+.ShopFashionContainer .modal .modal-content h2 {
   font-size: 32px;
   margin-bottom: 8px;
   color: #000000;
   
 }
 
-.ShopHouseContainer .modal .modal-content p {
+.ShopFashionContainer .modal .modal-content p {
   font-size: 20px;
   color: rgb(255, 72, 48);
   padding-top: 20px;
@@ -97,7 +98,7 @@
 }
 
 /* 오른쪽 하단 버튼 */
-.ShopHouseContainer .modal .modal-content .right-buttons {
+.ShopFashionContainer .modal .modal-content .right-buttons {
   position: absolute;
   bottom: 16px;
   right: 16px;
@@ -106,7 +107,7 @@
   align-items: center;
 }
 
-.ShopHouseContainer .modal .modal-content .right-buttons .admin-button {
+.ShopFashionContainer .modal .modal-content .right-buttons .admin-button {
   padding: 8px 14px;
   font-size: 14px;
   background: rgb(0, 201, 60);
@@ -117,19 +118,19 @@
   cursor: pointer;
 }
 
-.ShopHouseContainer .modal .modal-content .right-buttons .cart-button {
+.ShopFashionContainer .modal .modal-content .right-buttons .cart-button {
   width: 28px;
   height: 36px;
 }
 
-.ShopHouseContainer .modal .modal-content .right-buttons .cart-button img {
+.ShopFashionContainer .modal .modal-content .right-buttons .cart-button img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
 /* 중앙 하단 닫기 버튼 */
-.ShopHouseContainer .modal .modal-content .close-button {
+.ShopFashionContainer .modal .modal-content .close-button {
   position: absolute;
   bottom: 16px;
   left: 50%;
@@ -137,7 +138,7 @@
   width: max-content;
 }
 
-.ShopHouseContainer .modal .modal-content .close-button .modal-close {
+.ShopFashionContainer .modal .modal-content .close-button .modal-close {
   padding: 10px 20px;
   font-size: 14px;
   background: #333;
