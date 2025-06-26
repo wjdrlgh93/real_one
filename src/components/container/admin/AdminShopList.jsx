@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
-import { Map } from 'react-kakao-maps-sdk';
+// import { Map } from 'react-kakao-maps-sdk';
 
-const { kakao } = window
+// const { kakao } = window
 
 
 const AdminShopList = () => {

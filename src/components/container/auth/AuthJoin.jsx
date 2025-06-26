@@ -57,6 +57,7 @@ const AuthJoin = () => {
             setjoin(prev => ({ ...prev, [name]: value }));
         }
     }
+
     const onLoginFn = ((e) => {
         e.preventDefault();
         const loginAxiosFn = async () => {
@@ -130,9 +131,6 @@ const AuthJoin = () => {
                 }, 0)
 
                 const newId = { ...join, id: (maxId + 1).toString() }
-
-
-
 
                 // axios> POST > JOINPage
                 // after Join Move LoginPage

@@ -76,7 +76,7 @@ const Header = () => {
         <div className="nav-middle-con">
           <h1 className="logo2">
             <Link to={"/shop"}>
-              <img src="/images/logo.png" alt="LOGO" width="150" height="100" />
+              <img src="/images/logo.png" alt="LOGO" width="125" height="90" />
             </Link>
           </h1>
         </div>
