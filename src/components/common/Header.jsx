@@ -8,20 +8,20 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
- 
+
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn") === "1";
     if (storedLogin && !isLogin) {
-      dispatch(loginUserFn()); 
+      dispatch(loginUserFn());
     }
   }, [dispatch, isLogin]);
 
   const handleLogout = (e) => {
     e.preventDefault();
-    dispatch(logOutUserFn());        
-    localStorage.removeItem("isLoggedIn"); 
+    dispatch(logOutUserFn());
+    localStorage.removeItem("isLoggedIn");
     alert("로그아웃 되었습니다.");
-    navigate("/");                 
+    navigate("/");
   };
 
   const items = useSelector(state => state.cart.items)
@@ -38,7 +38,7 @@ const Header = () => {
               {isLogin ? (
                 <>
                   <li>
-                 
+
                     <Link to="#" onClick={handleLogout}>
                       LOGOUT
                     </Link>
@@ -46,7 +46,7 @@ const Header = () => {
                   <li>
                     <Link to={"/admin/members"}>회원목록</Link>
                   </li>
-                 
+
                   {true && (
                     <li>
                       <Link to={"/admin"}>ADMIN</Link>
@@ -81,7 +81,7 @@ const Header = () => {
         <div className="nav-middle-con">
           <h1 className="logo2">
             <Link to={"/shop"}>
-              <img src="/images/logo.png" alt="LOGO" width="200" height="150" />
+              <img src="/images/logo.png" alt="LOGO" width="35" height="auto" />
             </Link>
           </h1>
         </div>

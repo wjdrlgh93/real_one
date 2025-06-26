@@ -84,3 +84,15 @@
     background: #142f3c80;
 
 }
+
+.bottom button {
+    all: unset;
+    cursor: pointer;
+    color: #0077d8;
+    margin: 4px;
+
+    background-color: #ffe8a2;
+    border: 1px solid black;
+
+    padding: 5px;
+}

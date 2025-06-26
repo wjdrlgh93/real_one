@@ -357,27 +357,37 @@
   "shopList": [
     {
       "id": "1",
-      "name": "노원점",
-      "address": "서울 노원구 상계동 593-1",
-      "subway": "4,7호선",
-      "bus": " 146",
-      "phone": "02-6953-2002",
+      "name": "상계역점",
+      "address": "서울특별시 노원구 중계동 586 상가동 1층 109호",
+      "subway": "4호선",
+      "bus": [
+        "405",
+        "409",
+        "433",
+        "456"
+      ],
+      "phone": "010-8676-2093",
       "fax": "010-000-0000",
-      "bg": "https://nowon.greenart.co.kr/upimage/new_campus/20220318180010.jpg",
-      "x": "127.06227580591",
-      "y": "37.6572131271659"
+      "bg": "https://postfiles.pstatic.net/MjAyNDA4MDFfMTk5/MDAxNzIyNTIwMzMwOTk0.UOtuAUN1osjKZzOCIri2dxu-2ptoJobEG5BcQ6_X53Ug.jrh8J8uaiiUzhrHGf24WtzvY3YyFiy6lUSAraYVRdwQg.JPEG/SE-b733a119-9a72-4a56-b103-8bf8d8b7bbc8.jpg?type=w966",
+      "x": "37.662805",
+      "y": "127.076091"
     },
     {
       "id": "2",
-      "name": "강남점",
-      "address": "서울 강남구 역삼동 635-10",
-      "subway": "2,7호선",
-      "bus": " 146",
+      "name": "쌍문점",
+      "address": "서울특별시 도봉구 도봉로110길 39-4",
+      "subway": "4호선",
+      "bus": [
+        "405",
+        "409",
+        "433",
+        "456"
+      ],
       "phone": "02-3481-1005",
       "fax": "010-000-0000",
-      "bg": "https://gangnam.greenart.co.kr/upimage/new_campus/20220405160748.png",
-      "x": "127.02907088439586",
-      "y": "37.50017190761103"
+      "bg": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fm.blog.naver.com%2Falsxmcb%2F222717256758&psig=AOvVaw1q9yqKtuXjzoYYRETlVCvj&ust=1750996769345000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKDgiLmZjo4DFQAAAAAdAAAAABAE",
+      "x": "37.646514",
+      "y": "127.035664"
     },
     {
       "id": "3",
@@ -406,7 +416,7 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "멍멍 축구공 장난감",
       "category": "toy",
       "price": 4900,
@@ -414,14 +424,14 @@
       "hoverImg": "ledBallHover.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "우프 강아지 토이볼 레드",
       "category": "toy",
       "price": 1900,
       "img": "redBall.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "반려견 테니스공 장난감",
       "category": "toy",
       "price": 1600,
@@ -429,193 +439,205 @@
       "hoverImg": "tennisBallHover.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "포포펫 삑삑이 장난감 공",
       "category": "toy",
       "price": 2600,
       "img": "soundBall.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "나나펫 강아지 컬러 볼 세트",
       "category": "toy",
       "price": 6000,
       "img": "colorBallSet.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "강아지 라텍스 공 장난감",
       "category": "toy",
       "price": 2300,
       "img": "yellowBall.png"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "플레이독 점프볼 장난감",
       "category": "toy",
       "price": 9800,
       "img": ""
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "댕댕월드 꽈배기 볼 장난감",
       "category": "toy",
       "price": 2500,
       "img": "ropeBall.jpg"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "럭키펫 간식 공",
       "category": "toy",
       "price": 5000,
       "img": ""
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "알록 터그 장난감",
       "category": "toy",
       "price": 4900,
       "img": "tugRYB.jpg"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "love dog 원형 터그 장난감",
       "category": "toy",
       "price": 4900,
       "img": "tugRound.jpg"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "터그 놀이",
       "category": "toy",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "터그 놀이",
       "category": "toy",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "인형",
       "category": "toy",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "인형",
       "category": "toy",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "인형",
       "category": "toy",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "인형",
       "category": "toy",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "포에버 베이비 파우더향 샴푸",
       "category": "bath",
       "price": 7600,
       "img": ""
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "포에버 오트밀 샴푸",
       "category": "bath",
       "price": 7600,
       "img": "oatmealShampoo.jpg"
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "하이솝 카밍 샴푸",
       "category": "bath",
       "price": 6300,
       "img": ""
     },
     {
-      "id": 21,
+      "id": "21",
       "title": "하이솝 모이스쳐 샴푸",
       "category": "bath",
       "price": 6300,
       "img": ""
     },
     {
-      "id": 22,
+      "id": "22",
       "title": "힐링도그 오가닉 샴푸",
       "category": "bath",
       "price": 8500,
       "img": ""
     },
     {
-      "id": 23,
+      "id": "23",
       "title": "인형",
       "category": "bath",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 24,
+      "id": "24",
       "title": "룰루도기 스마일 참빗",
       "category": "bath",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 25,
+      "id": "25",
       "title": "러브독 미용 빗",
       "category": "bath",
       "price": 5200,
       "img": ""
     },
     {
-      "id": 26,
+      "id": "26",
       "title": "러브독 얼굴 빗",
       "category": "bath",
       "price": 4500,
       "img": ""
     },
     {
-      "id": 27,
+      "id": "27",
       "title": "룰로도기 스마일 슬리커 브러쉬",
       "category": "bath",
       "price": 6300,
       "img": ""
     },
     {
-      "id": 28,
+      "id": "28",
       "title": "쉐드킬러 털 제거 브러쉬",
       "category": "bath",
       "price": 9800,
       "img": ""
     },
     {
-      "id": 29,
+      "id": "29",
       "title": "헬로독 슬리커",
       "category": "bath",
       "price": 8300,
       "img": ""
     },
     {
-      "id": 30,
+      "id": "30",
       "title": "하너디 소프트 브러쉬",
       "category": "bath",
       "price": 12000,
       "img": ""
+    },
+    {
+      "id": "31",
+      "title": "스윗 마이 펫 하우스",
+      "category": "house",
+      "price": "120000"
+    },
+    {
+      "id": "32",
+      "title": "안락한~ 마이 펫 하우스",
+      "category": "house",
+      "price": "90000"
     }
   ]
 }
