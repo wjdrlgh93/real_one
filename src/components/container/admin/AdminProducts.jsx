@@ -1,16 +1,50 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
+import testdb from '../../../db/testdb.json'
+
+const addData = {
+    title: '',
+    category: '',
+    price: ''
+}
+
+
 
 
 
 const AdminProducts = () => {
 
-    const [itemListObj, setItemListObj] = useState()
-    const [itemList, setItemList] = useState([])
+    // const itemListArray = Array.from({ length: testdb.products.length }, (_, i) => `Item ${i + 1}`);
+    // total Data  = JSON.data.legnth
+    // 15 item Per Pages
+    // Page button >   Preview / NEXT / NUMBER
+
+    const [itemListObj, setItemListObj] = useState({}) // Object init
+    const [itemList, setItemList] = useState([]) // Array init
     const [modalOpen, setModalOpen] = useState(false);
+    // add Product 
+    const [addItem, setAddItem] = useState(addData)
+    // CurrentPage
+    const [currentPage, setCurrentPage] = useState(1);
+    // Item Count Per Page
+    const itemsPerPage = 15;
+    // Total Page Num 
+    const totalPages = Math.ceil(itemList.length / itemsPerPage)
+    // Click Handler
+    const handleClick = (page) => {
+        setCurrentPage(page);
+    };
+
+    const getCurrentItems = () => {
+        // Index Start for Per PAges
+        const start = (currentPage - 1) * itemsPerPage;
+        // bring END Index
+        const end = start + itemsPerPage;
+        // Bring Items Per Page
+        return itemList.slice(start, end);
+    };
 
     const modalBackground = useRef()
-
 
     const onInputchangeFn = (e) => {
         const name = e.target.name;
@@ -32,13 +66,12 @@ const AdminProducts = () => {
         itemListFn()
     }, [])
 
-
-
     return (
         <>
 
             <h1 className='product-list'>상품목록</h1>
             <table className="product-list-con">
+
                 <tbody>
                     <tr>
                         <th>ID</th>
@@ -47,9 +80,10 @@ const AdminProducts = () => {
                         <th>가격</th>
                         <th>상세보기</th>
                     </tr>
-                    {itemList && itemList.map(el => {
+                    {/* {itemList && itemList.map((el, idx) => { */}
+                    {getCurrentItems().map((el, idx) => {
                         return (
-                            <tr>
+                            <tr key={el.id}>
                                 <td>{el.id}</td>
                                 <td>{el.title}</td>
                                 <td>{el.category}</td>
@@ -65,6 +99,25 @@ const AdminProducts = () => {
                     })}
                 </tbody>
             </table>
+            <div className="bottom">
+                {/* Preview Page */}
+                <button onClick={() => handleClick(currentPage - 1)} disabled={currentPage === 1}>
+                    &lt; Prev
+                </button>
+                {[...Array(totalPages)].map((_, idx) => {
+                    // idx Start from 0
+                    const page = idx + 1;
+                    return (
+                        <button
+                            key={page}
+                            onClick={() => handleClick(page)}
+                        >{page}</button>
+                    );
+                })}
+                {/* after ... page */}
+                <button onClick={() => handleClick(currentPage + 1)} disabled={currentPage === totalPages}>
+                    Next &gt;</button>
+            </div >
             {
                 modalOpen &&
                 <div className={"itemList-modal-container"} ref={modalBackground} onClick={e => {
