@@ -1,64 +1,96 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { addItemSelectorApi } from '../../../API/authAPI'
+import { Navigate, useNavigate } from 'react-router-dom'
+
+
+const addData = {
+    title: '',
+    category: '',
+    price: ''
+}
+
 
 const AdminProductAdd = () => {
 
-    const [itemListObj, setItemListObj] = useState({})
-    const [itemList, setItemList] = useState([])
+    const [addItem, setAddItem] = useState(addData)
 
+
+    const navi = useNavigate();
     const onInputchangeFn = (e) => {
         const name = e.target.name;
         const value = e.target.value
-        setItemListObj(prev => ({ ...prev, [name]: value }));
+        setAddItem(prev => ({ ...prev, [name]: value }));
     }
-
-
     const uploadFile = () => {
+        // temp function
         return
+    }
+    const addItemFn = (e) => {
+        e.preventDefault();
+        const dataURL = `http://localhost:3001/products`
+        if (!addItem.title) { alert(`상품명을 입력해주세요`); return; }
+        if (!addItem.category) { alert(`카테고리를 선택해주세요`); return; }
+        if (!addItem.price) { alert(`가격을 입력해주세요`); return; }
+
+        const AddItemAxiosFn = async () => {
+            try {
+                alert(`상품등록을 시도합니다. 잠시만 기다려주세요...`)
+                const resAPI = await addItemSelectorApi()
+
+                if (resAPI === null) { alert(`상품등록에 실패했습니다. 나중에 다시 시도해주세요...`); return }
+                // DB Primary KEY
+                const maxId = resAPI.reduce((max, item) => {
+                    const idNum = parseInt(item.id, 10); // 뒤에 10은 진법
+                    return idNum > max ? idNum : max
+                }, 0)
+
+                const newId = { ...addItem, id: (maxId + 1).toString() }
+
+                const AddItemOK = await axios.post(`${dataURL}`, newId)
+                navi('/admin/product')
+
+            } catch (err) { alert(err) }
+        }
+        AddItemAxiosFn()
     }
 
     useEffect(() => {
-
     })
 
-
-    // <td>{el.id}</td>
-    // <td>{el.title}</td>
-    // <td>{el.category}</td>
-    // <td>{el.price}</td>
 
     return (
         <div className="item-add">
             <h2>상품추가</h2>
             <div className="item-add-con">
                 <form>
-                    <div className='item-input'> ID :
-                        <input type="text" name="id" id="id" onChange={onInputchangeFn} /> </div>
+                    {/* <div className='item-input'> ID :
+                        <input type="text" name="id" id="id" onChange={onInputchangeFn} /> </div> */}
                     <div className='item-input'> 상품명 :
-                        <input type="text" name="title" id="title" onChange={onInputchangeFn} /> </div>
-                    <div className='item-input'> 카테고리 :
-                        <input type="text" name="category" id="category" onChange={onInputchangeFn} /> </div>
+                        <input type="text" name="title" id="title" value={addItem.title} onChange={onInputchangeFn} /> </div>
                     <div className='item-input'> 가격 :
-                        <input type="text" name="price" id="price" onChange={onInputchangeFn} /> </div>
-                    <div className='item-input'> 파일업로드
+                        <input type="text" name="price" id="price" value={addItem.price} onChange={onInputchangeFn} /> </div>
+                    <div className='item-input'>
+                        <li>
+                            <label htmlFor="category">카테고리</label>
+                            <select name="category" id="category" value={addItem.category}
+                                onChange={onInputchangeFn}>
+                                <option value='food' id='food' name='food' defaultValue>사료</option>
+                                <option value="snack" id='snack' name='snack'>간식</option>
+                                <option value="toy" id='toy' name='toy'>장난감</option>
+                                <option value="bath" id='bath' name='bath'>목욕</option>
+                                <option value="house" id='house' name='house'>하우스</option>
+                                <option value="fashion" id='fashion' name='fashion'>패션</option>
+                            </select>
+                        </li>
+                    </div>
+                    <div className='item-input'> 이미지업로드
 
                         <button onClick={uploadFile}>업로드</button>
                     </div>
                 </form>
-                <li>
-                    <label htmlFor="role">카테고리</label>
-                    <select name="role" id="role"
-                        onChange={onInputchangeFn}>
-                        <option value='category' defaultValue>사료</option>
-                        <option value="snack">간식</option>
-                        <option value="toy">장난감</option>
-                        <option value="bath">목욕</option>
-                        <option value="house">하우스</option>
-                        <option value="fashion">패션</option>
-                    </select>
-                </li>
 
-                <button>추가</button>
+                <button onClick={addItemFn}>추가</button>
             </div>
         </div>
     )

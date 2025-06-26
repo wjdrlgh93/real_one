@@ -47,8 +47,9 @@
     align-items: center;
     text-align: center;
 
-
+    margin: 2px;
 }
+
 
 .item-input input {
     width: 140%;
@@ -59,6 +60,23 @@
     align-items: center;
     text-align: center;
 
-    padding: 3px;
+    margin: 5px;
 
+}
+
+.item-input label {
+
+    padding: 20px;
+    width: 100px;
+    /* display: flex; */
+    flex-direction: column;
+
+}
+
+.item-input select {
+    width: 100px;
+    margin: 5px;
+
+    display: flex;
+    text-align: center;
 }
