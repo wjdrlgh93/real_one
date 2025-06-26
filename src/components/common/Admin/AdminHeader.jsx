@@ -10,8 +10,8 @@ const AdminHeader = () => {
 
         if (ct === 'MEMBERS')
             Navigate('/admin/members')
-        else if (ct === 'CART')
-            Navigate('/admin/cart')
+        else if (ct === 'DASHBOARD')
+            Navigate('/admin/dashboard')
         else if (ct === 'PAYMENTS')
             Navigate('/admin/paym')
         else if (ct === 'SHOPLIST')
@@ -30,7 +30,7 @@ const AdminHeader = () => {
                 <ul id='menu'>
                     <li><img src='/images/logo.png' /></li>
                     <li onClick={liClick}>MEMBERS</li>
-                    <li onClick={liClick}>CART</li>
+                    <li onClick={liClick}>DASHBOARD</li>
                     <li onClick={liClick}>PAYMENTS</li>
                     <li onClick={liClick}>SHOPLIST</li>
                     <li onClick={liClick}>PRODUCTS</li>
