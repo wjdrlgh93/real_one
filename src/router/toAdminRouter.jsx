@@ -6,7 +6,7 @@ const Loading = <div className='loading'>Loading...</div>
 
 const AdminIndex = lazy(() => import('../components/container/admin/AdminIndex'))
 
-const AdminCarts = lazy(() => import('../components/container/admin/AdminCarts'))
+const AdminDashBoard = lazy(() => import('../components/container/admin/AdminDashBoard'))
 const AdminMembers = lazy(() => import('../components/container/admin/AdminMembers'))
 const AdminPayments = lazy(() => import('../components/container/admin/AdminPayments'))
 const AdminProduct = lazy(() => import('../components/container/admin/AdminProducts'))
@@ -34,8 +34,8 @@ const toAdminRouter = () => {
             },
             {
                 // admin/cart
-                path: 'cart',
-                element: <Suspense fallback={Loading}><AdminCarts /></Suspense>
+                path: 'dashboard',
+                element: <Suspense fallback={Loading}><AdminDashBoard /></Suspense>
             },
             {
                 // admin/payments
