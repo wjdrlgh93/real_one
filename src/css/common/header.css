@@ -82,6 +82,7 @@
 
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .header .nav-bottom {
@@ -128,7 +129,28 @@
     transition: color 0.3s ease;
 }
 
-.nav-middle-con .logo2 a {
+.logo {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.logo2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo2 img {
+    display: flex;
+    width: 30%;
+    height: auto;
+}
+
+.logo2 a {
     display: flex;
     justify-content: center;
     align-items: center;
