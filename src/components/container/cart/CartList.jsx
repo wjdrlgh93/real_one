@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { allCheckedFalse, allCheckedTrue, checkedChange, decreaseCount, deleteCart, increaseCount,setPaymentItems } from '../../../slices/cartSlice'
@@ -24,6 +24,10 @@ const CartList = () => {
   //     cartItems.forEach((item) => dispatch(allCheckedFalse(cartItems.id)))
   //   }
   // }
+
+  useEffect(() => {
+    dispatch(allCheckedTrue())
+  }, [dispatch])
 
   let totalSelectedPrice = 0;
   cartItems.forEach(item => {
@@ -77,10 +81,13 @@ const CartList = () => {
       alert('선택된 상품이 없습니다.')
       return
     }
-      window.confirm('주문을 진행하겠습니까?')
-      dispatch(setPaymentItems(checkedList))
-      navigate('/payment')
+      if(window.confirm('주문을 진행하겠습니까?') ){
+        dispatch(setPaymentItems(checkedList))
+        navigate('/payment')
+
+      }
     }
+    
     
     console.log(setPaymentItems(checkedList))
   
@@ -135,8 +142,8 @@ const CartList = () => {
                   )
                 })}
                 <div className="select-all">
-                  <button onClick={() => allChecked ? dispatch(allCheckedFalse()) : dispatch(allCheckedTrue())}>전체 선택</button>
-                  <button onClick={deleteSelected}>선택 삭제</button>
+                  <button className='all' onClick={() => allChecked ? dispatch(allCheckedFalse()) : dispatch(allCheckedTrue())}>전체 선택</button>
+                  <button className='delete' onClick={deleteSelected}>선택 삭제</button>
                 </div>
               </ul>
             </div>

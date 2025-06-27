@@ -38,12 +38,16 @@ const root = createBrowserRouter([
     },
     {
         // 숍리스트  -> shop
-        path: 'cart',
+        path: '',
         element: <Suspense fallback={Loading}><CartLayout /></Suspense>,
         children: [
             {
-                path:'',
-                element:<Suspense fallback={Loading}><CartList/></Suspense>
+                path: 'cart',
+                element: <Suspense fallback={Loading}><CartList /></Suspense>
+            },
+            {
+                path: 'payment',
+                element: <Suspense fallback={Loading}><OrderPayment /></Suspense>
             }
         ]
     },
@@ -52,10 +56,6 @@ const root = createBrowserRouter([
         path: 'admin',
         element: <Suspense fallback={Loading}><AdminLayout /></Suspense>,
         children: toAdminRouter()
-    },
-    {
-        path: 'payment',
-        element: <Suspense fallback={Loading}><OrderPayment /></Suspense>,
     }
 ])
 

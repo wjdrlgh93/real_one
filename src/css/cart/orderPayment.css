@@ -1,0 +1,210 @@
+.paymentList {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 10vmin;
+  padding-top: 150px;
+  box-sizing: border-box;
+
+  /* overflow-y: scroll;
+  overflow: visible; */
+  display: flex;
+  justify-content: space-between;
+
+  
+}
+.paymentList .paymentList-left {
+  
+  flex: 7;
+  padding: 10vw 5vw;
+  box-sizing: border-box;
+
+}
+
+.paymentList .paymentList-right {
+
+  flex: 3;
+  padding: 10vw 5vw;
+  box-sizing: border-box;
+}
+
+.paymentList .paymentList-left .paymentItemList {
+  width: 66%;
+
+}
+
+.paymentList .paymentList-left .paymentItem-con {
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  gap: 30px;
+}
+
+.paymentList .paymentList-left ul {
+}
+.paymentList .paymentList-left ul li{
+  
+}
+
+
+.paymentList .paymentList-left .paymentItem-con .paymentItemList>ul>li .paymentItem {
+  border-bottom: 1px solid #cccccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1vw;
+  box-sizing: border-box;
+
+  font-family: 'KBO Dia Gothic_light';
+}
+
+.paymentList .paymentList-left .paymentItem-con .paymentItemList ul li .top {
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1vw;
+  width: 60%;
+}
+
+.paymentList .paymentList-left .paymentItem-con .paymentItemList ul li img {
+  display: block;
+  width: 15%;
+  /* border: 1px solid #000000; */
+  box-sizing: border-box;
+}
+
+.paymentList .paymentList-left .paymentItem-con .paymentItemList ul li .bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1vw;
+}
+
+.paymentItem-con .paymentItemList .paymentItem .top .top-con {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 5px;
+}
+
+.paymentItemList .paymentItem .top .top-con span.top-price {
+  font-size: smaller;
+  color: #757576;
+}
+
+/* .paymentList .paymentList-left .paymentItem-con .paymentItemList ul li .bottom .paymentCount {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1vw;
+}
+
+.paymentList .paymentList-left .paymentItem-con .paymentItemList ul li .bottom .paymentCount {
+  display: flex;
+  flex-direction: column;
+} */
+
+.paymentList .paymentList-left .paymentItem-con .payment {
+  width: 30%;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0.1vw;
+  padding-top: 2vmax;
+  box-sizing: border-box;
+}
+
+.paymentList .paymentList-left .paymentItem-con .payment .payment-sub {
+  font-family: 'KBO Dia Gothic_light';
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+
+  gap: 1.5vmin;
+}
+
+.payment-sub span.sum-price {
+  display: flex;
+  font-size: large;
+}
+
+.payment-sub span.sum-count {
+  font-size: smaller;
+}
+
+.paymentList-left .paymentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10vmin;
+  padding-top: 10vmin;
+  box-sizing: border-box;
+
+  font-family: 'KBO Dia Gothic_light';
+}
+
+.paymentList h3 {
+  border-bottom: 2px solid #acacac;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 1vw;
+  box-sizing: border-box;
+  
+  font-size: 20px;
+  font-family: 'KBO Dia Gothic_bold';
+  letter-spacing: 0.2rem;
+}
+
+.paymentList-left .paymentInfo .paymentMethod {
+  
+}  
+
+.paymentList-left .paymentInfo .paymentMethod .paymentMethod-con {
+  display: flex;
+  flex-direction: column;
+  gap: 3vmin;
+
+  padding: 0 3vmin;
+  padding-top: 3vmin;
+  box-sizing: border-box;
+}
+
+.paymentList-left .paymentInfo .paymentMethod .paymentMethod-con label {
+  display: flex;
+  gap: 1vmin;
+}
+
+.paymentList-right .paymentResult {
+  padding: 3vmin 1.5vmin;
+  box-sizing: border-box;
+}
+
+.paymentList-right .paymentResult span {
+  font-family: 'KBO Dia Gothic_light';
+}
+
+.paymentList-right .paymentResult button {
+  height: 3rem;
+  width: 20vmin;
+  background-color: #3674B5;
+
+  border-radius: 200px;
+  border: none;
+
+  font-size: 1.7vmin;
+  color: #ffffff;
+  font-family: 'KBO Dia Gothic_light';
+  letter-spacing: 0.1rem;
+}
+
+.paymentList-right .paymentResult button:hover {
+  background-color: #FADA7A;
+  cursor: pointer;
+
+  color: #484747;
+}
