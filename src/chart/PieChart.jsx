@@ -15,7 +15,7 @@ const PieChart = () => {
 
     useEffect(() => {
         const ageGroups = {
-            '10대 이하': 0,
+            // '10대 이하': 0,
             '10대': 0,
             '20대': 0,
             '30대': 0,
@@ -27,8 +27,8 @@ const PieChart = () => {
             const age = parseInt(rawAge);
 
             if (!isNaN(age)) {
-                if (age < 10) ageGroups['10대 이하']++;
-                else if (age < 20) ageGroups['10대']++;
+                // if (age < 10) ageGroups['10대 이하']++;
+                if (age < 20) ageGroups['10대']++;
                 else if (age < 30) ageGroups['20대']++;
                 else if (age < 40) ageGroups['30대']++;
                 else ageGroups['40대 이상']++;
@@ -47,15 +47,15 @@ const PieChart = () => {
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.7)',
                         'rgba(54, 162, 235, 0.7)',
-                        'rgba(255, 206, 86, 0.7)',
-                        'pink',
+                        'purple',
+                        'yellow',
                         'blue'
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
                         'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'pink',
+                        'purple',
+                        'yellow',
                         'blue'
                     ],
                     borderWidth: 1
