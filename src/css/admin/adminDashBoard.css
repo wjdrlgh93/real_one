@@ -71,8 +71,8 @@
 }
 
 .PieChart-con canvas {
-    height: 60%;
-    width: 60%;
+    height: auto !important;
+    width: 100% !important;
 
     background-color: #f2f2f2;
     margin: 1vmax;
