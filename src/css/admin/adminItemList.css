@@ -85,6 +85,19 @@
 
 }
 
+.bottom {
+    /* display: flex; */
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 10px;
+}
+
+.bottom input {
+    width: 40%;
+
+}
+
 .bottom button {
     all: unset;
     cursor: pointer;
@@ -95,4 +108,25 @@
     border: 1px solid black;
 
     padding: 5px;
+}
+
+.search-list-con {
+    background-color: #e5e5e5;
+}
+
+.search-list-con th {
+    background-color: #33abbd;
+    color: #ffffff;
+
+    font-size: 13px;
+    padding: 0.5vw;
+    word-break: break-all;
+}
+
+.search-list-con td {
+
+    text-align: center;
+    padding: 0.8vw;
+    font-size: 12px;
+    word-break: break-all;
 }
