@@ -1,0 +1,222 @@
+/* 전체 레이아웃 */
+.house-detail-page {
+    max-width: 1080px;
+    margin: 30px auto 80px;
+    padding: 0 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding-top: 300px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 80px 0;
+    font-size: 1.25rem;
+    color: #666;
+  }
+  
+  /* 헤더 */
+  .house-detail-header {
+    border-bottom: 2px solid #eee;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+  }
+  
+  .house-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+  }
+  
+  /* 본문 */
+  .house-detail-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  
+  .house-image-gallery {
+    flex: 1 1 480px;
+    max-width: 480px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: #fafafa;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+  }
+  
+  .house-info {
+    flex: 1 1 440px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  }
+  
+  .house-price {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #E25822;
+    font-weight: 800px;
+  }
+  
+
+  
+  .house-size {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .house-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* 버튼 영역 */
+  .house-actions {
+    display: flex;
+    gap: 16px;
+  }
+  
+  .house-actions button {
+    flex: 1;
+    padding: 14px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+    color: #fff;
+    box-shadow: 0 5px 10px rgb(226 88 34 / 0.5);
+  }
+  
+  .btn-cart {
+    background-color: #E25822;
+  }
+  
+  .btn-cart:hover {
+    background-color: #c14719;
+    box-shadow: 0 6px 14px rgb(193 71 25 / 0.6);
+  }
+  
+  .btn-order {
+    background-color: #f08e49;
+  }
+  
+  .btn-order:hover {
+    background-color: #d9791e;
+    box-shadow: 0 6px 14px rgb(215 121 30 / 0.6);
+  }
+  
+  /* 탭 컨테이너 */
+  .detail-tabs-container {
+    margin-top: 60px;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* 탭 메뉴 */
+  .tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 0;
+    border-bottom: 2px solid #eaeaea;
+    justify-content: center; /* 가운데 정렬 */
+    gap: 28px;
+  }
+  
+  .tab-item {
+    padding: 14px 22px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #666;
+    border-bottom: 3px solid transparent;
+    user-select: none;
+    transition: color 0.3s, border-color 0.3s;
+  }
+  
+  .tab-item:hover {
+    color: #E25822;
+  }
+  
+  .tab-item.active {
+    border-color: #E25822;
+    color: #E25822;
+    font-weight: 700;
+  }
+  
+  /* 탭 콘텐츠 */
+  .tab-content {
+    max-width: 700px;
+    margin: 24px auto 0 auto;
+    background: #fff;
+    padding: 28px 24px;
+    border: 1px solid #eaeaea;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+    min-height: 220px;
+    box-sizing: border-box;
+  }
+  
+  .detail-images {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .detail-images img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    cursor: default;
+    transition: none;
+  }
+  
+  .detail-images img:hover {
+    transform: none;
+  }
+
+  .tab-content .exchange-content .exchange-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 반응형 */
+  @media (max-width: 768px) {
+    .house-detail-body {
+      flex-direction: column;
+    }
+  
+    .house-image-gallery,
+    .house-info {
+      max-width: 100%;
+    }
+  
+    .tab-content {
+      max-width: 100%;
+      padding: 20px 16px;
+    }
+  }
+  
