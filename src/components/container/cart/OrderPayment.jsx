@@ -1,18 +1,54 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { removePaidItems } from '../../../slices/cartSlice';
+import KakaoMap from '../../../API/kakaoApITest';
+import { addPayment } from '../../../slices/paymentSlice';
 
+const today = new Date(); // 현재 날짜
+const formattedDate = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`
+
+// const accountData = {
+//   shop:payData.shop,
+//   paymentMethod: payData.paymentMethod,
+//   member: loginUser[0].id,
+//   orderAddress: loginUser[0].address,
+//   paymentResult: cartItems,
+//   paymentAmount: totalPrice,
+//   time: formattedDate
+// }
 const paymentPre = {
   shop: "",
   paymentMethod:"",
+  member: '',
+  orderAddress: '',
   paymentResult:[],
-  paymentAmount:''
+  paymentAmount: ''
 }
+
 const OrderPayment = () => {
-  
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  
+  const paymentItems = useSelector(state => state.cart.paymentItems)
+  const loginUser = useSelector(state => state.auth.isUser)
+  console.log('OrderPayment에서 로그인 유저:', loginUser)
+  const isLogin = useSelector(state => state.auth.isLogin)  
+  const isState = useSelector(state => state.auth.isState)
+  const payment = useSelector(state => state.payment)
+  
   const [payData, setPayData] = useState(paymentPre)
+  
+  let totalPrice = 0
+  paymentItems.forEach((item) => {
+    totalPrice += item.price * item.count
+  })
+  
+  let totalAmount = 0;
+  paymentItems.forEach((item) => {
+    totalAmount += item.count
+  })
   
   const paymentMethodChange = (e) => {
     setPayData({
@@ -21,55 +57,147 @@ const OrderPayment = () => {
     })
   }
 
-  const paymentItems = useSelector(state => state.cart.paymentItems)
- 
-  const loginUser = useSelector(state => state.auth.isUser)
-console.log('OrderPayment에서 로그인 유저:', loginUser)
 
-  const isLogin = useSelector(state => state.auth.isLogin)
-  const isState = useSelector(state => state.auth.isState)
-  const payment = useSelector(state => state.payment)
-  // const shopList = useSelector(state => state.shop.shopList)
+  // 주문자 정보 입력 칸
   const [sameAsUser, setSameAsUser] = useState(false)
-  const [ordererInfo, setOredererInfo] = useState({
-    name:'',
-    email:'',
+  const [ordererInfo, setOrdererInfo] = useState({
+    userName:'',
+    userEmail:'',
     address:''
   })
 
-  console.log('loginUser:', loginUser)
-  const isSameAsUser = (e) => {
-    const checked = e.target.checked
-    setSameAsUser(checked)
-    if (checked && loginUser) {
-      setOredererInfo({
-        name:loginUser.userName,
-        email:loginUser.userEmail,
-        address:loginUser.address
+  useEffect(() => {
+    if (sameAsUser && loginUser) {
+      setOrdererInfo({
+        userName: loginUser.userName || '',
+        userEmail: loginUser.userEmail || '',
+        address: loginUser.address || '',
       })
-    } else {
-      setOredererInfo({
-        name:'',
-        email:'',
-        address:''
+    } else if (!sameAsUser) {
+      setOrdererInfo({
+        userName:'',
+        userEmail:'',
+        address:'',
       })
     }
+  }, [sameAsUser, loginUser])
+
+  const userChange =  (e) => {
+    const {name, value} = e.target
+    setOrdererInfo(el => ({ ...el, [name]: value}))
   }
 
-  console.log(loginUser?.name)  
+  console.log('loginUser:', loginUser)
 
-  console.log(paymentItems)
-  let totalPrice = 0
-  paymentItems.forEach((item) => {
-    totalPrice += item.price * item.count
-  })
+  // const isSameAsUser = (e) => {
+  //   const checked = e.target.checked
+  //   setSameAsUser(checked)
+  //   if (checked && loginUser) {
+  //     setOredererInfo({
+  //       name:loginUser.userName,
+  //       email:loginUser.userEmail,
+  //       address:loginUser.address
+  //     })
+  //   } else {
+  //     setOredererInfo({
+  //       name:'',
+  //       email:'',
+  //       address:''
+  //     })
+  //   }
+  // }
 
-  let totalAmount = 0;
-  paymentItems.forEach((item) => {
-    totalAmount += item.count
-  })
 
-  // useEffect
+  // 주문처 선택
+  const [shopList, setShopList] = useState([])
+  const [selectStore, setSelectStore] = useState()
+  const [mapVisibleId, setMapVisibleId] = useState(null)
+
+  useEffect(() => {
+    const fetchShopList = async() => {
+      try {
+        const res = await axios.get('http://localhost:3001/shopList')
+        setShopList(res.data)
+      } catch (error) {
+      console.eroor('매장 리스트 로딩 실패: ', error)
+      }
+    }
+    fetchShopList()
+  }, [])
+  
+  // const toggleStore = (id) => {
+  //   setSelectedStore(prev =>
+  //     prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
+  //   )
+  // }
+
+  const selectedStore = (id) => {
+    setSelectStore(id)
+  }
+  const showMap = (id) => {
+    setMapVisibleId(prev => (prev === id ? null : id))
+  }
+
+  // 결제하기 버튼 함수
+  const paymentBtn = async (e) => {
+    e.preventDefault();
+
+    if (!loginUser || !isLogin) {
+      alert('로그인이 필요합니다.')
+      return
+    }
+
+    if (!payData.paymentMethod) {
+      alert('결제 수단을 선택해주세요.')
+      return
+    }
+
+    if (!payData.shop) {
+      alert('주문처를 선택해주세요.')
+      return
+    }
+
+    if (!sameAsUser) {
+      const {userName, userEmail, address} = ordererInfo
+
+      if (
+      userName.trim() === "" ||
+      userEmail.trim() === "" ||
+      address.trim() === ''
+      ) {
+      alert('주문자 정보를 모두 입력해 주세요.')
+      return
+      }
+    }
+    const selectedStoreData = shopList.find(store => store.id === selectStore)
+
+    const newOrder = {
+      userId: loginUser.id,
+      userName: loginUser.userName,
+      userEmail: loginUser.userEmail,
+      paymentMethod: payData.paymentMethod,
+      paymentResult: paymentItems,
+      paymentAmount: totalPrice,
+      shop: payData.shop,
+      date: formattedDate,
+      orderer: ordererInfo
+    }
+
+    try {
+      await axios.post('http://localhost:3001/orders', newOrder)
+
+      dispatch(removePaidItems());
+
+      alert('결제가 완료되었습니다.')
+      dispatch(addPayment(newOrder))
+      navigate('')
+
+    } catch(error) {
+      console.error('주문실패:', error)
+      alert('결제 처리 중 오류가 발생했습니다.')
+    }
+
+  }
 
   return (
     <div className="paymentList">
@@ -170,7 +298,7 @@ console.log('OrderPayment에서 로그인 유저:', loginUser)
                 <input 
                   type="checkbox"
                   checked={sameAsUser}
-                  onChange={isSameAsUser}
+                  onChange={(e) => setSameAsUser(e.target.checked)}
                 />
                 회원 정보와 동일
               </label>              
@@ -180,24 +308,27 @@ console.log('OrderPayment에서 로그인 유저:', loginUser)
                 <label>이름</label>
                 <input
                 type="text"
-                value={ordererInfo.name}
-                onChange={(e) => setOredererInfo({ ...ordererInfo, name: e.target.value})}
+                name="userName"
+                value={ordererInfo.userName}
+                onChange={userChange}
                 disabled={sameAsUser}/>
               </div>
               <div>                
                 <label>Email</label>
                 <input
                 type="text"
-                value={ordererInfo.email}
-                onChange={(e) => setOredererInfo({ ...ordererInfo, email: e.target.value})}
+                name="userEmail"
+                value={ordererInfo.userEmail}
+                onChange={userChange}
                 disabled={sameAsUser}/>
               </div>
               <div>
               <label>주소</label>
                 <input
                 type="text"
+                name="address"
                 value={ordererInfo.address}
-                onChange={(e) => setOredererInfo({ ...ordererInfo, name: e.target.value})}
+                onChange={userChange}
                 disabled={sameAsUser}/>
               </div>
             </div>
@@ -205,21 +336,56 @@ console.log('OrderPayment에서 로그인 유저:', loginUser)
           <div className="orderShopInfo">
             <div className="orderShopInfo-con">
               <h3>주문처</h3>
+              <ul>
+                {shopList.map(store => (
+                  <li key={store.id}>
+                    <label>
+                      <input 
+                       type="radio"
+                       name='store'
+                       checked={selectStore === store.id}
+                       onChange={() => {
+                        setSelectStore(store.id)
+                        setPayData(prev => ({
+                          ...prev,
+                          shop: store.name
+                        }))
+                       }} 
+                      />
+                     {store.name}
+                    </label>
+                    <button onClick={() => showMap(store.id)}>
+                      지도 보기
+                    </button>
+                    {mapVisibleId === store.id && (<div>
+                      <KakaoMap lat={store.x} lng={store.y}/>
+                    <p>{store.address}</p>
+                    </div>
+                  )}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>         
         </div>
       </div>
       <div className="paymentList-right">
-        <h3>상세 결제 정보</h3>
+        <h3>상세 주문 정보</h3>
         <div className="paymentResult">
-          <span className="sum-price">총 결제 금액: { totalPrice } 원</span>
+          <div className="ordererInfo">
+            <h4>주문자 정보</h4>
+            <span><strong>이름: </strong>{ordererInfo.userName}</span>
+            <span><strong>이메일: </strong>{ordererInfo.userEmail}</span>
+            <span><strong>주소: </strong>{ordererInfo.address}</span>
+          </div>
+          <div className="paymentInfo">
+            <h4>결제 정보</h4>
+            <span><strong>결제 방법: </strong>{payData.paymentMethod}</span>
+            <span><strong>주문처: </strong>{payData.shop}</span>
+          </div>
+          <span className="sum-price"><strong>총 결제 금액: </strong>{ totalPrice } 원</span>
           <div className="order-result">
-            <button 
-            // onClick={(e) => {
-            //   e.preventDefault()
-            //   haderModalFn('paymentPre')
-            // }}
-            >결제하기</button>      
+            <button onClick={paymentBtn}>결제하기</button>      
         </div>
         </div>
       </div>

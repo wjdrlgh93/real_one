@@ -242,14 +242,20 @@
 .cartItemList ul .select-all button.all {
   border: none;
   border-radius: 5px;
-  background-color: #3673b5b3;
   height: 3vh;
-  width: 7vh;
-
+  width: 7vh;  
+  background-color: #3673b5b3;
+ 
   font-size: 1.5vh;
   color: #ffffff;
   font-family: 'KBO Dia Gothic_light';
 }
+
+.cartItemList ul .select-all button.all:hover {
+  cursor: pointer;
+  background-color: #fada7adc;
+}
+
 .cartItemList ul .select-all button.delete {
   border: none;
   border-radius: 5px;
@@ -260,4 +266,9 @@
   font-size: 1.5vh;
   color: #ffffff;
   font-family: 'KBO Dia Gothic_light';
+}
+
+.cartItemList ul .select-all button.delete:hover {
+  cursor: pointer;
+  background-color: #3673b5b3;
 }

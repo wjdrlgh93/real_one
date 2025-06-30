@@ -31,7 +31,7 @@ const BathDetail = () => {
   }
 
   useEffect(() => {
-    const productURL = `http://localhost:3001/grooming`
+    const productURL = `http://localhost:3001/products`
 
     const productFn = async (id) => {
       try{

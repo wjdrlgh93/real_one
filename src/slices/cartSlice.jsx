@@ -75,6 +75,11 @@ const cartSlice = createSlice({
     },
     clearCart: (state) => {
       state.items = []
+    },
+    removePaidItems: (state) => {
+      const paidId = state.paymentItems.map(item => item.id)
+      state.items = state.items.filter(item => !paidId.includes(item.id))
+      state.paymentItems = []
     }
   },
   extraReducers: (builder) => {
@@ -103,5 +108,5 @@ export const asyncAdminCartsFetch = createAsyncThunk('cart/asyncAdminCartsFetch'
   }
 )
 
-export const {deleteCart, addCart, increaseCount, decreaseCount, deleteAllCart, deleteItem, checkedChange, allCheckedFalse, allCheckedTrue, setPaymentItems, clearCart } = cartSlice.actions
+export const {deleteCart, addCart, increaseCount, decreaseCount, deleteAllCart, deleteItem, checkedChange, allCheckedFalse, allCheckedTrue, setPaymentItems, clearCart, removePaidItems } = cartSlice.actions
 export default cartSlice

@@ -19,7 +19,7 @@ const ProductDetail = () => {
   const [count, setCount] = useState(1)
   
   useEffect(() => {
-    const productURL = `http://localhost:3001/toy`
+    const productURL = `http://localhost:3001/products`
     
     const productFn = async (id) => {
       try{

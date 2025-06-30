@@ -23,10 +23,13 @@ const paymentSlice = createSlice({
     },
     setPaymentItems(state, action) {
       state.paymentItems = action.payload
+    },
+    pushPaymentData : (state, action) => {
+      state.paymentData.push(action.payload)
     }
   }
 })
 
 // export const asyncAdminPaymentsFetch = createAsyncThunk('admin/asyncAdmin')
-export const { addPayment, setPaymentItems } = paymentSlice.actions
+export const { addPayment, setPaymentItems, pushPaymentData } = paymentSlice.actions
 export default paymentSlice

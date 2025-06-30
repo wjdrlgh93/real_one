@@ -3,16 +3,28 @@ import { Link } from 'react-router-dom'
 
 const ShopToyContainer = () => {
 
-    const [toyList, setToyList] = useState()
+    const [productsList, setProductsList] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:3001/toy`
+        const url = `http://localhost:3001/products`
 
         fetch(url)
         .then(res => res.json())
-        .then(jsonData => setToyList(jsonData))
+        .then(jsonData => setProductsList(jsonData))
         // .catch(err => console.log(err))
     },[])
+
+    const [toyList, setToyList] = useState([])
+
+    useEffect(() => {
+        const toyFn = () => {
+            const toyArr = productsList.filter(el => {
+                return el.category === 'toy'
+            })
+            setToyList(toyArr)
+        }
+        toyFn()
+    }, [productsList])
     
     const [isHovered, setIsHovered] = useState(null)
 
