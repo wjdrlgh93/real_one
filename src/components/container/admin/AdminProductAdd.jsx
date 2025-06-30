@@ -1,8 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { addItemSelectorApi } from '../../../API/authAPI'
-import { Navigate, useNavigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom'
 
 const addData = {
     title: '',
@@ -14,6 +13,9 @@ const addData = {
 const AdminProductAdd = () => {
 
     const [addItem, setAddItem] = useState(addData)
+    const [subOp, setSubOp] = useState([])
+    //for Search 
+
 
 
     const navi = useNavigate();
@@ -21,7 +23,21 @@ const AdminProductAdd = () => {
         const name = e.target.name;
         const value = e.target.value
         setAddItem(prev => ({ ...prev, [name]: value }));
-    }
+
+        if (name === "category") {
+            const options = {
+                food: ["건식사료", "습식사료", "생식"],
+                snack: ["육포", "트릿", "기타"],
+                toy: ["씹는장난감", "노즈워크", "공", "터그", "인형", "기타"],
+                bath: ["삼푸", "린스", "수건", "드라이어", "브러시"],
+                house: ["실내용", "실외용"],
+                fashion: ["티셔츠", "원피스", "올인원", "커플룩", "소품"]
+            };
+            setSubOp(options[value] || []);
+            // 선택된 category 바뀌면 sub 도 초기화
+            setAddItem(prev => ({ ...prev, sub: '' }));
+        }
+    };
     const uploadFile = () => {
         // temp function
         return
@@ -55,6 +71,8 @@ const AdminProductAdd = () => {
         AddItemAxiosFn()
     }
 
+
+
     useEffect(() => {
     })
 
@@ -84,6 +102,18 @@ const AdminProductAdd = () => {
                             </select>
                         </li>
                     </div>
+                    {/* ✅ category 선택 시 서브 옵션 렌더링 */}
+                    {subOp.length > 0 && (
+                        <div className='item-input'>
+                            <label htmlFor="sub">세부항목</label>
+                            <select name="sub" id="sub" value={addItem.sub} onChange={onInputchangeFn}>
+                                <option value="">세부항목 선택</option>
+                                {subOp.map((opt, idx) => (
+                                    <option key={idx} value={opt}>{opt}</option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
                     <div className='item-input'> 이미지업로드
 
                         <button onClick={uploadFile}>업로드</button>

@@ -6,11 +6,11 @@ function HouseList() {
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
 
-  const [dogPage, setdogPage] = useState(1);
-  const [catPage, setcatPage] = useState(1);
-  const [petPage, setpetPage] = useState(1);
+  // const [dogPage, setdogPage] = useState(1);
+  // const [catPage, setcatPage] = useState(1);
+  // const [petPage, setpetPage] = useState(1);
 
-  const itemsPerPage = 6;
+  // const itemsPerPage = 6;
 
   useEffect(() => {
     fetch('http://localhost:3001/house')
@@ -23,14 +23,13 @@ function HouseList() {
   const catHouses = houses.filter(item => item.category === 'CatHouse');
   const petHouses = houses.filter(item => item.category === 'Pethouse');
 
-  // 페이징 함수
-  const getCurrentItems = () => {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    return items.slice(start, end);
-  };
+  // // 페이징 함수
+  // const getCurrentItems = () => {
+  //   // const start = (currentPage - 1) * itemsPerPage;
+  //   const end = start + itemsPerPage;
+  //   return items.slice(start, end);
+  // };
 
-  
 
   const openModal = (item) => {
     setSelectedItem(item);
