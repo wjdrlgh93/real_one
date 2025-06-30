@@ -7,7 +7,7 @@
     color: #222;
     background-color: #fff;
     box-sizing: border-box;
-    padding-top: 300px;
+    /* padding-top: 300px; */
   }
   
   .loading {
@@ -122,9 +122,7 @@
     box-shadow: 0 6px 14px rgb(215 121 30 / 0.6);
   }
   
-  /* 탭 컨테이너 */
   .detail-tabs-container {
-    margin-top: 60px;
     border-top: 1px solid #ddd;
   }
   
@@ -162,7 +160,6 @@
   
   /* 탭 콘텐츠 */
   .tab-content {
-    max-width: 700px;
     margin: 24px auto 0 auto;
     background: #fff;
     padding: 28px 24px;
@@ -178,7 +175,7 @@
   
   .detail-images {
     width: 100%;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -202,6 +199,65 @@
     justify-content: center;
     align-items: center;
   }
+
+  .review-con .review-con-bottom {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+
+.review-con {
+ padding: 1vw;
+ border: 1px solid #ccc;
+ box-sizing: border-box;
+ border-radius: 10px;
+}
+
+.review-con h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #E25822;
+  padding: 1vw;
+}
+.review-con .review-con-top  {
+  padding: 1vw;
+}
+.review-con .review-con-top input[type=text] {
+  padding: 0.3vw;
+}
+.review-con .review-con-top textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 300px; 
+  padding: 10px;
+  font-size: 16px;
+  resize: vertical; 
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.review-con-bottom .reviews {
+  padding: 1vw;
+}
+
+.review-con-bottom .reviews h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #E25822;
+}
+
+.review-con-bottom .reviews p,
+.review-con-bottom .reviews strong, 
+.review-con-bottom .reviews small {
+  padding: 1px;
+}
+
+.review-item {
+  margin-bottom: 15px;
+  padding: 1vw;
+}
+
+
+
   
   /* 반응형 */
   @media (max-width: 768px) {

@@ -1,19 +1,44 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// 공통 페이징 컴포넌트
+const Pagination = ({ currentPage, totalItems, onPageChange }) => {
+  const itemsPerPage = 4;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  if (totalPages <= 1) return null;
+
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  return (
+    <div className="pagination">
+      <button onClick={() => onPageChange(Math.max(currentPage - 1, 1))}>이전</button>
+      {pageNumbers.map(page => (
+        <button
+          key={page}
+          onClick={() => onPageChange(page)}
+          className={page === currentPage ? 'active' : ''}
+        >
+          {page}
+        </button>
+      ))}
+      <button onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}>다음</button>
+    </div>
+  );
+};
+
 function HouseList() {
   const [houses, setHouses] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
 
-  // const [dogPage, setdogPage] = useState(1);
-  // const [catPage, setcatPage] = useState(1);
-  // const [petPage, setpetPage] = useState(1);
+  const [dogPage, setdogPage] = useState(1);
+  const [catPage, setcatPage] = useState(1);
+  const [petPage, setpetPage] = useState(1);
 
-  // const itemsPerPage = 6;
+  const itemsPerPage = 4;
 
   useEffect(() => {
-    fetch('http://localhost:3001/house')
+    fetch('http://localhost:3001/products')
       .then(res => res.json())
       .then(data => setHouses(data))
       .catch(error => console.error('데이터 불러오기 실패:', error));
@@ -21,85 +46,57 @@ function HouseList() {
 
   const dogHouses = houses.filter(item => item.category === 'DogHouse');
   const catHouses = houses.filter(item => item.category === 'CatHouse');
-  const petHouses = houses.filter(item => item.category === 'Pethouse');
+  const petHouses = houses.filter(item => item.category === 'PetHouse');
 
-  // // 페이징 함수
-  // const getCurrentItems = () => {
-  //   // const start = (currentPage - 1) * itemsPerPage;
-  //   const end = start + itemsPerPage;
-  //   return items.slice(start, end);
-  // };
-
-
-  const openModal = (item) => {
-    setSelectedItem(item);
+  const getPaginatedItems = (items, currentPage) => {
+    const start = (currentPage - 1) * itemsPerPage;
+    return items.slice(start, start + itemsPerPage);
   };
 
-  const closeModal = () => {
-    setSelectedItem(null);
-  };
-  
-  const items = Array.from({length: 50}, (_, i) => `Item${i+1}`);
-  
+  const paginatedDogHouses = getPaginatedItems(dogHouses, dogPage);
+  const paginatedCatHouses = getPaginatedItems(catHouses, catPage);
+  const paginatedPetHouses = getPaginatedItems(petHouses, petPage);
+
+  const openModal = item => setSelectedItem(item);
+  const closeModal = () => setSelectedItem(null);
+
   return (
     <div className="ShopHouseContainer">
       <h2>강아지 하우스</h2>
       <div className="ShopHouseContainer-top">
-        {dogHouses.map(item => (
-          <div
-            key={item.id}
-            className="house-item"
-            onClick={() => openModal(item)}  // 리스트 아이템 클릭 시 모달 열림
-            style={{ cursor: 'pointer' }}
-          >
-            <img
-              src={`http://localhost:3001${item.img}`}
-              alt={item.title}
-              // 이미지에는 클릭 이벤트 없음 → 이미지 눌러도 모달 열림
-            />
+        {paginatedDogHouses.map(item => (
+          <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
+            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={dogPage} totalItems={dogHouses.length} onPageChange={setdogPage} />
 
       <h2>고양이 하우스</h2>
       <div className="ShopHouseContainer-middle">
-        {catHouses.map(item => (
-          <div
-            key={item.id}
-            className="house-item"
-            onClick={() => openModal(item)}
-            style={{ cursor: 'pointer' }}
-          >
-            <img
-              src={`http://localhost:3001${item.img}`}
-              alt={item.title}
-            />
+        {paginatedCatHouses.map(item => (
+          <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
+            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={catPage} totalItems={catHouses.length} onPageChange={setcatPage} />
 
       <h2>소형펫 하우스</h2>
       <div className="ShopHouseContainer-bottom">
-        {petHouses.map(item => (
-          <div
-            key={item.id}
-            className="house-item"
-            onClick={() => openModal(item)}
-            style={{ cursor: 'pointer' }}
-          >
-            <img
-              src={`http://localhost:3001${item.img}`}
-              alt={item.title}
-            />
+        {paginatedPetHouses.map(item => (
+          <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
+            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={petPage} totalItems={petHouses.length} onPageChange={setpetPage} />
 
       {/* 모달 */}
       {selectedItem && (
@@ -110,7 +107,7 @@ function HouseList() {
               title={`상세보기`}
               alt={selectedItem.title}
               style={{ cursor: 'pointer' }}
-              onClick={() => navigate(`/shop/house/${selectedItem.id}`)}  // 모달 이미지 클릭 시 상세페이지 이동
+              onClick={() => navigate(`/shop/house/${selectedItem.id}`)}
             />
             <h2>{selectedItem.title}</h2>
             <p>size: {selectedItem.size?.toLocaleString()}</p>

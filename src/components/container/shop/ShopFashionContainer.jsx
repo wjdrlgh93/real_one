@@ -7,7 +7,7 @@ function FashionList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:3001/fashion')
+    fetch('http://localhost:3001/products')
       .then(res => res.json())
       .then(data => setFashions(data))
       .catch(error => console.error('데이터 불러오기 실패:', error));

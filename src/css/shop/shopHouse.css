@@ -1,5 +1,5 @@
 .ShopHouseContainer {
-  padding-top: 300px;
+  /* padding-top: 300px; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -50,7 +50,7 @@
 }
 
 /* === Modal Styles === */
-.modal {
+.ShopHouseContainer .modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -64,7 +64,7 @@
   overflow: hidden;
 }
 
-.modal .modal-content {
+.ShopHouseContainer .modal .modal-content {
   position: relative;
   background: #e5edff;
   border-radius: 8px;
@@ -78,31 +78,31 @@
   overflow: hidden;
 }
 
-.modal .modal-content img {
+.ShopHouseContainer .modal .modal-content img {
   width: 100%;
   height: 400px;
   object-fit: contain;
   padding-top: 5px;
 }
 
-.modal .modal-content h2 {
+.ShopHouseContainer .modal .modal-content h2 {
   font-size: 30px;
   padding: 20px;
 }
 
-.modal .modal-content p {
+.ShopHouseContainer .modal .modal-content p {
   font-size: 16px;
   color: #ff5335;
   padding: 1vw;
 }
 
-.modal .modal-bottom-left {
+.ShopHouseContainer .modal .modal-bottom-left {
   position: absolute;
   bottom: 5px;
   left: 20px;
 }
 
-.modal .modal-bottom-left .admin-button {
+.ShopHouseContainer .modal .modal-bottom-left .admin-button {
   padding: 0.5rem 1rem;
   background-color: #4CAF50;
   color: white;
@@ -112,7 +112,7 @@
   white-space: nowrap;
 }
 
-.modal .modal-bottom-right {
+.ShopHouseContainer .modal .modal-bottom-right {
   position: absolute;
   bottom: 5px;
   right: 20px;
@@ -120,12 +120,12 @@
   height: 50px;
 }
 
-.modal .modal-bottom-right .cart img {
+.ShopHouseContainer .modal .modal-bottom-right .cart img {
   width: 100%;
   height: 100%;
 }
 
-.modal-close {
+.ShopHouseContainer .motdal .modal-content .modal-close {
   position: absolute;
   bottom: 5px;
   left: 50%;
