@@ -155,241 +155,379 @@
     },
     {
       "id": "3",
-      "name": "종로점",
-      "address": "서울 종로구 관수동 20",
-      "subway": "1,2,4호선",
-      "bus": " 111",
-      "phone": "02-722-2111",
+      "name": "별내 별가람점",
+      "address": "경기도 남양주시 별내동 827-5",
+      "subway": "4호선",
+      "bus": [
+        "80",
+        "82A",
+        "82B",
+        "85-1",
+        "86",
+        "1001"
+      ],
+      "phone": "010-7146-6007",
       "fax": "010-000-0000",
-      "bg": "https://jongro.greenart.co.kr/upimage/new_campus/20220318163137.jpg",
-      "x": "126.989979979848",
-      "y": "37.5697431315274"
+      "bg": "https://cdn.litt.ly/images/PUQNQauBvTCzDJxqJsnm04Njlmw1Ftsi?s=600x600&f=webp",
+      "x": "37.671510",
+      "y": "127.117238"
     },
     {
       "id": "4",
-      "name": "부천점",
-      "address": "경기 부천시 원미구 심곡동 172-15",
-      "subway": "7호선",
-      "bus": " 146",
-      "phone": "032-654-2111",
+      "name": "북서울꿈의숲점",
+      "address": "서울특별시 성북구 돌곶이로 220 코오롱하늘채아파트 단지내상가 105동 107호",
+      "subway": "",
+      "bus": [
+        "147",
+        "2155",
+        "N51"
+      ],
+      "phone": "010-9959-8782",
       "fax": "010-000-0000",
-      "bg": "https://bucheon.greenart.co.kr/upimage/new_campus/20220401175450.jpg",
-      "x": "126.783496521561",
-      "y": "37.4844401485066"
+      "bg": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fp%2FDH9yYkiz-mk%2F&psig=AOvVaw3kF_8_N6uMBUsnP9aQdUG1&ust=1751091904310000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMiCwun7kI4DFQAAAAAdAAAAABAK",
+      "x": "37.619153",
+      "y": "127.046702"
+    },
+    {
+      "id": "5",
+      "name": "도봉방학역점",
+      "address": "서울특별시 도봉구 도봉로150길 43 1층 129호",
+      "subway": "1호선",
+      "bus": [
+        "146",
+        "1127"
+      ],
+      "phone": "050-21945-9675",
+      "fax": "010-000-0000",
+      "bg": "https://maps.app.goo.gl/Hw8TkzuLswtRXmDGA",
+      "x": "37.666672",
+      "y": "127.045417"
+    },
+    {
+      "id": "6",
+      "name": "의정부 민락동점",
+      "address": "경기도 의정부시 천보로 38 파스텔시티 1층",
+      "subway": "",
+      "bus": [
+        "35",
+        "72-1",
+        "205-1",
+        "1205",
+        "3600"
+      ],
+      "phone": "050-21945-9675",
+      "fax": "010-000-0000",
+      "bg": "https://maps.app.goo.gl/Hw8TkzuLswtRXmDGA",
+      "x": "37.743893",
+      "y": "127.096753"
     }
   ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "멍멍 축구공 장난감",
       "category": "toy",
+      "sub": "공",
       "price": 4900,
       "img": "ledball.jpg",
       "hoverImg": "ledBallHover.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "우프 강아지 토이볼 레드",
       "category": "toy",
+      "sub": "공",
       "price": 1900,
       "img": "redBall.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "반려견 테니스공 장난감",
       "category": "toy",
+      "sub": "공",
       "price": 1600,
       "img": "tennisBall.jpg",
       "hoverImg": "tennisBallHover.jpg"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "포포펫 삑삑이 장난감 공",
       "category": "toy",
+      "sub": "공",
       "price": 2600,
       "img": "soundBall.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "나나펫 강아지 컬러 볼 세트",
       "category": "toy",
+      "sub": "공",
       "price": 6000,
       "img": "colorBallSet.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "강아지 라텍스 공 장난감",
       "category": "toy",
+      "sub": "공",
       "price": 2300,
       "img": "yellowBall.png"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "플레이독 점프볼 장난감",
       "category": "toy",
+      "sub": "공",
       "price": 9800,
       "img": ""
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "댕댕월드 꽈배기 볼 장난감",
       "category": "toy",
+      "sub": "공",
       "price": 2500,
       "img": "ropeBall.jpg"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "럭키펫 간식 공",
       "category": "toy",
+      "sub": "공",
       "price": 5000,
       "img": ""
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "알록 터그 장난감",
       "category": "toy",
+      "sub": "터그",
       "price": 4900,
       "img": "tugRYB.jpg"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "love dog 원형 터그 장난감",
       "category": "toy",
+      "sub": "터그",
       "price": 4900,
       "img": "tugRound.jpg"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "터그 놀이",
       "category": "toy",
+      "sub": "터그",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "터그 놀이",
       "category": "toy",
+      "sub": "터그",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "인형",
       "category": "toy",
+      "sub": "인형",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "인형",
       "category": "toy",
+      "sub": "인형",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "인형",
       "category": "toy",
+      "sub": "인형",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "인형",
       "category": "toy",
+      "sub": "인형",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "포에버 베이비 파우더향 샴푸",
       "category": "bath",
+      "sub": "샴푸",
       "price": 7600,
       "img": ""
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "포에버 오트밀 샴푸",
       "category": "bath",
+      "sub": "샴푸",
       "price": 7600,
       "img": "oatmealShampoo.jpg"
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "하이솝 카밍 샴푸",
       "category": "bath",
+      "sub": "샴푸",
       "price": 6300,
       "img": ""
     },
     {
-      "id": 21,
+      "id": "21",
       "title": "하이솝 모이스쳐 샴푸",
       "category": "bath",
+      "sub": "샴푸",
       "price": 6300,
       "img": ""
     },
     {
-      "id": 22,
+      "id": "22",
       "title": "힐링도그 오가닉 샴푸",
       "category": "bath",
+      "sub": "샴푸",
       "price": 8500,
       "img": ""
     },
     {
-      "id": 23,
-      "title": "인형",
+      "id": "23",
+      "title": "해피캣 직모 부드러운 빗",
       "category": "bath",
+      "sub": "브러시",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 24,
+      "id": "24",
       "title": "룰루도기 스마일 참빗",
       "category": "bath",
+      "sub": "브러시",
       "price": 4900,
       "img": ""
     },
     {
-      "id": 25,
+      "id": "25",
       "title": "러브독 미용 빗",
       "category": "bath",
+      "sub": "브러시",
       "price": 5200,
       "img": ""
     },
     {
-      "id": 26,
+      "id": "26",
       "title": "러브독 얼굴 빗",
       "category": "bath",
+      "sub": "브러시",
       "price": 4500,
       "img": ""
     },
     {
-      "id": 27,
+      "id": "27",
       "title": "룰로도기 스마일 슬리커 브러쉬",
       "category": "bath",
+      "sub": "브러시",
       "price": 6300,
       "img": ""
     },
     {
-      "id": 28,
+      "id": "28",
       "title": "쉐드킬러 털 제거 브러쉬",
       "category": "bath",
+      "sub": "브러시",
       "price": 9800,
       "img": ""
     },
     {
-      "id": 29,
       "title": "헬로독 슬리커",
       "category": "bath",
+      "sub": "브러시",
       "price": 8300,
       "img": ""
     },
     {
-      "id": 30,
+      "id": "30",
       "title": "하너디 소프트 브러쉬",
       "category": "bath",
+      "sub": "브러시",
       "price": 12000,
       "img": ""
+    },
+    {
+      "id": "31",
+      "title": "마이펫 해피바스 로즈샴푸",
+      "category": "bath",
+      "price": "12000",
+      "sub": "삼푸"
     }
+  ],
+  "house": [
+    {"id":1,"category":"DogHouse", "size":"소형","img":"/images/DogHouse1.jpg", "title":"플라스틱 하우스","price": 19900},
+    {"id":2,"category":"DogHouse", "size":"중형","img":"/images/DogHouse2.jpg", "title":"천막형 하우스","price": 21900 },
+    {"id":3,"category":"DogHouse", "size":"소형","img":"/images/DogHouse3.png", "title":"러블리 하우스","price": 20900 },
+    {"id":4,"category":"DogHouse", "size":"소형","img":"/images/DogHouse4.png", "title":"휴식 하우스","price": 29900 },
+    {"id":5,"category":"DogHouse", "size":"중형","img":"/images/DogHouse5.png", "title":"원목가공형 하우스","price": 26900 },
+    {"id":6,"category":"DogHouse", "size":"대형","img":"/images/DogHouse6.png", "title":"심플원목 하우스","price": 39900 },
+    {"id":7,"category":"DogHouse", "size":"중형","img":"/images/DogHouse7.png", "title":"세련된원목 하우스","price": 34900 },
+    {"id":8,"category":"DogHouse", "size":"대형","img":"/images/DogHouse8.png", "title":"원목가공형 하우스","price": 49900 },
+    {"id":9,"category":"CatHouse", "size":"대형","img":"/images/CatHouse1.png", "title":"통나무 하우스","price": 10000 },
+    {"id":10,"category":"CatHouse", "size":"대형","img":"/images/CatHouse2.png", "title":"포근 하우스","price": 19000 },
+    {"id":11,"category":"CatHouse", "size":"중형","img":"/images/CatHouse3.jpg", "title":"박스 하우스","price": 21900 },
+    {"id":12,"category":"CatHouse", "size":"중형","img":"/images/CatHouse4.jpg", "title":"가구형 하우스","price": 23900 },
+    {"id":13,"category":"CatHouse", "size":"중형","img":"/images/CatHouse5.png", "title":"미니통나무 하우스","price": 25900 },
+    {"id":14,"category":"CatHouse", "size":"중형","img":"/images/CatHouse6.png", "title":"스크래쳐형 하우스","price": 27900 },
+    {"id":15,"category":"CatHouse", "size":"소형","img":"/images/CatHouse7.png", "title":"외부형솜털 하우스","price": 29900 },
+    {"id":16,"category":"CatHouse", "size":"중형","img":"/images/CatHouse8.png", "title":"아트형 나무하우스 ","price": 30900 },
+    {"id":17,"category":"CatHouse", "size":"대형","img":"/images/CatHouse9.png", "title":"스크래쳐 하우스","price": 33000 },
+    {"id":18,"category":"CatHouse", "size":"소형","img":"/images/CatHouse10.png", "title":"이불형 하우스","price": 31900 },
+    {"id":19,"category":"Pethouse", "size":"소형","img":"/images/PetHouse1.png", "title":"도치 하우스","price": 9900 },
+    {"id":20,"category":"Pethouse", "size":"소형","img":"/images/PetHouse2.png", "title":"래트 하우스","price": 14900 },
+    {"id":21,"category":"Pethouse", "size":"소형","img":"/images/PetHouse3.png", "title":"햄스터 하우스1 ","price": 13900 },
+    {"id":22,"category":"Pethouse", "size":"소형","img":"/images/PetHouse4.png", "title":"햄스터 하우스2","price": 29900 }
+  ],
+  "fashion": [
+    {"id":1, "category":"CLOTH", "img":"/images/cloth1.png", "title":"강아지신사 슈트","size":"M","price":14900},
+    {"id":2, "category":"CLOTH", "img":"/images/cloth2.png", "title":"깔끔한블랙 슈트","size":"S","price":9900},
+    {"id":3, "category":"CLOTH", "img":"/images/cloth3.png", "title":"롱머플러","size":"XL","price":13900},
+    {"id":4, "category":"CLOTH", "img":"/images/cloth4.png", "title":"단정한리본 세트","size":"S","price":11900},
+    {"id":5, "category":"CLOTH", "img":"/images/cloth5.png", "title":"고풍스러운 케이프","size":"L","price":21900},
+    {"id":6, "category":"CLOTH", "img":"/images/cloth6.png", "title":"하와이안 남방","size":"S","price":7900},
+    {"id":7, "category":"CLOTH", "img":"/images/cloth7.png", "title":"줄무늬 스웨터","size":"M","price":9900},
+    {"id":8, "category":"CLOTH", "img":"/images/cloth8.png", "title":"솜털 스웨터","size":"M","price":11900},
+    {"id":9, "category":"HAT", "img":"/images/hat1.png", "title":"미니 모자","size":"S","price":5900},
+    {"id":10, "category":"HAT", "img":"/images/hat2.png", "title":"볏집 모자","size":"M","price":7900},
+    {"id":11, "category":"HAT", "img":"/images/hat3.png", "title":"개구리스웨터 모자","size":"L","price":6900},
+    {"id":12, "category":"HAT", "img":"/images/hat4.png", "title":"소형 산타모자","size":"S","price":3900},
+    {"id":13, "category":"HAT", "img":"/images/hat5.png", "title":"미니 엉클샘모자","size":"M","price":8900},
+    {"id":14, "category":"HAT", "img":"/images/hat6.png", "title":"꿀꿀이모자","size":"M","price":4900},
+    {"id":15, "category":"HAT", "img":"/images/hat7.png", "title":"경찰캡","size":"L","price":7900},
+    {"id":16, "category":"HAT", "img":"/images/hat8.png", "title":"솜브레로모자","size":"M","price":9900},
+    {"id":17, "category":"SUNGLASS", "img":"/images/sunglass1.png", "title":"black 선글라스","size":"M","price":8900},
+    {"id":18, "category":"SUNGLASS", "img":"/images/sunglass2.png", "title":"yellow 선글라스","size":"L","price":5900},
+    {"id":19, "category":"SUNGLASS", "img":"/images/sunglass3.png", "title":"거대 동글이안경","size":"L","price":3900},
+    {"id":20, "category":"SUNGLASS", "img":"/images/sunglass4.png", "title":"레옹 선글라스","size":"S","price":4900},
+    {"id":21, "category":"SUNGLASS", "img":"/images/sunglass5.png", "title":"blue&yellow 선글라스","size":"M","price":8900},
+    {"id":22, "category":"SUNGLASS", "img":"/images/sunglass6.png", "title":"red외계인 선글라스","size":"M","price":4900},
+    {"id":23, "category":"SUNGLASS", "img":"/images/sunglass7.png", "title":"brown 선글라스","size":"M","price":9900},
+    {"id":24, "category":"SUNGLASS", "img":"/images/sunglass8.png", "title":"12각 선글라스","size":"M","price":4900},
+    {"id":25, "category":"TIE", "img":"/images/tie1.png", "title":"brown star 넥타이","size":"M","price":11900},
+    {"id":26, "category":"TIE", "img":"/images/tie2.png", "title":"black 나비넥타이","size":"S","price":9900},
+    {"id":27, "category":"TIE", "img":"/images/tie3.png", "title":"격자무늬 넥타이","size":"M","price":14900},
+    {"id":28, "category":"TIE", "img":"/images/tie4.png", "title":"체크무늬 넥타이","size":"L","price":11900},
+    {"id":29, "category":"TIE", "img":"/images/tie5.png", "title":"크리스마스 넥타이","size":"M","price":11900},
+    {"id":30, "category":"TIE", "img":"/images/tie6.png", "title":"레드리본 넥타이","size":"M","price":17900},
+    {"id":31, "category":"TIE", "img":"/images/tie7.png", "title":"심플black 넥타이","size":"M","price":7900},
+    {"id":32, "category":"TIE", "img":"/images/tie8.png", "title":"알록달록무늬 넥타이","size":"S","price":3900}
   ]
 }
