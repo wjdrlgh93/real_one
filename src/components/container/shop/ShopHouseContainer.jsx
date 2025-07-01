@@ -30,12 +30,14 @@ function HouseList() {
   const [houses, setHouses] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
+  const [Search, setSearch] = useState('');
 
   const [dogPage, setdogPage] = useState(1);
   const [catPage, setcatPage] = useState(1);
   const [petPage, setpetPage] = useState(1);
 
   const itemsPerPage = 4;
+
 
   useEffect(() => {
     fetch('http://localhost:3001/products')
@@ -44,9 +46,15 @@ function HouseList() {
       .catch(error => console.error('데이터 불러오기 실패:', error));
   }, []);
 
-  const dogHouses = houses.filter(item => item.category === 'DogHouse');
-  const catHouses = houses.filter(item => item.category === 'CatHouse');
-  const petHouses = houses.filter(item => item.category === 'PetHouse');
+  const filterBySearch = (list) =>
+    list.filter(item =>
+      item.title.toLowerCase().includes(Search.toLowerCase())
+    )
+
+  const dogHouses = filterBySearch(houses.filter(item => item.category === 'DogHouse'));
+  const catHouses = filterBySearch(houses.filter(item => item.category === 'CatHouse'));
+  const petHouses = filterBySearch(houses.filter(item => item.category === 'PetHouse'));
+
 
   const getPaginatedItems = (items, currentPage) => {
     const start = (currentPage - 1) * itemsPerPage;
@@ -60,13 +68,30 @@ function HouseList() {
   const openModal = item => setSelectedItem(item);
   const closeModal = () => setSelectedItem(null);
 
+
   return (
     <div className="ShopHouseContainer">
+      <div className="ShopHouseSearch">
+        <input
+          type="text"
+          placeholder="상품명 검색"
+          value={Search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setdogPage(1);
+            setcatPage(1);
+            setpetPage(1);
+          }}/>
+            <button type="submit" className="submit-button">검색
+            </button>
+      </div>
       <h2>강아지 하우스</h2>
       <div className="ShopHouseContainer-top">
+
         {paginatedDogHouses.map(item => (
           <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
@@ -76,9 +101,11 @@ function HouseList() {
 
       <h2>고양이 하우스</h2>
       <div className="ShopHouseContainer-middle">
+
         {paginatedCatHouses.map(item => (
           <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
@@ -91,6 +118,7 @@ function HouseList() {
         {paginatedPetHouses.map(item => (
           <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
@@ -107,7 +135,9 @@ function HouseList() {
               title={`상세보기`}
               alt={selectedItem.title}
               style={{ cursor: 'pointer' }}
+
               onClick={() => navigate(`/shop/house/${selectedItem.id}`)}
+
             />
             <h2>{selectedItem.title}</h2>
             <p>size: {selectedItem.size?.toLocaleString()}</p>

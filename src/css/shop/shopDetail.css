@@ -1,5 +1,5 @@
 .detailLayout {
-  padding-top: 220px;
+  padding-top: 170px;
   width: 100%;
   min-height: calc(100vh - 100px - 100px);
 
@@ -104,18 +104,24 @@
 .detailLayout .detail-con .right .right-con .total>button {
   height: 4rem;
   width: 100%;
-  background-color: #3674B5;
+  background-color: #FADA7A;
 
   border-radius: 200px;
   border: none;
 
   font-size: 2vmin;
-  color: #ffffff;
+  color: #000000;
   font-family: 'KBO Dia Gothic_light';
   letter-spacing: 0.1rem;
 }
 
-.detailLayout .detail-con .right .right-con button:hover {
+.detailLayout .detail-con .right .right-con .pricej .countButton>button:hover {
   background-color: #FADA7A;
+  cursor: pointer;
+}
+
+.detailLayout .detail-con .right .right-con .total>button:hover {
+  background-color: #3674B5;
+  color: #ffffff;
   cursor: pointer;
 }

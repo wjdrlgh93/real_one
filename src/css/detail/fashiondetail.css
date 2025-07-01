@@ -272,24 +272,24 @@
 }
 
 .review-con-bottom .reviews {
-padding: 1vw;
+  padding: 1vw;
 }
 
 .review-con-bottom .reviews h4 {
-margin-bottom: 10px;
-font-size: 20px;
-color: #E25822;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #E25822;
 }
 
 .review-con-bottom .reviews p,
 .review-con-bottom .reviews strong, 
 .review-con-bottom .reviews small {
-padding: 1px;
+  padding: 1px;
 }
 
 .review-item {
-margin-bottom: 15px;
-padding: 1vw;
+  margin-bottom: 15px;
+  padding: 1vw;
 }
 
 .exchange-images img {

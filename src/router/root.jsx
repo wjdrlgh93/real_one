@@ -15,6 +15,8 @@ const AdminLayout = lazy(() => import('../layout/AdminLayout'))
 const CartLayout = lazy(() => import('../layout/CartLayout'))
 
 const CartList = lazy(() => import('../components/container/cart/CartList'))
+const OrderPayment = lazy(() => import('../components/container/cart/OrderPayment'))
+
 
 const root = createBrowserRouter([
     {
@@ -36,12 +38,16 @@ const root = createBrowserRouter([
     },
     {
         // 숍리스트  -> shop
-        path: 'cart',
+        path: '',
         element: <Suspense fallback={Loading}><CartLayout /></Suspense>,
         children: [
             {
-                path:'',
-                element:<Suspense fallback={Loading}><CartList/></Suspense>
+                path: 'cart',
+                element: <Suspense fallback={Loading}><CartList /></Suspense>
+            },
+            {
+                path: 'payment',
+                element: <Suspense fallback={Loading}><OrderPayment /></Suspense>
             }
         ]
     },

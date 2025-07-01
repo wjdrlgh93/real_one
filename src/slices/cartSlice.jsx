@@ -15,7 +15,7 @@ const cartSlice = createSlice({
         return el.id === action.payload.id && el.title === action.payload.title
       })
       if (num === -1) {
-        state.items.push(action.payload)
+        state.items.push({ ...action.payload, checked: false})
       } else {
         state.items[num].count += action.payload.count
       }
@@ -69,6 +69,17 @@ const cartSlice = createSlice({
       state.items.forEach((obj) => {
         obj.checked = false;  
       });
+    },
+    setPaymentItems(state, action) {
+      state.paymentItems = action.payload
+    },
+    clearCart: (state) => {
+      state.items = []
+    },
+    removePaidItems: (state) => {
+      const paidId = state.paymentItems.map(item => item.id)
+      state.items = state.items.filter(item => !paidId.includes(item.id))
+      state.paymentItems = []
     }
   },
   extraReducers: (builder) => {
@@ -97,5 +108,5 @@ export const asyncAdminCartsFetch = createAsyncThunk('cart/asyncAdminCartsFetch'
   }
 )
 
-export const {deleteCart, addCart, increaseCount, decreaseCount, deleteAllCart, deleteItem, checkedChange, allCheckedFalse, allCheckedTrue } = cartSlice.actions
+export const {deleteCart, addCart, increaseCount, decreaseCount, deleteAllCart, deleteItem, checkedChange, allCheckedFalse, allCheckedTrue, setPaymentItems, clearCart, removePaidItems } = cartSlice.actions
 export default cartSlice

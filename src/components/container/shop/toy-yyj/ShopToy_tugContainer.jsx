@@ -7,7 +7,7 @@ const ShopToy_tugContainer = () => {
 
   useEffect(() => {
     
-    fetch(`http://localhost:3001/toy`)
+    fetch(`http://localhost:3001/products`)
     .then((res) => {return res.json()})
     .then((jsonData )=> {setToyList(jsonData)})
     
@@ -18,7 +18,7 @@ const ShopToy_tugContainer = () => {
   useEffect(() => {
     const tugFn =()=> {
       const tugArr = toyList.filter(el => {
-        return el.category === 'toy-tug' 
+        return el.sub === '터그' 
       })
       setBallList(tugArr)
     }
