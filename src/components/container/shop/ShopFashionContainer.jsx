@@ -1,15 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// 공통 페이징 컴포넌트
+const Pagination = ({ currentPage, totalItems, onPageChange }) => {
+  const itemsPerPage = 4;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  if (totalPages <= 1) return null;
+
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  return (
+    <div className="pagination">
+      <button onClick={() => onPageChange(Math.max(currentPage - 1, 1))}>이전</button>
+      {pageNumbers.map(page => (
+        <button
+          key={page}
+          onClick={() => onPageChange(page)}
+          className={page === currentPage ? 'active' : ''}
+        >
+          {page}
+        </button>
+      ))}
+      <button onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}>다음</button>
+    </div>
+  );
+};
+
 function FashionList() {
-  const [fashions, setFashions] = useState([]);
+  const [fashions, setfashions] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
+
+  const [clothPage, setclothPage] = useState(1);
+  const [hatPage, sethatPage] = useState(1);
+  const [sunglassPage, setsunglassPage] = useState(1);
+  const [tiePage, settiePage] = useState(1);
+
+  const itemsPerPage = 4;
+
 
   useEffect(() => {
     fetch('http://localhost:3001/products')
       .then(res => res.json())
-      .then(data => setFashions(data))
+      .then(data => setfashions(data))
       .catch(error => console.error('데이터 불러오기 실패:', error));
   }, []);
 
@@ -18,76 +51,95 @@ function FashionList() {
   const sunglasses = fashions.filter(item => item.category === 'SUNGLASS');
   const ties = fashions.filter(item => item.category === 'TIE');
 
-  const openModal = (item) => {
-    setSelectedItem(item);
+
+
+  const getPaginatedItems = (items, currentPage) => {
+    const start = (currentPage - 1) * itemsPerPage;
+    return items.slice(start, start + itemsPerPage);
   };
 
-  const closeModal = () => {
-    setSelectedItem(null);
-  };
+  const paginatedcloths = getPaginatedItems(cloths, clothPage);
+  const paginatedhats = getPaginatedItems(hats, hatPage);
+  const paginatedsunglasses = getPaginatedItems(sunglasses, sunglassPage);
+  const paginatedties = getPaginatedItems(ties, tiePage);
+
+  const openModal = item => setSelectedItem(item);
+  const closeModal = () => setSelectedItem(null);
+
 
   return (
     <div className="ShopFashionContainer">
-
       <h2>펫 의상</h2>
       <div className="ShopFashionContainer-top">
-        {cloths.map(item => (
-          <div key={item.id} className="fashion-item" onClick={() => openModal(item)}>
+        {paginatedcloths.map(item => (
+          <div key={item.id} className="fashion-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={clothPage} totalItems={cloths.length} onPageChange={setclothPage} />
 
       <h2>펫 모자</h2>
       <div className="ShopFashionContainer-middle">
-        {hats.map(item => (
-          <div key={item.id} className="fashion-item" onClick={() => openModal(item)}>
+        {paginatedhats.map(item => (
+          <div key={item.id} className="fashion-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={hatPage} totalItems={hats.length} onPageChange={sethatPage} />
 
       <h2>펫 선글라스</h2>
       <div className="ShopFashionContainer-bottom">
-        {sunglasses.map(item => (
-          <div key={item.id} className="fashion-item" onClick={() => openModal(item)}>
+        {paginatedsunglasses.map(item => (
+          <div key={item.id} className="fashion-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={sunglassPage} totalItems={sunglasses.length} onPageChange={setsunglassPage} />
 
       <h2>펫 타이</h2>
-      <div className="ShopFashionContainer-bottoms">
-        {ties.map(item => (
-          <div key={item.id} className="fashion-item" onClick={() => openModal(item)}>
+      <div className="ShopFashionContainer-bottom">
+        {paginatedties.map(item => (
+          <div key={item.id} className="fashion-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={tiePage} totalItems={ties.length} onPageChange={settiePage} />
 
+      {/* 모달 */}
       {selectedItem && (
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
-            <img src={`http://localhost:3001${selectedItem.img}`} alt={selectedItem.title} />
+            <img
+              src={`http://localhost:3001${selectedItem.img}`}
+              title={`상세보기`}
+              alt={selectedItem.title}
+              style={{ cursor: 'pointer' }}
+
+              onClick={() => navigate(`/shop/house/${selectedItem.id}`)}
+
+            />
             <h2>{selectedItem.title}</h2>
-            <p>{selectedItem.size?.toLocaleString()}</p>
+            <p>size: {selectedItem.size?.toLocaleString()}</p>
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
 
             <div className="modal-bottom-left">
-              <button
-                onClick={() => navigate('/admin/order')}
-                className="admin-button">주문처로 이동
+              <button onClick={() => navigate('/admin/order')} className="admin-button">
+                주문처로 이동
               </button>
             </div>
-            
+
             <div className="modal-bottom-right">
               <a href="/cart" className="cart">
                 <img src="/images/cart.png" alt="장바구니로 이동" />

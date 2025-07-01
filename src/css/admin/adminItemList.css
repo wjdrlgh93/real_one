@@ -9,6 +9,11 @@
     align-items: center;
 }
 
+.product-list select {
+    position: absolute;
+    right: 50px;
+}
+
 
 .product-list-con {
     background-color: #e5e5e5;

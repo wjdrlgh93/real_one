@@ -30,6 +30,7 @@ function HouseList() {
   const [houses, setHouses] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
+  const [Search, setSearch] = useState('');
 
   const [dogPage, setdogPage] = useState(1);
   const [catPage, setcatPage] = useState(1);
@@ -45,9 +46,14 @@ function HouseList() {
       .catch(error => console.error('데이터 불러오기 실패:', error));
   }, []);
 
-  const dogHouses = houses.filter(item => item.category === 'DogHouse');
-  const catHouses = houses.filter(item => item.category === 'CatHouse');
-  const petHouses = houses.filter(item => item.category === 'PetHouse');
+  const filterBySearch = (list) =>
+    list.filter(item =>
+      item.title.toLowerCase().includes(Search.toLowerCase())
+    )
+
+  const dogHouses = filterBySearch(houses.filter(item => item.category === 'DogHouse'));
+  const catHouses = filterBySearch(houses.filter(item => item.category === 'CatHouse'));
+  const petHouses = filterBySearch(houses.filter(item => item.category === 'PetHouse'));
 
 
   const getPaginatedItems = (items, currentPage) => {
@@ -65,6 +71,20 @@ function HouseList() {
 
   return (
     <div className="ShopHouseContainer">
+      <div className="ShopHouseSearch">
+        <input
+          type="text"
+          placeholder="상품명 검색"
+          value={Search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setdogPage(1);
+            setcatPage(1);
+            setpetPage(1);
+          }}/>
+            <button type="submit" className="submit-button">검색
+            </button>
+      </div>
       <h2>강아지 하우스</h2>
       <div className="ShopHouseContainer-top">
 
