@@ -9,7 +9,7 @@ const index = configureStore({
     reducer: {
         auth: authSlice.reducer,
         cart: cartSlice.reducer,
-        // payment: paymentSlice.reducer
+        payment: paymentSlice.reducer
     }
 
 })

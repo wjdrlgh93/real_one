@@ -7,7 +7,9 @@
     color: #222;
     background-color: #fff;
     box-sizing: border-box;
-    /* padding-top: 300px; */
+
+    padding-top: 300px;
+
   }
   
   .loading {
@@ -122,7 +124,11 @@
     box-shadow: 0 6px 14px rgb(215 121 30 / 0.6);
   }
   
+
+  /* 탭 컨테이너 */
   .detail-tabs-container {
+    margin-top: 60px;
+
     border-top: 1px solid #ddd;
   }
   
@@ -160,6 +166,8 @@
   
   /* 탭 콘텐츠 */
   .tab-content {
+
+    max-width: 700px;
     margin: 24px auto 0 auto;
     background: #fff;
     padding: 28px 24px;
@@ -175,7 +183,7 @@
   
   .detail-images {
     width: 100%;
-    /* margin-top: 40px; */
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -199,7 +207,6 @@
     justify-content: center;
     align-items: center;
   }
-
   .review-con .review-con-bottom {
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -256,8 +263,6 @@
   padding: 1vw;
 }
 
-
-
   
   /* 반응형 */
   @media (max-width: 768px) {
@@ -275,4 +280,4 @@
       padding: 20px 16px;
     }
   }
-  
+
