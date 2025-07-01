@@ -1,25 +1,52 @@
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
-// import { Map } from 'react-kakao-maps-sdk';
+import { Map } from 'react-kakao-maps-sdk';
 
-// const { kakao } = window
 
 
 const AdminShopList = () => {
 
 
     const [shoplist, setshoplist] = useState()
-    const [modlaOpen, setModalOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
     // for modalSelectMap
     const [selectedShop, setSelectedShop] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const modalBackground = useRef();
     const mapRef = useRef(null);
 
 
 
+    // ✅ Kakao SDK 로드
     useEffect(() => {
+        const script = document.createElement("script");
+        script.src =
+            "//dapi.kakao.com/v2/maps/sdk.js?appkey=454ebd09b90c527f1da4544bf2ea90d7&autoload=false&libraries=services";
+        script.async = true;
+        script.async = true;
+        script.onload = () => {
+            window.kakao.maps.load(() => {
+                console.log("✅ Kakao SDK 로드 완료");
+            });
+        };
+        document.head.appendChild(script);
+    }, []);
 
+    // ✅ 점포 리스트 가져오기
+    useEffect(() => {
+        const shopListFn = async () => {
+            try {
+                const res = await axios.get(`http://localhost:3001/shopList`);
+                setshoplist(res.data);
+            } catch (err) {
+                console.error(err);
+            }
+        };
+        shopListFn();
+    }, []);
+
+    useEffect(() => {
         const shopListFn = async () => {
             const dataURL = `http://localhost:3001/shopList`
             try {
@@ -31,37 +58,34 @@ const AdminShopList = () => {
             }
         }
         shopListFn()
+    }, [])
 
-        if (!modlaOpen || !selectedShop) return;
-
-        // kakaomap load check
-        if (window.kakao && window.kakao.maps) {
-            window.kakao.maps.load(() => {
-                const container = mapRef.current;
-                if (!container) {
-                    console.warn("mapRef가 아직 DOM에 연결되지 않았습니다.");
+    useEffect(() => {
+        if (modalOpen && selectedShop && window.kakao?.maps) {
+            setTimeout(() => {
+                if (!mapRef.current) {
+                    console.warn("❌ mapRef is still null");
                     return;
                 }
 
-                // 주소가 아니라 위경도 기반으로 설정해야 정확함 (좌표 변환 추가 가능)
+                // ✅ 여기서 콘솔로 위치 확인
+                console.log("✅ mapRef bounds:", mapRef.current.getBoundingClientRect());
+
                 const geocoder = new window.kakao.maps.services.Geocoder();
                 geocoder.addressSearch(selectedShop.address, (result, status) => {
                     if (status === window.kakao.maps.services.Status.OK) {
                         const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
-                        const map = new window.kakao.maps.Map(container, {
+                        const map = new window.kakao.maps.Map(mapRef.current, {
                             center: coords,
                             level: 3
                         });
-
-                        const marker = new window.kakao.maps.Marker({ position: coords });
-                        marker.setMap(map);
-                    } else {
-                        console.warn("카카오맵이 아직 로드되지 않았습니다.");
+                        new window.kakao.maps.Marker({ position: coords, map });
+                        map.relayout();
                     }
-                })
-            });
+                });
+            }, 300);
         }
-    }, [modlaOpen, selectedShop])
+    }, [modalOpen, selectedShop]);
 
 
     return (
@@ -89,6 +113,7 @@ const AdminShopList = () => {
                                     onClick={() => {
                                         setModalOpen(true)
                                         setSelectedShop(el)
+                                        // mapRef.current.relayout();
                                     }}>Detail</td>
                             </tr>
                         )
@@ -96,11 +121,13 @@ const AdminShopList = () => {
                 </tbody>
             </table >
             {
-                modlaOpen && selectedShop &&
+                modalOpen && selectedShop &&
                 <div className={'modal-container'} ref={modalBackground} onClick={e => {
                     if (e.target === modalBackground.current) {
                         setModalOpen(false);
                         setSelectedShop(null);
+
+
                     }
                 }}>
                     <div className={'modal-content'}>
@@ -109,11 +136,15 @@ const AdminShopList = () => {
                         <div>주소 : {selectedShop.address}</div>
                         <div>전화번호 : {selectedShop.phone}</div>
                         <div className='info'>팩스번호 : {selectedShop.fax}</div><br />
-                        <div className='modalmap' ref={mapRef} ></div>
+                        <div
+                            className='modalmap'
+                            ref={mapRef}
+                            style={{ width: '100%', height: '300px' }}></div>
 
                         <button className={'modal-close-btn'} onClick={() => {
                             setModalOpen(false);
                             setSelectedShop(null);
+                            // kakao.Map.relayout()
                         }}>
                             닫기
                         </button>
