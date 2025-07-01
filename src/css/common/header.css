@@ -1,10 +1,10 @@
 .header {
     width: 100%;
     height: auto;
-    padding: 2vw;
+    padding: 1vw;
     border-bottom: 1px solid #cccccc;
     box-sizing: border-box;
-    position: fixed;
+    position: sticky;
     z-index: 999;
     background-color: white;
     
@@ -29,9 +29,13 @@
    box-sizing: border-box; */
  }
  
-.header .nav-top h1.logo{}
+.header .nav-top h1.logo{
+    font-size: 20px;
+}
 
-.header .nav-top .top-gnb {}
+.header .nav-top .top-gnb {
+    font-size: 14px;
+}
 
 .header .nav-top .top-gnb ul {
     display: flex;

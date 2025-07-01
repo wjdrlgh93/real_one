@@ -7,7 +7,7 @@ const ShopBath_shampooContainer = () => {
 
     useEffect(() => {
         
-        fetch(`http://localhost:3001/grooming`)
+        fetch(`http://localhost:3001/products`)
         .then((res) => res.json())
         .then(jsonData => setBathList(jsonData))
         // .catch(err => console.log(err))
@@ -17,7 +17,7 @@ const ShopBath_shampooContainer = () => {
     useEffect(() => {
       const combFn = () => {
         const combArr = bathList.filter(el => {
-          return el.category === 'bath-shampoo'
+          return el.sub === '샴푸'
         })
         setShampooList(combArr)
       }
