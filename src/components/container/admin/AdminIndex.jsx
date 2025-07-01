@@ -9,8 +9,8 @@ const AdminIndex = () => {
 
         if (ct === 'MEMBERS')
             Navigate('/admin/members')
-        else if (ct === 'CARTS')
-            Navigate('/admin/cart')
+        else if (ct === 'DASHBOARD')
+            Navigate('/admin/dashboard')
         else if (ct === 'PAYMENTS')
             Navigate('/admin/paym')
         else if (ct === 'SHOPLIST')
@@ -27,7 +27,7 @@ const AdminIndex = () => {
 
             <div className="adminIndex">
                 <div className="menu" onClick={liClick}>MEMBERS</div>
-                <div className="menu" onClick={liClick}>CARTS</div>
+                <div className="menu" onClick={liClick}>DASHBOARD</div>
                 <div className="menu" onClick={liClick}>PAYMENTS</div>
                 <div className="menu" onClick={liClick}>SHOPLIST</div>
                 <div className="menu" onClick={liClick}>PRODUCTS</div>

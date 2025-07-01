@@ -526,7 +526,31 @@
       "category": "toy",
       "price": "20000",
       "sub": "인형"
+<<<<<<< HEAD
+    },
+    {
+      "id": "34",
+      "title": "러블리 마이펫 하우스",
+      "category": "house",
+      "price": "120000",
+      "sub": "실내용"
+    },
+    {
+      "id": "35",
+      "title": "블링블링 패션 선글라스",
+      "category": "fashion",
+      "price": "18000",
+      "sub": "소품"
+    },
+    {
+      "id": "36",
+      "title": "샤이니 화이트 애견 우주복",
+      "category": "fashion",
+      "price": "45800",
+      "sub": "올인원"
+=======
 
+>>>>>>> 65e209a833e24b2b2494afe5932abcee614288c0
     }
   ]
 }
