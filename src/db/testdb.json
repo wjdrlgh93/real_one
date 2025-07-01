@@ -450,6 +450,7 @@
       "img": ""
     },
     {
+      "id": "29",
       "title": "헬로독 슬리커",
       "category": "bath",
       "sub": "브러시",
@@ -470,6 +471,13 @@
       "category": "bath",
       "price": "12000",
       "sub": "삼푸"
+    },
+    {
+      "id": "32",
+      "title": "마이펫 러블리 컴패니언 인형",
+      "category": "toy",
+      "price": "20000",
+      "sub": "인형"
     }
   ]
 }
