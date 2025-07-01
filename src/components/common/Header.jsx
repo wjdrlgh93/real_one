@@ -4,14 +4,22 @@ import { Link, useNavigate } from "react-router-dom";
 import { logOutUserFn, loginUserFn } from "../../slices/authSlice";
 
 const Header = () => {
+
   const isLogin = useSelector((state) => state.auth.isLogin);
   const isUser = useSelector((state) => state.auth.isUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
- 
+
+  const isLogin = useSelector((state) => state.auth.isLogin);
+  const user = useSelector((state) => state.auth.user); //  사용자 정보
+
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn") === "1";
+
+    if (storedLogin && !isLogin) {
+      dispatch(loginUserFn());
+
     const savedUser = localStorage.getItem("isUser")
     if (storedLogin && savedUser && !isLogin) {
       const parsedUser = JSON.parse(savedUser)
@@ -22,10 +30,10 @@ const Header = () => {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    dispatch(logOutUserFn());        
-    localStorage.removeItem("isLoggedIn"); 
+    dispatch(logOutUserFn());
+    localStorage.removeItem("isLoggedIn");
     alert("로그아웃 되었습니다.");
-    navigate("/");                 
+    navigate("/");
   };
 
   const items = useSelector(state => state.cart.items)
@@ -37,12 +45,17 @@ const Header = () => {
           <h1 className="logo">
             <Link to={"/"}>HOME</Link>
           </h1>
+
           <div className="top-gnb">
             <ul>
               {isLogin ? (
                 <>
                   <li>
-                 
+                    <span>
+                       {user?.username || "사용자"} 님 환영합니다!
+                    </span>
+                  </li>
+                  <li>
                     <Link to="#" onClick={handleLogout}>
                       LOGOUT
                     </Link>
@@ -50,8 +63,7 @@ const Header = () => {
                   <li>
                     <Link to={"/admin/members"}>회원목록</Link>
                   </li>
-                 
-                  {true && (
+                  {user?.role === "admin" && (
                     <li>
                       <Link to={"/admin"}>ADMIN</Link>
                     </li>

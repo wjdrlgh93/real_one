@@ -69,6 +69,10 @@ const toShopRouter = () => {
                 element: <Suspense fallback={Loading}><ShopHouse /></Suspense>
             },
             {
+                path: 'house/:id',
+                element: <Suspense fallback={Loading}><HouseDetail /></Suspense>
+            },
+            {
                 // shop/toy
                 path: 'fashion',
                 element: <Suspense fallback={Loading}><ShopFashion /></Suspense>
