@@ -478,6 +478,13 @@
       "category": "toy",
       "price": "20000",
       "sub": "인형"
+    },
+    {
+      "id": "34",
+      "title": "러블리 마이펫 하우스",
+      "category": "house",
+      "price": "120000",
+      "sub": "실내용"
     }
   ]
 }

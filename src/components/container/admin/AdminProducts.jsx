@@ -1,4 +1,4 @@
-import { wait } from '@testing-library/user-event/dist/utils'
+
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 
@@ -23,7 +23,11 @@ const AdminProducts = () => {
     // Item Count Per Page
     const itemsPerPage = 10;
     // Total Page Num 
-    const totalPages = Math.ceil(itemList.length / itemsPerPage)
+    const filteredList = selectedCategory === 'all'
+        ? itemList
+        : itemList.filter(item => item.category === selectedCategory);
+
+    const totalPages = Math.ceil(filteredList.length / itemsPerPage);
     // Click Handler
     const handleClick = (page) => {
         setCurrentPage(page);
@@ -31,6 +35,7 @@ const AdminProducts = () => {
 
 
 
+    // 전체 Item 페이징
     const getCurrentItems = () => {
         // Index Start for Per PAges
         const start = (currentPage - 1) * itemsPerPage;
@@ -38,8 +43,20 @@ const AdminProducts = () => {
         const end = start + itemsPerPage;
         // Bring Items Per Page
         return itemList.slice(start, end);
-
     };
+    // 페이지네이션을 필터링 이후에 적용하고 싶다면
+    // 만약에 카테고리가 ALL 이면 itemList를 그대로 페이징하고,
+    // 아니면 itemList에서 필터링한 값에서 페이징 
+    const getFilteredItems = () => {
+        const filtered = selectedCategory === 'all'
+            ? itemList
+            : itemList.filter(item => item.category === selectedCategory);
+
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        return filtered.slice(start, end);
+    }
+
 
     const modalBackground = useRef()
 
@@ -105,8 +122,13 @@ const AdminProducts = () => {
 
             <h1 className='product-list'>상품목록
                 <select name="category" id="category"
-                    value="category"
-                    onChange={onInputchangeFn}>
+                    value={selectedCategory}
+                    onChange={
+                        (e) => {
+                            setSelectedCategory(e.target.value)
+                            setCurrentPage(1);  // ✅ 페이지도 1로 초기화
+                        }}
+                >
                     <option value='all' id='all' name='all' >ALL</option>
                     <option value="food" id='food' name='food'>사료</option>
                     <option value="snack" id='snack' name='snack'>간식</option>
@@ -130,9 +152,7 @@ const AdminProducts = () => {
                     </tr>
                     {/* {itemList && itemList.slice(startPost - 1, endPost).map((el, idx) => { */}
                     {
-                        selectedCategory === "all" &&
-                        getCurrentItems().map((el, idx) => {
-
+                        getFilteredItems().map((el, idx) => {
                             return (
                                 <tr key={el.id}>
                                     <td>{el.id}</td>

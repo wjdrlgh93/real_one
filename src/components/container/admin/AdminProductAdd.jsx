@@ -52,6 +52,7 @@ const AdminProductAdd = () => {
         const dataURL = `http://localhost:3001/products`
         if (!addItem.title) { alert(`상품명을 입력해주세요`); return; }
         if (!addItem.category) { alert(`카테고리를 선택해주세요`); return; }
+        if (!addItem.sub) { alert(`서브카테고리를 선택해주세요`); return; }
         if (!addItem.price) { alert(`가격을 입력해주세요`); return; }
 
         const AddItemAxiosFn = async () => {
@@ -112,7 +113,7 @@ const AdminProductAdd = () => {
                         <div className='item-input'>
                             <label htmlFor="sub">세부항목</label>
                             <select name="sub" id="sub" value={addItem.sub} onChange={onInputchangeFn}>
-                                <option value="">세부항목 선택</option>
+                                <option value="" id='subNo'>세부항목 선택</option>
                                 {subOp.map((opt, idx) => (
                                     <option key={idx} value={opt}>{opt}</option>
                                 ))}
