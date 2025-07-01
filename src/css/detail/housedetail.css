@@ -8,7 +8,7 @@
     background-color: #fff;
     box-sizing: border-box;
 
-    padding-top: 300px;
+    /* padding-top: 300px; */
 
   }
   
@@ -167,26 +167,25 @@
   /* 탭 콘텐츠 */
   .tab-content {
 
-    max-width: 700px;
+    width: 800px;
     margin: 24px auto 0 auto;
     background: #fff;
-    padding: 28px 24px;
-    border: 1px solid #eaeaea;
+    /* padding: 28px 24px; */
+    /* border: 1px solid #eaeaea; */
+    /* box-sizing: border-box; */
     border-top: none;
     border-radius: 0 0 12px 12px;
     color: #444;
     font-size: 1rem;
     line-height: 1.6;
     min-height: 220px;
-    box-sizing: border-box;
+    
   }
   
   .detail-images {
     width: 100%;
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
     align-items: center;
   }
   

@@ -132,6 +132,21 @@ function HouseDetailTabs({ item }) {
         {activeTab === 'review' && (
           <>
             <div className="review-con">
+              <div className="review-star">
+                <label>평점:
+                  <select   value={newReview.rating}
+                  onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
+                  required
+                  style={{ marginLeft: '8px' }}>
+                  <option value={0}>선택</option>
+                  <option value={1}>★</option>
+                  <option value={2}>★★</option>
+                  <option value={3}>★★★</option>
+                  <option value={4}>★★★★</option>
+                  <option value={5}>★★★★★</option>
+                  </select>
+                </label>
+              </div>
               <h4>후기 작성</h4>
               <form onSubmit={handleSubmit}>
 
@@ -159,6 +174,7 @@ function HouseDetailTabs({ item }) {
                           return (
                             <li key={review.id} className="review-item">
                               <strong>{review.author}</strong>
+                              <p>평점: {review.rating ? '★'.repeat(review.rating) : '평점 없음'}</p>
                               <p>{review.content}</p>
                               <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
                             </li>
