@@ -152,6 +152,9 @@ const AdminProducts = () => {
                             )
                         })
                     }
+                    {
+
+                    }
 
                 </tbody>
             </table>
