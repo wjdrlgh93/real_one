@@ -11,6 +11,11 @@
   background-color: bisque;
 }
 
+.ShopHouseContainer .ShopHouseSearch {
+ margin-left: 900px;
+ padding: 1vw;
+}
+
 .ShopHouseContainer h2 {
   padding: 40px 0 20px 0;
   font-size: 40px;
