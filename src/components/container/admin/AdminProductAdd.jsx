@@ -23,6 +23,10 @@ const AdminProductAdd = () => {
         const name = e.target.name;
         const value = e.target.value
         setAddItem(prev => ({ ...prev, [name]: value }));
+        // 이 코드는 이전 상태를 기반으로 새로운 상태를 만들면서 
+        // 특정 속성의 값을 업데이트하는 데 사용됩니다. 
+        // 스프레드 연산자를 사용하여 불변성을 유지하면서 
+        // 안전하게 상태를 변경할 수 있습니다.
 
         if (name === "category") {
             const options = {
@@ -33,7 +37,8 @@ const AdminProductAdd = () => {
                 house: ["실내용", "실외용"],
                 fashion: ["티셔츠", "원피스", "올인원", "커플룩", "소품"]
             };
-            setSubOp(options[value] || []);
+            setSubOp(options[value] || [
+            ]);
             // 선택된 category 바뀌면 sub 도 초기화
             setAddItem(prev => ({ ...prev, sub: '' }));
         }
