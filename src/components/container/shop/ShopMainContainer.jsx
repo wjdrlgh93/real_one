@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const ShopMainContainer = () => {
+  const isLogin = useSelector(state => state.auth.isLogin)
+  const loginUser = useSelector(state => state.auth.isUser)
+
+  useEffect(() => {
+    console.log('로그인 상태:', isLogin)
+    console.log('로그인 유저 정보:', loginUser)
+  }, [isLogin, loginUser])
   return (
     <main className="shopContent">
       <div>

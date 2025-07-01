@@ -1,13 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// 공통 페이징 컴포넌트
+const Pagination = ({ currentPage, totalItems, onPageChange }) => {
+  const itemsPerPage = 4;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  if (totalPages <= 1) return null;
+
+  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
+
+  return (
+    <div className="pagination">
+      <button onClick={() => onPageChange(Math.max(currentPage - 1, 1))}>이전</button>
+      {pageNumbers.map(page => (
+        <button
+          key={page}
+          onClick={() => onPageChange(page)}
+          className={page === currentPage ? 'active' : ''}
+        >
+          {page}
+        </button>
+      ))}
+      <button onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}>다음</button>
+    </div>
+  );
+};
+
 function HouseList() {
   const [houses, setHouses] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
 
+  const [dogPage, setdogPage] = useState(1);
+  const [catPage, setcatPage] = useState(1);
+  const [petPage, setpetPage] = useState(1);
+
+  const itemsPerPage = 4;
+
+
   useEffect(() => {
-    fetch('http://localhost:3001/house')
+    fetch('http://localhost:3001/products')
       .then(res => res.json())
       .then(data => setHouses(data))
       .catch(error => console.error('데이터 불러오기 실패:', error));
@@ -15,77 +47,97 @@ function HouseList() {
 
   const dogHouses = houses.filter(item => item.category === 'DogHouse');
   const catHouses = houses.filter(item => item.category === 'CatHouse');
-  const petHouses = houses.filter(item => item.category === 'Pethouse');
+  const petHouses = houses.filter(item => item.category === 'PetHouse');
 
-  const openModal = (item) => {
-    setSelectedItem(item);
+
+  const getPaginatedItems = (items, currentPage) => {
+    const start = (currentPage - 1) * itemsPerPage;
+    return items.slice(start, start + itemsPerPage);
   };
 
-  const closeModal = () => {
-    setSelectedItem(null);
-  };
+  const paginatedDogHouses = getPaginatedItems(dogHouses, dogPage);
+  const paginatedCatHouses = getPaginatedItems(catHouses, catPage);
+  const paginatedPetHouses = getPaginatedItems(petHouses, petPage);
+
+  const openModal = item => setSelectedItem(item);
+  const closeModal = () => setSelectedItem(null);
+
 
   return (
     <div className="ShopHouseContainer">
-
       <h2>강아지 하우스</h2>
       <div className="ShopHouseContainer-top">
-        {dogHouses.map(item => (
-          <div key={item.id} className="house-item" onClick={() => openModal(item)}>
+
+        {paginatedDogHouses.map(item => (
+          <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={dogPage} totalItems={dogHouses.length} onPageChange={setdogPage} />
 
       <h2>고양이 하우스</h2>
       <div className="ShopHouseContainer-middle">
-        {catHouses.map(item => (
-          <div key={item.id} className="house-item" onClick={() => openModal(item)}>
+
+        {paginatedCatHouses.map(item => (
+          <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={catPage} totalItems={catHouses.length} onPageChange={setcatPage} />
 
       <h2>소형펫 하우스</h2>
       <div className="ShopHouseContainer-bottom">
-        {petHouses.map(item => (
-          <div key={item.id} className="house-item" onClick={() => openModal(item)}>
+        {paginatedPetHouses.map(item => (
+          <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
             <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
         ))}
       </div>
+      <Pagination currentPage={petPage} totalItems={petHouses.length} onPageChange={setpetPage} />
 
-      {/* 모달 창 */}
+      {/* 모달 */}
       {selectedItem && (
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
-            <img src={`http://localhost:3001${selectedItem.img}`} alt={selectedItem.title} />
+            <img
+              src={`http://localhost:3001${selectedItem.img}`}
+              title={`상세보기`}
+              alt={selectedItem.title}
+              style={{ cursor: 'pointer' }}
+
+              onClick={() => navigate(`/shop/house/${selectedItem.id}`)}
+
+            />
             <h2>{selectedItem.title}</h2>
-            <p>{selectedItem.size?.toLocaleString()}</p>
+            <p>size: {selectedItem.size?.toLocaleString()}</p>
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
 
-            {/* 오른쪽 하단 버튼 그룹 */}
-            <div className="right-buttons">
-              <button
-                onClick={() => navigate('/admin/order')}
-                className="admin-button" >주문처로 이동
+            <div className="modal-bottom-left">
+              <button onClick={() => navigate('/admin/order')} className="admin-button">
+                주문처로 이동
               </button>
+            </div>
 
-              <a href="/cart" className="cart-button">
+            <div className="modal-bottom-right">
+              <a href="/cart" className="cart">
                 <img src="/images/cart.png" alt="장바구니로 이동" />
               </a>
             </div>
 
-            {/* 모달 하단 중앙 닫기 버튼 */}
-            <div className="close-button">
-              <button onClick={closeModal} className="modal-close">닫기</button>
-            </div>
+            <button onClick={closeModal} className="modal-close">
+              CLOSE
+            </button>
           </div>
         </div>
       )}

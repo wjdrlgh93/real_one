@@ -1,22 +1,25 @@
 .ShopFashionContainer {
-  padding-top: 400px;
+
+  padding-top: 300px;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 2vw;
   background-color: bisque;
 }
 
 .ShopFashionContainer h2 {
-  padding-top: 20px;
+  padding: 40px 0 20px 0;
   font-size: 40px;
-  color: black;
+  color: rgb(49, 49, 49);
 }
 
 .ShopFashionContainer p {
-  color: rgb(255, 53, 53);
-  padding-top: 0.5vw;
+  color: rgb(248, 93, 93);
+  padding-top: 0.3vw;
+  margin: 0;
 }
 
 .ShopFashionContainer .ShopFashionContainer-top,
@@ -28,12 +31,11 @@
   gap: 1vw;
   margin-bottom: 40px;
   padding: 1vw;
-  width: 80%;
 }
 
-.Fashion-item {
+.fashion-item {
   text-align: center;
-  background: #f9f9f9;
+  background-color: #f9f9f9;
   padding: 15px;
   border-radius: 8px;
   border: 1px solid #ddd;
@@ -41,110 +43,102 @@
   cursor: pointer;
 }
 
-.Fashion-item img {
+.fashion-item img {
   width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 10px;
 }
 
-.ShopFashionContainer .modal {
+/* === Modal Styles === */
+.modal {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 999;
+  overflow: hidden;
 }
 
-.ShopFashionContainer .modal .modal-content {
+.modal .modal-content {
   position: relative;
-  background: #fff;
-  padding: 24px 32px;
+  background: #e5edff;
   border-radius: 8px;
-  width: 800px;
-  height: 700px;
+  width: 650px;
+  height: 75vh;
+  max-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  overflow-y: auto;
-  text-align: center;
-  background-color: rgb(233, 247, 255);
+  overflow: hidden;
 }
 
-.ShopFashionContainer .modal .modal-content img {
+.modal .modal-content img {
   width: 100%;
-  max-height: 400px;
+  height: 400px;
   object-fit: contain;
-  border-radius: 6px;
-  margin-bottom: 16px;
+  padding-top: 5px;
 }
 
-.ShopFashionContainer .modal .modal-content h2 {
-  font-size: 32px;
-  margin-bottom: 8px;
-  color: #000000;
-  
+.modal .modal-content h2 {
+  font-size: 30px;
+  padding: 20px;
 }
 
-.ShopFashionContainer .modal .modal-content p {
-  font-size: 20px;
-  color: rgb(255, 72, 48);
-  padding-top: 20px;
-  margin-bottom: 8px;
+.modal .modal-content p {
+  font-size: 16px;
+  color: #ff5335;
+  padding: 1vw;
 }
 
-/* 오른쪽 하단 버튼 */
-.ShopFashionContainer .modal .modal-content .right-buttons {
+.modal .modal-bottom-left {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
-  display: flex;
-  gap: 8px;
-  align-items: center;
+  bottom: 5px;
+  left: 20px;
 }
 
-.ShopFashionContainer .modal .modal-content .right-buttons .admin-button {
-  padding: 8px 14px;
-  font-size: 14px;
-  background: rgb(0, 201, 60);
-  color: #fff;
+.modal .modal-bottom-left .admin-button {
+  padding: 0.5rem 1rem;
+  background-color: #4CAF50;
+  color: white;
   border: none;
-  border-radius: 4px;
-  font-weight: 500;
+  border-radius: 5px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.ShopFashionContainer .modal .modal-content .right-buttons .cart-button {
-  width: 28px;
-  height: 36px;
+.modal .modal-bottom-right {
+  position: absolute;
+  bottom: 5px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
 }
 
-.ShopFashionContainer .modal .modal-content .right-buttons .cart-button img {
+.modal .modal-bottom-right .cart img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  transform: translateY(-5px);
+
 }
 
-/* 중앙 하단 닫기 버튼 */
-.ShopFashionContainer .modal .modal-content .close-button {
+.modal-close {
   position: absolute;
-  bottom: 16px;
+  bottom: 5px;
   left: 50%;
   transform: translateX(-50%);
-  width: max-content;
-}
-
-.ShopFashionContainer .modal .modal-content .close-button .modal-close {
-  padding: 10px 20px;
-  font-size: 14px;
-  background: #333;
-  color: #fff;
+  padding: 0.5rem 1.2rem;
+  background-color: #333;
+  color: white;
   border: none;
-  border-radius: 4px;
-  font-weight: 500;
+  border-radius: 5px;
   cursor: pointer;
+  white-space: nowrap;
 }

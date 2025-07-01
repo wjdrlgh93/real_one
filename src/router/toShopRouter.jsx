@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react'
 import { Navigate } from 'react-router-dom'
 import toToyRouter from './toToyRouter'
 import toBathRouter from './toBathRouter'
+import HouseDetail from '../components/container/Detail/HouseDetail'
 
 const Loading = <div className='loading'>Loading...</div>
 
@@ -68,10 +69,18 @@ const toShopRouter = () => {
                 element: <Suspense fallback={Loading}><ShopHouse /></Suspense>
             },
             {
+                path: 'house/:id',
+                element: <Suspense fallback={Loading}><HouseDetail /></Suspense>
+            },
+            {
                 // shop/toy
                 path: 'fashion',
                 element: <Suspense fallback={Loading}><ShopFashion /></Suspense>
             },
+            {
+                path: 'house/:id',
+                element: <Suspense fallback={Loading}><HouseDetail /></Suspense>
+            }
 
         ]
     )
