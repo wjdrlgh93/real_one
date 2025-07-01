@@ -5,14 +5,18 @@ import { logOutUserFn, loginUserFn } from "../../slices/authSlice";
 
 const Header = () => {
   const isLogin = useSelector((state) => state.auth.isLogin);
+  const isUser = useSelector((state) => state.auth.isUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
  
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn") === "1";
-    if (storedLogin && !isLogin) {
-      dispatch(loginUserFn()); 
+    const savedUser = localStorage.getItem("isUser")
+    if (storedLogin && savedUser && !isLogin) {
+      const parsedUser = JSON.parse(savedUser)
+      dispatch(loginUserFn(parsedUser)); 
+
     }
   }, [dispatch, isLogin]);
 
@@ -23,6 +27,8 @@ const Header = () => {
     alert("로그아웃 되었습니다.");
     navigate("/");                 
   };
+
+  const items = useSelector(state => state.cart.items)
 
   return (
     <div className="header">
@@ -64,8 +70,9 @@ const Header = () => {
               <li>
                 <Link to={"/shop"}>주문내역</Link>
               </li>
-              <li>
-                <Link to={"/cart"}>장바구니</Link>
+              <li className="headerCart">       
+                {items.length > 0 ? <span>{items.length}</span> : <></>}         
+                <Link to={"/cart"}><img src="/images/shoppingCart.png" alt="cart" /></Link>
               </li>
             </ul>
           </div>

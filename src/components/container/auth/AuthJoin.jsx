@@ -175,6 +175,14 @@ const AuthJoin = () => {
         }
     };
 
+        // const isLoginn = useSelector(state => state.auth.isLogin)
+        const loginUser = useSelector(state => state.auth.isUser)
+      
+        useEffect(() => {
+          console.log('shop 페이지 - 로그인 상태:', isLogin)
+          console.log('shop 페이지 - 로그인 유저 정보:', loginUser)
+        }, [isLogin, loginUser])
+
     return (
         <>
 
@@ -287,7 +295,7 @@ const AuthJoin = () => {
                                 </div>
                                 <div className="text sign-up">
                                     <h2>
-                                        Sing Up
+                                        Sign Up
                                     </h2>
 
                                 </div>
@@ -342,7 +350,7 @@ const AuthJoin = () => {
                                 </div>
                                 <div className="text sign-up">
                                     <h2>
-                                        Sing Up
+                                        Sign Up
                                     </h2>
 
                                 </div>

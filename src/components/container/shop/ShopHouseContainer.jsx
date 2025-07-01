@@ -24,11 +24,11 @@ function HouseList() {
   const petHouses = houses.filter(item => item.category === 'Pethouse');
 
   // 페이징 함수
-  const getCurrentItems = () => {
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    return items.slice(start, end);
-  };
+  // const getCurrentItems = () => {
+  //   const start = (currentPage - 1) * itemsPerPage;
+  //   const end = start + itemsPerPage;
+  //   return items.slice(start, end);
+  // };
 
   
 

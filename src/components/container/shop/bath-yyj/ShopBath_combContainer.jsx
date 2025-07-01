@@ -8,7 +8,7 @@ const ShopBath_combContainer = () => {
   // const navigate = useNavigate()
     useEffect(() => {
         
-        fetch(`http://localhost:3001/grooming`)
+        fetch(`http://localhost:3001/products`)
         .then((res) => res.json())
         .then(jsonData => setBathList(jsonData))
         // .catch(err => console.log(err))
@@ -18,7 +18,7 @@ const ShopBath_combContainer = () => {
     useEffect(() => {
       const combFn = () => {
         const combArr = bathList.filter(el => {
-          return el.category === 'bath-comb'
+          return el.sub === '브러시'
         })
         setCombList(combArr)
       }

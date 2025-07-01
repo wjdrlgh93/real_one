@@ -20,6 +20,7 @@ const authSlice = createSlice({
         loginUserFn: (state, action) => {
             state.isUser = action.payload
             localStorage.setItem("isLoggedIn", "1");
+            localStorage.setItem("isUser", JSON.stringify(action.payload));
             state.isLoggedIn = true;
             state.isLogin = true;
             //when login, Turn State >> True

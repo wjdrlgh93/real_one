@@ -10,9 +10,12 @@
 @import url(css/auth/authJoin.css);
 /* AdminPage */
 @import url(css/admin/adminpage.css);
-
+/* 장난감, 목욕, 장바구니 결제 등 - 유연준 */
 @import url(css/shop/shopToy.css);
 @import url(css/cart/cart.css);
+@import url(css/shop/shopDetail.css);
+@import url(css/cart/orderPayment.css);
+
 @import url(css/shop/shopHouse.css);
 @import url(css/shop/shopFashion.css);
 
