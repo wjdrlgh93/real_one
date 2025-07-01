@@ -13,7 +13,7 @@
 /* 장난감, 목욕, 장바구니 결제 등 - 유연준 */
 @import url(css/shop/shopToy.css);
 @import url(css/cart/cart.css);
-@import url(css/shop/shopDetail.css);
+@import url(css/shop/shopToyBathDetail.css);
 @import url(css/cart/orderPayment.css);
 
 @import url(css/shop/shopHouse.css);
@@ -21,6 +21,7 @@
 
 /* Detail */
 @import url(css/detail/housedetail.css);
+@import url(css/detail/fashiondetail.css);
 
 
 @font-face {

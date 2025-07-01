@@ -3,6 +3,9 @@ import React from 'react'
 
 const ShopDetailLayout = (props) => {
 
+  const cartBtn = async (e) => {
+    
+  }
   return (
     <div className="detailLayout">
       <div className="detail-con">

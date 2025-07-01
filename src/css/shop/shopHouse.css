@@ -1,6 +1,6 @@
 .ShopHouseContainer {
 
-  padding-top: 300px;
+  /* padding-top: 300px; */
 
   width: 100%;
   display: flex;
@@ -9,6 +9,11 @@
   flex-direction: column;
   gap: 2vw;
   background-color: bisque;
+}
+
+.ShopHouseContainer .ShopHouseSearch {
+ margin-left: 900px;
+ padding: 1vw;
 }
 
 .ShopHouseContainer h2 {

@@ -4,27 +4,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { logOutUserFn, loginUserFn } from "../../slices/authSlice";
 
 const Header = () => {
-
-  const isLogin = useSelector((state) => state.auth.isLogin);
-  const isUser = useSelector((state) => state.auth.isUser);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
 
-  // const isLogin = useSelector((state) => state.auth.isLogin);
+  const isLogin = useSelector((state) => state.auth.isLogin);
   const user = useSelector((state) => state.auth.user); //  사용자 정보
 
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn") === "1";
-
-    // if (storedLogin && !isLogin) {
-    //   dispatch(loginUserFn());
-
-    const savedUser = localStorage.getItem("isUser")
-    if (storedLogin && savedUser && !isLogin) {
-      const parsedUser = JSON.parse(savedUser)
-      dispatch(loginUserFn(parsedUser));
-
+    if (storedLogin && !isLogin) {
+      dispatch(loginUserFn());
     }
   }, [dispatch, isLogin]);
 
@@ -36,7 +26,14 @@ const Header = () => {
     navigate("/");
   };
 
+
   const items = useSelector(state => state.cart.items)
+
+  let cartAmount = 0;
+  items.forEach((items) => {
+    cartAmount += items.count
+  })
+
 
   return (
     <div className="header">
@@ -52,7 +49,7 @@ const Header = () => {
                 <>
                   <li>
                     <span>
-                      {user?.username || "사용자"} 님 환영합니다!
+                       {user?.username || "사용자"} 님 환영합니다!
                     </span>
                   </li>
                   <li>
@@ -82,9 +79,11 @@ const Header = () => {
               <li>
                 <Link to={"/shop"}>주문내역</Link>
               </li>
+
               <li className="headerCart">
-                {items.length > 0 ? <span>{items.length}</span> : <></>}
+                {items.length > 0 ? <span className="cart">{items.length}</span> : <></>}
                 <Link to={"/cart"}><img src="/images/shoppingCart.png" alt="cart" /></Link>
+
               </li>
             </ul>
           </div>

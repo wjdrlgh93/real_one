@@ -77,6 +77,11 @@ const CartList = () => {
     //   setLoginModal(true)
     //   return
     // }
+    if (!isLogin) {
+      alert('로그인이 필요합니다.')
+      navigate('/auth/login')
+      return
+    }
     if (checkedList.length === 0) {
       alert('선택된 상품이 없습니다.')
       return
