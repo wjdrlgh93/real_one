@@ -11,19 +11,19 @@ const Header = () => {
   const navigate = useNavigate();
 
 
-  const isLogin = useSelector((state) => state.auth.isLogin);
+  // const isLogin = useSelector((state) => state.auth.isLogin);
   const user = useSelector((state) => state.auth.user); //  사용자 정보
 
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn") === "1";
 
-    if (storedLogin && !isLogin) {
-      dispatch(loginUserFn());
+    // if (storedLogin && !isLogin) {
+    //   dispatch(loginUserFn());
 
     const savedUser = localStorage.getItem("isUser")
     if (storedLogin && savedUser && !isLogin) {
       const parsedUser = JSON.parse(savedUser)
-      dispatch(loginUserFn(parsedUser)); 
+      dispatch(loginUserFn(parsedUser));
 
     }
   }, [dispatch, isLogin]);
@@ -52,7 +52,7 @@ const Header = () => {
                 <>
                   <li>
                     <span>
-                       {user?.username || "사용자"} 님 환영합니다!
+                      {user?.username || "사용자"} 님 환영합니다!
                     </span>
                   </li>
                   <li>
@@ -82,8 +82,8 @@ const Header = () => {
               <li>
                 <Link to={"/shop"}>주문내역</Link>
               </li>
-              <li className="headerCart">       
-                {items.length > 0 ? <span>{items.length}</span> : <></>}         
+              <li className="headerCart">
+                {items.length > 0 ? <span>{items.length}</span> : <></>}
                 <Link to={"/cart"}><img src="/images/shoppingCart.png" alt="cart" /></Link>
               </li>
             </ul>
