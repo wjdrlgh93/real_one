@@ -26,6 +26,15 @@ const Header = () => {
     navigate("/");
   };
 
+
+  const items = useSelector(state => state.cart.items)
+
+  let cartAmount = 0;
+  items.forEach((items) => {
+    cartAmount += items.count
+  })
+
+
   return (
     <div className="header">
       <div className="nav-top">
@@ -70,8 +79,11 @@ const Header = () => {
               <li>
                 <Link to={"/shop"}>주문내역</Link>
               </li>
-              <li>
-                <Link to={"/cart"}>장바구니</Link>
+
+              <li className="headerCart">
+                {items.length > 0 ? <span className="cart">{items.length}</span> : <></>}
+                <Link to={"/cart"}><img src="/images/shoppingCart.png" alt="cart" /></Link>
+
               </li>
             </ul>
           </div>

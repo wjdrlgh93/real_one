@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 
 
 const ToyLayout = () => {
@@ -14,19 +14,19 @@ const ToyLayout = () => {
               </div>
               <div className="toy-filter">
                   <div className="toy-filter-type">
-                      <ul>
+                   <ul>
                           <li>
-                              <Link to={'/shop/toy'}>ALL</Link>
+                              <NavLink to={'/shop/toy'} end className={({ isActive }) => isActive ? 'navToy active' : 'navToy'}>ALL</NavLink>
                           </li>
                           <li>
-                              <Link to={'/shop/toy/ball'}>Ball</Link>
+                              <NavLink to={'/shop/toy/ball'} className={({ isActive }) => isActive ? 'navToy active' : 'navToy'}>Ball</NavLink>
                           </li>
                           <li>
-                              <Link to={'/shop/toy/tug'}>Tug toy</Link>
+                              <NavLink to={'/shop/toy/tug'} className={({ isActive }) => isActive ? 'navToy active' : 'navToy'}>Tug toy</NavLink>
                           </li>
                           <li>
-                              <Link to={'/shop/toy/stuffed'}>Stuffed toy</Link>
-                          </li>
+                              <NavLink to={'/shop/toy/stuffed'} className={({ isActive }) => isActive ? 'navToy active' : 'navToy'}>Stuffed toy</NavLink>
+                          </li>   
                       </ul>
                   </div>
               </div>
