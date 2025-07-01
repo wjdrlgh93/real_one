@@ -21,6 +21,8 @@ const AdminIndex = () => {
             Navigate('/admin/product_add')
         else if (ct === 'INSERT ITEM')
             Navigate('/admin/product_add')
+
+
     }
     return (
         <>

@@ -238,6 +238,32 @@
         "userEmail": "a1@email.com",
         "address": "서울시 노원구"
       }
+    },
+    {
+      "id": "ee76",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "계좌이체",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "LuckyOne led Ball 장난감",
+          "price": 4900,
+          "img": "ledball.jpg",
+          "hoverImg": "ledBallHover.jpg",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 4900,
+      "shop": "상계역점",
+      "date": "2025/7/1 16:26:14",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
     }
   ],
   "products": [
@@ -494,13 +520,12 @@
       "hoverImg": ""
     },
     {
-      "id": "29",
+      "id": "07f7",
       "title": "헬로독 슬리커",
       "category": "bath",
       "sub": "브러시",
       "price": 8300,
       "img": "",
-      "id": "07f7",
       "hoverImg": ""
     },
     {

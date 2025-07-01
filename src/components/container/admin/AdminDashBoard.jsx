@@ -7,6 +7,7 @@ import PieChart from '../../../chart/PieChart';
 // 주석말고 npm install chartjs-2 하세요
 
 
+
 const AdminDashBoard = () => {
     return (
         <div className='LineC'>

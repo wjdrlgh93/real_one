@@ -5,6 +5,8 @@ function AdminOrderList() {
   const [orders, setOrders] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
 
+
+  // AdminOrdreList 가 아니라 ShopOrderList? 
   useEffect(() => {
     fetch('http://localhost:3001/shoplist2')
       .then((res) => res.json())
@@ -52,8 +54,8 @@ function AdminOrderList() {
       </table>
 
       {selectedItem && (
-        <div className="map-container"> 
-        <h2>🗺️지도보기</h2>
+        <div className="map-container">
+          <h2>🗺️지도보기</h2>
           <KakaoMap lat={selectedItem.lat} lng={selectedItem.lng} />
         </div>
       )}
