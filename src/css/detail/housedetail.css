@@ -174,11 +174,11 @@
   }
   
   .detail-images {
-    width: 100%;
-    /* margin-top: 40px; */
+    width: 700px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    /* gap: 30px; */
     align-items: center;
   }
   
@@ -213,7 +213,6 @@
 }
 
 .review-con h4 {
-  margin-bottom: 10px;
   font-size: 20px;
   color: #E25822;
   padding: 1vw;
