@@ -50,6 +50,15 @@
 .header .nav-top .top-gnb ul li {
     transition: 0.3s;
     color: black;
+    position: relative;
+}
+.header .nav-top .top-gnb ul li span.cart{
+    position: absolute;
+    top: 2.5px;
+    left: 35px;
+    font-family: 'KBO Dia Gothic_light';
+    font-size: x-small;
+    font-weight: bolder;
 }
 
 .header .nav-top .top-gnb ul li a {

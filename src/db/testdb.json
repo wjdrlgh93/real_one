@@ -238,6 +238,32 @@
         "userEmail": "a1@email.com",
         "address": "서울시 노원구"
       }
+    },
+    {
+      "id": "1008",
+      "userId": "3",
+      "userName": "탕후루",
+      "userEmail": "a1@email.com",
+      "paymentMethod": "계좌이체",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "LuckyOne led Ball 장난감",
+          "price": 4900,
+          "img": "ledball.jpg",
+          "hoverImg": "ledBallHover.jpg",
+          "count": 3,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 14700,
+      "shop": "별내 별가람점",
+      "date": "2025/7/1 9:49:49",
+      "orderer": {
+        "userName": "탕후루",
+        "userEmail": "a1@email.com",
+        "address": "서울시 노원구"
+      }
     }
   ],
   "products": [
@@ -494,14 +520,13 @@
       "hoverImg": ""
     },
     {
+      "id": "29",
       "title": "헬로독 슬리커",
       "category": "bath",
       "sub": "브러시",
       "price": 8300,
       "img": "",
-      "id": "07f7"
       "hoverImg": ""
-
     },
     {
       "id": "30",
@@ -525,8 +550,6 @@
       "category": "bath",
       "price": "12300",
       "sub": "삼푸"
-    }
-  ]
     }
   ]
 }

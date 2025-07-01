@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 import Header from '../../../common/Header'
 import Footer from '../../../common/Footer'
 
@@ -7,10 +7,10 @@ import Footer from '../../../common/Footer'
 const BathLayout = () => {
   return (
     <>
-    <div className="header">
+    {/* <div className="header">
 
     <Header/>
-    </div>
+    </div> */}
     <div className="toy">
       <div className="toy-con">
           <div className="toy-wrap">
@@ -21,13 +21,13 @@ const BathLayout = () => {
                   <div className="toy-filter-type">
                       <ul>
                           <li>
-                              <Link to={'/shop/bath'}>ALL</Link>
+                              <NavLink to={'/shop/bath'} end className={({isActive}) => isActive ? 'navToy active' : 'navToy'}>ALL</NavLink>
                           </li>
                           <li>
-                              <Link to={'/shop/bath/shampoo'}>Shampoo</Link>
+                              <NavLink to={'/shop/bath/shampoo'} className={({isActive}) => isActive ? 'navToy active' : 'navToy'}>Shampoo</NavLink>
                           </li>
                           <li>
-                              <Link to={'/shop/bath/comb'}>Comb & Brush</Link>
+                              <NavLink to={'/shop/bath/comb'} className={({isActive}) => isActive ? 'navToy active' : 'navToy'}>Comb & Brush</NavLink>
                           </li>
                       </ul>
                   </div>
