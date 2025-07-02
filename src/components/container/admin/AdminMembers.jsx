@@ -9,11 +9,33 @@ const AdminMembers = () => {
     const [memberObj, setMemberObj] = useState({}) // Object init
     const [memberList, setMemberList] = useState([])    //Array Init
     const [modlaOpen, setModalOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState("all"); // 카테고리 셀렉터 
     // const [join, setjoin] = useState(joinData)
     const modalBackground = useRef();
 
-
     const navigate = useNavigate()
+
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
+    const filteredList = selectedCategory === 'all'
+        ? memberList
+        : memberList.filter(item => item.category === selectedCategory);
+
+    const totalPages = Math.ceil(filteredList.length / itemsPerPage);
+
+    const handleClick = (page) => {
+        setCurrentPage(page);
+    };
+    // 전체 Item 페이징
+    const getCurrentMembers = () => {
+        // Index Start for Per PAges
+        const start = (currentPage - 1) * itemsPerPage;
+        // bring END Index
+        const end = start + itemsPerPage;
+        // Bring Items Per Page
+        return memberList.slice(start, end);
+    };
 
 
     const onInputchangeFn = (e) => {
@@ -112,7 +134,8 @@ const AdminMembers = () => {
                         <th>role</th>
                         <th>보기</th>
                     </tr>
-                    {memberList && memberList.map(el => {
+                    {/* {memberList && memberList.map(el => { */}
+                    {getCurrentMembers().map((el, idx) => {
                         return (
                             <tr>
                                 <td>{el.id}</td>
@@ -196,7 +219,28 @@ const AdminMembers = () => {
                     </div>
                 </div >
             }
+            <div className="bottom">
+                {/* Preview Page */}
 
+                <button onClick={() => handleClick(currentPage - 1)} disabled={currentPage === 1}>
+                    &lt; Prev
+                </button>
+
+                {[...Array(totalPages)].map((_, idx) => {
+                    // idx Start from 0
+                    const page = idx + 1;
+                    return (
+                        <button
+                            key={page}
+                            onClick={() => handleClick(page)}
+                        >{page}</button>
+                    );
+                })}
+                {/* after ... page */}
+                <button onClick={() => handleClick(currentPage + 1)} disabled={currentPage === totalPages}>
+                    Next &gt;</button>
+
+            </div>
 
         </>
     )

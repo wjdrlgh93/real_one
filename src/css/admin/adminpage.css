@@ -4,6 +4,7 @@
 @import url(../admin/adminItemList.css);
 @import url(../admin/adminProductAdd.css);
 @import url(../admin/adminDashBoard.css);
+@import url(../admin/adminPayment.css);
 
 .layoutRoot {
     display: flex;

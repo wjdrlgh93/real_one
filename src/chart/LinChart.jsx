@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
+import testdb from '../db/testdb.json';
+
+
 import {
     Chart as ChartJS,
     LineElement,
@@ -20,28 +23,20 @@ ChartJS.register(
 );
 
 const LinChart = () => {
+
+    // sales 배열에서 month와 salesMount 값을 추출
+    const labels = testdb.sales.map(item => item.month);    // 월별 레이블 생성
+    const dataPoints = testdb.sales.map(item => Number(item.salesMount))    //
+
+
     const data = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        labels: labels,
         datasets: [
             {
-                label: '장난감매출',
-                data: [11, 8, 22, 21, 26, 35],
+                label: '2025년도 월매출',
+                data: dataPoints,
                 fill: false,
-                borderColor: 'red',
-                tension: 0.1
-            },
-            {
-                label: '사료매출',
-                data: [65, 59, 80, 41, 41, 65],
-                fill: false,
-                borderColor: 'blue',
-                tension: 0.1
-            },
-            {
-                label: '목욕용품매출',
-                data: [31, 41, 22, 17, 56, 55],
-                fill: false,
-                borderColor: 'Green',
+                borderColor: 'RED',
                 tension: 0.1
             }
         ]
