@@ -222,7 +222,6 @@
       "y": "127.096753"
     }
   ],
-
   "orders": [
     {
       "id": "806e",
@@ -241,7 +240,6 @@
       }
     },
     {
-
       "id": "1008",
       "userId": "3",
       "userName": "탕후루",
@@ -265,11 +263,9 @@
         "userName": "탕후루",
         "userEmail": "a1@email.com",
         "address": "서울시 노원구"
-
       }
     }
   ],
-
   "products": [
     {
       "id": "1",
@@ -498,7 +494,6 @@
       "img": ""
     },
     {
-
       "id": "29",
       "title": "헬로독 슬리커",
       "category": "bath",
@@ -506,7 +501,6 @@
       "price": 8300,
       "img": "",
       "hoverImg": ""
-
     },
     {
       "id": "30",
@@ -532,7 +526,8 @@
     },
     {
       "id": "33",
-      "category": "DogHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "소형",
       "img": "/images/DogHouse1.jpg",
       "title": "플라스틱 하우스",
@@ -540,7 +535,8 @@
     },
     {
       "id": "34",
-      "category": "DogHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "중형",
       "img": "/images/DogHouse2.jpg",
       "title": "천막형 하우스",
@@ -548,7 +544,8 @@
     },
     {
       "id": "35",
-      "category": "DogHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "소형",
       "img": "/images/DogHouse3.png",
       "title": "러블리 하우스",
@@ -556,7 +553,8 @@
     },
     {
       "id": "36",
-      "category": "DogHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "소형",
       "img": "/images/DogHouse4.png",
       "title": "휴식 하우스",
@@ -564,7 +562,8 @@
     },
     {
       "id": "37",
-      "category": "DogHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "중형",
       "img": "/images/DogHouse5.png",
       "title": "원목가공형 하우스",
@@ -572,7 +571,8 @@
     },
     {
       "id": "38",
-      "category": "DogHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "대형",
       "img": "/images/DogHouse6.png",
       "title": "심플원목 하우스",
@@ -580,7 +580,8 @@
     },
     {
       "id": "39",
-      "category": "DogHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "중형",
       "img": "/images/DogHouse7.png",
       "title": "세련된원목 하우스",
@@ -588,7 +589,8 @@
     },
     {
       "id": "40",
-      "category": "DogHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "대형",
       "img": "/images/DogHouse8.png",
       "title": "원목가공형 하우스",
@@ -596,7 +598,8 @@
     },
     {
       "id": "41",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "대형",
       "img": "/images/CatHouse1.png",
       "title": "통나무 하우스",
@@ -604,7 +607,8 @@
     },
     {
       "id": "42",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "대형",
       "img": "/images/CatHouse2.png",
       "title": "포근 하우스",
@@ -612,7 +616,8 @@
     },
     {
       "id": "43",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "중형",
       "img": "/images/CatHouse3.jpg",
       "title": "박스 하우스",
@@ -620,7 +625,8 @@
     },
     {
       "id": "44",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "중형",
       "img": "/images/CatHouse4.jpg",
       "title": "가구형 하우스",
@@ -628,7 +634,8 @@
     },
     {
       "id": "45",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "중형",
       "img": "/images/CatHouse5.png",
       "title": "미니통나무 하우스",
@@ -636,7 +643,8 @@
     },
     {
       "id": "46",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "중형",
       "img": "/images/CatHouse6.png",
       "title": "스크래쳐형 하우스",
@@ -644,7 +652,8 @@
     },
     {
       "id": "47",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "소형",
       "img": "/images/CatHouse7.png",
       "title": "외부형솜털 하우스",
@@ -652,7 +661,8 @@
     },
     {
       "id": "48",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "중형",
       "img": "/images/CatHouse8.png",
       "title": "아트형 나무하우스 ",
@@ -660,7 +670,8 @@
     },
     {
       "id": "49",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실외용",
       "size": "대형",
       "img": "/images/CatHouse9.png",
       "title": "스크래쳐 하우스",
@@ -668,7 +679,8 @@
     },
     {
       "id": "50",
-      "category": "CatHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "소형",
       "img": "/images/CatHouse10.png",
       "title": "이불형 하우스",
@@ -676,7 +688,8 @@
     },
     {
       "id": "51",
-      "category": "PetHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "소형",
       "img": "/images/PetHouse1.png",
       "title": "도치 하우스",
@@ -684,7 +697,8 @@
     },
     {
       "id": "52",
-      "category": "PetHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "소형",
       "img": "/images/PetHouse2.png",
       "title": "래트 하우스",
@@ -692,7 +706,8 @@
     },
     {
       "id": "53",
-      "category": "PetHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "소형",
       "img": "/images/PetHouse3.png",
       "title": "햄스터 하우스1 ",
@@ -700,7 +715,8 @@
     },
     {
       "id": "54",
-      "category": "PetHouse",
+      "category": "house",
+      "sub": "실내용",
       "size": "소형",
       "img": "/images/PetHouse4.png",
       "title": "햄스터 하우스2",
@@ -708,7 +724,8 @@
     },
     {
       "id": "55",
-      "category": "CLOTH",
+      "category": "fashion",
+      "sub": "올인원",
       "img": "/images/cloth1.png",
       "title": "강아지신사 슈트",
       "size": "M",
@@ -716,7 +733,8 @@
     },
     {
       "id": "56",
-      "category": "CLOTH",
+      "category": "fashion",
+      "sub": "올인원",
       "img": "/images/cloth2.png",
       "title": "깔끔한블랙 슈트",
       "size": "S",
@@ -724,7 +742,8 @@
     },
     {
       "id": "57",
-      "category": "CLOTH",
+      "category": "fashion",
+      "sub": "머플러",
       "img": "/images/cloth3.png",
       "title": "롱머플러",
       "size": "XL",
@@ -732,7 +751,8 @@
     },
     {
       "id": "58",
-      "category": "CLOTH",
+      "category": "fashion",
+      "sub": "소품",
       "img": "/images/cloth4.png",
       "title": "단정한리본 세트",
       "size": "S",
@@ -740,7 +760,8 @@
     },
     {
       "id": "59",
-      "category": "CLOTH",
+      "category": "fashion",
+      "sub": "머플러",
       "img": "/images/cloth5.png",
       "title": "고풍스러운 케이프",
       "size": "L",
@@ -748,7 +769,8 @@
     },
     {
       "id": "60",
-      "category": "CLOTH",
+      "category": "fashion",
+      "sub": "상의",
       "img": "/images/cloth6.png",
       "title": "하와이안 남방",
       "size": "S",
@@ -756,7 +778,8 @@
     },
     {
       "id": "61",
-      "category": "CLOTH",
+      "category": "fashion",
+      "sub": "상의",
       "img": "/images/cloth7.png",
       "title": "줄무늬 스웨터",
       "size": "M",
@@ -764,7 +787,8 @@
     },
     {
       "id": "62",
-      "category": "CLOTH",
+      "category": "fashion",
+      "sub": "상의",
       "img": "/images/cloth8.png",
       "title": "솜털 스웨터",
       "size": "M",
@@ -772,7 +796,8 @@
     },
     {
       "id": "63",
-      "category": "HAT",
+      "category": "fashion",
+      "sub": "모자",
       "img": "/images/hat1.png",
       "title": "미니 모자",
       "size": "S",
@@ -780,7 +805,8 @@
     },
     {
       "id": "64",
-      "category": "HAT",
+      "category": "fashion",
+      "sub": "모자",
       "img": "/images/hat2.png",
       "title": "볏집 모자",
       "size": "M",
@@ -788,7 +814,8 @@
     },
     {
       "id": "65",
-      "category": "HAT",
+      "category": "fashion",
+      "sub": "모자",
       "img": "/images/hat3.png",
       "title": "개구리스웨터 모자",
       "size": "L",
@@ -796,7 +823,8 @@
     },
     {
       "id": "66",
-      "category": "HAT",
+      "category": "fashion",
+      "sub": "모자",
       "img": "/images/hat4.png",
       "title": "소형 산타모자",
       "size": "S",
@@ -804,7 +832,8 @@
     },
     {
       "id": "67",
-      "category": "HAT",
+      "category": "fashion",
+      "sub": "모자",
       "img": "/images/hat5.png",
       "title": "미니 엉클샘모자",
       "size": "M",
@@ -812,7 +841,8 @@
     },
     {
       "id": "68",
-      "category": "HAT",
+      "category": "fashion",
+      "sub": "모자",
       "img": "/images/hat6.png",
       "title": "꿀꿀이모자",
       "size": "M",
@@ -820,7 +850,8 @@
     },
     {
       "id": "69",
-      "category": "HAT",
+      "category": "fashion",
+      "sub": "모자",
       "img": "/images/hat7.png",
       "title": "경찰캡",
       "size": "L",
@@ -828,7 +859,8 @@
     },
     {
       "id": "70",
-      "category": "HAT",
+      "category": "fashion",
+      "sub": "모자",
       "img": "/images/hat8.png",
       "title": "솜브레로모자",
       "size": "M",
@@ -836,7 +868,8 @@
     },
     {
       "id": "71",
-      "category": "SUNGLASS",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/sunglass1.png",
       "title": "black 선글라스",
       "size": "M",
@@ -844,7 +877,8 @@
     },
     {
       "id": "72",
-      "category": "SUNGLASS",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/sunglass2.png",
       "title": "yellow 선글라스",
       "size": "L",
@@ -852,7 +886,8 @@
     },
     {
       "id": "73",
-      "category": "SUNGLASS",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/sunglass3.png",
       "title": "거대 동글이안경",
       "size": "L",
@@ -860,7 +895,8 @@
     },
     {
       "id": "74",
-      "category": "SUNGLASS",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/sunglass4.png",
       "title": "레옹 선글라스",
       "size": "S",
@@ -868,7 +904,8 @@
     },
     {
       "id": "75",
-      "category": "SUNGLASS",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/sunglass5.png",
       "title": "blue&yellow 선글라스",
       "size": "M",
@@ -876,7 +913,8 @@
     },
     {
       "id": "76",
-      "category": "SUNGLASS",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/sunglass6.png",
       "title": "red외계인 선글라스",
       "size": "M",
@@ -884,7 +922,8 @@
     },
     {
       "id": "77",
-      "category": "SUNGLASS",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/sunglass7.png",
       "title": "brown 선글라스",
       "size": "M",
@@ -892,7 +931,8 @@
     },
     {
       "id": "78",
-      "category": "SUNGLASS",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/sunglass8.png",
       "title": "12각 선글라스",
       "size": "M",
@@ -900,7 +940,8 @@
     },
     {
       "id": "79",
-      "category": "TIE",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/tie1.png",
       "title": "brown star 넥타이",
       "size": "M",
@@ -908,7 +949,8 @@
     },
     {
       "id": "80",
-      "category": "TIE",
+      "category": "fashion",
+      "sub": "안경",
       "img": "/images/tie2.png",
       "title": "black 나비넥타이",
       "size": "S",
@@ -916,7 +958,8 @@
     },
     {
       "id": "81",
-      "category": "TIE",
+      "category": "fashion",
+      "sub": "소품",
       "img": "/images/tie3.png",
       "title": "격자무늬 넥타이",
       "size": "M",
@@ -924,7 +967,8 @@
     },
     {
       "id": "82",
-      "category": "TIE",
+      "category": "fashion",
+      "sub": "소품",
       "img": "/images/tie4.png",
       "title": "체크무늬 넥타이",
       "size": "L",
@@ -932,7 +976,8 @@
     },
     {
       "id": "83",
-      "category": "TIE",
+      "category": "fashion",
+      "sub": "소품",
       "img": "/images/tie5.png",
       "title": "크리스마스 넥타이",
       "size": "M",
@@ -940,7 +985,8 @@
     },
     {
       "id": "84",
-      "category": "TIE",
+      "category": "fashion",
+      "sub": "소품",
       "img": "/images/tie6.png",
       "title": "레드리본 넥타이",
       "size": "M",
@@ -948,7 +994,8 @@
     },
     {
       "id": "85",
-      "category": "TIE",
+      "category": "fashion",
+      "sub": "소품",
       "img": "/images/tie7.png",
       "title": "심플black 넥타이",
       "size": "M",
@@ -956,13 +1003,13 @@
     },
     {
       "id": "86",
-      "category": "TIE",
+      "category": "fashion",
+      "sub": "소품",
       "img": "/images/tie8.png",
       "title": "알록달록무늬 넥타이",
       "size": "S",
       "price": 3900
     }
-
   ],
   "reviews": [
     {
@@ -1134,6 +1181,5 @@
       "productId": "57",
       "time": "2025-07-01T08:20:11.436Z"
     }
-
   ]
 }
