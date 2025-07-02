@@ -1,11 +1,7 @@
 import React from 'react'
 
-
-import { Line } from 'react-chartjs-2';
 import LinChart from '../../../chart/LinChart';
 import PieChart from '../../../chart/PieChart';
-
-
 
 // 주석말고 npm install chartjs-2 하세요
 
@@ -28,6 +24,5 @@ const AdminDashBoard = () => {
         </div>
     )
 }
-
 
 export default AdminDashBoard
