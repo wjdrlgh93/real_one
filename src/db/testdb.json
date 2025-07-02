@@ -51,7 +51,7 @@
       "userPw": "11",
       "userName": "금태양",
       "age": 40,
-      "address": "11",
+      "address": "제주도 ",
       "role": "ROLE_MEMBER"
     },
     {
@@ -105,7 +105,7 @@
       "userPw": "1234",
       "userName": "1234",
       "age": "1234",
-      "address": "44",
+      "address": "서울시 은평구",
       "role": "ROLE_MEMBER"
     },
     {
@@ -114,7 +114,7 @@
       "userPw": "1234",
       "userName": "1234",
       "age": "31",
-      "address": "1234",
+      "address": "부산 중구",
       "role": "ROLE_MEMBER"
     }
   ],
@@ -1165,6 +1165,36 @@
       "type": "qna",
       "productId": "57",
       "time": "2025-07-01T08:20:11.436Z"
+    }
+  ],
+  "sales": [
+    {
+      "month": "1月",
+      "salesMount": "2500000"
+    },
+    {
+      "month": "2月",
+      "salesMount": "1980000"
+    },
+    {
+      "month": "3月",
+      "salesMount": "3110000"
+    },
+    {
+      "month": "4月",
+      "salesMount": "1982000"
+    },
+    {
+      "month": "5月",
+      "salesMount": "1100000"
+    },
+    {
+      "month": "6月",
+      "salesMount": "3330000"
+    },
+    {
+      "month": "7月",
+      "salesMount": "3522000"
     }
   ]
 }

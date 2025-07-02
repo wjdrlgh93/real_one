@@ -2,6 +2,17 @@
     box-sizing: border-box;
 }
 
+.dash_title {
+    background-color: #e3e3e3;
+    font-size: 20px;
+    padding: 2vw;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .LineC {
 
     display: flex;
@@ -88,4 +99,26 @@
 
     border-radius: 15px;
 
+}
+
+
+/* FOR LOOPING TEXT */
+body {
+    min-height: 100vh;
+    /* force some scrollbars */
+}
+
+.hero-section {
+    /* position: relative; */
+    /* top: 50vh; */
+    overflow: hidden;
+    /* font: 900 20vw/1; */
+    font-size: 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    /* min-height: 50vh; */
 }
