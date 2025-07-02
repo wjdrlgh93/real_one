@@ -1,12 +1,14 @@
 import React from 'react'
+import AddToCartModal from '../../cart/AddToCartModal'
+import { useNavigate } from 'react-router-dom'
 
 
 const ShopDetailLayout = (props) => {
 
-  const cartBtn = async (e) => {
-    
-  }
+  const navigate = useNavigate()
+
   return (
+    <>
     <div className="detailLayout">
       <div className="detail-con">
         <div className="left">
@@ -26,6 +28,7 @@ const ShopDetailLayout = (props) => {
           </div>
             <div className="total">
               <span>합계: ￦{props.count * props.price}</span>
+              
               <button onClick = {props.onAddToCart}>Add to Cart</button>
             </div>
 
@@ -33,6 +36,14 @@ const ShopDetailLayout = (props) => {
         </div>
       </div>
     </div>
+    {props.addCartModal && (
+      <AddToCartModal
+      onCart={() => navigate('/cart')}
+      onClose={() => props.setAddCartModal(false)}
+      />
+    )}
+    {props.addCartModal && <div>✅ 모달 조건 통과</div>}
+    </>
   )
 }
 
