@@ -12,20 +12,87 @@
 }
 
 .ShopHouseContainer .ShopHouseSearch {
- margin-left: 900px;
- padding: 1vw;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 300px;
+  padding: 1vw;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.ShopHouseContainer .ShopHouseSearch input[type="text"] {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.ShopHouseContainer .ShopHouseSearch input[type="text"]:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+.ShopHouseContainer .ShopHouseSearch .submit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.ShopHouseContainer .ShopHouseSearch .submit-button:hover {
+  background-color: #45a049;
 }
 
 .ShopHouseContainer h2 {
-  padding: 40px 0 20px 0;
+  padding: 1vw;
   font-size: 40px;
-  color: rgb(49, 49, 49);
+  color: brown;
 }
 
 .ShopHouseContainer p {
   color: rgb(248, 93, 93);
   padding-top: 0.3vw;
   margin: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.pagination button:hover {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.pagination button.active {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  border-color: #4CAF50;
 }
 
 .ShopHouseContainer .ShopHouseContainer-top,

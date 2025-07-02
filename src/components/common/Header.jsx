@@ -53,11 +53,6 @@ const Header = () => {
               {isLogin ? (
                 <>
                   <li>
-                    <span>
-                       {user?.username || "사용자"} 님 환영합니다!
-                    </span>
-                  </li>
-                  <li>
                     <Link to="#" onClick={handleLogout}>
                       LOGOUT
                     </Link>
@@ -82,7 +77,7 @@ const Header = () => {
                 </>
               )}
               <li>
-                <Link to={"/shop"}>주문내역</Link>
+                <Link to={"/payment"}>주문내역</Link>
               </li>
 
               <li className="headerCart">
@@ -99,7 +94,7 @@ const Header = () => {
         <div className="nav-middle-con">
           <h1 className="logo2">
             <Link to={"/shop"}>
-              <img src="/images/logo.png" alt="LOGO" width="125" height="90" />
+              <img src="/images/logo.png" alt="LOGO" width="200" height="200" />
             </Link>
           </h1>
         </div>

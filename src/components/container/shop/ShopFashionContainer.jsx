@@ -30,6 +30,7 @@ function FashionList() {
   const [fashions, setfashions] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const navigate = useNavigate();
+  const [Search, setSearch] = useState('');
 
   const [clothPage, setclothPage] = useState(1);
   const [hatPage, sethatPage] = useState(1);
@@ -38,7 +39,6 @@ function FashionList() {
 
   const itemsPerPage = 4;
 
-
   useEffect(() => {
     fetch('http://localhost:3001/products')
       .then(res => res.json())
@@ -46,11 +46,15 @@ function FashionList() {
       .catch(error => console.error('데이터 불러오기 실패:', error));
   }, []);
 
-  const cloths = fashions.filter(item => item.category === 'CLOTH');
-  const hats = fashions.filter(item => item.category === 'HAT');
-  const sunglasses = fashions.filter(item => item.category === 'SUNGLASS');
-  const ties = fashions.filter(item => item.category === 'TIE');
+  const filterBySearch = (list) =>
+    list.filter(item =>
+      item.title.toLowerCase().includes(Search.toLowerCase())
+    )
 
+  const cloths = filterBySearch(fashions.filter(item => item.category === 'CLOTH'));
+  const hats = filterBySearch(fashions.filter(item => item.category === 'HAT'));
+  const sunglasses = filterBySearch(fashions.filter(item => item.category === 'SUNGLASS'));
+  const ties = filterBySearch(fashions.filter(item => item.category === 'TIE'));
 
 
   const getPaginatedItems = (items, currentPage) => {
@@ -69,6 +73,21 @@ function FashionList() {
 
   return (
     <div className="ShopFashionContainer">
+      <div className="ShopFashionSearch">
+        <input
+          type="text"
+          placeholder="상품명 검색"
+          value={Search}
+          onChange={(e) => {
+            setSearch(e.target.value);
+            setclothPage(1);
+            sethatPage(1);
+            setsunglassPage(1);
+            settiePage(1);
+          }}/>
+            <button type="submit" className="submit-button">검색
+            </button>
+        </div>
       <h2>펫 의상</h2>
       <div className="ShopFashionContainer-top">
         {paginatedcloths.map(item => (
