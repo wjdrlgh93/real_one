@@ -13,8 +13,13 @@ const Header = () => {
 
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn") === "1";
+    const savedUser = localStorage.getItem("isUser")
     if (storedLogin && !isLogin) {
       dispatch(loginUserFn());
+    }    
+    if (storedLogin && savedUser && !isLogin) {
+      const parsedUser = JSON.parse(savedUser)
+      dispatch(loginUserFn(parsedUser)); 
     }
   }, [dispatch, isLogin]);
 

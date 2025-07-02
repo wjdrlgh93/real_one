@@ -42,7 +42,6 @@ const ShopDetailLayout = (props) => {
       onClose={() => props.setAddCartModal(false)}
       />
     )}
-    {props.addCartModal && <div>✅ 모달 조건 통과</div>}
     </>
   )
 }
