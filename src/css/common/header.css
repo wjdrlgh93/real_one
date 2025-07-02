@@ -58,12 +58,25 @@
     position: relative;
 }
 .header .nav-top .top-gnb ul li span.cart{
+    width: 14px;
+    height: 14px;
     position: absolute;
     top: 2.5px;
-    left: 35px;
+    left: 33px;
+
+    background-color: #578FCA;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    padding: 2px;
+
     font-family: 'KBO Dia Gothic_light';
     font-size: x-small;
     font-weight: bolder;
+    color: #ffffff;
 }
 
 .header .nav-top .top-gnb ul li a {

@@ -3,8 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { removePaidItems } from '../../../slices/cartSlice';
-import KakaoMap from '../../../API/kakaoApITest';
-import { addPayment } from '../../../slices/paymentSlice';
+import KakaoMapModal from './KakaoMap/KakaoMapModal';
+import { addPayment} from '../../../slices/paymentSlice';
+import KakaoMap from '../../../API/kakaoApITest'
+import KakaoMapCustom from './KakaoMap/KakaoMapCustom';
 
 const today = new Date(); // 현재 날짜
 const formattedDate = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`
@@ -28,6 +30,7 @@ const paymentPre = {
 }
 
 const OrderPayment = () => {
+  
   const navigate = useNavigate()
   const dispatch = useDispatch()
   
@@ -57,7 +60,7 @@ const OrderPayment = () => {
     })
   }
 
-
+  
   // 주문자 정보 입력 칸
   const [sameAsUser, setSameAsUser] = useState(false)
   const [ordererInfo, setOrdererInfo] = useState({
@@ -88,7 +91,7 @@ const OrderPayment = () => {
   }
 
   console.log('loginUser:', loginUser)
-
+  
   // const isSameAsUser = (e) => {
   //   const checked = e.target.checked
   //   setSameAsUser(checked)
@@ -99,27 +102,29 @@ const OrderPayment = () => {
   //       address:loginUser.address
   //     })
   //   } else {
-  //     setOredererInfo({
+    //     setOredererInfo({
   //       name:'',
   //       email:'',
   //       address:''
   //     })
   //   }
   // }
-
-
+  
+  
   // 주문처 선택
   const [shopList, setShopList] = useState([])
   const [selectStore, setSelectStore] = useState()
   const [mapVisibleId, setMapVisibleId] = useState(null)
-
+  const [isOpen, setIsOpen] = useState(false)
+  const [selectedShop, setSelectedShop] = useState(null)
+  
   useEffect(() => {
     const fetchShopList = async() => {
       try {
         const res = await axios.get('http://localhost:3001/shopList')
         setShopList(res.data)
       } catch (error) {
-      console.eroor('매장 리스트 로딩 실패: ', error)
+        console.eroor('매장 리스트 로딩 실패: ', error)
       }
     }
     fetchShopList()
@@ -137,6 +142,11 @@ const OrderPayment = () => {
   const showMap = (id) => {
     setMapVisibleId(prev => (prev === id ? null : id))
   }
+
+  // const showMap = (store) => {
+  //   setSelectedShop(store)
+  //   setIsOpen(true)
+  // }
 
   // 결제하기 버튼 함수
   const paymentBtn = async (e) => {
@@ -198,6 +208,8 @@ const OrderPayment = () => {
     }
 
   }
+  const monthRevenue = useSelector(state => state.payment.monthlyRevenue)
+  console.log(monthRevenue)
 
   return (
     <div className="paymentList">
@@ -358,13 +370,21 @@ const OrderPayment = () => {
                       지도 보기
                     </button>
                     {mapVisibleId === store.id && (<div>
-                      <KakaoMap lat={store.x} lng={store.y}/>
+                      <KakaoMapCustom lat={store.x} lng={store.y}/>
                     <p>{store.address}</p>
                     </div>
                   )}
                   </li>
                 ))}
               </ul>
+              {/* {selectedShop && (
+                <KakaoMapModal
+                  isOpen={isOpen}
+                  onClose={() => setIsOpen(false)}
+                  lat={selectedShop.x}
+                  lng={selectedShop.y}
+                />
+              )} */}
             </div>
           </div>         
         </div>

@@ -17,7 +17,8 @@ const ProductDetail = () => {
   
   const [product, setProduct] = useState([])
   const [count, setCount] = useState(1)
-  
+  const [addCartModal, setAddCartModal] = useState(false)
+
   useEffect(() => {
     const productURL = `http://localhost:3001/products`
     
@@ -38,8 +39,8 @@ const ProductDetail = () => {
   const addToCart = () => {
     const item = {id: product.id, title: product.title, price:product.price, img: product.img, hoverImg: product.hoverImg, count:count}
     console.log(item.img)
+    setAddCartModal(true)
     dispatch(addCart(item))
-    navigate('/cart');
   }
   const decrease = () => {
     if(count > 1) {
@@ -65,6 +66,8 @@ console.log('image path:', `/images/${product.hoverImg}`)
     onAddToCart={addToCart}
     onDecrease={decrease}
     onIncrease={increase}
+    addCartModal={addCartModal}
+    setAddCartModal={setAddCartModal}
     >
     
     </ShopDetailLayout>
