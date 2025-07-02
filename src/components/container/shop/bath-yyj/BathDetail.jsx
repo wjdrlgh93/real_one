@@ -11,11 +11,13 @@ const BathDetail = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+  const [addCartModal, setAddCartModal] = useState(false)
+
   const addToCart = () => {
     const item = {id: product.id, title: product.title, price:product.price, img:product.img, hoverImg: product.hoverImg, count:count}
     
     dispatch(addCart(item))
-    navigate('/cart');
+    setAddCartModal(true)
   }
 
   const [count, setCount] = useState(1)
@@ -59,6 +61,8 @@ const BathDetail = () => {
     onAddToCart={addToCart}
     onIncrease={onIncrease}
     onDecrease={onDecrease}
+    addCartModal={addCartModal}
+    setAddCartModal={setAddCartModal}
     >
 
     </ShopDetailLayout>
