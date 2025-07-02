@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function HouseDetail() {
   const { id } = useParams();
@@ -22,7 +23,7 @@ function HouseDetail() {
       .catch((err) => {
         console.error(err);
         alert('존재하지 않는 상품입니다.');
-        navigate('/'); // 상품 없으면 메인으로 이동 (선택사항)
+        navigate('/'); // 상품 없으면 메인으로 이동
       });
   }, [id, navigate]);
 
@@ -61,9 +62,29 @@ function HouseDetail() {
 function HouseDetailTabs({ item }) {
   const [activeTab, setActiveTab] = useState('detail');
   const [reviews, setReviews] = useState([]);
-  // 초기 type을 review로 맞춤 (후기 탭용)
   const [newReview, setNewReview] = useState({ author: '', content: '', rating: 0, type: 'review' });
   const [Search, setSearch] = useState('');
+
+  // 리덕스에서 로그인 상태, 사용자 정보 가져오기
+  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const currentUser = useSelector(state => state.auth.isUser);
+
+  const navigate = useNavigate();
+
+  // 로그인 사용자 정보가 바뀌면 newReview.author 업데이트
+  useEffect(() => {
+    if (currentUser) {
+      setNewReview(prev => ({
+        ...prev,
+        author: currentUser.userName || currentUser.userEmail || '',
+      }));
+    } else {
+      setNewReview(prev => ({
+        ...prev,
+        author: '',
+      }));
+    }
+  }, [currentUser]);
 
   useEffect(() => {
     if (!item) return;
@@ -76,6 +97,12 @@ function HouseDetailTabs({ item }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if(!isLoggedIn) {
+      alert('로그인이 필요합니다.');
+      navigate('/auth/login');
+      return;
+    }
 
     if(newReview.rating === 0 && newReview.type === 'review'){
       alert('평점을 선택해주세요.');
@@ -95,7 +122,7 @@ function HouseDetailTabs({ item }) {
       .then((savedReview) => {
         setReviews(prev => [...prev, savedReview]);
         // 작성 후 초기화 (type 유지)
-        setNewReview(prev => ({ author: '', content: '', rating: 0, type: prev.type }));
+        setNewReview(prev => ({ author: currentUser ? (currentUser.userName || currentUser.userEmail) : '', content: '', rating: 0, type: prev.type }));
       })
       .catch(err => alert('후기 등록 실패'));
   };
@@ -103,9 +130,9 @@ function HouseDetailTabs({ item }) {
   const handleTabChange = (tab) => {
     setActiveTab(tab);
     if (tab === 'review') {
-      setNewReview(prev => ({ ...prev, type: 'review', rating: 0, author: '', content: '' }));
+      setNewReview(prev => ({ ...prev, type: 'review', rating: 0, content: '', author: currentUser ? (currentUser.userName || currentUser.userEmail) : '' }));
     } else if (tab === 'qna') {
-      setNewReview(prev => ({ ...prev, type: 'qna', rating: 0, author: '', content: '' }));
+      setNewReview(prev => ({ ...prev, type: 'qna', rating: 0, content: '', author: currentUser ? (currentUser.userName || currentUser.userEmail) : '' }));
     }
   };
 
@@ -189,26 +216,37 @@ function HouseDetailTabs({ item }) {
                   </button>
                 </div>
               </div>
-
-              <h4>후기 작성</h4>
-              <form onSubmit={handleSubmit}>
-                <div className="review-con-top">
-                  <input
-                    type="text"
-                    placeholder="작성자"
-                    value={newReview.author}
-                    onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
-                    required
-                  />
-                  <textarea
-                    className="review-textarea"
-                    placeholder="내용을 입력하세요"
-                    value={newReview.content}
-                    onChange={(e) => setNewReview({ ...newReview, content: e.target.value })}
-                    required
-                  />
-                  <button type="submit" className="submit-button">등록</button>
-                </div>
+          
+              {isLoggedIn ? (
+                <>
+                  <h4>후기 작성</h4>
+                  <form onSubmit={handleSubmit}>
+                    <div className="review-con-top">
+                      <input
+                        type="text"
+                        placeholder="작성자"
+                        value={newReview.author}
+                        onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
+                        required
+                      />
+                      <textarea
+                        className="review-textarea"
+                        placeholder="내용을 입력하세요"
+                        value={newReview.content}
+                        onChange={(e) => setNewReview({ ...newReview, content: e.target.value })}
+                        required
+                      />
+                      <button type="submit" className="submit-button">
+                        등록
+                      </button>
+                    </div>
+                  </form>
+                </>
+              ) : (
+                <p style={{ color: 'red', marginTop: '10px' }}>
+                  ※ 후기를 작성하려면 로그인이 필요합니다.
+                </p>
+              )}
 
                 <div className="review-con-bottom">
                   <div className="reviews">
@@ -238,7 +276,6 @@ function HouseDetailTabs({ item }) {
                     )}
                   </div>
                 </div>
-              </form>
             </div>
           </>
         )}
@@ -280,25 +317,36 @@ function HouseDetailTabs({ item }) {
                 </div>
               </div>
 
-              <h4>상품문의 작성</h4>
-              <form onSubmit={handleSubmit}>
-                <div className="review-con-top">
-                  <input
-                    type="text"
-                    placeholder="작성자"
-                    value={newReview.author}
-                    onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
-                    required
-                  />
-                  <textarea
-                    className="review-textarea"
-                    placeholder="내용을 입력하세요"
-                    value={newReview.content}
-                    onChange={(e) => setNewReview({ ...newReview, content: e.target.value })}
-                    required
-                  />
-                  <button type="submit" className="submit-button">등록</button>
-                </div>
+              {isLoggedIn ? (
+                <>
+                  <h4>상품문의 작성</h4>
+                  <form onSubmit={handleSubmit}>
+                    <div className="review-con-top">
+                      <input
+                        type="text"
+                        placeholder="작성자"
+                        value={newReview.author}
+                        onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
+                        required
+                      />
+                      <textarea
+                        className="review-textarea"
+                        placeholder="내용을 입력하세요"
+                        value={newReview.content}
+                        onChange={(e) => setNewReview({ ...newReview, content: e.target.value })}
+                        required
+                      />
+                      <button type="submit" className="submit-button">
+                        등록
+                      </button>
+                    </div>
+                  </form>
+                </>
+              ) : (
+                <p style={{ color: 'red', marginTop: '10px' }}>
+                  ※ 문의를 작성하려면 로그인이 필요합니다.
+                </p>
+              )}
 
                 <div className="review-con-bottom">
                   <div className="reviews">
@@ -313,21 +361,22 @@ function HouseDetailTabs({ item }) {
                             r.author.toLowerCase().includes(Search.toLowerCase()) ||
                             r.content.toLowerCase().includes(Search.toLowerCase())
                           )
-                          .map((review) => {
-                            const date = review.time ? new Date(review.time) : null;
+                          .map((qna) => {
+                            const date = qna.time ? new Date(qna.time) : null;
                             return (
-                              <li key={review.id} className="review-item">
-                                <strong>{review.author}</strong>
-                                <p>
-                                  문의유형:{' '}
-                                  {review.rating === 1 ? '불량상품 문의' :
-                                   review.rating === 2 ? '사이즈 문의' :
-                                   review.rating === 3 ? '색상 문의' :
-                                   review.rating === 4 ? '재고 문의' :
-                                   review.rating === 5 ? '기타 문의' :
-                                   '기타'}
-                                </p>
-                                <p>{review.content}</p>
+                              <li key={qna.id} className="review-item">
+                                <strong>{qna.author}</strong>
+                                <p>문의 유형: {(() => {
+                                  switch(qna.rating){
+                                    case 1: return '불량상품 문의';
+                                    case 2: return '사이즈 문의';
+                                    case 3: return '색상 문의';
+                                    case 4: return '재고 문의';
+                                    case 5: return '기타 문의';
+                                    default: return '미분류';
+                                  }
+                                })()}</p>
+                                <p>{qna.content}</p>
                                 <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
                               </li>
                             );
@@ -336,17 +385,15 @@ function HouseDetailTabs({ item }) {
                     )}
                   </div>
                 </div>
-              </form>
             </div>
           </>
         )}
 
         {/* 교환/반품/배송 탭 */}
         {activeTab === 'exchange' && (
-          <div className="exchange-content">
-            <div className="exchange-images">
-              <img src="/images/PetDetail6.png" alt="교환 배송 안내" />
-            </div>
+          <div className="exchange-info">
+            <p>교환 및 반품 안내 내용</p>
+            {/* 여기에 교환/반품/배송 정보 작성 */}
           </div>
         )}
       </div>
