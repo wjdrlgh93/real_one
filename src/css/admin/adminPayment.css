@@ -40,3 +40,32 @@
     color: #578FCA;
 
 }
+
+/* span */
+
+.top ul {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    gap: .1vw;
+    padding: .1vw;
+}
+
+.top ul li span:first-child {
+    align-items: center;
+    background-color: #b50480;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1;
+    justify-content: flex-start;
+    padding: 0 .5vw;
+}
+
+.top ul li span:nth-child(2) {
+    background-color: #fff;
+    flex: 2.5 1;
+    text-align: center;
+}

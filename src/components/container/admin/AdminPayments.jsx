@@ -83,8 +83,32 @@ const AdminPayments = () => {
                         }}>
                             <div className={'modal-content'}>
                                 <div className={'memInfo'}> === 결제 상세보기 ===</div>
+                                {/* 
+                                <div>결제자 ID : {selectedPay.userId}</div>
+                                <div>결제자 이메일 : {selectedPay.userEmail}</div>
+                                <div>결제방법 : {selectedPay.paymentMethod}</div>
+                                <div>주문처 : {selectedPay.shop}</div>
+                                <div>주문금액 : {selectedPay.paymentAmount}</div> */}
 
-                                <div>test: {selectedPay.id}</div>
+                                <div className='top'>
+                                    <ul>
+                                        <li>
+                                            <span>결제일시 </span>
+                                            <span>{selectedPay.date}</span>
+                                        </li>
+                                        <li>
+                                            <span>ID </span>
+                                            <span>{selectedPay.userId}</span>
+                                        </li>
+                                        <li>
+                                            <span>EMAIL </span>
+                                            <span>{selectedPay.userEmail}</span>
+                                        </li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
+
 
 
                                 <button className={'modal-close-btn'} onClick={() => {
