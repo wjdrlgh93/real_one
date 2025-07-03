@@ -292,7 +292,7 @@
       }
     },
     {
-      "id": "39a3",
+      "id": "4",
       "userId": "7",
       "userName": "정기호 ",
       "userEmail": "mario115@naver.com",
@@ -329,6 +329,215 @@
       "paymentAmount": 14400,
       "shop": "의정부 민락동점",
       "date": "2025/7/3 10:23:57",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "5",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "휴대폰",
+      "paymentResult": [
+        {
+          "id": "4",
+          "title": "반려견 테니스공 장난감",
+          "price": 1600,
+          "img": "tennisBall.jpg",
+          "hoverImg": "tennisBallHover.jpg",
+          "count": 1,
+          "checked": true
+        },
+        {
+          "id": "14",
+          "title": "Happy 돼지 터그 놀이 인형",
+          "price": 4900,
+          "img": "tugPig.jpg",
+          "hoverImg": "tugPigHover.jpg",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 6500,
+      "shop": "도봉방학역점",
+      "date": "2025/7/3 12:27:13",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "6",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "카카오페이",
+      "paymentResult": [
+        {
+          "id": "4",
+          "title": "반려견 테니스공 장난감",
+          "price": 1600,
+          "img": "tennisBall.jpg",
+          "hoverImg": "tennisBallHover.jpg",
+          "count": 1,
+          "checked": true
+        },
+        {
+          "id": "14",
+          "title": "Happy 돼지 터그 놀이 인형",
+          "price": 4900,
+          "img": "tugPig.jpg",
+          "hoverImg": "tugPigHover.jpg",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 6500,
+      "shop": "도봉방학역점",
+      "date": "2025/7/3 12:30:41",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "7",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "휴대폰",
+      "paymentResult": [
+        {
+          "id": "18",
+          "title": "포에버 오트밀 샴푸",
+          "price": 7600,
+          "img": "oatmealShampoo.jpg",
+          "hoverImg": "",
+          "count": 5,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 38000,
+      "shop": "별내 별가람점",
+      "date": "2025/7/3 12:38:36",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "8",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "계좌이체",
+      "paymentResult": [
+        {
+          "id": "6",
+          "title": "나나펫 강아지 컬러 볼 세트",
+          "price": 6000,
+          "img": "colorBallSet.jpg",
+          "hoverImg": "",
+          "count": 11,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 66000,
+      "shop": "상계역점",
+      "date": "2025/7/3 12:44:34",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "9",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "무통장입금",
+      "paymentResult": [
+        {
+          "id": "8",
+          "title": "강아지 라텍스 공 장난감",
+          "price": 2300,
+          "img": "yellowBall.png",
+          "hoverImg": "",
+          "count": 5,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 11500,
+      "shop": "상계역점",
+      "date": "2025/7/3 12:46:11",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "10",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "카카오페이",
+      "paymentResult": [
+        {
+          "id": "9",
+          "title": "댕댕월드 꽈배기 볼 장난감",
+          "price": 2500,
+          "img": "ropeBall.jpg",
+          "hoverImg": "",
+          "count": 3,
+          "checked": true
+        },
+        {
+          "id": "18",
+          "title": "포에버 오트밀 샴푸",
+          "price": 7600,
+          "img": "oatmealShampoo.jpg",
+          "hoverImg": "",
+          "count": 4,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 37900,
+      "shop": "쌍문점",
+      "date": "2025/7/3 12:50:22",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "11",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "신용/체크카드",
+      "paymentResult": [
+        {
+          "id": "18",
+          "title": "포에버 오트밀 샴푸",
+          "price": 7600,
+          "img": "oatmealShampoo.jpg",
+          "hoverImg": "",
+          "count": 2,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 15200,
+      "shop": "의정부 민락동점",
+      "date": "2025/7/3 12:52:19",
       "orderer": {
         "userName": "정기호 ",
         "userEmail": "mario115@naver.com",

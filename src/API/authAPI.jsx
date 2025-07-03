@@ -3,7 +3,17 @@ import axios from 'axios'
 const API_SERVER_URL = 'http://localhost:3001/members'
 const API_SERVER_URL_ADDITEM = 'http://localhost:3001/products'
 
+const API_SERVER_URL_ORDERS = 'http://localhost:3001/orders'
 
+
+export const getOrdersSeletorApi = async () => {
+    try {
+        const ServerURL = await axios.get(`${API_SERVER_URL_ORDERS}`)
+        return ServerURL.data
+    } catch (err) {
+        alert(err)
+    }
+}
 
 //login
 export const getMemberSelectorApi = async () => {
