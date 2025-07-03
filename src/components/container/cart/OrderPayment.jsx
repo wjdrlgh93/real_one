@@ -243,31 +243,30 @@ const OrderPayment = () => {
   console.log(monthRevenue)
 
   return (
+
     <div className="paymentList">
       <div className="paymentList-left">
         <h3 className="title">주문 상품</h3>
 
-        <div className="paymentItem-con">                  
-            <div className="paymentItemList">
-              <ul>
-                {paymentItems.map((el,idx) => {
-                  console.log(el.img);
-                  return (
-                    <li>
-                      <div className="paymentItem" key={idx}>
-                        <div className="top">                          
-                          <img src={`/images/${el.img}`} alt={el.img} />
-                          <div className="top-con">
-                            <span> {el.title}</span>
-                            <span className="top-price">{el.price}원</span>
-                          </div>
-
+        <div className="paymentItem-con">
+          <div className="paymentItemList">
+            <ul>
+              {paymentItems.map((el, idx) => {
+                console.log(el.img);
+                return (
+                  <li key={idx}>
+                    <div className="paymentItem" >
+                      <div className="top">
+                        <img src={`/images/${el.img}`} alt={el.img} />
+                        <div className="top-con">
+                          <span> {el.title}</span>
+                          <span className="top-price">{el.price}원</span>
                         </div>
                       </div>
-                      <div className="bottom">
-                        <div className="paymentCount">
-                          <span>{el.count * el.price}원</span>
-                        </div>
+                    </div>
+                    <div className="bottom">
+                      <div className="paymentCount">
+                        <span>{el.count * el.price}원</span>
                       </div>
                     </div>
                   </li>
@@ -444,7 +443,7 @@ const OrderPayment = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
 
