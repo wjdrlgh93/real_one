@@ -15,6 +15,7 @@ const cartSlice = createSlice({
         return el.id === action.payload.id && el.title === action.payload.title
       })
       if (num === -1) {
+        console.log(action.payload)
         state.items.push({ ...action.payload, checked: false})
       } else {
         state.items[num].count += action.payload.count

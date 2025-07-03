@@ -219,6 +219,7 @@ const OrderPayment = () => {
             <div className="paymentItemList">
               <ul>
                 {paymentItems.map((el,idx) => {
+                  console.log(el.img);
                   return (
                     <li>
                       <div className="paymentItem" key={idx}>

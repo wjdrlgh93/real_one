@@ -168,7 +168,7 @@
       ],
       "phone": "010-7146-6007",
       "fax": "010-000-0000",
-      "bg": "https://cdn.litt.ly/images/PUQNQauBvTCzDJxqJsnm04Njlmw1Ftsi?s=600x600&f=webp",
+      "bg": "https://cdn.litt.lyPUQNQauBvTCzDJxqJsnm04Njlmw1Ftsi?s=600x600&f=webp",
       "x": "37.671510",
       "y": "127.117238"
     },
@@ -355,6 +355,33 @@
       "paymentAmount": 22800,
       "shop": "상계역점",
       "date": "2025/7/3 11:58:2",
+      "orderer": {
+        "userName": "1234",
+        "userEmail": "7777@email.com",
+        "address": "서울시 은평구"
+      }
+    },
+    {
+      "id": "90cd",
+      "userId": "12",
+      "userName": "1234",
+      "userEmail": "7777@email.com",
+      "paymentMethod": "계좌이체",
+      "paymentResult": [
+        {
+          "id": "33",
+          "category": "house",
+          "sub": "강아지",
+          "size": "소형",
+          "img": "DogHouse1.jpg",
+          "title": "플라스틱 하우스",
+          "price": 19900,
+          "count": 1
+        }
+      ],
+      "paymentAmount": 19900,
+      "shop": "상계역점",
+      "date": "2025/7/3 14:16:22",
       "orderer": {
         "userName": "1234",
         "userEmail": "7777@email.com",
@@ -651,7 +678,7 @@
       "category": "house",
       "sub": "강아지",
       "size": "소형",
-      "img": "/images/DogHouse1.jpg",
+      "img": "DogHouse1.jpg",
       "title": "플라스틱 하우스",
       "price": 19900
     },
@@ -660,7 +687,7 @@
       "category": "house",
       "sub": "강아지",
       "size": "중형",
-      "img": "/images/DogHouse2.jpg",
+      "img": "DogHouse2.jpg",
       "title": "천막형 하우스",
       "price": 21900
     },
@@ -669,7 +696,7 @@
       "category": "house",
       "sub": "강아지",
       "size": "소형",
-      "img": "/images/DogHouse3.png",
+      "img": "DogHouse3.png",
       "title": "러블리 하우스",
       "price": 20900
     },
@@ -678,7 +705,7 @@
       "category": "house",
       "sub": "강아지",
       "size": "소형",
-      "img": "/images/DogHouse4.png",
+      "img": "DogHouse4.png",
       "title": "휴식 하우스",
       "price": 29900
     },
@@ -687,7 +714,7 @@
       "category": "house",
       "sub": "강아지",
       "size": "중형",
-      "img": "/images/DogHouse5.png",
+      "img": "DogHouse5.png",
       "title": "원목가공형 하우스",
       "price": 26900
     },
@@ -696,7 +723,7 @@
       "category": "house",
       "sub": "강아지",
       "size": "대형",
-      "img": "/images/DogHouse6.png",
+      "img": "DogHouse6.png",
       "title": "심플원목 하우스",
       "price": 39900
     },
@@ -705,7 +732,7 @@
       "category": "house",
       "sub": "강아지",
       "size": "중형",
-      "img": "/images/DogHouse7.png",
+      "img": "DogHouse7.png",
       "title": "세련된원목 하우스",
       "price": 34900
     },
@@ -714,7 +741,7 @@
       "category": "house",
       "sub": "강아지",
       "size": "대형",
-      "img": "/images/DogHouse8.png",
+      "img": "DogHouse8.png",
       "title": "원목가공형 하우스",
       "price": 49900
     },
@@ -723,7 +750,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "대형",
-      "img": "/images/CatHouse1.png",
+      "img": "CatHouse1.png",
       "title": "통나무 하우스",
       "price": 10000
     },
@@ -732,7 +759,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "대형",
-      "img": "/images/CatHouse2.png",
+      "img": "CatHouse2.png",
       "title": "포근 하우스",
       "price": 19000
     },
@@ -741,7 +768,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "중형",
-      "img": "/images/CatHouse3.jpg",
+      "img": "CatHouse3.jpg",
       "title": "박스 하우스",
       "price": 21900
     },
@@ -750,7 +777,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "중형",
-      "img": "/images/CatHouse4.jpg",
+      "img": "CatHouse4.jpg",
       "title": "가구형 하우스",
       "price": 23900
     },
@@ -759,7 +786,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "중형",
-      "img": "/images/CatHouse5.png",
+      "img": "CatHouse5.png",
       "title": "미니통나무 하우스",
       "price": 25900
     },
@@ -768,7 +795,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "중형",
-      "img": "/images/CatHouse6.png",
+      "img": "CatHouse6.png",
       "title": "스크래쳐형 하우스",
       "price": 27900
     },
@@ -777,7 +804,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "소형",
-      "img": "/images/CatHouse7.png",
+      "img": "CatHouse7.png",
       "title": "외부형솜털 하우스",
       "price": 29900
     },
@@ -786,7 +813,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "중형",
-      "img": "/images/CatHouse8.png",
+      "img": "CatHouse8.png",
       "title": "아트형 나무하우스 ",
       "price": 30900
     },
@@ -795,7 +822,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "대형",
-      "img": "/images/CatHouse9.png",
+      "img": "CatHouse9.png",
       "title": "스크래쳐 하우스",
       "price": 33000
     },
@@ -804,7 +831,7 @@
       "category": "house",
       "sub": "고양이",
       "size": "소형",
-      "img": "/images/CatHouse10.png",
+      "img": "CatHouse10.png",
       "title": "이불형 하우스",
       "price": 31900
     },
@@ -813,7 +840,7 @@
       "category": "house",
       "sub": "소형펫",
       "size": "소형",
-      "img": "/images/PetHouse1.png",
+      "img": "PetHouse1.png",
       "title": "도치 하우스",
       "price": 9900
     },
@@ -822,7 +849,7 @@
       "category": "house",
       "sub": "소형펫",
       "size": "소형",
-      "img": "/images/PetHouse2.png",
+      "img": "PetHouse2.png",
       "title": "래트 하우스",
       "price": 14900
     },
@@ -831,7 +858,7 @@
       "category": "house",
       "sub": "소형펫",
       "size": "소형",
-      "img": "/images/PetHouse3.png",
+      "img": "PetHouse3.png",
       "title": "햄스터 하우스1 ",
       "price": 13900
     },
@@ -840,7 +867,7 @@
       "category": "house",
       "sub": "소형펫",
       "size": "소형",
-      "img": "/images/PetHouse4.png",
+      "img": "PetHouse4.png",
       "title": "햄스터 하우스2",
       "price": 29900
     },
@@ -848,7 +875,7 @@
       "id": "55",
       "category": "fashion",
       "sub": "의상",
-      "img": "/images/cloth1.png",
+      "img": "cloth1.png",
       "title": "강아지신사 슈트",
       "size": "M",
       "price": 14900
@@ -857,7 +884,7 @@
       "id": "56",
       "category": "fashion",
       "sub": "의상",
-      "img": "/images/cloth2.png",
+      "img": "cloth2.png",
       "title": "깔끔한블랙 슈트",
       "size": "S",
       "price": 9900
@@ -866,7 +893,7 @@
       "id": "57",
       "category": "fashion",
       "sub": "의상",
-      "img": "/images/cloth3.png",
+      "img": "cloth3.png",
       "title": "롱머플러의상",
       "size": "XL",
       "price": 13900
@@ -875,7 +902,7 @@
       "id": "58",
       "category": "fashion",
       "sub": "의상",
-      "img": "/images/cloth4.png",
+      "img": "cloth4.png",
       "title": "단정한리본 세트",
       "size": "S",
       "price": 11900
@@ -884,7 +911,7 @@
       "id": "59",
       "category": "fashion",
       "sub": "의상",
-      "img": "/images/cloth5.png",
+      "img": "cloth5.png",
       "title": "고풍스러운 케이프",
       "size": "L",
       "price": 21900
@@ -893,7 +920,7 @@
       "id": "60",
       "category": "fashion",
       "sub": "의상",
-      "img": "/images/cloth6.png",
+      "img": "cloth6.png",
       "title": "하와이안 남방",
       "size": "S",
       "price": 7900
@@ -902,7 +929,7 @@
       "id": "61",
       "category": "fashion",
       "sub": "의상",
-      "img": "/images/cloth7.png",
+      "img": "cloth7.png",
       "title": "줄무늬 스웨터",
       "size": "M",
       "price": 9900
@@ -911,7 +938,7 @@
       "id": "62",
       "category": "fashion",
       "sub": "의상",
-      "img": "/images/cloth8.png",
+      "img": "cloth8.png",
       "title": "솜털 스웨터",
       "size": "M",
       "price": 11900
@@ -920,7 +947,7 @@
       "id": "63",
       "category": "fashion",
       "sub": "모자",
-      "img": "/images/hat1.png",
+      "img": "hat1.png",
       "title": "미니 모자",
       "size": "S",
       "price": 5900
@@ -929,7 +956,7 @@
       "id": "64",
       "category": "fashion",
       "sub": "모자",
-      "img": "/images/hat2.png",
+      "img": "hat2.png",
       "title": "볏집 모자",
       "size": "M",
       "price": 7900
@@ -938,7 +965,7 @@
       "id": "65",
       "category": "fashion",
       "sub": "모자",
-      "img": "/images/hat3.png",
+      "img": "hat3.png",
       "title": "개구리스웨터 모자",
       "size": "L",
       "price": 6900
@@ -947,7 +974,7 @@
       "id": "66",
       "category": "fashion",
       "sub": "모자",
-      "img": "/images/hat4.png",
+      "img": "hat4.png",
       "title": "소형 산타모자",
       "size": "S",
       "price": 3900
@@ -956,7 +983,7 @@
       "id": "67",
       "category": "fashion",
       "sub": "모자",
-      "img": "/images/hat5.png",
+      "img": "hat5.png",
       "title": "미니 엉클샘모자",
       "size": "M",
       "price": 8900
@@ -965,7 +992,7 @@
       "id": "68",
       "category": "fashion",
       "sub": "모자",
-      "img": "/images/hat6.png",
+      "img": "hat6.png",
       "title": "꿀꿀이모자",
       "size": "M",
       "price": 4900
@@ -974,7 +1001,7 @@
       "id": "69",
       "category": "fashion",
       "sub": "모자",
-      "img": "/images/hat7.png",
+      "img": "hat7.png",
       "title": "경찰캡",
       "size": "L",
       "price": 7900
@@ -983,7 +1010,7 @@
       "id": "70",
       "category": "fashion",
       "sub": "모자",
-      "img": "/images/hat8.png",
+      "img": "hat8.png",
       "title": "솜브레로모자",
       "size": "M",
       "price": 9900
@@ -992,7 +1019,7 @@
       "id": "71",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/sunglass1.png",
+      "img": "sunglass1.png",
       "title": "black 선글라스",
       "size": "M",
       "price": 8900
@@ -1001,7 +1028,7 @@
       "id": "72",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/sunglass2.png",
+      "img": "sunglass2.png",
       "title": "yellow 선글라스",
       "size": "L",
       "price": 5900
@@ -1010,7 +1037,7 @@
       "id": "73",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/sunglass3.png",
+      "img": "sunglass3.png",
       "title": "거대 동글이안경",
       "size": "L",
       "price": 3900
@@ -1019,7 +1046,7 @@
       "id": "74",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/sunglass4.png",
+      "img": "sunglass4.png",
       "title": "레옹 선글라스",
       "size": "S",
       "price": 4900
@@ -1028,7 +1055,7 @@
       "id": "75",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/sunglass5.png",
+      "img": "sunglass5.png",
       "title": "blue&yellow 선글라스",
       "size": "M",
       "price": 8900
@@ -1037,7 +1064,7 @@
       "id": "76",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/sunglass6.png",
+      "img": "sunglass6.png",
       "title": "red외계인 선글라스",
       "size": "M",
       "price": 4900
@@ -1046,7 +1073,7 @@
       "id": "77",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/sunglass7.png",
+      "img": "sunglass7.png",
       "title": "brown 선글라스",
       "size": "M",
       "price": 9900
@@ -1055,7 +1082,7 @@
       "id": "78",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/sunglass8.png",
+      "img": "sunglass8.png",
       "title": "12각 선글라스",
       "size": "M",
       "price": 4900
@@ -1064,7 +1091,7 @@
       "id": "79",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/tie1.png",
+      "img": "tie1.png",
       "title": "brown star 넥타이",
       "size": "M",
       "price": 11900
@@ -1073,7 +1100,7 @@
       "id": "80",
       "category": "fashion",
       "sub": "안경",
-      "img": "/images/tie2.png",
+      "img": "tie2.png",
       "title": "black 나비넥타이",
       "size": "S",
       "price": 9900
@@ -1082,7 +1109,7 @@
       "id": "81",
       "category": "fashion",
       "sub": "타이",
-      "img": "/images/tie3.png",
+      "img": "tie3.png",
       "title": "격자무늬 넥타이",
       "size": "M",
       "price": 14900
@@ -1091,7 +1118,7 @@
       "id": "82",
       "category": "fashion",
       "sub": "타이",
-      "img": "/images/tie4.png",
+      "img": "tie4.png",
       "title": "체크무늬 넥타이",
       "size": "L",
       "price": 11900
@@ -1100,7 +1127,7 @@
       "id": "83",
       "category": "fashion",
       "sub": "타이",
-      "img": "/images/tie5.png",
+      "img": "tie5.png",
       "title": "크리스마스 넥타이",
       "size": "M",
       "price": 11900
@@ -1109,7 +1136,7 @@
       "id": "84",
       "category": "fashion",
       "sub": "타이",
-      "img": "/images/tie6.png",
+      "img": "tie6.png",
       "title": "레드리본 넥타이",
       "size": "M",
       "price": 17900
@@ -1118,7 +1145,7 @@
       "id": "85",
       "category": "fashion",
       "sub": "타이",
-      "img": "/images/tie7.png",
+      "img": "tie7.png",
       "title": "심플black 넥타이",
       "size": "M",
       "price": 7900
@@ -1127,7 +1154,7 @@
       "id": "86",
       "category": "fashion",
       "sub": "타이",
-      "img": "/images/tie8.png",
+      "img": "tie8.png",
       "title": "알록달록무늬 넥타이",
       "size": "S",
       "price": 3900
