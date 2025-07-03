@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { addCart, setPaymentItems } from '../../../slices/cartSlice'
+import { addCart, setPaymentItems } from '../../../slices/cartSlice';
 
 function HouseDetail() {
   const { id } = useParams();
@@ -9,6 +9,7 @@ function HouseDetail() {
   const dispatch = useDispatch();
   const [item, setItem] = useState(null);
   const [mainImg, setMainImg] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -20,7 +21,6 @@ function HouseDetail() {
       })
       .then((data) => {
         setItem(data);
-        // setMainImg(`http://localhost:3001/images/${data.img}`);
         setMainImg(`${data.img}`);
       })
       .catch((err) => {
@@ -31,6 +31,23 @@ function HouseDetail() {
   }, [id, navigate]);
 
   if (!item) return <div className="loading">로딩 중...</div>;
+
+  // 장바구니 담기 클릭 시 모달 표시
+  const handleAddCart = () => {
+    dispatch(addCart({ ...item, count: 1 }));
+    setModalVisible(true);
+  };
+
+  // 모달에서 장바구니 가기
+  const goToCart = () => {
+    setModalVisible(false);
+    navigate('/cart');
+  };
+
+  // 모달 닫기
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
   return (
     <div className="house-detail-page">
@@ -56,15 +73,9 @@ function HouseDetail() {
         </div>
       </div>
 
-      {/* ✅ 장바구니/결제 버튼 추가 */}
+      {/* 장바구니 / 결제 버튼 */}
       <div className="detail-actions">
-        <button
-          onClick={() => {
-            dispatch(addCart({ ...item, count: 1 }));
-            alert('장바구니에 추가되었습니다.');
-          }}
-          className="btn-cart"
-        >
+        <button onClick={handleAddCart} className="btn-cart">
           장바구니 담기
         </button>
 
@@ -79,10 +90,32 @@ function HouseDetail() {
         </button>
       </div>
 
+      {/* AddToCartModal 모달 */}
+      {modalVisible && <AddToCartModal onCart={goToCart} onClose={closeModal} />}
+
+      {/* 하단 탭 컴포넌트 */}
       <HouseDetailTabs item={item} />
     </div>
   );
 }
+
+// AddToCartModal 컴포넌트
+const AddToCartModal = ({ onCart, onClose }) => {
+  return (
+    <div className="addCartModal">
+      <div className="addCartModal-con">
+        <h4>장바구니에 상품이 담겼습니다.</h4>
+        <div className="modalBtn">
+          <p>장바구니로 이동하시겠습니까?</p>
+          <div className="modalBtn-con">
+            <button onClick={onCart}>장바구니 가기</button>
+            <button onClick={onClose}>계속 쇼핑하기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 // Detail Page Tabs
 function HouseDetailTabs({ item }) {
