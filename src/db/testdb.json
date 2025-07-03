@@ -623,7 +623,7 @@
     {
       "id": "33",
       "category": "house",
-      "sub": "실내용",
+      "sub": "강아지",
       "size": "소형",
       "img": "/images/DogHouse1.jpg",
       "title": "플라스틱 하우스",
@@ -632,7 +632,7 @@
     {
       "id": "34",
       "category": "house",
-      "sub": "고양이",
+      "sub": "강아지",
       "size": "중형",
       "img": "/images/DogHouse2.jpg",
       "title": "천막형 하우스",
@@ -650,7 +650,7 @@
     {
       "id": "36",
       "category": "house",
-      "sub": "소형펫",
+      "sub": "강아지",
       "size": "소형",
       "img": "/images/DogHouse4.png",
       "title": "휴식 하우스",
@@ -695,7 +695,7 @@
     {
       "id": "41",
       "category": "house",
-      "sub": "강아지",
+      "sub": "고양이",
       "size": "대형",
       "img": "/images/CatHouse1.png",
       "title": "통나무 하우스",
@@ -749,7 +749,7 @@
     {
       "id": "47",
       "category": "house",
-      "sub": "소형펫",
+      "sub": "고양이",
       "size": "소형",
       "img": "/images/CatHouse7.png",
       "title": "외부형솜털 하우스",
@@ -785,7 +785,7 @@
     {
       "id": "51",
       "category": "house",
-      "sub": "강아지",
+      "sub": "소형펫",
       "size": "소형",
       "img": "/images/PetHouse1.png",
       "title": "도치 하우스",
@@ -821,7 +821,7 @@
     {
       "id": "55",
       "category": "fashion",
-      "sub": "올인원",
+      "sub": "의상",
       "img": "/images/cloth1.png",
       "title": "강아지신사 슈트",
       "size": "M",
@@ -830,7 +830,7 @@
     {
       "id": "56",
       "category": "fashion",
-      "sub": "올인원",
+      "sub": "의상",
       "img": "/images/cloth2.png",
       "title": "깔끔한블랙 슈트",
       "size": "S",
@@ -839,16 +839,16 @@
     {
       "id": "57",
       "category": "fashion",
-      "sub": "머플러",
+      "sub": "의상",
       "img": "/images/cloth3.png",
-      "title": "롱머플러",
+      "title": "롱머플러의상",
       "size": "XL",
       "price": 13900
     },
     {
       "id": "58",
       "category": "fashion",
-      "sub": "소품",
+      "sub": "의상",
       "img": "/images/cloth4.png",
       "title": "단정한리본 세트",
       "size": "S",
@@ -857,7 +857,7 @@
     {
       "id": "59",
       "category": "fashion",
-      "sub": "머플러",
+      "sub": "의상",
       "img": "/images/cloth5.png",
       "title": "고풍스러운 케이프",
       "size": "L",
@@ -866,7 +866,7 @@
     {
       "id": "60",
       "category": "fashion",
-      "sub": "상의",
+      "sub": "의상",
       "img": "/images/cloth6.png",
       "title": "하와이안 남방",
       "size": "S",
@@ -875,7 +875,7 @@
     {
       "id": "61",
       "category": "fashion",
-      "sub": "상의",
+      "sub": "의상",
       "img": "/images/cloth7.png",
       "title": "줄무늬 스웨터",
       "size": "M",
@@ -884,7 +884,7 @@
     {
       "id": "62",
       "category": "fashion",
-      "sub": "상의",
+      "sub": "의상",
       "img": "/images/cloth8.png",
       "title": "솜털 스웨터",
       "size": "M",
@@ -1055,7 +1055,7 @@
     {
       "id": "81",
       "category": "fashion",
-      "sub": "소품",
+      "sub": "타이",
       "img": "/images/tie3.png",
       "title": "격자무늬 넥타이",
       "size": "M",
@@ -1064,7 +1064,7 @@
     {
       "id": "82",
       "category": "fashion",
-      "sub": "소품",
+      "sub": "타이",
       "img": "/images/tie4.png",
       "title": "체크무늬 넥타이",
       "size": "L",
@@ -1073,7 +1073,7 @@
     {
       "id": "83",
       "category": "fashion",
-      "sub": "소품",
+      "sub": "타이",
       "img": "/images/tie5.png",
       "title": "크리스마스 넥타이",
       "size": "M",
@@ -1082,7 +1082,7 @@
     {
       "id": "84",
       "category": "fashion",
-      "sub": "소품",
+      "sub": "타이",
       "img": "/images/tie6.png",
       "title": "레드리본 넥타이",
       "size": "M",
@@ -1091,7 +1091,7 @@
     {
       "id": "85",
       "category": "fashion",
-      "sub": "소품",
+      "sub": "타이",
       "img": "/images/tie7.png",
       "title": "심플black 넥타이",
       "size": "M",
@@ -1100,7 +1100,7 @@
     {
       "id": "86",
       "category": "fashion",
-      "sub": "소품",
+      "sub": "타이",
       "img": "/images/tie8.png",
       "title": "알록달록무늬 넥타이",
       "size": "S",

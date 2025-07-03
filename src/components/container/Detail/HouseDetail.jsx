@@ -392,7 +392,7 @@ function HouseDetailTabs({ item }) {
         {/* 교환/반품/배송 탭 */}
         {activeTab === 'exchange' && (
           <div className="exchange-info">
-            <p>교환 및 반품 안내 내용</p>
+            <img src="/images/PetDetail6.png" alt="Detail" />
             {/* 여기에 교환/반품/배송 정보 작성 */}
           </div>
         )}
