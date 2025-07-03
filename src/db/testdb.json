@@ -223,9 +223,8 @@
     }
   ],
   "orders": [
-
     {
-      "id": "806e",
+      "id": "1",
       "userId": "3",
       "userName": "탕후루",
       "userEmail": "a1@email.com",
@@ -241,7 +240,7 @@
       }
     },
     {
-      "id": "1008",
+      "id": "2",
       "userId": "3",
       "userName": "탕후루",
       "userEmail": "a1@email.com",
@@ -265,8 +264,77 @@
         "userEmail": "a1@email.com",
         "address": "서울시 노원구"
       }
+    },
+    {
+      "id": "3",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "신용/체크카드",
+      "paymentResult": [
+        {
+          "id": "3",
+          "title": "우프 강아지 토이볼 레드",
+          "price": 1900,
+          "img": "redBall.jpg",
+          "hoverImg": "",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 1900,
+      "shop": "쌍문점",
+      "date": "2025/7/3 9:41:52",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "39a3",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "휴대폰",
+      "paymentResult": [
+        {
+          "id": "3",
+          "title": "우프 강아지 토이볼 레드",
+          "price": 1900,
+          "img": "redBall.jpg",
+          "hoverImg": "",
+          "count": 1,
+          "checked": true
+        },
+        {
+          "id": "1",
+          "title": "LuckyOne led Ball 장난감",
+          "price": 4900,
+          "img": "ledball.jpg",
+          "hoverImg": "ledBallHover.jpg",
+          "count": 1,
+          "checked": true
+        },
+        {
+          "id": "18",
+          "title": "포에버 오트밀 샴푸",
+          "price": 7600,
+          "img": "oatmealShampoo.jpg",
+          "hoverImg": "",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 14400,
+      "shop": "의정부 민락동점",
+      "date": "2025/7/3 10:23:57",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
     }
-
   ],
   "products": [
     {
@@ -564,7 +632,7 @@
     {
       "id": "34",
       "category": "house",
-      "sub": "실외용",
+      "sub": "고양이",
       "size": "중형",
       "img": "/images/DogHouse2.jpg",
       "title": "천막형 하우스",
@@ -573,7 +641,7 @@
     {
       "id": "35",
       "category": "house",
-      "sub": "실내용",
+      "sub": "강아지",
       "size": "소형",
       "img": "/images/DogHouse3.png",
       "title": "러블리 하우스",
@@ -582,7 +650,7 @@
     {
       "id": "36",
       "category": "house",
-      "sub": "실내용",
+      "sub": "소형펫",
       "size": "소형",
       "img": "/images/DogHouse4.png",
       "title": "휴식 하우스",
@@ -591,7 +659,7 @@
     {
       "id": "37",
       "category": "house",
-      "sub": "실외용",
+      "sub": "강아지",
       "size": "중형",
       "img": "/images/DogHouse5.png",
       "title": "원목가공형 하우스",
@@ -600,7 +668,7 @@
     {
       "id": "38",
       "category": "house",
-      "sub": "실외용",
+      "sub": "강아지",
       "size": "대형",
       "img": "/images/DogHouse6.png",
       "title": "심플원목 하우스",
@@ -609,7 +677,7 @@
     {
       "id": "39",
       "category": "house",
-      "sub": "실외용",
+      "sub": "강아지",
       "size": "중형",
       "img": "/images/DogHouse7.png",
       "title": "세련된원목 하우스",
@@ -618,7 +686,7 @@
     {
       "id": "40",
       "category": "house",
-      "sub": "실외용",
+      "sub": "강아지",
       "size": "대형",
       "img": "/images/DogHouse8.png",
       "title": "원목가공형 하우스",
@@ -627,7 +695,7 @@
     {
       "id": "41",
       "category": "house",
-      "sub": "실외용",
+      "sub": "강아지",
       "size": "대형",
       "img": "/images/CatHouse1.png",
       "title": "통나무 하우스",
@@ -636,7 +704,7 @@
     {
       "id": "42",
       "category": "house",
-      "sub": "실외용",
+      "sub": "고양이",
       "size": "대형",
       "img": "/images/CatHouse2.png",
       "title": "포근 하우스",
@@ -645,7 +713,7 @@
     {
       "id": "43",
       "category": "house",
-      "sub": "실내용",
+      "sub": "고양이",
       "size": "중형",
       "img": "/images/CatHouse3.jpg",
       "title": "박스 하우스",
@@ -654,7 +722,7 @@
     {
       "id": "44",
       "category": "house",
-      "sub": "실내용",
+      "sub": "고양이",
       "size": "중형",
       "img": "/images/CatHouse4.jpg",
       "title": "가구형 하우스",
@@ -663,7 +731,7 @@
     {
       "id": "45",
       "category": "house",
-      "sub": "실외용",
+      "sub": "고양이",
       "size": "중형",
       "img": "/images/CatHouse5.png",
       "title": "미니통나무 하우스",
@@ -672,7 +740,7 @@
     {
       "id": "46",
       "category": "house",
-      "sub": "실내용",
+      "sub": "고양이",
       "size": "중형",
       "img": "/images/CatHouse6.png",
       "title": "스크래쳐형 하우스",
@@ -681,7 +749,7 @@
     {
       "id": "47",
       "category": "house",
-      "sub": "실내용",
+      "sub": "소형펫",
       "size": "소형",
       "img": "/images/CatHouse7.png",
       "title": "외부형솜털 하우스",
@@ -690,7 +758,7 @@
     {
       "id": "48",
       "category": "house",
-      "sub": "실외용",
+      "sub": "고양이",
       "size": "중형",
       "img": "/images/CatHouse8.png",
       "title": "아트형 나무하우스 ",
@@ -699,7 +767,7 @@
     {
       "id": "49",
       "category": "house",
-      "sub": "실외용",
+      "sub": "고양이",
       "size": "대형",
       "img": "/images/CatHouse9.png",
       "title": "스크래쳐 하우스",
@@ -708,7 +776,7 @@
     {
       "id": "50",
       "category": "house",
-      "sub": "실내용",
+      "sub": "고양이",
       "size": "소형",
       "img": "/images/CatHouse10.png",
       "title": "이불형 하우스",
@@ -717,7 +785,7 @@
     {
       "id": "51",
       "category": "house",
-      "sub": "실내용",
+      "sub": "강아지",
       "size": "소형",
       "img": "/images/PetHouse1.png",
       "title": "도치 하우스",
@@ -726,7 +794,7 @@
     {
       "id": "52",
       "category": "house",
-      "sub": "실내용",
+      "sub": "소형펫",
       "size": "소형",
       "img": "/images/PetHouse2.png",
       "title": "래트 하우스",
@@ -735,7 +803,7 @@
     {
       "id": "53",
       "category": "house",
-      "sub": "실내용",
+      "sub": "소형펫",
       "size": "소형",
       "img": "/images/PetHouse3.png",
       "title": "햄스터 하우스1 ",
@@ -744,7 +812,7 @@
     {
       "id": "54",
       "category": "house",
-      "sub": "실내용",
+      "sub": "소형펫",
       "size": "소형",
       "img": "/images/PetHouse4.png",
       "title": "햄스터 하우스2",
@@ -1085,37 +1153,42 @@
       "productId": "33",
       "time": "2025-07-02T05:17:02.374Z"
     }
-
   ],
   "sales": [
     {
       "month": "1月",
-      "salesMount": "2500000"
+      "salesMount": "2500000",
+      "id": "d78b"
     },
     {
       "month": "2月",
-      "salesMount": "1980000"
+      "salesMount": "1980000",
+      "id": "eb6c"
     },
     {
       "month": "3月",
-      "salesMount": "3110000"
+      "salesMount": "3110000",
+      "id": "440e"
     },
     {
       "month": "4月",
-      "salesMount": "1982000"
+      "salesMount": "1982000",
+      "id": "4745"
     },
     {
       "month": "5月",
-      "salesMount": "1100000"
+      "salesMount": "1100000",
+      "id": "4b23"
     },
     {
       "month": "6月",
-      "salesMount": "3330000"
+      "salesMount": "3330000",
+      "id": "ef99"
     },
     {
       "month": "7月",
-      "salesMount": "3522000"
+      "salesMount": "3522000",
+      "id": "cc52"
     }
-
   ]
 }
