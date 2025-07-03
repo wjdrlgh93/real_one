@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
-import { addCart } from '../../../../slices/cartSlice'
+import { addCart, setPaymentItems } from '../../../../slices/cartSlice'
 import axios from 'axios'
 import ShopDetailLayout from '../layout-yyj/ShopDetailLayout'
 
@@ -20,7 +20,13 @@ const BathDetail = () => {
     setAddCartModal(true)
   }
 
-  // const payDirect = ()
+  const payDirect = () => {
+    const item = {id: product.id, title: product.title, price:product.price, img:product.img, hoverImg: product.hoverImg, count:count}
+
+    dispatch(addCart(item))
+    dispatch(setPaymentItems([item]))
+    navigate('/payment')
+  }
 
   const [count, setCount] = useState(1)
   const [product, setProduct] = useState([])
@@ -65,6 +71,7 @@ const BathDetail = () => {
     onDecrease={onDecrease}
     addCartModal={addCartModal}
     setAddCartModal={setAddCartModal}
+    payDirect={payDirect}
     >
 
     </ShopDetailLayout>

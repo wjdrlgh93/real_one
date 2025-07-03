@@ -366,7 +366,7 @@ const OrderPayment = () => {
                       />
                      {store.name}
                     </label>
-                    <button onClick={() => showMap(store.id)}>
+                    <button onClick={() => showMap(store)}>
                       지도 보기
                     </button>
                     {/* {mapVisibleId === store.id && (<div>

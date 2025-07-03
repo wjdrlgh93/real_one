@@ -97,11 +97,14 @@
 }
 
 .toy .toy-con .toyList ul li .top {
-
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .toy .toy-con .toyList ul li .top img {
   display: block;
-  width: 100%;
+  max-width: 100%;
   border-radius: 30px;
 }
 
