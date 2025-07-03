@@ -43,29 +43,50 @@
 
 /* span */
 
+.top {
+    width: 85%;
+}
+
 .top ul {
+    /* width: 100%; */
     box-sizing: border-box;
     display: flex;
-    flex: 1 1;
     flex-direction: column;
+    flex: 1 1;
     gap: .1vw;
     padding: .1vw;
+    background-color: white;
+}
+
+.top ul li {
+    display: flex;
+    /* flex-direction: column; */
 }
 
 .top ul li span:first-child {
     align-items: center;
-    background-color: #b50480;
+    background-color: #0077d8;
+    ;
     box-sizing: border-box;
     color: #fff;
     display: flex;
     flex-direction: row;
     flex: 1 1;
     justify-content: flex-start;
-    padding: 0 .5vw;
+    padding: 0.6vw;
+
+    font-size: 18px;
 }
 
 .top ul li span:nth-child(2) {
-    background-color: #fff;
+    /* background-color: #fff; */
     flex: 2.5 1;
-    text-align: center;
+    text-align: left;
+    font-size: 18px;
+
+    padding: 5px;
+
+    color: black !important;
+
+
 }
