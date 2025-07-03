@@ -24,15 +24,15 @@ const paymentSlice = createSlice({
       }
       state.totalRevenue += action.payload.paymentAmount || 0
 
-      if (action.payload.date) {
-        const [year, month] = action.payload.date.split('/')
-        const yearMonth = `${year}/${month}`
+      // if (action.payload.date) {
+      //   const [year, month] = action.payload.date.split('/')
+      //   const yearMonth = `${year}/${month}`
 
-        if (!state.monthlyRevenue[yearMonth]) {
-          state.monthlyRevenue[yearMonth] = 0
-        }
-        state.monthlyRevenue[yearMonth] += action.payload.paymentAmount || 0
-      }
+      //   if (!state.monthlyRevenue[yearMonth]) {
+      //     state.monthlyRevenue[yearMonth] = 0
+      //   }
+      //   state.monthlyRevenue[yearMonth] += action.payload.paymentAmount || 0
+      // }
     },
     setPaymentItems(state, action) {
       state.paymentItems = action.payload

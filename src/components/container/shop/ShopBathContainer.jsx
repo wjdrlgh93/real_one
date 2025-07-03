@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Paging from './layout-yyj/Paging'
 
 const ShopBathContainer = () => {
     const [productsList, setProductsList] = useState([])
@@ -27,11 +29,14 @@ const ShopBathContainer = () => {
     },[productsList])
     
     const [isHovered, setIsHovered] = useState(null)
+    const { currentPage, itemsPerPage} = useSelector((state) => state.paging)
+    const start = (currentPage - 1) * itemsPerPage
+    const pagedItems = bathList.slice(start, start + itemsPerPage)
 
     return (
         <div className="toyList">
             <ul>
-                {bathList && bathList.map((el) => {
+                {pagedItems.map((el) => {
                     return (
 
                         <li key={el.id}>
@@ -53,6 +58,7 @@ const ShopBathContainer = () => {
                     )
                 })}
             </ul>
+            <Paging totalItems={bathList.length}/>
         </div>
     )
 }

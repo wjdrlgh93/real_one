@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const KakaoMapCustom = ({lat, lng}) => {
+  const mapRef = useRef(null)
+
   useEffect(() => {
     const loadMap = () => {
       if (!window.kakao || !window.kakao.maps) {
@@ -8,7 +10,7 @@ const KakaoMapCustom = ({lat, lng}) => {
         return
       }
       window.kakao.maps.load(() => {
-        const container = document.getElementById('map')
+        const container = document.getElementById('mapRef')
 
         if(!container) return
 
@@ -30,8 +32,14 @@ const KakaoMapCustom = ({lat, lng}) => {
           position: options.center,
           image: markerImage
         });
+
+        setTimeout(() => {
+          window.kakao.maps.event.trigger(map, 'resize')
+          map.setCenter(options.center)
+        }, 200)
       });
     };
+
 
     if (!document.getElementById('kakao-map-cus')) {
       const script = document.createElement('script')
@@ -44,9 +52,10 @@ const KakaoMapCustom = ({lat, lng}) => {
       loadMap()
     }
   }, [lat, lng])
+  
   return (
     <div
-      id="map"
+      id="mapRef"
       style={{
         width: '100%',
         height: '300px',

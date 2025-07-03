@@ -223,7 +223,6 @@
     }
   ],
   "orders": [
-
     {
       "id": "806e",
       "userId": "3",
@@ -265,8 +264,85 @@
         "userEmail": "a1@email.com",
         "address": "서울시 노원구"
       }
+    },
+    {
+      "id": "d8c7",
+      "userId": "3",
+      "userName": "탕후루",
+      "userEmail": "a1@email.com",
+      "paymentMethod": "카카오페이",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "LuckyOne led Ball 장난감",
+          "price": 4900,
+          "img": "ledball.jpg",
+          "hoverImg": "ledBallHover.jpg",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 4900,
+      "shop": "상계역점",
+      "date": "2025/7/2 17:20:15",
+      "orderer": {
+        "userName": "탕후루",
+        "userEmail": "a1@email.com",
+        "address": "서울시 노원구"
+      }
+    },
+    {
+      "id": "7c08",
+      "userId": "3",
+      "userName": "탕후루",
+      "userEmail": "a1@email.com",
+      "paymentMethod": "신용/체크카드",
+      "paymentResult": [
+        {
+          "id": "2",
+          "title": "love dog 원형 터그 장난감",
+          "price": 4900,
+          "img": "tugRound.jpg",
+          "hoverImg": "",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 4900,
+      "shop": "상계역점",
+      "date": "2025/7/2 17:20:15",
+      "orderer": {
+        "userName": "탕후루",
+        "userEmail": "a1@email.com",
+        "address": "서울시 노원구"
+      }
+    },
+    {
+      "id": "b7d6",
+      "userId": "3",
+      "userName": "탕후루",
+      "userEmail": "a1@email.com",
+      "paymentMethod": "계좌이체",
+      "paymentResult": [
+        {
+          "id": "18",
+          "title": "포에버 오트밀 샴푸",
+          "price": 7600,
+          "img": "oatmealShampoo.jpg",
+          "hoverImg": "",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 7600,
+      "shop": "북서울꿈의숲점",
+      "date": "2025/7/2 17:21:56",
+      "orderer": {
+        "userName": "탕후루",
+        "userEmail": "a1@email.com",
+        "address": "서울시 노원구"
+      }
     }
-
   ],
   "products": [
     {
@@ -1085,7 +1161,6 @@
       "productId": "33",
       "time": "2025-07-02T05:17:02.374Z"
     }
-
   ],
   "sales": [
     {
@@ -1116,6 +1191,5 @@
       "month": "7月",
       "salesMount": "3522000"
     }
-
   ]
 }

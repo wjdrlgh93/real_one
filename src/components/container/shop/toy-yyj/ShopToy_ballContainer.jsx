@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Paging from '../layout-yyj/Paging'
 
 const ShopToy_ballContainer = () => {
 
@@ -27,10 +29,14 @@ const ShopToy_ballContainer = () => {
   
   const [isHovered, setIsHovered] = useState(null)
 
+  const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+  const start = (currentPage - 1) * itemsPerPage
+  const pagedItems = ballList.slice(start, start + itemsPerPage)
+
   return (
     <div className="toyList">
                 <ul>
-                {ballList && ballList.map((el)=>{
+                {pagedItems.map((el)=>{
                     return (
                       <li>
                           <Link to={`/shop/toy/detail/${el.id}`}>                        
@@ -48,6 +54,7 @@ const ShopToy_ballContainer = () => {
                     )
                 })}
                 </ul>
+                <Paging totalItems={ballList.length}/>
             </div>
   )
 }

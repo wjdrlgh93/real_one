@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { addCart, decreaseCount, increaseCount } from '../../../../slices/cartSlice'
 import ShopDetailLayout from '../layout-yyj/ShopDetailLayout'
+import { setPaymentItems } from '../../../../slices/cartSlice'
 
 
 const ProductDetail = () => {
@@ -42,6 +43,13 @@ const ProductDetail = () => {
     setAddCartModal(true)
     dispatch(addCart(item))
   }
+
+  const payDirect = () => {
+    const item = {id: product.id, title: product.title, price:product.price, img: product.img, hoverImg: product.hoverImg, count:count}
+    dispatch(addCart(item))
+    dispatch(setPaymentItems([item]))
+    navigate('/payment')
+  }
   const decrease = () => {
     if(count > 1) {
       setCount(count - 1)
@@ -68,6 +76,7 @@ console.log('image path:', `/images/${product.hoverImg}`)
     onIncrease={increase}
     addCartModal={addCartModal}
     setAddCartModal={setAddCartModal}
+    payDirect={payDirect}
     >
     
     </ShopDetailLayout>

@@ -1,5 +1,8 @@
+import { current } from '@reduxjs/toolkit'
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Paging from '../layout-yyj/Paging'
 
 const ShopToy_stuffedContainer = () => {
   const [toyList, setToyList] = useState([])
@@ -26,10 +29,14 @@ const ShopToy_stuffedContainer = () => {
 
   const [isHovered, setIsHovered] = useState(null)
 
+  const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+  const start = (currentPage - 1) * itemsPerPage
+  const pagedItems = stuffedList.slice(start, start + itemsPerPage)
+
   return (
     <div className="toyList">
                 <ul>
-                {stuffedList && stuffedList.map((el)=>{
+                {pagedItems.map((el)=>{
                     return (
                       <li key={el.id}>
                           <Link to={`/shop/toy/detail/${el.id}`}>                        
@@ -47,6 +54,7 @@ const ShopToy_stuffedContainer = () => {
                     )
                 })}
                 </ul>
+                <Paging totalItems={stuffedList.length}/>
             </div>
   )
 }

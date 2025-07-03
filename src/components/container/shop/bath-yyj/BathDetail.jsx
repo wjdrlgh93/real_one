@@ -20,6 +20,8 @@ const BathDetail = () => {
     setAddCartModal(true)
   }
 
+  // const payDirect = ()
+
   const [count, setCount] = useState(1)
   const [product, setProduct] = useState([])
 
