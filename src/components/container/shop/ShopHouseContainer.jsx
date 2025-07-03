@@ -148,11 +148,13 @@ function HouseList() {
             </div>
 
             <div className="modal-bottom-right">
-              <a href="/cart" className="cart">
-                <img src="/images/cart.png" alt="장바구니로 이동" />
-              </a>
+              <div
+                className="cart"
+                onClick={() => navigate(`/shop/house/${selectedItem.id}`)}
+                style={{ cursor: 'pointer' }}>
+                <img src="/images/cart.png" alt="상세보기로 이동" />
+              </div>
             </div>
-
             <button onClick={closeModal} className="modal-close">
               CLOSE
             </button>

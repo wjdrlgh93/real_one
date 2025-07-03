@@ -334,6 +334,32 @@
         "userEmail": "mario115@naver.com",
         "address": "경기도 의정부시 "
       }
+    },
+    {
+      "id": "a21b",
+      "userId": "12",
+      "userName": "1234",
+      "userEmail": "7777@email.com",
+      "paymentMethod": "계좌이체",
+      "paymentResult": [
+        {
+          "id": "18",
+          "title": "포에버 오트밀 샴푸",
+          "price": 7600,
+          "img": "oatmealShampoo.jpg",
+          "hoverImg": "",
+          "count": 3,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 22800,
+      "shop": "상계역점",
+      "date": "2025/7/3 11:58:2",
+      "orderer": {
+        "userName": "1234",
+        "userEmail": "7777@email.com",
+        "address": "서울시 은평구"
+      }
     }
   ],
   "products": [

@@ -54,7 +54,7 @@
 .ShopHouseContainer h2 {
   padding: 1vw;
   font-size: 40px;
-  color: brown;
+  color: black;
 }
 
 .ShopHouseContainer p {
@@ -167,6 +167,7 @@
 .modal .modal-content h2 {
   font-size: 30px;
   padding: 20px;
+  color: black;
 }
 
 .ShopHouseContainer .modal .modal-content p,
