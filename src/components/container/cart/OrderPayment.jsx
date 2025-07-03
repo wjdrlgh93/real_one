@@ -246,18 +246,22 @@ const OrderPayment = () => {
     <div className="paymentList">
       <div className="paymentList-left">
         <h3 className="title">주문 상품</h3>
-        <div className="paymentItem-con">
-          <div className="paymentItemList">
-            <ul>
-              {paymentItems.map((el, idx) => {
-                return (
-                  <li>
-                    <div className="paymentItem" key={idx}>
-                      <div className="top">
-                        <img src={`/images/${el.img}`} alt={el.img} />
-                        <div className="top-con">
-                          <span> {el.title}</span>
-                          <span className="top-price">{el.price}원</span>
+
+        <div className="paymentItem-con">                  
+            <div className="paymentItemList">
+              <ul>
+                {paymentItems.map((el,idx) => {
+                  console.log(el.img);
+                  return (
+                    <li>
+                      <div className="paymentItem" key={idx}>
+                        <div className="top">                          
+                          <img src={`/images/${el.img}`} alt={el.img} />
+                          <div className="top-con">
+                            <span> {el.title}</span>
+                            <span className="top-price">{el.price}원</span>
+                          </div>
+
                         </div>
                       </div>
                       <div className="bottom">
