@@ -44,22 +44,22 @@ const AdminPayments = () => {
                     <table className="paymentlist">
                         <tbody>
                             <tr>
+                                <th>결제ID</th>
                                 <th>결제일</th>
                                 <th>주문처</th>
                                 <th>결제방식</th>
-                                <th>결제ID</th>
-                                <th>주소</th>
+                                {/* <th>주소</th> */}
                                 <th>보기</th>
                             </tr>
                             {
                                 paymentList && paymentList.map((el, idx) => {
                                     return (
                                         <tr>
+                                            <td>{el.id}</td>
                                             <td>{el.date}</td>
                                             <td>{el.shop}</td>
                                             <td>{el.paymentMethod}</td>
-                                            <td>{el.id}</td>
-                                            <td>{el.orderer.address}</td>
+                                            {/* <td>{el.orderer.address}</td> */}
                                             <td className={'modal-td'}
                                                 onClick={() => {
                                                     setModalOpen(true)
