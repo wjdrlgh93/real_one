@@ -50,9 +50,9 @@ function HouseList() {
       item.title.toLowerCase().includes(Search.toLowerCase())
     )
 
-  const dogHouses = filterBySearch(houses.filter(item => item.category === 'DogHouse'));
-  const catHouses = filterBySearch(houses.filter(item => item.category === 'CatHouse'));
-  const petHouses = filterBySearch(houses.filter(item => item.category === 'PetHouse'));
+  const dogHouses = filterBySearch(houses.filter(item => item.sub === '강아지'));
+  const catHouses = filterBySearch(houses.filter(item => item.sub === '고양이'));
+  const petHouses = filterBySearch(houses.filter(item => item.sub === '소형펫'));
 
 
   const getPaginatedItems = (items, currentPage) => {
@@ -86,10 +86,9 @@ function HouseList() {
       </div>
       <h2>강아지 하우스</h2>
       <div className="ShopHouseContainer-top">
-
         {paginatedDogHouses.map(item => (
           <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+            <img src={item.img} alt={item.title} />
 
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
@@ -103,7 +102,7 @@ function HouseList() {
 
         {paginatedCatHouses.map(item => (
           <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+            <img src={item.img} alt={item.title} />
 
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
@@ -116,7 +115,7 @@ function HouseList() {
       <div className="ShopHouseContainer-bottom">
         {paginatedPetHouses.map(item => (
           <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+            <img src={item.img} alt={item.title} />
 
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
