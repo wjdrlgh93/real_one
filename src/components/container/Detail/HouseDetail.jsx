@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addCart, setPaymentItems } from '../../../slices/cartSlice'
 
 function HouseDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [item, setItem] = useState(null);
   const [mainImg, setMainImg] = useState('');
 
@@ -18,12 +20,13 @@ function HouseDetail() {
       })
       .then((data) => {
         setItem(data);
-        setMainImg(`http://localhost:3001${data.img}`);
+        // setMainImg(`http://localhost:3001/images/${data.img}`);
+        setMainImg(`${data.img}`);
       })
       .catch((err) => {
         console.error(err);
         alert('존재하지 않는 상품입니다.');
-        navigate('/'); // 상품 없으면 메인으로 이동
+        navigate('/');
       });
   }, [id, navigate]);
 
@@ -37,7 +40,7 @@ function HouseDetail() {
 
       <div className="house-detail-body">
         <div className="house-image-gallery">
-          <img className="main-image" src={mainImg} alt={item.title} />
+          <img className="main-image" src={`/images/${mainImg}`} alt={item.title} />
         </div>
 
         <div className="house-info">
@@ -51,6 +54,29 @@ function HouseDetail() {
               '우리 아이들이 안전하게 생활할 수 있도록 최대한 불필요한 요소들은 제거하고 제작했습니다. 많은 관심 부탁드립니다~'}
           </p>
         </div>
+      </div>
+
+      {/* ✅ 장바구니/결제 버튼 추가 */}
+      <div className="detail-actions">
+        <button
+          onClick={() => {
+            dispatch(addCart({ ...item, count: 1 }));
+            alert('장바구니에 추가되었습니다.');
+          }}
+          className="btn-cart"
+        >
+          장바구니 담기
+        </button>
+
+        <button
+          onClick={() => {
+            dispatch(setPaymentItems([{ ...item, count: 1 }]));
+            navigate('/payment');
+          }}
+          className="btn-pay"
+        >
+          바로 결제하기
+        </button>
       </div>
 
       <HouseDetailTabs item={item} />
