@@ -51,10 +51,10 @@ function FashionList() {
       item.title.toLowerCase().includes(Search.toLowerCase())
     )
 
-  const cloths = filterBySearch(fashions.filter(item => item.category === 'CLOTH'));
-  const hats = filterBySearch(fashions.filter(item => item.category === 'HAT'));
-  const sunglasses = filterBySearch(fashions.filter(item => item.category === 'SUNGLASS'));
-  const ties = filterBySearch(fashions.filter(item => item.category === 'TIE'));
+  const cloths = filterBySearch(fashions.filter(item => item.sub === '의상'));
+  const hats = filterBySearch(fashions.filter(item => item.sub === '모자'));
+  const sunglasses = filterBySearch(fashions.filter(item => item.sub === '안경'));
+  const ties = filterBySearch(fashions.filter(item => item.sub === '타이'));
 
 
   const getPaginatedItems = (items, currentPage) => {
