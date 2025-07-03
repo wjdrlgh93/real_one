@@ -143,14 +143,14 @@ const OrderPayment = () => {
   const selectedStore = (id) => {
     setSelectStore(id)
   }
-  const showMap = (id) => {
-    setMapVisibleId(prev => (prev === id ? null : id))
-  }
-
-  // const showMap = (store) => {
-  //   setSelectedShop(store)
-  //   setIsOpen(true)
+  // const showMap = (id) => {
+  //   setMapVisibleId(prev => (prev === id ? null : id))
   // }
+
+  const showMap = (store) => {
+    setSelectedShop(store)
+    setIsOpen(true)
+  }
 
   // 결제하기 버튼 함수
   const paymentBtn = async (e) => {
@@ -400,25 +400,25 @@ const OrderPayment = () => {
                       />
                       {store.name}
                     </label>
-                    <button onClick={() => showMap(store.id)}>
+                    <button onClick={() => showMap(store)}>
                       지도 보기
                     </button>
-                    {mapVisibleId === store.id && (<div>
-                      <KakaoMapCustom lat={store.x} lng={store.y} />
-                      <p>{store.address}</p>
+                    {/* {mapVisibleId === store.id && (<div>
+                      <KakaoMapCustom lat={store.x} lng={store.y}/>
+                    <p>{store.address}</p>
                     </div>
-                    )}
+                  )} */}
                   </li>
                 ))}
               </ul>
-              {/* {selectedShop && (
+              {selectedShop && (
                 <KakaoMapModal
                   isOpen={isOpen}
                   onClose={() => setIsOpen(false)}
                   lat={selectedShop.x}
                   lng={selectedShop.y}
                 />
-              )} */}
+              )}
             </div>
           </div>
         </div>

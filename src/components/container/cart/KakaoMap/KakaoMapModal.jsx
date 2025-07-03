@@ -7,12 +7,18 @@ const KakaoMapModal = ({ isOpen, onClose, lat, lng }) => {
   return (
     <div className="kakaoMapModal">
       <div className="kakaoMapModal-con">
+        <div className="kakaoMapModal-btn">
+          
         <button onClick={onClose}>닫기</button>
-        <KakaoMapCustom
-          lat={lat}
-          lng={lng}
-          markerImage='/images/markerK.png'
-        />
+        </div>
+        <div className="kakaoMapModal-map">
+
+          <KakaoMapCustom
+            lat={lat}
+            lng={lng}
+            markerImage='/images/markerK.png'
+          />
+        </div>
       </div>
     </div>
   )

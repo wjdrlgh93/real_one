@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import Paging from '../layout-yyj/Paging'
 
 const ShopBath_combContainer = () => {
 
@@ -26,11 +28,16 @@ const ShopBath_combContainer = () => {
     },[bathList])
     
     const [isHovered, setIsHovered] = useState(null)
+    
+    const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+
+    const start = (currentPage - 1) * itemsPerPage
+    const pagedItems = combList.slice(start, start + itemsPerPage)
 
     return (
             <div className="toyList">
                 <ul>
-                {combList && combList.map((el)=>{
+                {pagedItems.map((el)=>{
                     return (
                       <li>
                         <Link to={`/shop/bath/detail/${el.id}`}>
@@ -50,6 +57,7 @@ const ShopBath_combContainer = () => {
                     )
                 })}
                 </ul>
+                <Paging totalItems={combList.length}/>
             </div>
     )
 }
