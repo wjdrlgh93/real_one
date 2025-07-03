@@ -4,9 +4,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { removePaidItems } from '../../../slices/cartSlice';
 import KakaoMapModal from './KakaoMap/KakaoMapModal';
-import { addPayment} from '../../../slices/paymentSlice';
+import { addPayment } from '../../../slices/paymentSlice';
 import KakaoMap from '../../../API/kakaoApITest'
 import KakaoMapCustom from './KakaoMap/KakaoMapCustom';
+import { getMemberSelectorApi, getOrdersSeletorApi } from '../../../API/authAPI';
 
 const today = new Date(); // 현재 날짜
 const formattedDate = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`
@@ -21,38 +22,41 @@ const formattedDate = `${today.getFullYear()}/${today.getMonth() + 1}/${today.ge
 //   time: formattedDate
 // }
 const paymentPre = {
+  id: "",
   shop: "",
-  paymentMethod:"",
+  paymentMethod: "",
   member: '',
   orderAddress: '',
-  paymentResult:[],
+  paymentResult: [],
   paymentAmount: ''
 }
 
+
+
 const OrderPayment = () => {
-  
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  
+
   const paymentItems = useSelector(state => state.cart.paymentItems)
   const loginUser = useSelector(state => state.auth.isUser)
   console.log('OrderPayment에서 로그인 유저:', loginUser)
-  const isLogin = useSelector(state => state.auth.isLogin)  
+  const isLogin = useSelector(state => state.auth.isLogin)
   const isState = useSelector(state => state.auth.isState)
   const payment = useSelector(state => state.payment)
-  
+
   const [payData, setPayData] = useState(paymentPre)
-  
+
   let totalPrice = 0
   paymentItems.forEach((item) => {
     totalPrice += item.price * item.count
   })
-  
+
   let totalAmount = 0;
   paymentItems.forEach((item) => {
     totalAmount += item.count
   })
-  
+
   const paymentMethodChange = (e) => {
     setPayData({
       ...payData,
@@ -60,13 +64,13 @@ const OrderPayment = () => {
     })
   }
 
-  
+
   // 주문자 정보 입력 칸
   const [sameAsUser, setSameAsUser] = useState(false)
   const [ordererInfo, setOrdererInfo] = useState({
-    userName:'',
-    userEmail:'',
-    address:''
+    userName: '',
+    userEmail: '',
+    address: ''
   })
 
   useEffect(() => {
@@ -78,20 +82,20 @@ const OrderPayment = () => {
       })
     } else if (!sameAsUser) {
       setOrdererInfo({
-        userName:'',
-        userEmail:'',
-        address:'',
+        userName: '',
+        userEmail: '',
+        address: '',
       })
     }
   }, [sameAsUser, loginUser])
 
-  const userChange =  (e) => {
-    const {name, value} = e.target
-    setOrdererInfo(el => ({ ...el, [name]: value}))
+  const userChange = (e) => {
+    const { name, value } = e.target
+    setOrdererInfo(el => ({ ...el, [name]: value }))
   }
 
   console.log('loginUser:', loginUser)
-  
+
   // const isSameAsUser = (e) => {
   //   const checked = e.target.checked
   //   setSameAsUser(checked)
@@ -102,24 +106,24 @@ const OrderPayment = () => {
   //       address:loginUser.address
   //     })
   //   } else {
-    //     setOredererInfo({
+  //     setOredererInfo({
   //       name:'',
   //       email:'',
   //       address:''
   //     })
   //   }
   // }
-  
-  
+
+
   // 주문처 선택
   const [shopList, setShopList] = useState([])
   const [selectStore, setSelectStore] = useState()
   const [mapVisibleId, setMapVisibleId] = useState(null)
   const [isOpen, setIsOpen] = useState(false)
   const [selectedShop, setSelectedShop] = useState(null)
-  
+
   useEffect(() => {
-    const fetchShopList = async() => {
+    const fetchShopList = async () => {
       try {
         const res = await axios.get('http://localhost:3001/shopList')
         setShopList(res.data)
@@ -129,7 +133,7 @@ const OrderPayment = () => {
     }
     fetchShopList()
   }, [])
-  
+
   // const toggleStore = (id) => {
   //   setSelectedStore(prev =>
   //     prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
@@ -168,15 +172,15 @@ const OrderPayment = () => {
     }
 
     if (!sameAsUser) {
-      const {userName, userEmail, address} = ordererInfo
+      const { userName, userEmail, address } = ordererInfo
 
       if (
-      userName.trim() === "" ||
-      userEmail.trim() === "" ||
-      address.trim() === ''
+        userName.trim() === "" ||
+        userEmail.trim() === "" ||
+        address.trim() === ''
       ) {
-      alert('주문자 정보를 모두 입력해 주세요.')
-      return
+        alert('주문자 정보를 모두 입력해 주세요.')
+        return
       }
     }
     const selectedStoreData = shopList.find(store => store.id === selectStore)
@@ -194,15 +198,42 @@ const OrderPayment = () => {
     }
 
     try {
+
+
+      const dataURL = `http://localhost:3001/orders`
+      const resAPI = await getOrdersSeletorApi()
+
+
+      // 숫자인 ID만 모아서 max 계산
+      const numericIds = resAPI
+        .map(item => parseInt(item.id, 10))
+        .filter(id => !isNaN(id));
+      const maxId = numericIds.length > 0 ? Math.max(...numericIds) : 0;
+      const newId = (maxId + 1).toString(); // ✅ 새로운 ID 먼저 생성
+
+      const newOrder = {
+        id: newId, // ✅ 먼저 넣기
+        userId: loginUser.id,
+        userName: loginUser.userName,
+        userEmail: loginUser.userEmail,
+        paymentMethod: payData.paymentMethod,
+        paymentResult: paymentItems,
+        paymentAmount: totalPrice,
+        shop: payData.shop,
+        date: formattedDate,
+        orderer: ordererInfo
+      };
+
       await axios.post('http://localhost:3001/orders', newOrder)
 
-      dispatch(removePaidItems());
+
+      dispatch(removePaidItems(), newId);
 
       alert('결제가 완료되었습니다.')
       dispatch(addPayment(newOrder))
-      navigate('')
+      navigate('/shop/main')
 
-    } catch(error) {
+    } catch (error) {
       console.error('주문실패:', error)
       alert('결제 처리 중 오류가 발생했습니다.')
     }
@@ -215,6 +246,7 @@ const OrderPayment = () => {
     <div className="paymentList">
       <div className="paymentList-left">
         <h3 className="title">주문 상품</h3>
+
         <div className="paymentItem-con">                  
             <div className="paymentItemList">
               <ul>
@@ -229,120 +261,122 @@ const OrderPayment = () => {
                             <span> {el.title}</span>
                             <span className="top-price">{el.price}원</span>
                           </div>
-                        </div>
-                        <div className="bottom">
-                          <div className="paymentCount">                            
-                            <span>{el.count * el.price}원</span>
-                          </div>
+
                         </div>
                       </div>
-                    </li>
-                  )
-                })}                
-              </ul>
+                      <div className="bottom">
+                        <div className="paymentCount">
+                          <span>{el.count * el.price}원</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+          <div className="payment">
+            <div className="payment-sub">
+              <span className="sum-price">총 상품금액: {totalPrice} 원</span>
+              <span className='sum-count'>상품수량: {totalAmount} 개</span>
             </div>
-            <div className="payment">
-              <div className="payment-sub">
-                <span className="sum-price">총 상품금액: { totalPrice } 원</span>
-                <span className='sum-count'>상품수량: { totalAmount } 개</span>                
-              </div>
-            </div>        
+          </div>
         </div>
         <div className="paymentInfo">
           <div className="paymentMethod">
-              <h3>결제 방법</h3>
-              <div className="paymentMethod-con">
-                <label>
-                  <input
+            <h3>결제 방법</h3>
+            <div className="paymentMethod-con">
+              <label>
+                <input
                   type="radio"
                   name='paymentMehod'
                   value='계좌이체'
                   checked={payData.paymentMethod === '계좌이체'}
-                  onChange={paymentMethodChange}    
-                  />
-                  계좌이체
-                </label>
-                <label>
-                  <input
+                  onChange={paymentMethodChange}
+                />
+                계좌이체
+              </label>
+              <label>
+                <input
                   type="radio"
                   name='paymentMehod'
                   value='신용/체크카드'
                   checked={payData.paymentMethod === '신용/체크카드'}
-                  onChange={paymentMethodChange} 
-                  />
-                  신용/체크카드
-                </label>
-                <label>
-                  <input
+                  onChange={paymentMethodChange}
+                />
+                신용/체크카드
+              </label>
+              <label>
+                <input
                   type="radio"
                   name='paymentMehod'
                   value='카카오페이'
                   checked={payData.paymentMethod === '카카오페이'}
-                  onChange={paymentMethodChange} 
-                  />
-                  카카오페이
-                </label>
-                <label>
-                  <input
+                  onChange={paymentMethodChange}
+                />
+                카카오페이
+              </label>
+              <label>
+                <input
                   type="radio"
                   name='paymentMehod'
                   value='휴대폰'
                   checked={payData.paymentMethod === '휴대폰'}
-                  onChange={paymentMethodChange} 
-                  />
-                  휴대폰
-                </label>
-                <label>
-                  <input
+                  onChange={paymentMethodChange}
+                />
+                휴대폰
+              </label>
+              <label>
+                <input
                   type="radio"
                   name='paymentMehod'
                   value='무통장입금'
                   checked={payData.paymentMethod === '무통장입금'}
-                  onChange={paymentMethodChange} 
-                  />
-                  무통장입금
-                </label>
-              </div>
+                  onChange={paymentMethodChange}
+                />
+                무통장입금
+              </label>
+            </div>
           </div>
           <div className="paymentMember">
             <h3>주문자 정보</h3>
             {isLogin && (
               <label>
-                <input 
+                <input
                   type="checkbox"
                   checked={sameAsUser}
                   onChange={(e) => setSameAsUser(e.target.checked)}
                 />
                 회원 정보와 동일
-              </label>              
+              </label>
             )}
             <div className="paymentMember-con">
-              <div>                
+              <div>
                 <label>이름</label>
                 <input
-                type="text"
-                name="userName"
-                value={ordererInfo.userName}
-                onChange={userChange}
-                disabled={sameAsUser}/>
-              </div>
-              <div>                
-                <label>Email</label>
-                <input
-                type="text"
-                name="userEmail"
-                value={ordererInfo.userEmail}
-                onChange={userChange}
-                disabled={sameAsUser}/>
+                  type="text"
+                  name="userName"
+                  value={ordererInfo.userName}
+                  onChange={userChange}
+                  disabled={sameAsUser} />
               </div>
               <div>
-              <label>주소</label>
+                <label>Email</label>
                 <input
-                type="text"
-                name="address"
-                value={ordererInfo.address}
-                onChange={userChange}
-                disabled={sameAsUser}/>
+                  type="text"
+                  name="userEmail"
+                  value={ordererInfo.userEmail}
+                  onChange={userChange}
+                  disabled={sameAsUser} />
+              </div>
+              <div>
+                <label>주소</label>
+                <input
+                  type="text"
+                  name="address"
+                  value={ordererInfo.address}
+                  onChange={userChange}
+                  disabled={sameAsUser} />
               </div>
             </div>
           </div>
@@ -353,28 +387,28 @@ const OrderPayment = () => {
                 {shopList.map(store => (
                   <li key={store.id}>
                     <label>
-                      <input 
-                       type="radio"
-                       name='store'
-                       checked={selectStore === store.id}
-                       onChange={() => {
-                        setSelectStore(store.id)
-                        setPayData(prev => ({
-                          ...prev,
-                          shop: store.name
-                        }))
-                       }} 
+                      <input
+                        type="radio"
+                        name='store'
+                        checked={selectStore === store.id}
+                        onChange={() => {
+                          setSelectStore(store.id)
+                          setPayData(prev => ({
+                            ...prev,
+                            shop: store.name
+                          }))
+                        }}
                       />
-                     {store.name}
+                      {store.name}
                     </label>
                     <button onClick={() => showMap(store.id)}>
                       지도 보기
                     </button>
                     {mapVisibleId === store.id && (<div>
-                      <KakaoMapCustom lat={store.x} lng={store.y}/>
-                    <p>{store.address}</p>
+                      <KakaoMapCustom lat={store.x} lng={store.y} />
+                      <p>{store.address}</p>
                     </div>
-                  )}
+                    )}
                   </li>
                 ))}
               </ul>
@@ -387,7 +421,7 @@ const OrderPayment = () => {
                 />
               )} */}
             </div>
-          </div>         
+          </div>
         </div>
       </div>
       <div className="paymentList-right">
@@ -404,10 +438,10 @@ const OrderPayment = () => {
             <span><strong>결제 방법: </strong>{payData.paymentMethod}</span>
             <span><strong>주문처: </strong>{payData.shop}</span>
           </div>
-          <span className="sum-price"><strong>총 결제 금액: </strong>{ totalPrice } 원</span>
+          <span className="sum-price"><strong>총 결제 금액: </strong>{totalPrice} 원</span>
           <div className="order-result">
-            <button onClick={paymentBtn}>결제하기</button>      
-        </div>
+            <button onClick={paymentBtn}>결제하기</button>
+          </div>
         </div>
       </div>
     </div>
