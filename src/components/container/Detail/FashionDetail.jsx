@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { addCart, setPaymentItems } from '../../../slices/cartSlice'
 
 function FashionDetail() {
   const { id } = useParams();
@@ -18,7 +19,8 @@ function FashionDetail() {
       })
       .then((data) => {
         setItem(data);
-        setMainImg(`http://localhost:3001${data.img}`);
+        // setMainImg(`http://localhost:3001${data.img}`);
+        setMainImg(`${data.img}`);
       })
       .catch((err) => {
         console.error(err);
@@ -37,7 +39,7 @@ function FashionDetail() {
 
       <div className="fashion-detail-body">
         <div className="fashion-image-gallery">
-          <img className="fashion-image" src={mainImg} alt={item.title} />
+          <img className="fashion-image" src={`/images/${mainImg}`} alt={item.title} />
         </div>
 
         <div className="fashion-info">
@@ -53,6 +55,28 @@ function FashionDetail() {
         </div>
       </div>
 
+       {/* ✅ 장바구니/결제 버튼 추가 */}
+            <div className="detail-actions">
+              <button
+                onClick={() => {
+                  dispatch(addCart({ ...item, count: 1 }));
+                  alert('장바구니에 추가되었습니다.');
+                }}
+                className="btn-cart"
+              >
+                장바구니 담기
+              </button>
+      
+              <button
+                onClick={() => {
+                  dispatch(setPaymentItems([{ ...item, count: 1 }]));
+                  navigate('/payment');
+                }}
+                className="btn-pay"
+              >
+                바로 결제하기
+              </button>
+            </div>
       <fashionDetailTabs item={item} />
     </div>
   );

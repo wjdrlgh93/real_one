@@ -92,7 +92,7 @@ function FashionList() {
       <div className="ShopFashionContainer-top">
         {paginatedcloths.map(item => (
           <div key={item.id} className="fashion-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+            <img src={`/images/${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
@@ -104,7 +104,7 @@ function FashionList() {
       <div className="ShopFashionContainer-middle">
         {paginatedhats.map(item => (
           <div key={item.id} className="fashion-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+            <img src={`/images/${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
@@ -116,7 +116,7 @@ function FashionList() {
       <div className="ShopFashionContainer-bottom">
         {paginatedsunglasses.map(item => (
           <div key={item.id} className="fashion-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+            <img src={`/images/${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
@@ -128,7 +128,7 @@ function FashionList() {
       <div className="ShopFashionContainer-bottom">
         {paginatedties.map(item => (
           <div key={item.id} className="fashion-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-            <img src={`http://localhost:3001${item.img}`} alt={item.title} />
+            <img src={`/images/${item.img}`} alt={item.title} />
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
           </div>
@@ -141,7 +141,7 @@ function FashionList() {
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <img
-              src={`http://localhost:3001${selectedItem.img}`}
+              src={`http://localhost:3001/images/${selectedItem.img}`}
               title={`상세보기`}
               alt={selectedItem.title}
               style={{ cursor: 'pointer' }}
@@ -154,17 +154,20 @@ function FashionList() {
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
 
             <div className="modal-bottom-left">
-              <button onClick={() => navigate('/admin/order')} className="admin-button">
+              <button onClick={() => navigate('/admin/shop_list')} className="admin-button">
                 주문처로 이동
               </button>
             </div>
 
             <div className="modal-bottom-right">
-              <a href="/cart" className="cart">
-                <img src="/images/cart.png" alt="장바구니로 이동" />
-              </a>
+            <div
+                className="cart"
+                onClick={() => navigate(`/shop/fashion/${selectedItem.id}`)}
+                style={{ cursor: 'pointer' }}>
+                <img src="/images/cart.png" alt="상세보기로 이동" />
+                
+              </div>
             </div>
-
             <button onClick={closeModal} className="modal-close">
               CLOSE
             </button>

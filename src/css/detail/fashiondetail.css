@@ -88,41 +88,44 @@
   }
   
   /* 버튼 영역 */
-  .house-actions {
-    display: flex;
-    gap: 16px;
-  }
-  
-  .house-actions button {
-    flex: 1;
-    padding: 14px 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.25s ease;
-    color: #fff;
-    box-shadow: 0 5px 10px rgb(226 88 34 / 0.5);
-  }
-  
-  .btn-cart {
-    background-color: #E25822;
-  }
-  
-  .btn-cart:hover {
-    background-color: #c14719;
-    box-shadow: 0 6px 14px rgb(193 71 25 / 0.6);
-  }
-  
-  .btn-order {
-    background-color: #f08e49;
-  }
-  
-  .btn-order:hover {
-    background-color: #d9791e;
-    box-shadow: 0 6px 14px rgb(215 121 30 / 0.6);
-  }
+.detail-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.detail-actions button {
+  flex: 1;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: #fff;
+  box-shadow: 0 5px 10px rgba(226, 88, 34, 0.5);
+}
+
+/* 장바구니 버튼 */
+.btn-cart {
+  background-color: #E25822;
+}
+
+.btn-cart:hover {
+  background-color: #c14719;
+  box-shadow: 0 6px 14px rgba(193, 71, 25, 0.6);
+}
+
+/* 결제 버튼 */
+.btn-pay {
+  background-color: #f08e49;
+}
+
+.btn-pay:hover {
+  background-color: #d9791e;
+  box-shadow: 0 6px 14px rgba(215, 121, 30, 0.6);
+}
   
 
   /* 탭 컨테이너 */
