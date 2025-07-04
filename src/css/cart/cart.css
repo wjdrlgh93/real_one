@@ -111,15 +111,16 @@
 
 .cartList .cartList-con .cartItem-con .cartItemList ul li .bottom .cartCount .cartCountBtn {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: center;
   align-items: center;
+  gap: 0.2vw;
 }
 
 .cartList .cartList-con .cartItem-con .cartItemList ul li .bottom .cartCount .cartCountBtn button {
   border: none;
-  width: 20px;
-  height: 20px;
+  width: 0.5vw;
+  height: 0.5vw;
 
   display: flex;
   justify-content: center;
@@ -165,7 +166,7 @@
   font-family: 'KBO Dia Gothic_light';
   display: flex;
   flex-direction: column;
-  /* align-items: space-between; */
+  justify-content: center;
 
   gap: 1.5vmin;
 }
@@ -178,15 +179,20 @@
 .payment-sub span {
   font-size: smaller;
 }
-.payment-sub .order-result button {
-  height: 3rem;
-  width: 20vmin;
+
+.payment .order-result {
+  padding: 1em;
+}
+
+.payment .order-result button {
+  height: 4em;
+  width: 11em;
   background-color: #3674B5;
 
   border-radius: 200px;
   border: none;
 
-  font-size: 1.7vmin;
+  font-size: 0.8rem;
   color: #ffffff;
   font-family: 'KBO Dia Gothic_light';
   letter-spacing: 0.1rem;
@@ -219,14 +225,14 @@
 }
 
 .cartList .cartList-con .cartItem-con .cart-empty>button {
-  height: 3rem;
-  width: 20vmin;
+  height: 5vh;
+  width: 11em;
   background-color: #3674B5;
 
   border-radius: 200px;
   border: none;
 
-  font-size: 1.7vmin;
+  font-size: 1.5vh;
   color: #ffffff;
   font-family: 'KBO Dia Gothic_light';
   letter-spacing: 0.1rem;
@@ -242,8 +248,8 @@
 .cartItemList ul .select-all button.all {
   border: none;
   border-radius: 5px;
-  height: 3vh;
-  width: 7vh;  
+  height: 2em;
+  width: 4.5em;  
   background-color: #3673b5b3;
  
   font-size: 1.5vh;
@@ -260,8 +266,8 @@
   border: none;
   border-radius: 5px;
   background-color: #fada7adc;
-  height: 3vh;
-  width: 7vh;
+  height: 2em;
+  width: 4.5em; 
 
   font-size: 1.5vh;
   color: #ffffff;
@@ -271,4 +277,88 @@
 .cartItemList ul .select-all button.delete:hover {
   cursor: pointer;
   background-color: #3673b5b3;
+}
+
+.cartList input[type='checkbox'] {
+  appearance: none;
+  width: 0.8em;
+  height: 0.8em;
+  border: 1px solid #a7a7a7;
+  border-radius: 20%;
+  outline: none;
+  cursor: pointer;
+}
+
+.cartList input[type='checkbox']:checked {
+  background-color: #6694c4;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #6694c4;
+}
+
+@media screen and (max-width:1200px)  {
+  /* .cartItem-con {
+    height: auto;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: start !important;
+  } */
+  .cartList span {
+    font-size: 15px;
+  }
+  .payment-sub span.sum-count {
+    font-size: 13px;
+  }
+  .cartList label {
+    font-size: 13px;
+  }
+  .paymentInfo .paymentMember>label {
+    font-size: 11px;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .cartItem-con {
+    height: auto;
+    /* font-size: smaller; */
+    display: flex;
+    flex-direction: column;
+    align-items: start !important;
+  }
+  .cartList .cartList-con .cartItemList{
+    width: 100%;
+  }
+  .cartList .cartList-con .cartItem-con .payment {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #acacac;
+  }
+
+  .cartList .cartList-con .cartItem-con .payment .payment-sub {
+    padding: 0 10px;
+  }
+
+  .cartList .cartList-con .cartItem-con .payment .payment-sub .sum-price {
+  }
+  .cartList .sum-price {
+    font-size: 15px;
+  }
+  .cartList p {
+    font-size: 13px;
+  }
+  .cartList h3 {
+    font-size: 13px !important;
+  }
+  .cartList h4 {
+    font-size: 12px !important;
+  }
+  .cartList span {
+    font-size: 11px !important;
+  }
+.cartItemList ul .select-all button {
+  font-size: 10px !important;
+
+}
 }

@@ -125,6 +125,16 @@
 
   gap: 1.5vmin;
 }
+.paymentList .paymentList-left .paymentItem-con .payment .payment-sub .pricej {
+  font-family: 'KBO Dia Gothic_light';
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+
+  gap: 1.5vmin;
+}
+
+
 
 .payment-sub span.sum-price {
   display: flex;
@@ -166,11 +176,43 @@
 .paymentList-left .paymentInfo .paymentMethod .paymentMethod-con {
   display: flex;
   flex-direction: column;
-  gap: 3vmin;
+  gap: 4vmin;
 
   padding: 0 3vmin;
   padding-top: 3vmin;
   box-sizing: border-box;
+}
+.paymentList label {
+  display: flex;
+  align-items: center;
+}
+.paymentList input[type='radio'] {
+  appearance: none;
+  width: 0.8em;
+  height: 0.8em;
+  border: 1px solid #a7a7a7;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+.paymentList input[type='radio']:checked {
+  background-color: #FADA7A;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #FADA7A;
+}
+.paymentList input[type='checkbox'] {
+  appearance: none;
+  width: 0.8em;
+  height: 0.8em;
+  border: 1px solid #a7a7a7;
+  border-radius: 20%;
+  outline: none;
+  cursor: pointer;
+}
+.paymentList input[type='checkbox']:checked {
+  background-color: #FADA7A;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #FADA7A;
 }
 
 .paymentList-left .paymentInfo .paymentMethod .paymentMethod-con label {
@@ -276,6 +318,7 @@
     /* font-family: 'KBO Dia Gothic_light'; */
 
     font-size: 18px;
+    letter-spacing: 0.1em;
     /* font-weight: bolder; */
   }
 
@@ -302,16 +345,21 @@
 
     letter-spacing: 0.2vmin;
   }
+
+  .paymentList-right .paymentResult .order-result {
+    display: flex;
+    justify-content: center;
+  }
   
   .paymentList-right .paymentResult button {
-    height: 3rem;
-    width: 20vmin;
+    height: 5em;
+    width: 10em;
     background-color: #3674B5;
   
     border-radius: 200px;
     border: none;
   
-    font-size: 1.7vmin;
+    font-size: 0.7rem;
     color: #ffffff;
     font-family: 'KBO Dia Gothic_light';
     letter-spacing: 0.1rem;
@@ -327,7 +375,7 @@
   @media screen and (max-width:1200px)  {
     .paymentList {
       height: auto;
-      /* font-size: smaller; */
+
       display: flex;
       flex-direction: column;
     }
@@ -337,8 +385,10 @@
     .payment-sub span.sum-count {
       font-size: 13px;
     }
-    label {
+    .paymentList label {
       font-size: 13px;
+    }.paymentInfo .paymentMember>label {
+      font-size: 11px;
     }
     
   }
@@ -347,14 +397,48 @@
     .paymentList {
     
     }
+    .paymentList .paymentList-left .paymentItem-con {
+      display: flex;
+      gap: 0;
+    }
+    .paymentList .paymentList-left .paymentItem-con .paymentItemList {
+      width: 60%;
+    }
+    .paymentItem-con .payment {
+      width: 40%;
+    }
+    .paymentList .paymentList-left .paymentItem-con .payment .payment-sub .pricej {
+      font-family: 'KBO Dia Gothic_light';
+      display: flex;
+      flex-direction: column;
+      /* align-items: center; */
+      justify-content: center;
+    
+      gap: 1.5vmin;
+    }
     .payment-sub span.sum-price {
-      font-size: 10px;
+      font-size: 11px;
     }
     .payment-sub span.sum-count {
-      font-size: 8px;
+      font-size: 9px;
     }
-    label {
+    .paymentList label {
       font-size: 11px;
+    }
+    .paymentList h3 {
+      font-size: 13px !important;
+    }
+    .paymentList h4 {
+      font-size: 12px !important;
+    }
+    .paymentList span {
+      font-size: 11px ;
+    }
+    span.top-price {
+      font-size: 10px !important;
+    }
+    .paymentInfo .paymentMember>label {
+      font-size: 9px;
     }
   }
   
