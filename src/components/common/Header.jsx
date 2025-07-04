@@ -1,25 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { logOutUserFn, loginUserFn } from "../../slices/authSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const location = useLocation(); // 현재 URL 경로 가져오기
 
   const isLogin = useSelector((state) => state.auth.isLogin);
-  const user = useSelector((state) => state.auth.user); //  사용자 정보
+  const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn") === "1";
-    const savedUser = localStorage.getItem("isUser")
+    const savedUser = localStorage.getItem("isUser");
     if (storedLogin && !isLogin) {
-      dispatch(loginUserFn());
-    }    
-    if (storedLogin && savedUser && !isLogin) {
-      const parsedUser = JSON.parse(savedUser)
-      dispatch(loginUserFn(parsedUser)); 
+      const parsedUser = savedUser ? JSON.parse(savedUser) : null;
+      dispatch(loginUserFn(parsedUser));
     }
   }, [dispatch, isLogin]);
 
@@ -31,14 +28,12 @@ const Header = () => {
     navigate("/");
   };
 
-
-  const items = useSelector(state => state.cart.items)
+  const items = useSelector((state) => state.cart.items);
 
   let cartAmount = 0;
-  items.forEach((items) => {
-    cartAmount += items.count
-  })
-
+  items.forEach((item) => {
+    cartAmount += item.count;
+  });
 
   return (
     <div className="header">
@@ -70,20 +65,18 @@ const Header = () => {
                   </li>
                 </>
               ) : (
-                <>
-                  <li>
-                    <Link to={"/auth"}>LOGIN / 회원가입</Link>
-                  </li>
-                </>
+                <li>
+                  <Link to={"/auth"}>LOGIN / 회원가입</Link>
+                </li>
               )}
               <li>
                 <Link to={"/payment"}>주문내역</Link>
               </li>
-
               <li className="headerCart">
-                {items.length > 0 ? <span className="cart">{items.length}</span> : <></>}
-                <Link to={"/cart"}><img src="/images/shoppingCart.png" alt="cart" /></Link>
-
+                {items.length > 0 && <span className="cart">{items.length}</span>}
+                <Link to={"/cart"}>
+                  <img src="/images/shoppingCart.png" alt="cart" />
+                </Link>
               </li>
             </ul>
           </div>
@@ -105,22 +98,52 @@ const Header = () => {
           <div className="main-gnb">
             <ul>
               <li>
-                <Link to={"/shop/food"}>사료</Link>
+                <Link
+                  to="/shop/food"
+                  className={location.pathname.startsWith("/shop/food") ? "active" : ""}
+                >
+                  사료
+                </Link>
               </li>
               <li>
-                <Link to={"/shop/snack"}>간식</Link>
+                <Link
+                  to="/shop/snack"
+                  className={location.pathname.startsWith("/shop/snack") ? "active" : ""}
+                >
+                  간식
+                </Link>
               </li>
               <li>
-                <Link to={"/shop/toy"}>장난감</Link>
+                <Link
+                  to="/shop/toy"
+                  className={location.pathname.startsWith("/shop/toy") ? "active" : ""}
+                >
+                  장난감
+                </Link>
               </li>
               <li>
-                <Link to={"/shop/bath"}>목욕</Link>
+                <Link
+                  to="/shop/bath"
+                  className={location.pathname.startsWith("/shop/bath") ? "active" : ""}
+                >
+                  목욕
+                </Link>
               </li>
               <li>
-                <Link to={"/shop/house"}>하우스</Link>
+                <Link
+                  to="/shop/house"
+                  className={location.pathname.startsWith("/shop/house") ? "active" : ""}
+                >
+                  하우스
+                </Link>
               </li>
               <li>
-                <Link to={"/shop/fashion"}>패션</Link>
+                <Link
+                  to="/shop/fashion"
+                  className={location.pathname.startsWith("/shop/fashion") ? "active" : ""}
+                >
+                  패션
+                </Link>
               </li>
             </ul>
           </div>

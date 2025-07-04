@@ -21,6 +21,8 @@
 
 @import url(css/shop/shopHouse.css);
 @import url(css/shop/shopFashion.css);
+@import url(css/shop/shopFood.css);
+@import url(css/shop/shopSnack.css);
 
 /* Detail */
 @import url(css/detail/housedetail.css);

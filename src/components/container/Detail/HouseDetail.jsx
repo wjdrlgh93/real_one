@@ -14,7 +14,7 @@ function HouseDetail() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`http://localhost:3001/products/${id}`)
+    fetch(`http://192.168.23.209:3001/products/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('데이터를 불러오는 데 실패했습니다.');
         return res.json();
@@ -68,7 +68,11 @@ function HouseDetail() {
 
           <p className="house-description">
             {item.description ||
-              '우리 아이들이 안전하게 생활할 수 있도록 최대한 불필요한 요소들은 제거하고 제작했습니다. 많은 관심 부탁드립니다~'}
+              '1. 우리 아이를 위한 가장 포근한 공간, 펫 하우스에서 시작하세요.'} <br/>
+              {item.description ||
+              '2. 내 반려동물의 작은 세상, 사랑을 담은 펫 하우스'} <br/>
+              {item.description ||
+              '3. 집처럼 편안하고 품처럼 따뜻한, 단 하나의 하우스'}
           </p>
         </div>
       </div>
@@ -148,7 +152,7 @@ function HouseDetailTabs({ item }) {
   useEffect(() => {
     if (!item) return;
 
-    fetch(`http://localhost:3001/reviews?productId=${item.id}`)
+    fetch(`http://192.168.23.209:3001/reviews?productId=${item.id}`)
       .then(res => res.json())
       .then(data => setReviews(data))
       .catch(err => console.error('후기 로딩 실패:', err));
@@ -168,7 +172,7 @@ function HouseDetailTabs({ item }) {
       return;
     }
 
-    fetch(`http://localhost:3001/reviews`, {
+    fetch(`http://192.168.23.209:3001/reviews`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

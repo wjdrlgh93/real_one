@@ -138,6 +138,13 @@
     height: auto;  
 }
 
+.header .nav-bottom .nav-bottom-con .main-gnb a.active {
+    color: black;
+    font-weight: bold;
+    border-bottom: 3px solid black;
+    padding: 5px;
+  }
+
 .header .nav-bottom .nav-bottom-con .main-gnb ul {
     display: flex;
     justify-content: space-between;
@@ -154,10 +161,5 @@
     color: rgb(94, 92, 92)
 }
 
-.header .nav-bottom .main-gnb ul li:hover a {
-    color: black;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
 
   

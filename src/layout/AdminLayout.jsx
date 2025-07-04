@@ -21,7 +21,7 @@ const AdminLayout = () => {
 
         const onAdminMemberListFn = async (memberId) => {
             // get Member match by User
-            const dataURL = "http://localhost:3001/members"
+            const dataURL = "http://192.168.23.209:3001/members"
             try {
 
                 const res = await axios.get(`${dataURL}?id=${memberId}`)
