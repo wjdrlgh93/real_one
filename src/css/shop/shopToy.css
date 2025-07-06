@@ -120,12 +120,12 @@
 
 .toy .toy-con .toyList ul li .bottom a>span.title {
   font-family: 'KBO Dia Gothic_light';
-  font-size: 2vmin;
+  font-size: 2.2vmin;
   font-weight: bold;
 }
 
 .toy .toy-con .toyList ul li .bottom>span.pricej {
-  font-size: 1.5vmin;
+  font-size: 1.8vmin;
   font-family: 'KBO Dia Gothic_light';
   color: #5e5e5e;
 }
@@ -148,7 +148,15 @@
   }
   .toy .toy-con .toyList>ul {
     grid-template-columns: repeat(1, 1fr);
-  } 
+  }
+  .toy .toy-con .toyList ul li .bottom a>span.title {
+    font-size: 3vmin;
+  }
+  
+  .toy .toy-con .toyList ul li .bottom>span.pricej {
+    font-size: 2.5vmin;
+  }
+  
 }
 
 
