@@ -8,25 +8,25 @@ const ShopToy_ballContainer = () => {
   const [toyList, setToyList] = useState([])
 
   useEffect(() => {
-    
-    fetch(`http://192.168.23.209:3001/products`)
-    .then((res) => {return res.json()})
-    .then((jsonData )=> {setToyList(jsonData)})
-    
-},[])
-  
+
+    fetch(`http://localhost:001/products`)
+      .then((res) => { return res.json() })
+      .then((jsonData) => { setToyList(jsonData) })
+
+  }, [])
+
   const [ballList, setBallList] = useState([])
 
   useEffect(() => {
-    const ballFn =()=> {
+    const ballFn = () => {
       const ballArr = toyList.filter(el => {
-        return el.sub === '공' 
+        return el.sub === '공'
       })
       setBallList(ballArr)
     }
     ballFn()
-  },[toyList])
-  
+  }, [toyList])
+
   const [isHovered, setIsHovered] = useState(null)
 
   const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
@@ -35,27 +35,27 @@ const ShopToy_ballContainer = () => {
 
   return (
     <div className="toyList">
-                <ul>
-                {pagedItems.map((el)=>{
-                    return (
-                      <li>
-                          <Link to={`/shop/toy/detail/${el.id}`}>                        
-                            <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
-                                <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
-                            </div>
-                          </Link>
-                            <div className="bottom">
-                            <Link to={`/shop/toy/detail/${el.id}`}>
-                                <span className="title">{el.title}</span>
-                              </Link>
-                                <span className="pricej">￦{el.price}</span>
-                            </div>                         
-                        </li>
-                    )
-                })}
-                </ul>
-                <Paging totalItems={ballList.length}/>
-            </div>
+      <ul>
+        {pagedItems.map((el) => {
+          return (
+            <li>
+              <Link to={`/shop/toy/detail/${el.id}`}>
+                <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
+                  <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
+                </div>
+              </Link>
+              <div className="bottom">
+                <Link to={`/shop/toy/detail/${el.id}`}>
+                  <span className="title">{el.title}</span>
+                </Link>
+                <span className="pricej">￦{el.price}</span>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+      <Paging totalItems={ballList.length} />
+    </div>
   )
 }
 

@@ -40,7 +40,7 @@ function FashionList() {
   const itemsPerPage = 4;
 
   useEffect(() => {
-    fetch('http://192.168.23.209:3001/products')
+    fetch('http://localhost:001/products')
       .then(res => res.json())
       .then(data => setfashions(data))
       .catch(error => console.error('데이터 불러오기 실패:', error));
@@ -84,10 +84,10 @@ function FashionList() {
             sethatPage(1);
             setsunglassPage(1);
             settiePage(1);
-          }}/>
-            <button type="submit" className="submit-button">검색
-            </button>
-        </div>
+          }} />
+        <button type="submit" className="submit-button">검색
+        </button>
+      </div>
       <h2>펫 의상</h2>
       <div className="ShopFashionContainer-top">
         {paginatedcloths.map(item => (
@@ -141,7 +141,7 @@ function FashionList() {
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <img
-              src={`http://192.168.23.209:3001/images/${selectedItem.img}`}
+              src={`http://localhost:001/images/${selectedItem.img}`}
               title={`상세보기`}
               alt={selectedItem.title}
               style={{ cursor: 'pointer' }}
@@ -160,12 +160,12 @@ function FashionList() {
             </div>
 
             <div className="modal-bottom-right">
-            <div
+              <div
                 className="cart"
                 onClick={() => navigate(`/shop/fashion/${selectedItem.id}`)}
                 style={{ cursor: 'pointer' }}>
                 <img src="/images/cart.png" alt="상세보기로 이동" />
-                
+
               </div>
             </div>
             <button onClick={closeModal} className="modal-close">

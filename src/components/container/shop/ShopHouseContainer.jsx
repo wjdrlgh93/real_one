@@ -39,7 +39,7 @@ function HouseList() {
   const itemsPerPage = 4;
 
   useEffect(() => {
-    fetch('http://192.168.23.209:3001/products')
+    fetch('http://localhost:001/products')
       .then(res => res.json())
       .then(data => setHouses(data))
       .catch(error => console.error('데이터 불러오기 실패:', error));
@@ -80,9 +80,9 @@ function HouseList() {
             setdogPage(1);
             setcatPage(1);
             setpetPage(1);
-          }}/>
-            <button type="submit" className="submit-button">검색
-            </button>
+          }} />
+        <button type="submit" className="submit-button">검색
+        </button>
       </div>
       <h2>강아지 하우스</h2>
       <div className="ShopHouseContainer-top">
@@ -102,7 +102,7 @@ function HouseList() {
 
         {paginatedCatHouses.map(item => (
           <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-        <img src={`/images/${item.img}`} alt={item.title} />
+            <img src={`/images/${item.img}`} alt={item.title} />
 
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
@@ -115,7 +115,7 @@ function HouseList() {
       <div className="ShopHouseContainer-bottom">
         {paginatedPetHouses.map(item => (
           <div key={item.id} className="house-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-   <img src={`/images/${item.img}`} alt={item.title} />
+            <img src={`/images/${item.img}`} alt={item.title} />
 
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
@@ -129,7 +129,7 @@ function HouseList() {
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <img
-              src={`http://192.168.23.209:3001/images/${selectedItem.img}`}
+              src={`http://localhost:001/images/${selectedItem.img}`}
               title={`상세보기`}
               alt={selectedItem.title}
               style={{ cursor: 'pointer' }}
@@ -153,7 +153,7 @@ function HouseList() {
                 onClick={() => navigate(`/shop/house/${selectedItem.id}`)}
                 style={{ cursor: 'pointer' }}>
                 <img src="/images/cart.png" alt="상세보기로 이동" />
-                
+
               </div>
             </div>
             <button onClick={closeModal} className="modal-close">

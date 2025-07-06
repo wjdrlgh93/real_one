@@ -14,7 +14,7 @@ function HouseDetail() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`http://192.168.23.209:3001/products/${id}`)
+    fetch(`http://localhost:001/products/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('데이터를 불러오는 데 실패했습니다.');
         return res.json();
@@ -68,10 +68,10 @@ function HouseDetail() {
 
           <p className="house-description">
             {item.description ||
-              '1. 우리 아이를 위한 가장 포근한 공간, 펫 하우스에서 시작하세요.'} <br/>
-              {item.description ||
-              '2. 내 반려동물의 작은 세상, 사랑을 담은 펫 하우스'} <br/>
-              {item.description ||
+              '1. 우리 아이를 위한 가장 포근한 공간, 펫 하우스에서 시작하세요.'} <br />
+            {item.description ||
+              '2. 내 반려동물의 작은 세상, 사랑을 담은 펫 하우스'} <br />
+            {item.description ||
               '3. 집처럼 편안하고 품처럼 따뜻한, 단 하나의 하우스'}
           </p>
         </div>
@@ -152,7 +152,7 @@ function HouseDetailTabs({ item }) {
   useEffect(() => {
     if (!item) return;
 
-    fetch(`http://192.168.23.209:3001/reviews?productId=${item.id}`)
+    fetch(`http://localhost:001/reviews?productId=${item.id}`)
       .then(res => res.json())
       .then(data => setReviews(data))
       .catch(err => console.error('후기 로딩 실패:', err));
@@ -161,18 +161,18 @@ function HouseDetailTabs({ item }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(!isLoggedIn) {
+    if (!isLoggedIn) {
       alert('로그인이 필요합니다.');
       navigate('/auth/login');
       return;
     }
 
-    if(newReview.rating === 0 && newReview.type === 'review'){
+    if (newReview.rating === 0 && newReview.type === 'review') {
       alert('평점을 선택해주세요.');
       return;
     }
 
-    fetch(`http://192.168.23.209:3001/reviews`, {
+    fetch(`http://localhost:001/reviews`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -279,7 +279,7 @@ function HouseDetailTabs({ item }) {
                   </button>
                 </div>
               </div>
-          
+
               {isLoggedIn ? (
                 <>
                   <h4>후기 작성</h4>
@@ -311,34 +311,34 @@ function HouseDetailTabs({ item }) {
                 </p>
               )}
 
-                <div className="review-con-bottom">
-                  <div className="reviews">
-                    <h4>후기 목록</h4>
-                    {reviews.filter(r => r.type === 'review').length === 0 ? (
-                      <p>등록된 후기가 없습니다.</p>
-                    ) : (
-                      <ul>
-                        {reviews
-                          .filter(r => r.type === 'review')
-                          .filter(r =>
-                            r.author.toLowerCase().includes(Search.toLowerCase()) ||
-                            r.content.toLowerCase().includes(Search.toLowerCase())
-                          )
-                          .map((review) => {
-                            const date = review.time ? new Date(review.time) : null;
-                            return (
-                              <li key={review.id} className="review-item">
-                                <strong>{review.author}</strong>
-                                <p>{review.rating ? '★'.repeat(review.rating) : '평점 없음'}</p>
-                                <p>{review.content}</p>
-                                <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
-                              </li>
-                            );
-                          })}
-                      </ul>
-                    )}
-                  </div>
+              <div className="review-con-bottom">
+                <div className="reviews">
+                  <h4>후기 목록</h4>
+                  {reviews.filter(r => r.type === 'review').length === 0 ? (
+                    <p>등록된 후기가 없습니다.</p>
+                  ) : (
+                    <ul>
+                      {reviews
+                        .filter(r => r.type === 'review')
+                        .filter(r =>
+                          r.author.toLowerCase().includes(Search.toLowerCase()) ||
+                          r.content.toLowerCase().includes(Search.toLowerCase())
+                        )
+                        .map((review) => {
+                          const date = review.time ? new Date(review.time) : null;
+                          return (
+                            <li key={review.id} className="review-item">
+                              <strong>{review.author}</strong>
+                              <p>{review.rating ? '★'.repeat(review.rating) : '평점 없음'}</p>
+                              <p>{review.content}</p>
+                              <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  )}
                 </div>
+              </div>
             </div>
           </>
         )}
@@ -411,43 +411,43 @@ function HouseDetailTabs({ item }) {
                 </p>
               )}
 
-                <div className="review-con-bottom">
-                  <div className="reviews">
-                    <h4>문의 목록</h4>
-                    {reviews.filter(r => r.type === 'qna').length === 0 ? (
-                      <p>등록된 문의가 없습니다.</p>
-                    ) : (
-                      <ul>
-                        {reviews
-                          .filter(r => r.type === 'qna')
-                          .filter(r =>
-                            r.author.toLowerCase().includes(Search.toLowerCase()) ||
-                            r.content.toLowerCase().includes(Search.toLowerCase())
-                          )
-                          .map((qna) => {
-                            const date = qna.time ? new Date(qna.time) : null;
-                            return (
-                              <li key={qna.id} className="review-item">
-                                <strong>{qna.author}</strong>
-                                <p>문의 유형: {(() => {
-                                  switch(qna.rating){
-                                    case 1: return '불량상품 문의';
-                                    case 2: return '사이즈 문의';
-                                    case 3: return '색상 문의';
-                                    case 4: return '재고 문의';
-                                    case 5: return '기타 문의';
-                                    default: return '미분류';
-                                  }
-                                })()}</p>
-                                <p>{qna.content}</p>
-                                <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
-                              </li>
-                            );
-                          })}
-                      </ul>
-                    )}
-                  </div>
+              <div className="review-con-bottom">
+                <div className="reviews">
+                  <h4>문의 목록</h4>
+                  {reviews.filter(r => r.type === 'qna').length === 0 ? (
+                    <p>등록된 문의가 없습니다.</p>
+                  ) : (
+                    <ul>
+                      {reviews
+                        .filter(r => r.type === 'qna')
+                        .filter(r =>
+                          r.author.toLowerCase().includes(Search.toLowerCase()) ||
+                          r.content.toLowerCase().includes(Search.toLowerCase())
+                        )
+                        .map((qna) => {
+                          const date = qna.time ? new Date(qna.time) : null;
+                          return (
+                            <li key={qna.id} className="review-item">
+                              <strong>{qna.author}</strong>
+                              <p>문의 유형: {(() => {
+                                switch (qna.rating) {
+                                  case 1: return '불량상품 문의';
+                                  case 2: return '사이즈 문의';
+                                  case 3: return '색상 문의';
+                                  case 4: return '재고 문의';
+                                  case 5: return '기타 문의';
+                                  default: return '미분류';
+                                }
+                              })()}</p>
+                              <p>{qna.content}</p>
+                              <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  )}
                 </div>
+              </div>
             </div>
           </>
         )}

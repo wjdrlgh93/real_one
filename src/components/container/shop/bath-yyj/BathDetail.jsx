@@ -7,21 +7,21 @@ import ShopDetailLayout from '../layout-yyj/ShopDetailLayout'
 
 const BathDetail = () => {
   const param = useParams()
-  console.log(param.id, typeof(param.id))
+  console.log(param.id, typeof (param.id))
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const [addCartModal, setAddCartModal] = useState(false)
 
   const addToCart = () => {
-    const item = {id: product.id, title: product.title, price:product.price, img:product.img, hoverImg: product.hoverImg, count:count}
-    
+    const item = { id: product.id, title: product.title, price: product.price, img: product.img, hoverImg: product.hoverImg, count: count }
+
     dispatch(addCart(item))
     setAddCartModal(true)
   }
 
   const payDirect = () => {
-    const item = {id: product.id, title: product.title, price:product.price, img:product.img, hoverImg: product.hoverImg, count:count}
+    const item = { id: product.id, title: product.title, price: product.price, img: product.img, hoverImg: product.hoverImg, count: count }
 
     dispatch(addCart(item))
     dispatch(setPaymentItems([item]))
@@ -41,12 +41,12 @@ const BathDetail = () => {
   }
 
   useEffect(() => {
-    const productURL = `http://192.168.23.209:3001/products`
+    const productURL = `http://localhost:001/products`
 
     const productFn = async (id) => {
-      try{
+      try {
         const res = await axios.get(`${productURL}?id=${param.id}`)
-        console.log(res+" res")
+        console.log(res + " res")
         if (res.data.length > 0) {
           setProduct(res.data[0])
         }
@@ -61,17 +61,17 @@ const BathDetail = () => {
   product && console.log(product)
   return (
     <ShopDetailLayout
-    img={`/images/${product.img}`}
-    hoverImg={product.hoverImg && product.hoverImg !== '' ? `/images/${product.hoverImg}` : null}
-    title={product.title}
-    price={product.price}
-    count={count}
-    onAddToCart={addToCart}
-    onIncrease={onIncrease}
-    onDecrease={onDecrease}
-    addCartModal={addCartModal}
-    setAddCartModal={setAddCartModal}
-    payDirect={payDirect}
+      img={`/images/${product.img}`}
+      hoverImg={product.hoverImg && product.hoverImg !== '' ? `/images/${product.hoverImg}` : null}
+      title={product.title}
+      price={product.price}
+      count={count}
+      onAddToCart={addToCart}
+      onIncrease={onIncrease}
+      onDecrease={onDecrease}
+      addCartModal={addCartModal}
+      setAddCartModal={setAddCartModal}
+      payDirect={payDirect}
     >
 
     </ShopDetailLayout>

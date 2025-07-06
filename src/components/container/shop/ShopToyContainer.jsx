@@ -8,13 +8,13 @@ const ShopToyContainer = () => {
     const [productsList, setProductsList] = useState([])
 
     useEffect(() => {
-        const url = `http://192.168.23.209:3001/products`
+        const url = `http://localhost:001/products`
 
         fetch(url)
-        .then(res => res.json())
-        .then(jsonData => setProductsList(jsonData))
+            .then(res => res.json())
+            .then(jsonData => setProductsList(jsonData))
         // .catch(err => console.log(err))
-    },[])
+    }, [])
 
     const [toyList, setToyList] = useState([])
 
@@ -27,36 +27,36 @@ const ShopToyContainer = () => {
         }
         toyFn()
     }, [productsList])
-    
+
     const [isHovered, setIsHovered] = useState(null)
     const { currentPage, itemsPerPage } = useSelector(state => state.paging)
-    const start = (currentPage - 1)*itemsPerPage
+    const start = (currentPage - 1) * itemsPerPage
     const pagedItems = toyList.slice(start, start + itemsPerPage)
 
     return (
-            <div className="toyList">
-                <ul>
-                {pagedItems.map((el)=>{
+        <div className="toyList">
+            <ul>
+                {pagedItems.map((el) => {
                     return (
                         <li key={el.id}>
-                            <Link to={`detail/${el.id}`}>                            
+                            <Link to={`detail/${el.id}`}>
                                 <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
-                                    <img src={el.hoverImg && isHovered === el.id ?`/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title}/>
+                                    <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
                                 </div>
                             </Link>
-                                <div className="bottom">
+                            <div className="bottom">
                                 <Link to={`detail/${el.id}`}>
                                     <span className="title">{el.title}</span>
                                 </Link>
-                                    <span className="pricej">￦{el.price}</span>
-                                </div>                            
+                                <span className="pricej">￦{el.price}</span>
+                            </div>
                         </li>
                     )
                 })}
-                </ul>
-                <Paging totalItems={toyList.length}/>
-            </div>
-      
+            </ul>
+            <Paging totalItems={toyList.length} />
+        </div>
+
     )
 }
 

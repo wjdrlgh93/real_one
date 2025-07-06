@@ -15,7 +15,7 @@ const AdminPayments = () => {
     useEffect(() => {
         const onPayMentListfn = async (id) => {
             // get Payment info 
-            const dataURL = `http://192.168.23.209:3001/orders`
+            const dataURL = `http://localhost:001/orders`
             try {
                 const res = await axios.get(`${dataURL}`)
                 const res2 = await axios.get(`${dataURL}?id=${id}`)
