@@ -8,7 +8,7 @@ const ShopBathContainer = () => {
 
     useEffect(() => {
 
-        const url = `http://localhost:001/products`
+        const url = `http://localhost:3001/products`
 
         fetch(url)
             .then(res => res.json())

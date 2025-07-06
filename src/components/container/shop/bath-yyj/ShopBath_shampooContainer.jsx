@@ -9,7 +9,7 @@ const ShopBath_shampooContainer = () => {
 
   useEffect(() => {
 
-    fetch(`http://localhost:001/products`)
+    fetch(`http://localhost:3001/products`)
       .then((res) => res.json())
       .then(jsonData => setBathList(jsonData))
     // .catch(err => console.log(err))

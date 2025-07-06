@@ -9,7 +9,7 @@ const ShopToy_stuffedContainer = () => {
 
   useEffect(() => {
 
-    fetch(`http://localhost:001/products`)
+    fetch(`http://localhost:3001/products`)
       .then((res) => { return res.json() })
       .then((jsonData) => { setToyList(jsonData) })
 

@@ -92,7 +92,7 @@ const AdminProducts = () => {
 
     useEffect(() => {
         const itemListFn = async (memberId) => {
-            const dataURL = `http://localhost:001/products`
+            const dataURL = `http://localhost:3001/products`
             try {
                 const res = await axios.get(`${dataURL}`)
                 const res2 = await axios.get(`${dataURL}?id=${memberId}`)
@@ -106,7 +106,7 @@ const AdminProducts = () => {
 
     useEffect(() => {
         const testFn = async () => {
-            const dataURL = `http://localhost:001/products`
+            const dataURL = `http://localhost:3001/products`
             const res = await axios.get(`${dataURL}`)
                 .then((response) => {
                     setSearchItemData(response.data);
