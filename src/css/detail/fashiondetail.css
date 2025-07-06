@@ -1,93 +1,87 @@
 /* 전체 레이아웃 */
-.house-detail-page {
-    max-width: 1080px;
-    margin: 30px auto 80px;
-    padding: 0 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #222;
-    background-color: #fff;
-    box-sizing: border-box;
+.fashion-detail-page {
+  max-width: 1080px;
+  margin: 30px auto 80px;
+  padding: 0 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background-color: #fff;
+  box-sizing: border-box;
+}
 
-    /* padding-top: 300px; */
+.loading {
+  text-align: center;
+  padding: 80px 0;
+  font-size: 1.25rem;
+  color: #666;
+}
 
-  }
-  
-  .loading {
-    text-align: center;
-    padding: 80px 0;
-    font-size: 1.25rem;
-    color: #666;
-  }
-  
-  /* 헤더 */
-  .house-detail-header {
-    border-bottom: 2px solid #eee;
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-  }
-  
-  .house-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #222;
-    margin: 0;
-  }
-  
-  /* 본문 */
-  .house-detail-body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 32px;
-    margin-bottom: 48px;
-  }
-  
-  .house-image-gallery {
-    flex: 1 1 480px;
-    max-width: 480px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    background: #fafafa;
-  }
-  
-  .main-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    user-select: none;
-  }
-  
-  .house-info {
-    flex: 1 1 440px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-  }
-  
-  .house-price {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #E25822;
-    font-weight: 800px;
-  }
-  
+/* 헤더 */
+.fashion-detail-header {
+  border-bottom: 2px solid #eee;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+}
 
-  
-  .house-size {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #444;
-  }
-  
-  .house-description {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  
-  /* 버튼 영역 */
+.fashion-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+/* 본문 */
+.fashion-detail-body {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.fashion-image-gallery {
+  flex: 1 1 480px;
+  max-width: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+}
+
+.fashion-image-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+}
+
+.fashion-info {
+  flex: 1 1 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fashion-price {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #E25822;
+  font-weight: 800;
+}
+
+.fashion-size {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.fashion-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* 버튼 영역 */
 .detail-actions {
   display: flex;
   gap: 16px;
@@ -126,99 +120,89 @@
   background-color: #d9791e;
   box-shadow: 0 6px 14px rgba(215, 121, 30, 0.6);
 }
-  
 
-  /* 탭 컨테이너 */
-  .detail-tabs-container {
-    margin-top: 60px;
+/* 탭 컨테이너 */
+.detail-tabs-container {
+  margin-top: 60px;
+  border-top: 1px solid #ddd;
+}
 
-    border-top: 1px solid #ddd;
-  }
-  
-  /* 탭 메뉴 */
-  .tabs {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    margin: 0 0 0 0;
-    border-bottom: 2px solid #eaeaea;
-    justify-content: center; /* 가운데 정렬 */
-    gap: 28px;
-  }
-  
-  .tab-item {
-    padding: 14px 22px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: #666;
-    border-bottom: 3px solid transparent;
-    user-select: none;
-    transition: color 0.3s, border-color 0.3s;
-  }
-  
-  .tab-item:hover {
-    color: #E25822;
-  }
-  
-  .tab-item.active {
-    border-color: #E25822;
-    color: #E25822;
-    font-weight: 700;
-  }
-  
-  /* 탭 콘텐츠 */
-  .tab-content {
+/* 탭 메뉴 */
+.tabs {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0 0;
+  border-bottom: 2px solid #eaeaea;
+  justify-content: center; /* 가운데 정렬 */
+  gap: 28px;
+}
 
-    width: 900px;
-    margin: 24px auto 0 auto;
-    background: #fff;
-    /* padding: 28px 24px; */
-    /* border: 1px solid #eaeaea; */
-    /* box-sizing: border-box; */
-    border-top: none;
-    border-radius: 0 0 12px 12px;
-    color: #444;
-    font-size: 1rem;
-    line-height: 1.6;
-    min-height: 220px;
-    
-  }
-  
-  .detail-images {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .detail-images img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    cursor: default;
-    transition: none;
-  }
-  
-  .detail-images img:hover {
-    transform: none;
-  }
+.tab-item {
+  padding: 14px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  user-select: none;
+  transition: color 0.3s, border-color 0.3s;
+}
 
-  .tab-content .exchange-content .exchange-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .review-con .review-con-bottom {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
+.tab-item:hover {
+  color: #E25822;
+}
 
+.tab-item.active {
+  border-color: #E25822;
+  color: #E25822;
+  font-weight: 700;
+}
+
+/* 탭 콘텐츠 */
+.tab-content {
+  width: 900px;
+  margin: 24px auto 0 auto;
+  background: #fff;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 220px;
+}
+
+.detail-images {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-images img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: default;
+  transition: none;
+}
+
+.detail-images img:hover {
+  transform: none;
+}
+
+/* 교환/반품/배송 탭 내부 이미지 */
+.exchange-info img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* 후기 컨테이너 */
 .review-con {
- padding: 1vw;
- /* border: 1px solid #ccc;
- box-sizing: border-box;
- border-radius: 10px; */
+  padding: 1vw;
+  /* border-radius: 10px; */
+  /* box-sizing: border-box; */
 }
 
 .review-star {
@@ -230,11 +214,12 @@
   margin-bottom: 20px;
 }
 
-.review-star label select{
+.review-star label select {
   height: 25px;
   margin-right: 450px;
 }
-.review-star input[type=text] {
+
+.review-star input[type="text"] {
   width: 200px;
   height: 19px;
   text-align: center;
@@ -242,36 +227,45 @@
 
 .review-star .review-search {
   padding: 0 auto;
-  
 }
 
-
-
+/* 후기 제목 */
 .review-con h4 {
   margin-bottom: 10px;
   font-size: 20px;
   color: #E25822;
   padding: 0.5vw;
 }
-.review-con .review-con-top  {
+
+/* 후기 입력 폼 상단 */
+.review-con .review-con-top {
   padding: 0.5vw;
 }
-.review-con .review-con-top input[type=text] {
+
+.review-con .review-con-top input[type="text"] {
   padding: 0.3vw;
   border: 1px solid #cccccc;
   box-sizing: border-box;
   border-radius: 5px;
 }
+
 .review-con .review-con-top textarea {
   border: 1px solid #cccccc;
   box-sizing: border-box;
   border-radius: 10px;
   width: 100%;
-  height: 200px; 
+  height: 200px;
   padding: 10px;
   font-size: 16px;
-  resize: vertical; 
+  resize: vertical;
   margin-top: 5px;
+}
+
+/* 후기 목록 컨테이너 */
+.review-con-bottom {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
 .review-con-bottom .reviews {
@@ -285,7 +279,7 @@
 }
 
 .review-con-bottom .reviews p,
-.review-con-bottom .reviews strong, 
+.review-con-bottom .reviews strong,
 .review-con-bottom .reviews small {
   padding: 1px;
 }
@@ -295,24 +289,38 @@
   padding: 1vw;
 }
 
-.exchange-images img {
-  border-radius: 10px;
-}
-  
-  /* 반응형 */
-  @media (max-width: 768px) {
-    .house-detail-body {
-      flex-direction: column;
-    }
-  
-    .house-image-gallery,
-    .house-info {
-      max-width: 100%;
-    }
-  
-    .tab-content {
-      max-width: 100%;
-      padding: 20px 16px;
-    }
+/* 반응형 */
+@media (max-width: 768px) {
+  .fashion-detail-body {
+    flex-direction: column;
   }
 
+  .fashion-image-gallery,
+  .fashion-info {
+    max-width: 100%;
+  }
+
+  .tab-content {
+    max-width: 100%;
+    padding: 20px 16px;
+    width: auto;
+    margin: 24px 0 0 0;
+  }
+
+  .review-star label select {
+    margin-right: 0;
+  }
+
+  .review-star {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .review-star input[type="text"] {
+    width: 100%;
+  }
+
+  .review-star .review-search {
+    width: 100%;
+  }
+}

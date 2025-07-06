@@ -3,6 +3,9 @@ import { Navigate } from 'react-router-dom'
 import toToyRouter from './toToyRouter'
 import toBathRouter from './toBathRouter'
 import HouseDetail from '../components/container/Detail/HouseDetail'
+import FashionDetail from '../components/container/Detail/FashionDetail'
+import FoodDetail from '../components/container/Detail/FoodDetail'
+import SnackDetail from '../components/container/Detail/SnackDetail'
 
 const Loading = <div className='loading'>Loading...</div>
 
@@ -39,9 +42,17 @@ const toShopRouter = () => {
                 element: <Suspense fallback={Loading}><ShopFood /></Suspense>
             },
             {
+                path: 'food/:id',
+                element: <Suspense fallback={Loading}><FoodDetail /></Suspense>
+            },
+            {
                 // shop/snack
                 path: 'snack',
                 element: <Suspense fallback={Loading}><ShopSnack /></Suspense>
+            },
+            {
+                path: 'snack/:id',
+                element: <Suspense fallback={Loading}><SnackDetail /></Suspense>
             },
             {
                 // shop/toy
@@ -79,7 +90,7 @@ const toShopRouter = () => {
             },
             {
                 path: 'fashion/:id',
-                element: <Suspense fallback={Loading}><HouseDetail /></Suspense>
+                element: <Suspense fallback={Loading}><FashionDetail /></Suspense>
             }
 
         ]

@@ -39,7 +39,7 @@ function HouseList() {
   const itemsPerPage = 4;
 
   useEffect(() => {
-    fetch('http://localhost:3001/products')
+    fetch('http://192.168.23.209:3001/products')
       .then(res => res.json())
       .then(data => setHouses(data))
       .catch(error => console.error('데이터 불러오기 실패:', error));
@@ -129,7 +129,7 @@ function HouseList() {
         <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
             <img
-              src={`http://localhost:3001/images/${selectedItem.img}`}
+              src={`http://192.168.23.209:3001/images/${selectedItem.img}`}
               title={`상세보기`}
               alt={selectedItem.title}
               style={{ cursor: 'pointer' }}
@@ -138,7 +138,7 @@ function HouseList() {
 
             />
             <h2>{selectedItem.title}</h2>
-            <p>size: {selectedItem.size?.toLocaleString()}</p>
+            <p>{selectedItem.size?.toLocaleString()}</p>
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
 
             <div className="modal-bottom-left">
