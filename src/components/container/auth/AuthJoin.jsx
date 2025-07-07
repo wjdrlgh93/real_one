@@ -47,16 +47,15 @@ const AuthJoin = () => {
     }
 
     const onInputchangeFn = (e) => {
-        const name = e.target.name;
-        const value = e.target.value
-        // 로그인 입력이면 login 상태 변경
-        if (name === "userEmail" || name === "userPw") {
-            setLogin(prev => ({ ...prev, [name]: value }));
-        } else {
-            // 그 외는 회원가입
-            setjoin(prev => ({ ...prev, [name]: value }));
+        const { name, value } = e.target;
+
+        if (name === "loginEmail" || name === "loginPw") {
+            setLogin(prev => ({ ...prev, [name === "loginEmail" ? "userEmail" : "userPw"]: value }));
+        } else if (name === "joinEmail" || name === "joinPw" || name === "age" || name === "address" || name === "userName" || name === "role") {
+            setjoin(prev => ({ ...prev, [name === "joinEmail" ? "userEmail" : name === "joinPw" ? "userPw" : name]: value }));
         }
     }
+
 
     const onLoginFn = ((e) => {
         e.preventDefault();
@@ -175,13 +174,13 @@ const AuthJoin = () => {
         }
     };
 
-        // const isLoginn = useSelector(state => state.auth.isLogin)
-        const loginUser = useSelector(state => state.auth.isUser)
-      
-        useEffect(() => {
-          console.log('shop 페이지 - 로그인 상태:', isLogin)
-          console.log('shop 페이지 - 로그인 유저 정보:', loginUser)
-        }, [isLogin, loginUser])
+    // const isLoginn = useSelector(state => state.auth.isLogin)
+    const loginUser = useSelector(state => state.auth.isUser)
+
+    useEffect(() => {
+        console.log('shop 페이지 - 로그인 상태:', isLogin)
+        console.log('shop 페이지 - 로그인 유저 정보:', loginUser)
+    }, [isLogin, loginUser])
 
     return (
         <>
@@ -197,12 +196,12 @@ const AuthJoin = () => {
                                             {/* 회원가입 */}
                                             <div className="input-group">
                                                 <i className='bx bx-mail-send'></i>
-                                                <input type="email" name="userEmail" id="userEmail" placeholder='EMAIL'
+                                                <input type="email" name="joinEmail" id="userEmail" placeholder='EMAIL'
                                                     value={join.userEmail} onChange={onInputchangeFn} />
                                             </div>
                                             <div className="input-group">
                                                 <i className='bx bxs-lock-alt'></i>
-                                                <input type="password" name="userPw" id="userPw" placeholder='PASSOWORD'
+                                                <input type="password" name="joinPw" id="userPw" placeholder='PASSWORD'
                                                     value={join.userPw} onChange={onInputchangeFn} />
                                             </div>
                                             <div className="input-group">
@@ -246,12 +245,12 @@ const AuthJoin = () => {
                                         <form>
                                             <div className="input-group">
                                                 <i className='bx bxs-user'></i>
-                                                <input type="email" name="userEmail" id="userEmail" placeholder='EMAIL'
+                                                <input type="email" name="loginEmail" id="userEmail" placeholder='EMAIL'
                                                     value={login.userEmail} onChange={onInputchangeFn} />
                                             </div>
                                             <div className="input-group">
                                                 <i className='bx bxs-lock-alt'></i>
-                                                <input type="password" name="userPw" id="userPw" placeholder='PASSWORD'
+                                                <input type="password" name="loginPw" id="userPw" placeholder='PASSWORD'
                                                     value={login.userPw} onChange={onInputchangeFn} />
                                             </div>
 

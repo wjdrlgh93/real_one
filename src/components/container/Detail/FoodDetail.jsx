@@ -69,13 +69,13 @@ function HouseDetail() {
           <p className="house-description">
             {item.description ||
               '1. 우리 아이 첫 번째 건강, 좋은 사료에서 시작됩니다.'} <br />
-               {item.description ||
-              '2. 사랑하는 반려견을 위한 프리미엄 영양식!'} <br/>
-               {item.description ||
-              '3. 하루 한 끼, 평생 건강. 제대로 만든 사료를 만나보세요.'} <br/>
-               {item.description ||
-              '4. 기호성 끝판왕! 아이가 먼저 찾는 맛있는 사료'} <br/>
-               {item.description ||
+            {item.description ||
+              '2. 사랑하는 반려견을 위한 프리미엄 영양식!'} <br />
+            {item.description ||
+              '3. 하루 한 끼, 평생 건강. 제대로 만든 사료를 만나보세요.'} <br />
+            {item.description ||
+              '4. 기호성 끝판왕! 아이가 먼저 찾는 맛있는 사료'} <br />
+            {item.description ||
               '5. 사료 하나 바꿨을 뿐인데, 건강이 달라졌어요.'}
           </p>
         </div>
@@ -165,13 +165,13 @@ function HouseDetailTabs({ item }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(!isLoggedIn) {
+    if (!isLoggedIn) {
       alert('로그인이 필요합니다.');
       navigate('/auth/login');
       return;
     }
 
-    if(newReview.rating === 0 && newReview.type === 'review'){
+    if (newReview.rating === 0 && newReview.type === 'review') {
       alert('평점을 선택해주세요.');
       return;
     }
@@ -281,7 +281,7 @@ function HouseDetailTabs({ item }) {
                   </button>
                 </div>
               </div>
-          
+
               {isLoggedIn ? (
                 <>
                   <h4>후기 작성</h4>
@@ -313,34 +313,34 @@ function HouseDetailTabs({ item }) {
                 </p>
               )}
 
-                <div className="review-con-bottom">
-                  <div className="reviews">
-                    <h4>후기 목록</h4>
-                    {reviews.filter(r => r.type === 'review').length === 0 ? (
-                      <p>등록된 후기가 없습니다.</p>
-                    ) : (
-                      <ul>
-                        {reviews
-                          .filter(r => r.type === 'review')
-                          .filter(r =>
-                            r.author.toLowerCase().includes(Search.toLowerCase()) ||
-                            r.content.toLowerCase().includes(Search.toLowerCase())
-                          )
-                          .map((review) => {
-                            const date = review.time ? new Date(review.time) : null;
-                            return (
-                              <li key={review.id} className="review-item">
-                                <strong>{review.author}</strong>
-                                <p>{review.rating ? '★'.repeat(review.rating) : '평점 없음'}</p>
-                                <p>{review.content}</p>
-                                <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
-                              </li>
-                            );
-                          })}
-                      </ul>
-                    )}
-                  </div>
+              <div className="review-con-bottom">
+                <div className="reviews">
+                  <h4>후기 목록</h4>
+                  {reviews.filter(r => r.type === 'review').length === 0 ? (
+                    <p>등록된 후기가 없습니다.</p>
+                  ) : (
+                    <ul>
+                      {reviews
+                        .filter(r => r.type === 'review')
+                        .filter(r =>
+                          r.author.toLowerCase().includes(Search.toLowerCase()) ||
+                          r.content.toLowerCase().includes(Search.toLowerCase())
+                        )
+                        .map((review) => {
+                          const date = review.time ? new Date(review.time) : null;
+                          return (
+                            <li key={review.id} className="review-item">
+                              <strong>{review.author}</strong>
+                              <p>{review.rating ? '★'.repeat(review.rating) : '평점 없음'}</p>
+                              <p>{review.content}</p>
+                              <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  )}
                 </div>
+              </div>
             </div>
           </>
         )}
@@ -410,43 +410,43 @@ function HouseDetailTabs({ item }) {
                 </p>
               )}
 
-                <div className="review-con-bottom">
-                  <div className="reviews">
-                    <h4>문의 목록</h4>
-                    {reviews.filter(r => r.type === 'qna').length === 0 ? (
-                      <p>등록된 문의가 없습니다.</p>
-                    ) : (
-                      <ul>
-                        {reviews
-                          .filter(r => r.type === 'qna')
-                          .filter(r =>
-                            r.author.toLowerCase().includes(Search.toLowerCase()) ||
-                            r.content.toLowerCase().includes(Search.toLowerCase())
-                          )
-                          .map((qna) => {
-                            const date = qna.time ? new Date(qna.time) : null;
-                            return (
-                              <li key={qna.id} className="review-item">
-                                <strong>{qna.author}</strong>
-                                <p>문의 유형: {(() => {
-                                  switch(qna.rating){
-                                    case 1: return '불량상품 문의';
-                                    case 2: return '사이즈 문의';
-                                    case 3: return '색상 문의';
-                                    case 4: return '재고 문의';
-                                    case 5: return '기타 문의';
-                                    default: return '미분류';
-                                  }
-                                })()}</p>
-                                <p>{qna.content}</p>
-                                <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
-                              </li>
-                            );
-                          })}
-                      </ul>
-                    )}
-                  </div>
+              <div className="review-con-bottom">
+                <div className="reviews">
+                  <h4>문의 목록</h4>
+                  {reviews.filter(r => r.type === 'qna').length === 0 ? (
+                    <p>등록된 문의가 없습니다.</p>
+                  ) : (
+                    <ul>
+                      {reviews
+                        .filter(r => r.type === 'qna')
+                        .filter(r =>
+                          r.author.toLowerCase().includes(Search.toLowerCase()) ||
+                          r.content.toLowerCase().includes(Search.toLowerCase())
+                        )
+                        .map((qna) => {
+                          const date = qna.time ? new Date(qna.time) : null;
+                          return (
+                            <li key={qna.id} className="review-item">
+                              <strong>{qna.author}</strong>
+                              <p>문의 유형: {(() => {
+                                switch (qna.rating) {
+                                  case 1: return '불량상품 문의';
+                                  case 2: return '사이즈 문의';
+                                  case 3: return '색상 문의';
+                                  case 4: return '재고 문의';
+                                  case 5: return '기타 문의';
+                                  default: return '미분류';
+                                }
+                              })()}</p>
+                              <p>{qna.content}</p>
+                              <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  )}
                 </div>
+              </div>
             </div>
           </>
         )}

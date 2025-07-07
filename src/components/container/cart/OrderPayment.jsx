@@ -128,7 +128,7 @@ const OrderPayment = () => {
         const res = await axios.get('http://localhost:3001/shopList')
         setShopList(res.data)
       } catch (error) {
-        console.eroor('매장 리스트 로딩 실패: ', error)
+        console.error('매장 리스트 로딩 실패: ', error)
       }
     }
     fetchShopList()
@@ -263,10 +263,10 @@ const OrderPayment = () => {
                           <span className="top-price">{el.price}원</span>
                         </div>
                       </div>
-                    </div>
-                    <div className="bottom">
-                      <div className="paymentCount">
-                        <span>{el.count * el.price}원</span>
+                      <div className="bottom">
+                        <div className="paymentCount">
+                          <span>{el.count * el.price}원</span>
+                        </div>
                       </div>
                     </div>
                   </li>
@@ -276,7 +276,10 @@ const OrderPayment = () => {
           </div>
           <div className="payment">
             <div className="payment-sub">
-              <span className="sum-price">총 상품금액: {totalPrice} 원</span>
+              <div className="pricej">
+                <span className="sum-price">총 상품금액:</span>
+                <span className='sum-price'> {totalPrice} 원</span>
+              </div>
               <span className='sum-count'>상품수량: {totalAmount} 개</span>
             </div>
           </div>
@@ -409,15 +412,19 @@ const OrderPayment = () => {
                     </div>
                   )} */}
                   </li>
+
                 ))}
               </ul>
               {selectedShop && (
-                <KakaoMapModal
-                  isOpen={isOpen}
-                  onClose={() => setIsOpen(false)}
-                  lat={selectedShop.x}
-                  lng={selectedShop.y}
-                />
+                <>
+                  <KakaoMapModal
+                    isOpen={isOpen}
+                    onClose={() => setIsOpen(false)}
+                    lat={selectedShop.x}
+                    lng={selectedShop.y}
+                    address={selectedShop.address}
+                  />
+                </>
               )}
             </div>
           </div>

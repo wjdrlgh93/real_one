@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
 import Paging from '../layout-yyj/Paging'
+import { addCart } from '../../../../slices/cartSlice'
+import AddToCartModal from '../../cart/AddToCartModal'
 
 const ShopToy_tugContainer = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const [toyList, setToyList] = useState([])
 
@@ -18,44 +22,63 @@ const ShopToy_tugContainer = () => {
   const [tugList, setBallList] = useState([])
 
   useEffect(() => {
-    const tugFn =()=> {
+    const tugFn = () => {
       const tugArr = toyList.filter(el => {
-        return el.sub === '터그' 
+        return el.sub === '터그'
       })
       setBallList(tugArr)
     }
     tugFn()
-  },[toyList])
+  }, [toyList])
 
   const [isHovered, setIsHovered] = useState(null)
 
   const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
-  const start = (currentPage - 1)*itemsPerPage
+  const start = (currentPage - 1) * itemsPerPage
   const pagedItems = tugList.slice(start, start + itemsPerPage)
 
+  const [addCartModal, setAddCartModal] = useState(false)
+  const addToCart = (item) => {
+    const {id, title, price, img, hoverImg} = item
+    const iconItem = {id, title, price, img, hoverImg, count:1}
+    dispatch(addCart(iconItem))
+    setAddCartModal(true)
+  }
+
   return (
+    <>
     <div className="toyList">
-                <ul>
-                {pagedItems.map((el)=>{
-                    return (
-                      <li>
-                          <Link to={`/shop/toy/detail/${el.id}`}>                        
-                            <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
-                                <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
-                            </div>
-                          </Link>
-                            <div className="bottom">
-                            <Link to={`/shop/toy/detail/${el.id}`}>
-                                <span className="title">{el.title}</span>
-                              </Link>
-                                <span className="pricej">￦{el.price}</span>
-                            </div>               
-                        </li>
-                    )
-                })}
-                </ul>
-                <Paging totalItems={tugList.length}/>
-            </div>
+      <ul>
+        {pagedItems.map((el) => {
+          return (
+            <li>
+              <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
+                <Link to={`/shop/toy/detail/${el.id}`}>
+                  <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
+                </Link>
+                <div className="cartIcon"
+                  onClick={() => addToCart(el)}>
+                  <img 
+                    src="/images/cart.png" 
+                    alt="addToCart" /> 
+                </div>
+              </div>
+              <div className="bottom">
+                <Link to={`/shop/toy/detail/${el.id}`}>
+                  <span className="title">{el.title}</span>
+                </Link>
+                <span className="pricej">￦{el.price}</span>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+      <Paging totalItems={tugList.length} />
+    </div>
+    {addCartModal && (
+      <AddToCartModal onCart={() => navigate('/cart')} onClose={() => setAddCartModal(false)} /> 
+    )}
+    </>
   )
 }
 

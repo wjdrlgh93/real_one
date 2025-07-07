@@ -355,49 +355,49 @@ function FashionDetailTabs({ item }) {
                 </p>
               )}
 
-                <div className="review-con-bottom">
-                  <div className="reviews">
-                    <h4>문의 목록</h4>
-                    {reviews.filter(r => r.type === 'qna').length === 0 ? (
-                      <p>등록된 문의가 없습니다.</p>
-                    ) : (
-                      <ul>
-                        {reviews
-                          .filter(r => r.type === 'qna')
-                          .filter(r =>
-                            r.author.toLowerCase().includes(Search.toLowerCase()) ||
-                            r.content.toLowerCase().includes(Search.toLowerCase())
-                          )
-                          .map((qna) => {
-                            const date = qna.time ? new Date(qna.time) : null;
-                            return (
-                              <li key={qna.id} className="review-item">
-                                <strong>{qna.author}</strong>
-                                <p>문의 유형: {(() => {
-                                  switch(qna.rating){
-                                    case 1: return '불량상품 문의';
-                                    case 2: return '사이즈 문의';
-                                    case 3: return '색상 문의';
-                                    case 4: return '재고 문의';
-                                    case 5: return '기타 문의';
-                                    default: return '미분류';
-                                  }
-                                })()}</p>
-                                <p>{qna.content}</p>
-                                <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
-                              </li>
-                            );
-                          })}
-                      </ul>
-                    )}
-                  </div>
+              <div className="review-con-bottom">
+                <div className="reviews">
+                  <h4>문의 목록</h4>
+                  {reviews.filter(r => r.type === 'qna').length === 0 ? (
+                    <p>등록된 문의가 없습니다.</p>
+                  ) : (
+                    <ul>
+                      {reviews
+                        .filter(r => r.type === 'qna')
+                        .filter(r =>
+                          r.author.toLowerCase().includes(Search.toLowerCase()) ||
+                          r.content.toLowerCase().includes(Search.toLowerCase())
+                        )
+                        .map((qna) => {
+                          const date = qna.time ? new Date(qna.time) : null;
+                          return (
+                            <li key={qna.id} className="review-item">
+                              <strong>{qna.author}</strong>
+                              <p>문의 유형: {(() => {
+                                switch (qna.rating) {
+                                  case 1: return '불량상품 문의';
+                                  case 2: return '사이즈 문의';
+                                  case 3: return '색상 문의';
+                                  case 4: return '재고 문의';
+                                  case 5: return '기타 문의';
+                                  default: return '미분류';
+                                }
+                              })()}</p>
+                              <p>{qna.content}</p>
+                              <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  )}
                 </div>
+              </div>
             </div>
           </>
         )}
 
-       {/* 교환/반품/배송 탭 */}
-       {activeTab === 'exchange' && (
+        {/* 교환/반품/배송 탭 */}
+        {activeTab === 'exchange' && (
           <div className="exchange-info">
             <img src="/images/PetDetail6.png" alt="Detail" />
             {/* 여기에 교환/반품/배송 정보 작성 */}

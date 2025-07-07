@@ -75,9 +75,9 @@ function SnackList() {
             setSearch(e.target.value);
             setdogsnackPage(1);
             setcatsnackPage(1);
-          }}/>
-            <button type="submit" className="submit-button">검색
-            </button>
+          }} />
+        <button type="submit" className="submit-button">검색
+        </button>
       </div>
       <h2>강아지 간식</h2>
       <div className="ShopSnackContainer-top">
@@ -97,7 +97,7 @@ function SnackList() {
 
         {paginatedCatSnacks.map(item => (
           <div key={item.id} className="Snack-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-        <img src={`/images/${item.img}`} alt={item.title} />
+            <img src={`/images/${item.img}`} alt={item.title} />
 
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
@@ -135,7 +135,7 @@ function SnackList() {
                 onClick={() => navigate(`/shop/snack/${selectedItem.id}`)}
                 style={{ cursor: 'pointer' }}>
                 <img src="/images/cart.png" alt="상세보기로 이동" />
-                
+
               </div>
             </div>
             <button onClick={closeModal} className="modal-close">

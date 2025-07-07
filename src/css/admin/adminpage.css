@@ -6,6 +6,8 @@
 @import url(../admin/adminDashBoard.css);
 @import url(../admin/adminPayment.css);
 
+@import url(../admin/adminMediaQuery.css);
+
 .layoutRoot {
     display: flex;
     flex-direction: row;

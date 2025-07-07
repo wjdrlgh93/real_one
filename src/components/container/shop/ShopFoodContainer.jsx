@@ -80,9 +80,9 @@ function FoodList() {
             setdogFoodPage(1);
             setcatFoodPage(1);
             setpetFoodPage(1);
-          }}/>
-            <button type="submit" className="submit-button">검색
-            </button>
+          }} />
+        <button type="submit" className="submit-button">검색
+        </button>
       </div>
       <h2>강아지 사료</h2>
       <div className="ShopFoodContainer-top">
@@ -102,7 +102,7 @@ function FoodList() {
 
         {paginatedCatFoods.map(item => (
           <div key={item.id} className="Food-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-        <img src={`/images/${item.img}`} alt={item.title} />
+            <img src={`/images/${item.img}`} alt={item.title} />
 
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
@@ -115,7 +115,7 @@ function FoodList() {
       <div className="ShopFoodContainer-bottom">
         {paginatedPetFoods.map(item => (
           <div key={item.id} className="Food-item" onClick={() => openModal(item)} style={{ cursor: 'pointer' }}>
-   <img src={`/images/${item.img}`} alt={item.title} />
+            <img src={`/images/${item.img}`} alt={item.title} />
 
             <h3>{item.title}</h3>
             <p>가격: {item.price.toLocaleString()}원</p>
@@ -153,7 +153,7 @@ function FoodList() {
                 onClick={() => navigate(`/shop/food/${selectedItem.id}`)}
                 style={{ cursor: 'pointer' }}>
                 <img src="/images/cart.png" alt="상세보기로 이동" />
-                
+
               </div>
             </div>
             <button onClick={closeModal} className="modal-close">
