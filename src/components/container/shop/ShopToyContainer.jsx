@@ -12,10 +12,10 @@ const ShopToyContainer = () => {
         const url = `http://localhost:3001/products`
 
         fetch(url)
-        .then(res => res.json())
-        .then(jsonData => setProductsList(jsonData))
+            .then(res => res.json())
+            .then(jsonData => setProductsList(jsonData))
         // .catch(err => console.log(err))
-    },[])
+    }, [])
 
     const [toyList, setToyList] = useState([])
 
@@ -28,10 +28,10 @@ const ShopToyContainer = () => {
         }
         toyFn()
     }, [productsList])
-    
+
     const [isHovered, setIsHovered] = useState(null)
     const { currentPage, itemsPerPage } = useSelector(state => state.paging)
-    const start = (currentPage - 1)*itemsPerPage
+    const start = (currentPage - 1) * itemsPerPage
     const pagedItems = toyList.slice(start, start + itemsPerPage)
     
     const [count, setCount] = useState(1)
@@ -46,9 +46,9 @@ const ShopToyContainer = () => {
       }
     
     return (
-            <div className="toyList">
-                <ul>
-                {pagedItems.map((el)=>{
+        <div className="toyList">
+            <ul>
+                {pagedItems.map((el) => {
                     return (
                         <li key={el.id}>
                             <div className="top" 
@@ -72,10 +72,10 @@ const ShopToyContainer = () => {
                         </li>
                     )
                 })}
-                </ul>
-                <Paging totalItems={toyList.length}/>
-            </div>
-      
+            </ul>
+            <Paging totalItems={toyList.length} />
+        </div>
+
     )
 }
 

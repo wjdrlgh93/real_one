@@ -412,18 +412,18 @@ const OrderPayment = () => {
                     </div>
                   )} */}
                   </li>
-                  
+
                 ))}
               </ul>
               {selectedShop && (
                 <>
-                <KakaoMapModal
-                  isOpen={isOpen}
-                  onClose={() => setIsOpen(false)}
-                  lat={selectedShop.x}
-                  lng={selectedShop.y}
-                address = {selectedShop.address}
-                />
+                  <KakaoMapModal
+                    isOpen={isOpen}
+                    onClose={() => setIsOpen(false)}
+                    lat={selectedShop.x}
+                    lng={selectedShop.y}
+                    address={selectedShop.address}
+                  />
                 </>
               )}
             </div>

@@ -8,7 +8,6 @@ import toAdminRouter from './toAdminRouter'
 const Loading = <div className='loading'>Loading...</div>
 
 const IndexPage = lazy(() => import(`../pages/index/IndexPage`))
-
 const LoginLayout = lazy(() => import('../layout/LogInLayout'))
 const ShopLayout = lazy(() => import(`../layout/ShopLayout`))
 const AdminLayout = lazy(() => import('../layout/AdminLayout'))

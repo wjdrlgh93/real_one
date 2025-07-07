@@ -84,10 +84,10 @@ function FashionList() {
             sethatPage(1);
             setsunglassPage(1);
             settiePage(1);
-          }}/>
-            <button type="submit" className="submit-button">검색
-            </button>
-        </div>
+          }} />
+        <button type="submit" className="submit-button">검색
+        </button>
+      </div>
       <h2>펫 의상</h2>
       <div className="ShopFashionContainer-top">
         {paginatedcloths.map(item => (
@@ -150,7 +150,7 @@ function FashionList() {
 
             />
             <h2>{selectedItem.title}</h2>
-            <p>size: {selectedItem.size?.toLocaleString()}</p>
+            <p>{selectedItem.size?.toLocaleString()}</p>
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
 
             <div className="modal-bottom-left">
@@ -160,12 +160,12 @@ function FashionList() {
             </div>
 
             <div className="modal-bottom-right">
-            <div
+              <div
                 className="cart"
                 onClick={() => navigate(`/shop/fashion/${selectedItem.id}`)}
                 style={{ cursor: 'pointer' }}>
                 <img src="/images/cart.png" alt="상세보기로 이동" />
-                
+
               </div>
             </div>
             <button onClick={closeModal} className="modal-close">
