@@ -98,14 +98,14 @@
 
 .toy .toy-con .toyList ul li .top {
   width: 100%;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   position: relative;
 }
 .toy .toy-con .toyList ul li .top img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   border-radius: 30px;
 }
 
@@ -117,6 +117,7 @@
   align-items: center;
   gap: 1vw;
   padding: 2vmax;
+  
 }
 
 .toy .toy-con .toyList ul li .bottom a>span.title {
@@ -133,8 +134,8 @@
 
 .cartIcon {
   position: absolute;
-  right: 16px;
-  bottom: 10px;
+  right: 6%;
+  bottom: 5%;
 }
 
 .cartIcon:hover {
@@ -156,6 +157,21 @@
     height: auto;
   }
   .toy .toy-con .toyList>ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .toy .toy-con .toyList ul li .bottom a>span.title {
+    font-size: 2vmin;
+  }
+  
+  .toy .toy-con .toyList ul li .bottom>span.pricej {
+    font-size: 2.5vmin;
+  }
+}
+@media screen and (max-width: 400px) {
+  .toy {
+    height: auto;
+  }
+  .toy .toy-con .toyList>ul {
     grid-template-columns: repeat(1, 1fr);
   }
   .toy .toy-con .toyList ul li .bottom a>span.title {
@@ -165,7 +181,6 @@
   .toy .toy-con .toyList ul li .bottom>span.pricej {
     font-size: 2.5vmin;
   }
-  
 }
 
 

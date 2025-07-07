@@ -173,13 +173,17 @@
 
 .payment-sub .sum-price {
   display: flex;
-  font-size: large;
+  font-size: 18px;
+  gap: 0.5em;
 }
 
 .payment-sub span {
   font-size: smaller;
 }
-
+.payment-amount {
+  display: flex;
+  gap: 0.5em;
+}
 .payment .order-result {
   padding: 1em;
 }
@@ -341,24 +345,37 @@
   }
 
   .cartList .cartList-con .cartItem-con .payment .payment-sub .sum-price {
+    font-size: 14px !important;
   }
-  .cartList .sum-price {
-    font-size: 15px;
+  .payment-sub {
+    font-size: 14px !important;
   }
   .cartList p {
     font-size: 13px;
   }
-  .cartList h3 {
-    font-size: 13px !important;
+  .cartList h3.title {
+    font-size: 14px !important;
   }
   .cartList h4 {
     font-size: 12px !important;
   }
-  .cartList span {
-    font-size: 11px !important;
+  .payment-amount span {
+    font-size: 12px !important;
   }
-.cartItemList ul .select-all button {
+  .cartItemList ul .select-all button {
   font-size: 10px !important;
 
+  }
 }
+
+@media screen and (max-width: 400px) {
+  .sum-price {
+    display: flex;
+    flex-direction: column;
+
+  }
+  .payment-amount {
+    display: flex;
+    flex-direction: column;
+  }
 }

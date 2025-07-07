@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Paging from './layout-yyj/Paging'
 import { addCart } from '../../../slices/cartSlice'
+import AddToCartModal from '../cart/AddToCartModal'
 
 const ShopToyContainer = () => {
-
+    const navigate = useNavigate()
     const [productsList, setProductsList] = useState([])
 
     useEffect(() => {
@@ -46,6 +47,7 @@ const ShopToyContainer = () => {
       }
     
     return (
+        <>
         <div className="toyList">
             <ul>
                 {pagedItems.map((el) => {
@@ -55,12 +57,13 @@ const ShopToyContainer = () => {
                                 onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} 
                                 onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
                                 <Link to={`detail/${el.id}`}>                            
-                                        <img 
-                                            src={el.hoverImg && isHovered === el.id ?`/images/${el.hoverImg}` : `/images/${el.img}`} 
-                                            alt={el.title}/>
+                                    <img 
+                                        src={el.hoverImg && isHovered === el.id ?`/images/${el.hoverImg}` : `/images/${el.img}`} 
+                                        alt={el.title}/>
                                 </Link>
                                 <div className="cartIcon" onClick={() => addToCart(el)} >
-                                    {/* <img src="/images/cart.png" alt="addToCart"/> */}┿
+                                    <img src="/images/cart.png" alt="addToCart"/>
+                                    {/* ┿ */}
                                 </div>
                             </div>
                             <div className="bottom">
@@ -75,7 +78,10 @@ const ShopToyContainer = () => {
             </ul>
             <Paging totalItems={toyList.length} />
         </div>
-
+        {addCartModal && (
+        <AddToCartModal onCart={() => navigate('/cart')} onClose={() => setAddCartModal(false)}/>
+        )}
+        </>
     )
 }
 
