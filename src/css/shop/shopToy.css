@@ -101,6 +101,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .toy .toy-con .toyList ul li .top img {
   display: block;
@@ -130,7 +131,15 @@
   color: #5e5e5e;
 }
 
+.cartIcon {
+  position: absolute;
+  right: 16px;
+  bottom: 10px;
+}
 
+.cartIcon:hover {
+  cursor: crosshair;
+}
 
 
 @media screen and (max-width:1200px)  {
