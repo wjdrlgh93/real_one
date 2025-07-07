@@ -49,7 +49,7 @@ const AdminProductAdd = () => {
     }
     const addItemFn = (e) => {
         e.preventDefault();
-        const dataURL = `http://192.168.23.209:3001/products`
+        const dataURL = `http://localhost:3001/products`
         if (!addItem.title) { alert(`상품명을 입력해주세요`); return; }
         if (!addItem.category) { alert(`카테고리를 선택해주세요`); return; }
         if (!addItem.sub) { alert(`서브카테고리를 선택해주세요`); return; }

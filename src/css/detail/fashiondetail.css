@@ -289,38 +289,26 @@
   padding: 1vw;
 }
 
-/* 반응형 */
-@media (max-width: 768px) {
-  .fashion-detail-body {
-    flex-direction: column;
+  /* 반응형 */
+  @media (max-width: 640px) {
+    .fashion-detail-body {
+      flex-direction: column;
+    }
+  
+    .fashion-image-gallery {
+      max-width: 100%;
+      flex: 1 1 auto;
+    }
+  
+    .tab-content {
+      max-width: 100%;
+      padding: 20px 16px;
+    }
   }
 
-  .fashion-image-gallery,
-  .fashion-info {
-    max-width: 100%;
+  @media (max-width: 360px) {
+    .fashion-image-gallery{
+      flex: 1 1 auto;
+    }
   }
 
-  .tab-content {
-    max-width: 100%;
-    padding: 20px 16px;
-    width: auto;
-    margin: 24px 0 0 0;
-  }
-
-  .review-star label select {
-    margin-right: 0;
-  }
-
-  .review-star {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .review-star input[type="text"] {
-    width: 100%;
-  }
-
-  .review-star .review-search {
-    width: 100%;
-  }
-}

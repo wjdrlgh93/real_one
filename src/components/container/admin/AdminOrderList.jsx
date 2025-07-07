@@ -8,7 +8,7 @@ function AdminOrderList() {
 
   // AdminOrdreList 가 아니라 ShopOrderList? 
   useEffect(() => {
-    fetch('http://192.168.23.209:3001/shoplist2')
+    fetch('http://localhost:3001/shoplist2')
       .then((res) => res.json())
       .then((data) => setOrders(data))
       .catch((error) => console.error('데이터 불러오기 실패:', error));

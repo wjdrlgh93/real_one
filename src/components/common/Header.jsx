@@ -53,16 +53,13 @@ const Header = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to={"/admin/members"}>회원목록</Link>
+                    <Link to={"/admin"}>회원목록</Link>
                   </li>
                   {user?.role === "admin" && (
                     <li>
                       <Link to={"/admin"}>ADMIN</Link>
                     </li>
                   )}
-                  <li>
-                    <Link to={"/auth/detail"}>개인정보</Link>
-                  </li>
                 </>
               ) : (
                 <li>

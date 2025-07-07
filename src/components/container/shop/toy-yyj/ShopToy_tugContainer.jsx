@@ -9,7 +9,7 @@ const ShopToy_tugContainer = () => {
 
   useEffect(() => {
     
-    fetch(`http://192.168.23.209:3001/products`)
+    fetch(`http://localhost:3001/products`)
     .then((res) => {return res.json()})
     .then((jsonData )=> {setToyList(jsonData)})
     

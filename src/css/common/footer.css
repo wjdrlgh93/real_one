@@ -74,3 +74,81 @@
 .footer-bottom p {
   font-size: 12px;
 }
+
+@media (max-width: 640px) {
+  .footer-top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    padding: 0 16px;
+    justify-items: center; 
+    box-sizing: border-box;
+  }
+
+  .footer-con {
+    width: 100%;
+    margin-bottom: 0;
+    text-align: left;  
+    padding: 1vw;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-con h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .footer-con p,
+  .footer-con li,
+  .footer-con a {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .footer-bottom {
+    padding: 10px 16px;
+  }
+
+  .footer-bottom p {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 8px;
+    justify-items: start; /* 텍스트 왼쪽 정렬 */
+    max-width: 100%;
+  }
+
+  .footer-con {
+    padding: 0.5vw 4px;
+    font-size: 10px;      /* 글자 크기 줄임 */
+    margin-bottom: 12px;  /* 요소간 간격 조절 */
+  }
+
+  .footer-con h3 {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .footer-con p,
+  .footer-con li,
+  .footer-con a {
+    font-size: 10px;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+
+  .footer-bottom {
+    padding: 8px 10px;
+  }
+
+  .footer-bottom p {
+    font-size: 9px;
+  }
+}
