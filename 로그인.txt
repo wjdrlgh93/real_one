@@ -13,3 +13,12 @@ localStroge >> isLoggedIn 1 일때 로그인
 - 사용자 입력을 처리하고 있나?
 - 외부 함수이거나 라이브러리가 호출되고 있나?
 - 아니면 단순히 로직 이슈인가?
+
+
+반응형 // 끝
+
+PPT 
+
+프로덕트 목록에서 이미지 추가하기 
+
+https://www.miricanvas.com/v2/ko/design?sheetW=MTkyMA%3D%3D&sheetH=MTA4MA%3D%3D&templateTypeId=cHJlc2VudGF0aW9u&templateIdx=NzcyMzM2&templatePurpose=V0VC
