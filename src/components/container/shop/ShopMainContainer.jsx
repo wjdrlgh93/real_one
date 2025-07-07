@@ -41,7 +41,7 @@ const ShopMainContainer = () => {
       <section className="announcement">
         <h2>📢 공지사항</h2>
         <ul>
-          <li>6월 한정 전 제품 10% 할인!</li>
+          <li>7월 한정 전 제품 10% 할인!</li>
           <li>신규 가입 시 무료 배송 쿠폰 지급</li>
         </ul>
       </section>

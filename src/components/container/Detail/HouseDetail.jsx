@@ -14,7 +14,7 @@ function HouseDetail() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`http://192.168.23.215:3001/products/${id}`)
+    fetch(`http://localhost:3001/products/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('데이터를 불러오는 데 실패했습니다.');
         return res.json();
@@ -152,7 +152,7 @@ function HouseDetailTabs({ item }) {
   useEffect(() => {
     if (!item) return;
 
-    fetch(`http://192.168.23.215:3001/reviews?productId=${item.id}`)
+    fetch(`http://localhost:3001/reviews?productId=${item.id}`)
       .then(res => res.json())
       .then(data => setReviews(data))
       .catch(err => console.error('후기 로딩 실패:', err));
@@ -172,7 +172,7 @@ function HouseDetailTabs({ item }) {
       return;
     }
 
-    fetch(`http://192.168.23.215:3001/reviews`, {
+    fetch(`http://localhost:3001/reviews`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -248,12 +248,10 @@ function HouseDetailTabs({ item }) {
           <>
             <div className="review-con">
               <div className="review-star">
-                <label>
                   <select
                     value={newReview.rating}
                     onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required
-                  >
+                    required>
                     <option value={0}>-평점선택-</option>
                     <option value={1}>★</option>
                     <option value={2}>★★</option>
@@ -261,7 +259,7 @@ function HouseDetailTabs({ item }) {
                     <option value={4}>★★★★</option>
                     <option value={5}>★★★★★</option>
                   </select>
-                </label>
+      
 
                 <div className="review-search">
                   <input
@@ -348,12 +346,10 @@ function HouseDetailTabs({ item }) {
           <>
             <div className="review-con">
               <div className="review-star">
-                <label>
                   <select
                     value={newReview.rating}
                     onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required
-                  >
+                    required>
                     <option value={0}>-전체-</option>
                     <option value={1}>불량상품 문의</option>
                     <option value={2}>사이즈 문의</option>
@@ -361,8 +357,7 @@ function HouseDetailTabs({ item }) {
                     <option value={4}>재고 문의</option>
                     <option value={5}>기타 문의</option>
                   </select>
-                </label>
-
+                   
                 <div className="review-search">
                   <input
                     type="text"

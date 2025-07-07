@@ -12,12 +12,12 @@ const ShopToy_tugContainer = () => {
   const [toyList, setToyList] = useState([])
 
   useEffect(() => {
-
-    fetch(`http://192.168.23.215:3001/products`)
-      .then((res) => { return res.json() })
-      .then((jsonData) => { setToyList(jsonData) })
-
-  }, [])
+    
+    fetch(`http://localhost:3001/products`)
+    .then((res) => {return res.json()})
+    .then((jsonData )=> {setToyList(jsonData)})
+    
+},[])
 
   const [tugList, setBallList] = useState([])
 

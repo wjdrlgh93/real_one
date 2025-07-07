@@ -10,13 +10,13 @@ const ShopBath_shampooContainer = () => {
 
   const [bathList, setBathList] = useState([])
 
-  useEffect(() => {
-
-    fetch(`http://192.168.23.215:3001/products`)
-      .then((res) => res.json())
-      .then(jsonData => setBathList(jsonData))
-    // .catch(err => console.log(err))
-  }, [])
+    useEffect(() => {
+        
+        fetch(`http://localhost:3001/products`)
+        .then((res) => res.json())
+        .then(jsonData => setBathList(jsonData))
+        // .catch(err => console.log(err))
+    },[])
 
   const [shampooList, setShampooList] = useState([])
   useEffect(() => {

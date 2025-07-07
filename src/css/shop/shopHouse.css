@@ -173,7 +173,7 @@
 
 .ShopHouseContainer .modal .modal-content p,
 .modal .modal-content p {
-  font-size: 20px;
+  font-size: 16px;
   color: #ff5335;
   padding: 1vw;
 }
@@ -227,4 +227,127 @@
   border-radius: 5px;
   cursor: pointer;
   white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .ShopHouseContainer .ShopHouseContainer-top,
+  .ShopHouseContainer .ShopHouseContainer-middle,
+  .ShopHouseContainer .ShopHouseContainer-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ShopHouseContainer .ShopHouseSearch {
+    flex-direction: row;       
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .ShopHouseContainer .ShopHouseSearch input[type="text"] {
+    flex: 1;                    
+    font-size: 14px;
+    padding: 10px;
+    margin-right: 10px;         
+  }
+
+  .ShopHouseContainer .ShopHouseSearch .submit-button {
+    white-space: nowrap;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+  .modal .modal-content {
+    height: 100vh; 
+  }
+  
+}
+
+@media (max-width: 360px) {
+  .ShopHouseContainer .ShopHouseContainer-top,
+  .ShopHouseContainer .ShopHouseContainer-middle,
+  .ShopHouseContainer .ShopHouseContainer-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .ShopHouseContainer .ShopHouseSearch {
+    margin-right: auto; 
+    padding: 0.5vw;
+  }
+
+  .ShopHouseContainer .ShopHouseSearch input[type="text"] {
+    width: 100%; 
+  }
+
+  .ShopHouseContainer .ShopHouseSearch .submit-button {
+    white-space: nowrap; /* 줄바꿈 방지 */
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .modal .modal-content {
+    width: 95%;
+    height: auto;
+    max-height: 90vh;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .modal .modal-content img {
+    height: 140px;
+    object-fit: contain;
+  }
+
+  .modal .modal-content h2 {
+    font-size: 18px;
+    padding: 10px 0 5px;
+    text-align: center;
+  }
+
+  .modal .modal-content p {
+    font-size: 14px;
+    padding: 5px 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .modal .modal-bottom-left,
+  .modal .modal-bottom-right {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .modal .modal-bottom-left .admin-button {
+    font-size: 12px;            /* 글씨 크기 더 작게 */
+    padding: 5px 8px;           /* 버튼 내부 여백 축소 */
+    border-radius: 4px;
+    min-width: 80px;            /* 최소 너비 줄임 */
+    text-align: center;
+  }
+
+  .modal .modal-bottom-right {
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+  }
+
+  .modal .modal-bottom-right .cart img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .modal .modal-close {
+    position: static;
+    margin: 12px auto 8px;
+    transform: none;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 4px;
+  }
 }
