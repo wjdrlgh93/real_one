@@ -37,12 +37,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 6vw;
+  gap: 5vw;
   padding: 0 5vw;
 }
 
 .detailLayout .detail-con .right .right-con h2 {
-  font-size: 2vw;
+  font-size: 20px;
   font-family: 'KBO Dia Gothic_light';
   /* font-weight: lighter; */
 }
@@ -56,7 +56,7 @@
 }
 
 .detailLayout .detail-con .right .pricej>span.pricej {
-  font-size: 2.5vmin;
+  font-size: 19px;
   font-family: 'KBO Dia Gothic_light';
 }
 
@@ -101,14 +101,14 @@
 }
 
 .detailLayout .detail-con .right .right-con .total>button.addCart {
-  height: 7vh;
-  width: 25vw;
+  height: 4em;
+  width: 13em;
   background-color: #FADA7A;
 
   border-radius: 200px;
   border: none;
 
-  font-size: 2vmin;
+  font-size: 15px;
   color: #000000;
   font-family: 'KBO Dia Gothic_light';
   letter-spacing: 0.1rem;
@@ -127,8 +127,16 @@
   cursor: pointer;
 }
 
-.detailLayout .detail-con .right .total .total-con {
+.detailLayout .detail-con .right .total {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detailLayout .detail-con .right .total .total-con {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -137,10 +145,10 @@
   border: none;
   border-radius: 200px;
   font-family: 'KBO Dia Gothic_light';
-  font-size: 1.5vmin;
+  font-size: 15px;
 
-  height: 2.5rem;
-  width: 10vmin;
+  height: 3em;
+  width: 7em;
   
   background-color: #93c5fa;
   color: #ffffff;
@@ -153,70 +161,25 @@
 
 
 @media screen and (max-width:1200px)  {
-  /* .cartItem-con {
-    height: auto;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: start !important;
-  } */
-  .cartList span {
-    font-size: 15px;
-  }
-  .payment-sub span.sum-count {
-    font-size: 13px;
-  }
-  .cartList label {
-    font-size: 13px;
-  }
-  .paymentInfo .paymentMember>label {
-    font-size: 11px;
-  }
   
 }
 
 @media screen and (max-width: 768px) {
-  .cartItem-con {
-    height: auto;
-    /* font-size: smaller; */
-    display: flex;
-    flex-direction: column;
-    align-items: start !important;
-  }
-  .cartList .cartList-con .cartItemList{
-    width: 100%;
-  }
-  .cartList .cartList-con .cartItem-con .payment {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid #acacac;
-  }
+.detailLayout .detail-con {
+  display: flex;
+  flex-direction: column;
+}
 
-  .cartList .cartList-con .cartItem-con .payment .payment-sub {
-    padding: 0 10px;
-  }
+.detailLayout .detail-con img {
+  width: 100% !important;
+}
 
-  .cartList .cartList-con .cartItem-con .payment .payment-sub .sum-price {
-  }
-  .cartList .sum-price {
-    font-size: 15px;
-  }
-  .cartList p {
-    font-size: 13px;
-  }
-  .cartList h3 {
-    font-size: 13px !important;
-  }
-  .cartList h4 {
-    font-size: 12px !important;
-  }
-  .cartList span {
-    font-size: 11px !important;
-  }
-.cartItemList ul .select-all button {
-  font-size: 10px !important;
+.right-con h2 {
+  font-size: 16px !important;
+}
 
+.detailLayout .detail-con .right .pricej {
+  font-size: 13px !important;
 }
 
 .detailLayout .detail-con .right .pricej .countButton {
@@ -224,9 +187,16 @@
 }
 
 .detailLayout .detail-con .right .pricej .countButton>button {
-  font-size: 13px;
+  font-size: 12px;
 }
+
 .total span {
-  font-size: 15px !important;
+  font-size: 14px !important;
+}
+.total-con button {
+  font-size: 12px !important;
+}
+.total button.addCart {
+  font-size: 12px !important;
 }
 }

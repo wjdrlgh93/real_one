@@ -154,8 +154,20 @@ const CartList = () => {
             </div>
             <div className="payment">
               <div className="payment-sub">
-                <div className="sum-price">총 상품금액: {checkedList.length > 0 ? totalSelectedPrice : totalPrice } 원</div>
-                <span>상품수량: {checkedList.length > 0 ? totalSelectedAmount : totalAmount} 개</span>
+                <div className="sum-price">
+                  <div className="sum-price-con">
+                  총 상품금액: 
+                  </div>
+                  <div className="sum-price-num">
+                  {checkedList.length > 0 ? totalSelectedPrice : totalPrice } 원
+                  </div>  
+                </div>
+                <div className="payment-amount">
+                  <span>상품수량: </span>
+                  <span>
+                    {checkedList.length > 0 ? totalSelectedAmount : totalAmount} 개
+                  </span>
+                </div>
               </div>
               <div className="order-result">
                 <button onClick={payBtn}>주문하기</button>
