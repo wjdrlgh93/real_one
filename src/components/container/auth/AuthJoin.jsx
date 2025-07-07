@@ -250,7 +250,7 @@ const AuthJoin = () => {
                                             </div>
                                             <div className="input-group">
                                                 <i className='bx bxs-lock-alt'></i>
-                                                <input type="password" name="loginEmail" id="userPw" placeholder='PASSWORD'
+                                                <input type="password" name="loginPw" id="userPw" placeholder='PASSWORD'
                                                     value={login.userPw} onChange={onInputchangeFn} />
                                             </div>
 
