@@ -103,12 +103,16 @@
   align-items: center; */
   position: relative;
 }
-.toy .toy-con .toyList ul li .top img {
+.toy .toy-con .toyList ul li .top a>img {
   display: block;
   width: 100%;
   border-radius: 30px;
+  transition: all 0.2s;
 }
 
+.top a>img:hover {
+  transform: scale(1.05);
+}
 
 .toy .toy-con .toyList ul li .bottom {
   display: flex;
@@ -134,12 +138,21 @@
 
 .cartIcon {
   position: absolute;
-  right: 6%;
-  bottom: 5%;
+  right: 3%;
+  bottom: 3%;
+  transition: all 0.2s;
 }
 
-.cartIcon:hover {
-  cursor: crosshair;
+.cartIcon>img {
+  width: 60%;
+  height: 60%;
+}
+
+.cartIcon>img:hover {
+  cursor: url(/public/images/shoppingCart.png)2 2, auto;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transform: scale(1.2);
 }
 
 
@@ -167,7 +180,7 @@
     font-size: 2.5vmin;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   .toy {
     height: auto;
   }

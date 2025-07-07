@@ -40,8 +40,13 @@ const BathDetail = () => {
     }
   }
 
+  const images = [
+    product.img ? `/images/${product.img}` : null,
+    product.hoverImg ? `/images/${product.hoverImg}` : null,
+  ].filter(Boolean)
+
   useEffect(() => {
-    const productURL = `http://localhost:3001/products`
+    const productURL = `http://192.168.23.215:3001/products`
 
     const productFn = async (id) => {
       try {
@@ -72,6 +77,7 @@ const BathDetail = () => {
       addCartModal={addCartModal}
       setAddCartModal={setAddCartModal}
       payDirect={payDirect}
+      images={images}
     >
 
     </ShopDetailLayout>

@@ -368,7 +368,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
   .sum-price {
     display: flex;
     flex-direction: column;
