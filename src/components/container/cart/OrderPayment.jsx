@@ -242,8 +242,7 @@ const OrderPayment = () => {
   const monthRevenue = useSelector(state => state.payment.monthlyRevenue)
   console.log(monthRevenue)
 
-  return (
-
+  return (   
     <div className="paymentList">
       <div className="paymentList-left">
         <h3 className="title">주문 상품</h3>
@@ -432,7 +431,8 @@ const OrderPayment = () => {
       </div>
       <div className="paymentList-right">
         <h3>상세 주문 정보</h3>
-        <div className="paymentResult">
+        <div className="paymentResult"
+        >
           <div className="ordererInfo">
             <h4>주문자 정보</h4>
             <span><strong>이름: </strong>{ordererInfo.userName}</span>

@@ -202,7 +202,7 @@
   letter-spacing: 0.1rem;
 }
 
-.payment-sub .order-result >button:hover {
+.payment .order-result >button:hover {
   background-color: #FADA7A;
   cursor: pointer;
 

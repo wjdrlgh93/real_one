@@ -1,30 +1,34 @@
 .imageSlider {
   width: 100%;
+  /* max-width: 400px; */
   overflow: hidden;
   position: relative;
 }
 
 .imageSlider-con {
   display: flex;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s;
   width: 100%;
 }
 
 .imageSlider-con ul {
   display: flex;
-  padding: 0;
-  margin: 0;
-  list-style: none;
   width: 100%;
 }
 
 .imageSlider-con ul li {
-  min-width: 100%;
-  height: 400px; /* 필요에 따라 조절 */
+  flex: 0 0 100%;
+  height: 400;
   background-size: cover;
   background-position: center;
 }
 
+.imageSlider-con ul li img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
 .bottom-con {
   position: absolute;
   bottom: 15px;
@@ -33,10 +37,8 @@
 }
 
 .bottom-con ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -44,10 +46,10 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: lightgray;
+  background-color: rgba(211, 211, 211, 0.665);
   cursor: pointer;
 }
 
 .bottom-con ul li.one {
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.581);
 }

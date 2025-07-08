@@ -305,140 +305,144 @@
   cursor: pointer;
 }
 
-  .paymentList-right .paymentResult {
-    padding: 3vmin 1.5vmin;
-    box-sizing: border-box;
+.paymentList-right .paymentResult {
+  padding: 3vmin 1.5vmin;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5vmin;
+}
+
+.paymentList-right .paymentResult h4 {
+  /* font-family: 'KBO Dia Gothic_light'; */
+
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  /* font-weight: bolder; */
+}
+
+.paymentList-right .paymentResult .ordererInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3vmin;
+
+}
+
+.paymentList-right .paymentResult .paymentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3vmin;
+  
+  
+}
+
+
+.paymentList-right .paymentResult span {
+  font-family: 'KBO Dia Gothic_light';
+  display: flex;
+  gap: 1vmin;
+
+  letter-spacing: 0.2vmin;
+}
+
+.paymentList-right .paymentResult .order-result {
+  display: flex;
+  justify-content: center;
+}
+
+.paymentList-right .paymentResult button {
+  height: 5em;
+  width: 10em;
+  background-color: #3674B5;
+
+  border-radius: 200px;
+  border: none;
+
+  font-size: 1rem;
+  color: #ffffff;
+  font-family: 'KBO Dia Gothic_light';
+  letter-spacing: 0.1rem;
+}
+
+.paymentList-right .paymentResult button:hover {
+  background-color: #FADA7A;
+  cursor: pointer;
+
+  color: #484747;
+}
+
+@media screen and (max-width:1200px)  {
+  .paymentList {
+    height: auto;
 
     display: flex;
     flex-direction: column;
-    gap: 5vmin;
   }
+  .payment-sub span.sum-price {
+    font-size: 15px;
+  }
+  .payment-sub span.sum-count {
+    font-size: 13px;
+  }
+  .paymentList label {
+    font-size: 13px;
+  }.paymentInfo .paymentMember>label {
+    font-size: 11px;
+  }
+  .paymentList-right {
+    padding-top: 0 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .paymentList {
   
-  .paymentList-right .paymentResult h4 {
-    /* font-family: 'KBO Dia Gothic_light'; */
-
-    font-size: 18px;
-    letter-spacing: 0.1em;
-    /* font-weight: bolder; */
   }
-
-  .paymentList-right .paymentResult .ordererInfo {
+  .paymentList .paymentList-left .paymentItem-con {
     display: flex;
-    flex-direction: column;
-    gap: 3vmin;
-
+    gap: 0;
   }
-
-  .paymentList-right .paymentResult .paymentInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 3vmin;
-    
-    
+  .paymentList .paymentList-left .paymentItem-con .paymentItemList {
+    width: 60%;
   }
-  
-  
-  .paymentList-right .paymentResult span {
+  .paymentItem-con .payment {
+    width: 40%;
+  }
+  .paymentList .paymentList-left .paymentItem-con .payment .payment-sub .pricej {
     font-family: 'KBO Dia Gothic_light';
     display: flex;
-    gap: 1vmin;
-
-    letter-spacing: 0.2vmin;
-  }
-
-  .paymentList-right .paymentResult .order-result {
-    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
     justify-content: center;
+  
+    gap: 1.5vmin;
   }
-  
-  .paymentList-right .paymentResult button {
-    height: 5em;
-    width: 10em;
-    background-color: #3674B5;
-  
-    border-radius: 200px;
-    border: none;
-  
-    font-size: 0.7rem;
-    color: #ffffff;
-    font-family: 'KBO Dia Gothic_light';
-    letter-spacing: 0.1rem;
+  .payment-sub span.sum-price {
+    font-size: 14px;
   }
-  
-  .paymentList-right .paymentResult button:hover {
-    background-color: #FADA7A;
-    cursor: pointer;
-  
-    color: #484747;
+  .payment-sub span.sum-count {
+    font-size: 12px;
   }
-
-  @media screen and (max-width:1200px)  {
-    .paymentList {
-      height: auto;
-
-      display: flex;
-      flex-direction: column;
-    }
-    .payment-sub span.sum-price {
-      font-size: 15px;
-    }
-    .payment-sub span.sum-count {
-      font-size: 13px;
-    }
-    .paymentList label {
-      font-size: 13px;
-    }.paymentInfo .paymentMember>label {
-      font-size: 11px;
-    }
-    
+  .paymentList label {
+    font-size: 11px;
   }
-  
-  @media screen and (max-width: 768px) {
-    .paymentList {
-    
-    }
-    .paymentList .paymentList-left .paymentItem-con {
-      display: flex;
-      gap: 0;
-    }
-    .paymentList .paymentList-left .paymentItem-con .paymentItemList {
-      width: 60%;
-    }
-    .paymentItem-con .payment {
-      width: 40%;
-    }
-    .paymentList .paymentList-left .paymentItem-con .payment .payment-sub .pricej {
-      font-family: 'KBO Dia Gothic_light';
-      display: flex;
-      flex-direction: column;
-      /* align-items: center; */
-      justify-content: center;
-    
-      gap: 1.5vmin;
-    }
-    .payment-sub span.sum-price {
-      font-size: 14px;
-    }
-    .payment-sub span.sum-count {
-      font-size: 12px;
-    }
-    .paymentList label {
-      font-size: 11px;
-    }
-    .paymentList h3 {
-      font-size: 14px !important;
-    }
-    .paymentList h4 {
-      font-size: 12px !important;
-    }
-    .paymentList span {
-      font-size: 12px ;
-    }
-    span.top-price {
-      font-size: 10px !important;
-    }
-    .paymentInfo .paymentMember>label {
-      font-size: 9px;
-    }
+  .paymentList h3 {
+    font-size: 14px !important;
   }
-  
+  .paymentList h4 {
+    font-size: 12px !important;
+  }
+  .paymentList span {
+    font-size: 12px ;
+  }
+  span.top-price {
+    font-size: 10px !important;
+  }
+  .paymentInfo .paymentMember>label {
+    font-size: 9px;
+  }
+  .paymentResult button {
+    font-size: 12px !important;
+  }
+}
