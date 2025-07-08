@@ -329,7 +329,7 @@
           "id": "18",
           "title": "포에버 오트밀 샴푸",
           "price": 7600,
-          "img": "oatmealShampoo.jpg",
+          "img": "bathShampooOatmea.jpg",
           "hoverImg": "",
           "count": 1,
           "checked": true
@@ -355,7 +355,7 @@
           "id": "18",
           "title": "포에버 오트밀 샴푸",
           "price": 7600,
-          "img": "oatmealShampoo.jpg",
+          "img": "bathShampooOatmea.jpg",
           "hoverImg": "",
           "count": 3,
           "checked": true
@@ -507,7 +507,7 @@
           "id": "18",
           "title": "포에버 오트밀 샴푸",
           "price": 7600,
-          "img": "oatmealShampoo.jpg",
+          "img": "bathShampooOatmea.jpg",
           "hoverImg": "",
           "count": 1,
           "checked": true
@@ -746,7 +746,7 @@
       "category": "bath",
       "sub": "샴푸",
       "price": 7600,
-      "img": "oatmealShampoo.jpg",
+      "img": "bathShampooOatmea.jpg",
       "hoverImg": ""
     },
     {
