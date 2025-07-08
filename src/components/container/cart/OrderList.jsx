@@ -31,8 +31,8 @@ const OrderList = () => {
           {myOrders.map(order => (
             <li key={order.id}>
               <p>결제일: {order.date}</p>
-              <p>결제 방법: {order.date}</p>
-              <p>결제 금액: {order.date}</p>
+              <p>결제 방법: {order.paymentMethod}</p>
+              <p>결제 금액: {order.paymentAmount}</p>
               <p>주문처: {order.shop}</p>
               <div>
                 <p>주문 상품:</p>
