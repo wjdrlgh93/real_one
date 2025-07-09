@@ -1,0 +1,127 @@
+.orderList {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+}
+.orderList-con {
+  flex: 0 1 1600px;
+  padding: 3vh 8vw;
+}
+.orderList-con h2 {
+  padding: 5vh;
+}
+.orderList-con>ul {
+ 
+}
+.orderList-con>ul>li {
+  padding: 2.5vw;
+  border: 1px solid #FADA7A;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+  font-family: 'KBO Dia Gothic_light';
+}
+.order-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2em;
+}
+.order-items {
+  
+}
+.order-items>ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3vw;
+}
+.order-items>ul>li {
+  display: flex;
+  gap: 3vw;
+}
+.order-items .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.order-items img {
+  display: block;
+  width: 11%;
+}
+.order-items .title-detail {
+  width: 55vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.order-items .title-detail .title-detail-btn {
+  display: flex;
+}
+.order-items>ul>li>p.title {
+  flex: 0 0 60%;
+}
+.order-items>ul>li>p.price {
+  flex: 0 0 30%;
+}
+.order-items>ul>li>p.count {
+  flex: 0 0 10%;
+}
+.orderList button {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .paymentList {
+  
+  }
+  .paymentList .paymentList-left .paymentItem-con {
+    display: flex;
+    gap: 0;
+  }
+  .paymentList .paymentList-left .paymentItem-con .paymentItemList {
+    width: 60%;
+  }
+  .paymentItem-con .payment {
+    width: 40%;
+  }
+  .paymentList .paymentList-left .paymentItem-con .payment .payment-sub .pricej {
+    font-family: 'KBO Dia Gothic_light';
+    display: flex;
+    flex-direction: column;
+  
+    justify-content: center;
+  
+    gap: 1.5vmin;
+  }
+  .payment-sub span.sum-price {
+    font-size: 14px;
+  }
+  .payment-sub span.sum-count {
+    font-size: 12px;
+  }
+  .paymentList label {
+    font-size: 11px;
+  }
+  .paymentList h3 {
+    font-size: 14px !important;
+  }
+  .paymentList h4 {
+    font-size: 12px !important;
+  }
+  .paymentList span {
+    font-size: 12px ;
+  }
+  span.top-price {
+    font-size: 10px !important;
+  }
+  .paymentInfo .paymentMember>label {
+    font-size: 9px;
+  }
+  .paymentResult button {
+    font-size: 12px !important;
+  }
+}

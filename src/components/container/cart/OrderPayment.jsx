@@ -10,7 +10,8 @@ import KakaoMapCustom from './KakaoMap/KakaoMapCustom';
 import { getMemberSelectorApi, getOrdersSeletorApi } from '../../../API/authAPI';
 
 const today = new Date(); // 현재 날짜
-const formattedDate = `${today.getFullYear()}/${today.getMonth() + 1}/${today.getDate()} ${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`
+const two = (num) => String(num).padStart(2, '0')
+const formattedDate = `${today.getFullYear()}.${two(today.getMonth() + 1)}.${two(today.getDate())} ${two(today.getHours())}:${two(today.getMinutes())}:${two(today.getSeconds())}`
 
 // const accountData = {
 //   shop:payData.shop,
@@ -125,7 +126,7 @@ const OrderPayment = () => {
   useEffect(() => {
     const fetchShopList = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/shopList')
+        const res = await axios.get('http://192.168.23.215:3001/shopList')
         setShopList(res.data)
       } catch (error) {
         console.error('매장 리스트 로딩 실패: ', error)
@@ -200,7 +201,7 @@ const OrderPayment = () => {
     try {
 
 
-      const dataURL = `http://localhost:3001/orders`
+      const dataURL = `http://192.168.23.215:3001/orders`
       const resAPI = await getOrdersSeletorApi()
 
 
@@ -224,14 +225,14 @@ const OrderPayment = () => {
         orderer: ordererInfo
       };
 
-      await axios.post('http://localhost:3001/orders', newOrder)
+      await axios.post('http://192.168.23.215:3001/orders', newOrder)
 
 
       dispatch(removePaidItems(), newId);
 
       alert('결제가 완료되었습니다.')
       dispatch(addPayment(newOrder))
-      navigate('/shop/main')
+      navigate('/paymentresult')
 
     } catch (error) {
       console.error('주문실패:', error)
@@ -242,7 +243,8 @@ const OrderPayment = () => {
   const monthRevenue = useSelector(state => state.payment.monthlyRevenue)
   console.log(monthRevenue)
 
-  return (   
+  return (
+    
     <div className="paymentList">
       <div className="paymentList-left">
         <h3 className="title">주문 상품</h3>
@@ -428,25 +430,27 @@ const OrderPayment = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
       <div className="paymentList-right">
-        <h3>상세 주문 정보</h3>
-        <div className="paymentResult"
-        >
-          <div className="ordererInfo">
-            <h4>주문자 정보</h4>
-            <span><strong>이름: </strong>{ordererInfo.userName}</span>
-            <span><strong>이메일: </strong>{ordererInfo.userEmail}</span>
-            <span><strong>주소: </strong>{ordererInfo.address}</span>
-          </div>
-          <div className="paymentInfo">
-            <h4>결제 정보</h4>
-            <span><strong>결제 방법: </strong>{payData.paymentMethod}</span>
-            <span><strong>주문처: </strong>{payData.shop}</span>
-          </div>
-          <span className="sum-price"><strong>총 결제 금액: </strong>{totalPrice} 원</span>
-          <div className="order-result">
-            <button onClick={paymentBtn}>결제하기</button>
+        <div className="paymentList-right-con">
+          <h3>상세 주문 정보</h3>
+          <div className="paymentResult"
+          >
+            <div className="ordererInfo">
+              <h4>주문자 정보</h4>
+              <span><strong>이름: </strong>{ordererInfo.userName}</span>
+              <span><strong>이메일: </strong>{ordererInfo.userEmail}</span>
+              <span><strong>주소: </strong>{ordererInfo.address}</span>
+            </div>
+            <div className="paymentInfo">
+              <h4>결제 정보</h4>
+              <span><strong>결제 방법: </strong>{payData.paymentMethod}</span>
+              <span><strong>주문처: </strong>{payData.shop}</span>
+            </div>
+            <span className="sum-price"><strong>총 결제 금액: </strong>{totalPrice} 원</span>
+            <div className="order-result">
+              <button onClick={paymentBtn}>결제하기</button>
+            </div>
           </div>
         </div>
       </div>

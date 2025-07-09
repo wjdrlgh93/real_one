@@ -14,7 +14,7 @@ const ShopToy_stuffedContainer = () => {
 
   useEffect(() => {
     
-    fetch(`http://localhost:3001/products`)
+    fetch(`http://192.168.23.215:3001/products`)
     .then((res) => {return res.json()})
     .then((jsonData )=> {setToyList(jsonData)})
     
@@ -34,7 +34,8 @@ const ShopToy_stuffedContainer = () => {
 
   const [isHovered, setIsHovered] = useState(null)
 
-  const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 6
   const start = (currentPage - 1) * itemsPerPage
   const pagedItems = stuffedList.slice(start, start + itemsPerPage)
 
@@ -76,7 +77,11 @@ const ShopToy_stuffedContainer = () => {
           )
         })}
       </ul>
-      <Paging totalItems={stuffedList.length} />
+      <Paging 
+        totalItems={stuffedList.length}
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        onPageChange={(page) => setCurrentPage(page)}/>
     </div>
     {addCartModal && (
       <AddToCartModal onCart={() => navigate('/cart')} onClose={() => setAddCartModal(false)} /> 

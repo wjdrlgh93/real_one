@@ -12,7 +12,7 @@ const ShopBath_shampooContainer = () => {
 
     useEffect(() => {
         
-        fetch(`http://localhost:3001/products`)
+        fetch(`http://192.168.23.215:3001/products`)
         .then((res) => res.json())
         .then(jsonData => setBathList(jsonData))
         // .catch(err => console.log(err))
@@ -31,7 +31,8 @@ const ShopBath_shampooContainer = () => {
 
   const [isHovered, setIsHovered] = useState(null)
 
-  const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 6
   const start = (currentPage - 1) * itemsPerPage
   const pagedItems = shampooList.slice(start, start + itemsPerPage)
 
@@ -67,7 +68,11 @@ const ShopBath_shampooContainer = () => {
           )
         })}
       </ul>
-      <Paging totalItems={shampooList.length} />
+      <Paging
+        totalItems={shampooList.length}
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        onPageChange={(page) => setCurrentPage(page)}/>
     </div>
     </>
   )

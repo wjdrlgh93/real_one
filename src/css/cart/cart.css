@@ -7,9 +7,7 @@
   /* overflow-y: scroll;
   overflow: visible; */
   display: flex;
-  justify-content: center;
-
-  
+  justify-content: center;  
 }
 .cartList .cartList-con {
   flex: 0 1 1600px;

@@ -14,7 +14,7 @@ const ShopBath_combContainer = () => {
   // const navigate = useNavigate()
     useEffect(() => {
         
-        fetch(`http://localhost:3001/products`)
+        fetch(`http://192.168.23.215:3001/products`)
         .then((res) => res.json())
         .then(jsonData => setBathList(jsonData))
         // .catch(err => console.log(err))
@@ -33,7 +33,8 @@ const ShopBath_combContainer = () => {
 
   const [isHovered, setIsHovered] = useState(null)
 
-  const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 6
 
   const start = (currentPage - 1) * itemsPerPage
   const pagedItems = combList.slice(start, start + itemsPerPage)
@@ -72,7 +73,11 @@ const ShopBath_combContainer = () => {
           )
         })}
       </ul>
-      <Paging totalItems={combList.length} />
+      <Paging 
+        totalItems={combList.length}
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        onPageChange={(page) => setCurrentPage(page)}/>
     </div>
     {addCartModal && (
       <AddToCartModal onCart={() => navigate('/cart')} onClose={() => setAddCartModal(false)}/> 

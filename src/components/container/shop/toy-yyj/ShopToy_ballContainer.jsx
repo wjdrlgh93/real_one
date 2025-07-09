@@ -6,12 +6,13 @@ import AddToCartModal from '../../cart/AddToCartModal'
 import { addCart } from '../../../../slices/cartSlice'
 
 const ShopToy_ballContainer = () => {
+  // const [currentPage, setCurrentPage] = useState(1)
 
   const [toyList, setToyList] = useState([])
 
   useEffect(() => {
     
-    fetch(`http://localhost:3001/products`)
+    fetch(`http://192.168.23.215:3001/products`)
     .then((res) => {return res.json()})
     .then((jsonData )=> {setToyList(jsonData)})
     
@@ -31,7 +32,8 @@ const ShopToy_ballContainer = () => {
 
   const [isHovered, setIsHovered] = useState(null)
 
-  const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 6
   const start = (currentPage - 1) * itemsPerPage
   const pagedItems = ballList.slice(start, start + itemsPerPage)
 
@@ -73,7 +75,12 @@ const ShopToy_ballContainer = () => {
           )
         })}
       </ul>
-      <Paging totalItems={ballList.length} />
+      <Paging 
+        totalItems={ballList.length}
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
     </div>
     {addCartModal && (
       <AddToCartModal onCart={() => navigate('/cart')} onClose={() => setAddCartModal(false)}/>

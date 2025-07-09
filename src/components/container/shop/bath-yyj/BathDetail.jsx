@@ -46,7 +46,7 @@ const BathDetail = () => {
   ].filter(Boolean)
 
   useEffect(() => {
-    const productURL = `http://localhost:3001/products`
+    const productURL = `http://192.168.23.215:3001/products`
 
     const productFn = async (id) => {
       try {

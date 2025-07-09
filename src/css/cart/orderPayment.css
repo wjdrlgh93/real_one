@@ -1,11 +1,11 @@
 .paymentList {
   width: 100%;
   min-height: 100vh;
+  height: 200vh;
   padding: 0 10vmin;
   box-sizing: border-box;
 
-  /* overflow-y: scroll;
-  overflow: visible; */
+  overflow: visible;
   display: flex;
   justify-content: space-between;
 
@@ -24,6 +24,16 @@
   flex: 3;
   padding: 10vw 5vw;
   box-sizing: border-box;
+
+  height: auto;
+}
+
+.paymentList-right .paymentList-right-con {
+  height: 650px;
+  position: sticky;
+  top: 150px;
+  align-self: flex-start;
+  z-index: 100;
 }
 
 .paymentList .paymentList-left .paymentItemList {
@@ -413,7 +423,7 @@
     font-family: 'KBO Dia Gothic_light';
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+  
     justify-content: center;
   
     gap: 1.5vmin;
