@@ -192,25 +192,23 @@ function FashionDetailTabs({ item }) {
           </>
         )}
 
-        {/* 후기 탭 */}
-        {activeTab === 'review' && (
+       {/* 후기 탭 */}
+       {activeTab === 'review' && (
           <>
             <div className="review-con">
               <div className="review-star">
-                <label>
                   <select
                     value={newReview.rating}
                     onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required
-                  >
+                    required>
                     <option value={0}>-평점선택-</option>
-                    {[1, 2, 3, 4, 5].map((n) => (
-                      <option key={n} value={n}>
-                        {'★'.repeat(n)}
-                      </option>
-                    ))}
+                    <option value={1}>★</option>
+                    <option value={2}>★★</option>
+                    <option value={3}>★★★</option>
+                    <option value={4}>★★★★</option>
+                    <option value={5}>★★★★★</option>
                   </select>
-                </label>
+      
 
                 <div className="review-search">
                   <input
@@ -219,73 +217,88 @@ function FashionDetailTabs({ item }) {
                     value={Search}
                     onChange={(e) => setSearch(e.target.value)}
                   />
-                  <button type="button" className="search-submit-button" onClick={() => alert(`검색어: ${Search}`)}>
+                  <button
+                    type="button"
+                    className="search-submit-button"
+                    onClick={() => alert(`검색어: ${Search}`)}
+                  >
                     검색
                   </button>
                 </div>
               </div>
-
+          
               {isLoggedIn ? (
-                <form onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    placeholder="작성자"
-                    value={newReview.author}
-                    onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
-                    required
-                  />
-                  <textarea
-                    placeholder="내용을 입력하세요"
-                    value={newReview.content}
-                    onChange={(e) => setNewReview({ ...newReview, content: e.target.value })}
-                    required
-                  />
-                  <button type="submit">등록</button>
-                </form>
+                <>
+                  <h4>후기 작성</h4>
+                  <form onSubmit={handleSubmit}>
+                    <div className="review-con-top">
+                      <input
+                        type="text"
+                        placeholder="작성자"
+                        value={newReview.author}
+                        onChange={(e) => setNewReview({ ...newReview, author: e.target.value })}
+                        required
+                      />
+                      <textarea
+                        className="review-textarea"
+                        placeholder="내용을 입력하세요"
+                        value={newReview.content}
+                        onChange={(e) => setNewReview({ ...newReview, content: e.target.value })}
+                        required
+                      />
+                      <button type="submit" className="submit-button">
+                        등록
+                      </button>
+                    </div>
+                  </form>
+                </>
               ) : (
-                <p style={{ color: 'red' }}>※ 후기를 작성하려면 로그인이 필요합니다.</p>
+                <p style={{ color: 'red', marginTop: '10px' }}>
+                  ※ 후기를 작성하려면 로그인이 필요합니다.
+                </p>
               )}
 
-              <div className="reviews">
-                <h4>후기 목록</h4>
-                {reviews.filter((r) => r.type === 'review').length === 0 ? (
-                  <p>등록된 후기가 없습니다.</p>
-                ) : (
-                  <ul>
-                    {reviews
-                      .filter((r) => r.type === 'review')
-                      .filter(
-                        (r) =>
-                          r.author.toLowerCase().includes(Search.toLowerCase()) ||
-                          r.content.toLowerCase().includes(Search.toLowerCase())
-                      )
-                      .map((review) => (
-                        <li key={review.id}>
-                          <strong>{review.author}</strong>
-                          <p>{'★'.repeat(review.rating || 0)}</p>
-                          <p>{review.content}</p>
-                          <small>{new Date(review.time).toLocaleString()}</small>
-                        </li>
-                      ))}
-                  </ul>
-                )}
-              </div>
+                <div className="review-con-bottom">
+                  <div className="reviews">
+                    <h4>후기 목록</h4>
+                    {reviews.filter(r => r.type === 'review').length === 0 ? (
+                      <p>등록된 후기가 없습니다.</p>
+                    ) : (
+                      <ul>
+                        {reviews
+                          .filter(r => r.type === 'review')
+                          .filter(r =>
+                            r.author.toLowerCase().includes(Search.toLowerCase()) ||
+                            r.content.toLowerCase().includes(Search.toLowerCase())
+                          )
+                          .map((review) => {
+                            const date = review.time ? new Date(review.time) : null;
+                            return (
+                              <li key={review.id} className="review-item">
+                                <strong>{review.author}</strong>
+                                <p>{review.rating ? '★'.repeat(review.rating) : '평점 없음'}</p>
+                                <p>{review.content}</p>
+                                <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
+                              </li>
+                            );
+                          })}
+                      </ul>
+                    )}
+                  </div>
+                </div>
             </div>
           </>
         )}
-
 
         {/* 문의 탭 */}
         {activeTab === 'qna' && (
           <>
             <div className="review-con">
               <div className="review-star">
-                <label>
                   <select
                     value={newReview.rating}
                     onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required
-                  >
+                    required>
                     <option value={0}>-전체-</option>
                     <option value={1}>불량상품 문의</option>
                     <option value={2}>사이즈 문의</option>
@@ -293,7 +306,6 @@ function FashionDetailTabs({ item }) {
                     <option value={4}>재고 문의</option>
                     <option value={5}>기타 문의</option>
                   </select>
-                </label>
 
                 <div className="review-search">
                   <input

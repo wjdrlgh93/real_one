@@ -247,17 +247,15 @@ function HouseDetailTabs({ item }) {
           </>
         )}
 
-        {/* 후기 탭 */}
-        {activeTab === 'review' && (
+         {/* 후기 탭 */}
+         {activeTab === 'review' && (
           <>
             <div className="review-con">
               <div className="review-star">
-                <label>
                   <select
                     value={newReview.rating}
                     onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required
-                  >
+                    required>
                     <option value={0}>-평점선택-</option>
                     <option value={1}>★</option>
                     <option value={2}>★★</option>
@@ -265,7 +263,7 @@ function HouseDetailTabs({ item }) {
                     <option value={4}>★★★★</option>
                     <option value={5}>★★★★★</option>
                   </select>
-                </label>
+      
 
                 <div className="review-search">
                   <input
@@ -352,12 +350,10 @@ function HouseDetailTabs({ item }) {
           <>
             <div className="review-con">
               <div className="review-star">
-                <label>
                   <select
                     value={newReview.rating}
                     onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required
-                  >
+                    required>
                     <option value={0}>-전체-</option>
                     <option value={1}>불량상품 문의</option>
                     <option value={2}>사이즈 문의</option>
@@ -365,7 +361,6 @@ function HouseDetailTabs({ item }) {
                     <option value={4}>재고 문의</option>
                     <option value={5}>기타 문의</option>
                   </select>
-                </label>
 
                 <div className="review-search">
                   <input

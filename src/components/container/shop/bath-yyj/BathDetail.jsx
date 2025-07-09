@@ -40,6 +40,11 @@ const BathDetail = () => {
     }
   }
 
+  const images = [
+    product.img ? `/images/${product.img}` : null,
+    product.hoverImg ? `/images/${product.hoverImg}` : null,
+  ].filter(Boolean)
+
   useEffect(() => {
     const productURL = `http://192.168.23.234:3001/products`
 
@@ -72,6 +77,7 @@ const BathDetail = () => {
       addCartModal={addCartModal}
       setAddCartModal={setAddCartModal}
       payDirect={payDirect}
+      images={images}
     >
 
     </ShopDetailLayout>

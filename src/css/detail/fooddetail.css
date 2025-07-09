@@ -245,10 +245,7 @@ text-align: center;
 
 .review-star .review-search {
 padding: 0 auto;
-
 }
-
-
 
 .review-con h4 {
 margin-bottom: 10px;
@@ -303,19 +300,13 @@ border-radius: 10px;
 }
 
 /* 반응형 */
-@media (max-width: 768px) {
-  .house-detail-body {
-    flex-direction: column;
-  }
 
-  .house-image-gallery,
-  .house-info {
-    max-width: 100%;
-  }
-
-  .tab-content {
-    max-width: 100%;
-    padding: 20px 16px;
-  }
+@media (max-width: 360px) {
+ .house-image-gallery {
+  flex: 1 1 auto;
+}
 }
 
+@media (max-width: 640px) {
+  
+}

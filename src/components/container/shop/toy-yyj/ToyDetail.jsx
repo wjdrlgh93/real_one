@@ -23,6 +23,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const productURL = `http://192.168.23.234:3001/products`
 
+
     const productFn = async (id) => {
       try {
         const res = await axios.get(`${productURL}?id=${param.id}`)
@@ -64,6 +65,11 @@ const ProductDetail = () => {
   console.log('hoverImg:', product.hoverImg)
   console.log('image path:', `/images/${product.hoverImg}`)
 
+  const images = [
+    product.img ? `/images/${product.img}` : null,
+    product.hoverImg ? `/images/${product.hoverImg}` : null,
+  ].filter(Boolean)
+
   return (
     <ShopDetailLayout
       img={`/images/${product.img}`}
@@ -77,6 +83,7 @@ const ProductDetail = () => {
       addCartModal={addCartModal}
       setAddCartModal={setAddCartModal}
       payDirect={payDirect}
+      images={images}
     >
 
     </ShopDetailLayout>

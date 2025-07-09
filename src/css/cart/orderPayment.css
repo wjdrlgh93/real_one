@@ -417,22 +417,22 @@
       gap: 1.5vmin;
     }
     .payment-sub span.sum-price {
-      font-size: 11px;
+      font-size: 14px;
     }
     .payment-sub span.sum-count {
-      font-size: 9px;
+      font-size: 12px;
     }
     .paymentList label {
       font-size: 11px;
     }
     .paymentList h3 {
-      font-size: 13px !important;
+      font-size: 14px !important;
     }
     .paymentList h4 {
       font-size: 12px !important;
     }
     .paymentList span {
-      font-size: 11px ;
+      font-size: 12px ;
     }
     span.top-price {
       font-size: 10px !important;

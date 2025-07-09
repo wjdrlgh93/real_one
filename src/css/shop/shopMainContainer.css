@@ -5,10 +5,15 @@
  flex-direction: column;
  /* padding-top: 200px; */
  /* background-color: bisque; */
+ padding: 1vw;
+ box-sizing: border-box;
 }
 
 .shopContent img {
-  width: 800px;
+  width: 80%;  /* 기본 화면에서 이미지 너비 줄임 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .shopSection {
@@ -90,4 +95,20 @@ html, body, #root {
   height: auto !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
+}
+
+@media (max-width: 640px) {
+  .shopContent {
+    width: 100%;
+    height: auto;
+    padding: 5vw;
+   }
+  /* .shopContent img {
+    width: 100%;
+    height: auto;
+    display: block;  
+    max-width: 300px; 
+    height: auto;
+  } */
+
 }
