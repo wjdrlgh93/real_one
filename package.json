@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:3001",
+  "proxy": "http://192.168.23.234:3001",
   "name": "ex0609",
   "version": "0.1.0",
   "private": true,

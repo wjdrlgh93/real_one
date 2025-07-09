@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const API_SERVER_URL = 'http://localhost:3001/members'
-const API_SERVER_URL_ADDITEM = 'http://localhost:3001/products'
+const API_SERVER_URL = 'http://192.168.23.234:3001/members'
+const API_SERVER_URL_ADDITEM = 'http://192.168.23.234:3001/products'
 
-const API_SERVER_URL_ORDERS = 'http://localhost:3001/orders'
+const API_SERVER_URL_ORDERS = 'http://192.168.23.234:3001/orders'
 
 
 export const getOrdersSeletorApi = async () => {
