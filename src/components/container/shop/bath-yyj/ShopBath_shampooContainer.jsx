@@ -13,7 +13,7 @@ const ShopBath_shampooContainer = () => {
 
   useEffect(() => {
 
-    fetch(`http://192.168.23.234:3001/products`)
+    fetch(`http://localhost:3001/products`)
       .then((res) => res.json())
       .then(jsonData => setBathList(jsonData))
     // .catch(err => console.log(err))
@@ -39,38 +39,38 @@ const ShopBath_shampooContainer = () => {
 
   const [addCartModal, setAddCartModal] = useState(false)
   const addToCart = (item) => {
-    const {id, title, price, img, hoverImg} = item
-    const iconItem = {id, title, price, img, hoverImg, count:1}
+    const { id, title, price, img, hoverImg } = item
+    const iconItem = { id, title, price, img, hoverImg, count: 1 }
     dispatch(addCart(iconItem))
     setAddCartModal(true)
   }
   return (
     <>
-    <div className="toyList">
-      <ul>
-        {pagedItems.map((el) => {
-          return (
-            <li>
-              <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
-                <Link to={`/shop/bath/detail/${el.id}`}>
-                  <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
-                </Link>
-                <div className="cartIcon" onClick={() => addToCart(el)} >
-                  <img src="/images/cart.png" alt="addToCart"/>
+      <div className="toyList">
+        <ul>
+          {pagedItems.map((el) => {
+            return (
+              <li>
+                <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
+                  <Link to={`/shop/bath/detail/${el.id}`}>
+                    <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
+                  </Link>
+                  <div className="cartIcon" onClick={() => addToCart(el)} >
+                    <img src="/images/cart.png" alt="addToCart" />
+                  </div>
                 </div>
-              </div>
-              <div className="bottom">
-                <Link to={`/shop/bath/detail/${el.id}`}>
-                  <span className="title">{el.title}</span>
-                </Link>
-                <span className="pricej">￦{el.price}</span>
-              </div>
-            </li>
-          )
-        })}
-      </ul>
-      <Paging totalItems={shampooList.length} />
-    </div>
+                <div className="bottom">
+                  <Link to={`/shop/bath/detail/${el.id}`}>
+                    <span className="title">{el.title}</span>
+                  </Link>
+                  <span className="pricej">￦{el.price}</span>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+        <Paging totalItems={shampooList.length} />
+      </div>
     </>
   )
 }

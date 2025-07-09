@@ -61,7 +61,7 @@
       "userName": "정기호 ",
       "age": "33",
       "address": "경기도 의정부시 ",
-      "role": "ROLE_MEMBER"
+      "role": "ADMIN"
     },
     {
       "id": "8",
@@ -523,7 +523,8 @@
       "sub": "공",
       "price": 4900,
       "img": "ledball.jpg",
-      "hoverImg": "ledBallHover.jpg"
+      "hoverImg": "ledBallHover.jpg",
+      "cover": "/images/ledball.jpg"
     },
     {
       "id": "2",
@@ -532,7 +533,8 @@
       "sub": "터그",
       "price": 4900,
       "img": "tugRound.jpg",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
     },
     {
       "id": "3",
@@ -541,7 +543,8 @@
       "sub": "공",
       "price": 1900,
       "img": "redBall.jpg",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/redBall.jpg"
     },
     {
       "id": "4",
@@ -550,7 +553,8 @@
       "sub": "공",
       "price": 1600,
       "img": "tennisBall.jpg",
-      "hoverImg": "tennisBallHover.jpg"
+      "hoverImg": "tennisBallHover.jpg",
+      "cover": "/images/tennisBall.jpg"
     },
     {
       "id": "5",
@@ -559,7 +563,8 @@
       "sub": "인형",
       "price": 4900,
       "img": "stuffedPig.jpg",
-      "hoverImg": "stuffedPigHover.jpg"
+      "hoverImg": "stuffedPigHover.jpg",
+      "cover": "/images/stuffedPig.jpg"
     },
     {
       "id": "6",
@@ -568,7 +573,8 @@
       "sub": "공",
       "price": 6000,
       "img": "colorBallSet.jpg",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/colorBallSet.jpg"
     },
     {
       "id": "7",
@@ -577,7 +583,8 @@
       "sub": "인형",
       "price": 4900,
       "img": "",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
     },
     {
       "id": "8",
@@ -586,7 +593,8 @@
       "sub": "공",
       "price": 2300,
       "img": "yellowBall.png",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/yellowBall.jpg"
     },
     {
       "id": "9",
@@ -595,7 +603,8 @@
       "sub": "공",
       "price": 2500,
       "img": "ropeBall.jpg",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/ropeBall.jpg"
     },
     {
       "id": "10",
@@ -604,7 +613,8 @@
       "sub": "인형",
       "price": 4900,
       "img": "",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
     },
     {
       "id": "11",
@@ -613,7 +623,8 @@
       "sub": "공",
       "price": 5000,
       "img": "",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
     },
     {
       "id": "12",
@@ -622,7 +633,8 @@
       "sub": "터그",
       "price": 4900,
       "img": "tugRYB.jpg",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/tugRYB.jpg"
     },
     {
       "id": "13",
@@ -631,7 +643,8 @@
       "sub": "공",
       "price": 2600,
       "img": "soundBall.jpg",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/soundBall.jpg"
     },
     {
       "id": "14",
@@ -640,7 +653,8 @@
       "sub": "터그",
       "price": 4900,
       "img": "tugPig.jpg",
-      "hoverImg": "tugPigHover.jpg"
+      "hoverImg": "tugPigHover.jpg",
+      "cover": "/images/tugPig.jpg"
     },
     {
       "id": "15",
@@ -649,7 +663,8 @@
       "sub": "터그",
       "price": 4900,
       "img": "",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
     },
     {
       "id": "16",
@@ -658,7 +673,8 @@
       "sub": "공",
       "price": 9800,
       "img": "",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
     },
     {
       "id": "17",
@@ -667,7 +683,8 @@
       "sub": "인형",
       "price": 4900,
       "img": "",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
     },
     {
       "id": "18",
@@ -676,7 +693,8 @@
       "sub": "샴푸",
       "price": 7600,
       "img": "oatmealShampoo.jpg",
-      "hoverImg": ""
+      "hoverImg": "",
+      "cover": "/images/oatmealShampoo.jpg"
     },
     {
       "id": "19",
