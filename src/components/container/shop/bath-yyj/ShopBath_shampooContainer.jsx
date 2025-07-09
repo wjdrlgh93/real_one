@@ -10,6 +10,7 @@ const ShopBath_shampooContainer = () => {
 
   const [bathList, setBathList] = useState([])
 
+
     useEffect(() => {
         
         fetch(`http://192.168.23.215:3001/products`)
