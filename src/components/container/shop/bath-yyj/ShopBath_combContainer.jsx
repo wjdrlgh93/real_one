@@ -12,13 +12,14 @@ const ShopBath_combContainer = () => {
   const [bathList, setBathList] = useState([])
 
   // const navigate = useNavigate()
-    useEffect(() => {
-        
-        fetch(`http://localhost:3001/products`)
-        .then((res) => res.json())
-        .then(jsonData => setBathList(jsonData))
-        // .catch(err => console.log(err))
-    },[])
+  useEffect(() => {
+
+    fetch(`http://192.168.23.234:3001/products`)
+      .then((res) => res.json())
+      .then(jsonData => setBathList(jsonData))
+    // .catch(err => console.log(err))
+  }, [])
+
 
   const [combList, setCombList] = useState([])
   useEffect(() => {

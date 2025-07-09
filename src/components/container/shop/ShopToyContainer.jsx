@@ -10,7 +10,7 @@ const ShopToyContainer = () => {
     const [productsList, setProductsList] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:3001/products`
+        const url = `http://192.168.23.234:3001/products`
 
         fetch(url)
             .then(res => res.json())

@@ -116,6 +116,33 @@
       "age": "31",
       "address": "부산 중구",
       "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "14",
+      "userEmail": "q@email.com",
+      "userPw": "11",
+      "userName": "ㅣㅣ",
+      "age": "11",
+      "address": "ㅣㅣ",
+      "role": "ADMIN"
+    },
+    {
+      "id": "15",
+      "userEmail": "q1",
+      "userPw": "11",
+      "userName": "ㅣㅣ",
+      "age": "11",
+      "address": "ㅣㅣ",
+      "role": "ADMIN"
+    },
+    {
+      "id": "16",
+      "userEmail": "a2",
+      "userPw": "11",
+      "userName": "ㅣㅣ",
+      "age": "11",
+      "address": "ㅣㅣ",
+      "role": "ADMIN"
     }
   ],
   "shopList": [
