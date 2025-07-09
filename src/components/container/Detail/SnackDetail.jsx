@@ -14,7 +14,7 @@ function HouseDetail() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`http://192.168.23.215:3001/products/${id}`)
+    fetch(`http://localhost:3001/products/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('데이터를 불러오는 데 실패했습니다.');
         return res.json();
