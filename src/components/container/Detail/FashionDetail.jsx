@@ -13,7 +13,7 @@ function FashionDetail() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`http://192.168.23.234:3001/products/${id}`)
+    fetch(`http://localhost:3001/products/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('데이터를 불러오는 데 실패했습니다.');
         return res.json();
@@ -109,7 +109,7 @@ function FashionDetailTabs({ item }) {
   useEffect(() => {
     if (!item) return;
 
-    fetch(`http://192.168.23.234:3001/reviews?productId=${item.id}`)
+    fetch(`http://localhost:3001/reviews?productId=${item.id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data))
       .catch((err) => console.error('후기 로딩 실패:', err));
@@ -129,7 +129,7 @@ function FashionDetailTabs({ item }) {
       return;
     }
 
-    fetch(`http://192.168.23.234:3001/reviews`, {
+    fetch(`http://localhost:3001/reviews`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -192,23 +192,23 @@ function FashionDetailTabs({ item }) {
           </>
         )}
 
-       {/* 후기 탭 */}
-       {activeTab === 'review' && (
+        {/* 후기 탭 */}
+        {activeTab === 'review' && (
           <>
             <div className="review-con">
               <div className="review-star">
-                  <select
-                    value={newReview.rating}
-                    onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required>
-                    <option value={0}>-평점선택-</option>
-                    <option value={1}>★</option>
-                    <option value={2}>★★</option>
-                    <option value={3}>★★★</option>
-                    <option value={4}>★★★★</option>
-                    <option value={5}>★★★★★</option>
-                  </select>
-      
+                <select
+                  value={newReview.rating}
+                  onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
+                  required>
+                  <option value={0}>-평점선택-</option>
+                  <option value={1}>★</option>
+                  <option value={2}>★★</option>
+                  <option value={3}>★★★</option>
+                  <option value={4}>★★★★</option>
+                  <option value={5}>★★★★★</option>
+                </select>
+
 
                 <div className="review-search">
                   <input
@@ -226,7 +226,7 @@ function FashionDetailTabs({ item }) {
                   </button>
                 </div>
               </div>
-          
+
               {isLoggedIn ? (
                 <>
                   <h4>후기 작성</h4>
@@ -258,34 +258,34 @@ function FashionDetailTabs({ item }) {
                 </p>
               )}
 
-                <div className="review-con-bottom">
-                  <div className="reviews">
-                    <h4>후기 목록</h4>
-                    {reviews.filter(r => r.type === 'review').length === 0 ? (
-                      <p>등록된 후기가 없습니다.</p>
-                    ) : (
-                      <ul>
-                        {reviews
-                          .filter(r => r.type === 'review')
-                          .filter(r =>
-                            r.author.toLowerCase().includes(Search.toLowerCase()) ||
-                            r.content.toLowerCase().includes(Search.toLowerCase())
-                          )
-                          .map((review) => {
-                            const date = review.time ? new Date(review.time) : null;
-                            return (
-                              <li key={review.id} className="review-item">
-                                <strong>{review.author}</strong>
-                                <p>{review.rating ? '★'.repeat(review.rating) : '평점 없음'}</p>
-                                <p>{review.content}</p>
-                                <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
-                              </li>
-                            );
-                          })}
-                      </ul>
-                    )}
-                  </div>
+              <div className="review-con-bottom">
+                <div className="reviews">
+                  <h4>후기 목록</h4>
+                  {reviews.filter(r => r.type === 'review').length === 0 ? (
+                    <p>등록된 후기가 없습니다.</p>
+                  ) : (
+                    <ul>
+                      {reviews
+                        .filter(r => r.type === 'review')
+                        .filter(r =>
+                          r.author.toLowerCase().includes(Search.toLowerCase()) ||
+                          r.content.toLowerCase().includes(Search.toLowerCase())
+                        )
+                        .map((review) => {
+                          const date = review.time ? new Date(review.time) : null;
+                          return (
+                            <li key={review.id} className="review-item">
+                              <strong>{review.author}</strong>
+                              <p>{review.rating ? '★'.repeat(review.rating) : '평점 없음'}</p>
+                              <p>{review.content}</p>
+                              <small>{date && !isNaN(date) ? date.toLocaleString() : '날짜 정보 없음'}</small>
+                            </li>
+                          );
+                        })}
+                    </ul>
+                  )}
                 </div>
+              </div>
             </div>
           </>
         )}
@@ -295,17 +295,17 @@ function FashionDetailTabs({ item }) {
           <>
             <div className="review-con">
               <div className="review-star">
-                  <select
-                    value={newReview.rating}
-                    onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required>
-                    <option value={0}>-전체-</option>
-                    <option value={1}>불량상품 문의</option>
-                    <option value={2}>사이즈 문의</option>
-                    <option value={3}>색상 문의</option>
-                    <option value={4}>재고 문의</option>
-                    <option value={5}>기타 문의</option>
-                  </select>
+                <select
+                  value={newReview.rating}
+                  onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
+                  required>
+                  <option value={0}>-전체-</option>
+                  <option value={1}>불량상품 문의</option>
+                  <option value={2}>사이즈 문의</option>
+                  <option value={3}>색상 문의</option>
+                  <option value={4}>재고 문의</option>
+                  <option value={5}>기타 문의</option>
+                </select>
 
                 <div className="review-search">
                   <input

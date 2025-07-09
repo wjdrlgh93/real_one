@@ -37,7 +37,7 @@ const AdminShopList = () => {
     useEffect(() => {
         const shopListFn = async () => {
             try {
-                const res = await axios.get(`http://192.168.23.234:3001/shopList`);
+                const res = await axios.get(`http://localhost:3001/shopList`);
                 setshoplist(res.data);
             } catch (err) {
                 console.error(err);
@@ -48,7 +48,7 @@ const AdminShopList = () => {
 
     useEffect(() => {
         const shopListFn = async () => {
-            const dataURL = `http://192.168.23.234:3001/shopList`
+            const dataURL = `http://localhost:3001/shopList`
             try {
                 const res = await axios.get(`${dataURL}`)
                 setshoplist(res.data)
