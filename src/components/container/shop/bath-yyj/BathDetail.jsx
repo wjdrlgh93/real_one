@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { addCart, setPaymentItems } from '../../../../slices/cartSlice'
 import axios from 'axios'
-import ShopDetailLayout from '../layout-yyj/ShopDetailLayout'
+import ShopDetailLayout from '../../../../layout-yyj/ShopDetailLayout'
 
 const BathDetail = () => {
   const param = useParams()
@@ -46,7 +46,7 @@ const BathDetail = () => {
   ].filter(Boolean)
 
   useEffect(() => {
-    const productURL = `http://localhost:3001/products`
+    const productURL = `http://192.168.23.215:3001/products`
 
     const productFn = async (id) => {
       try {

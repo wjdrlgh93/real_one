@@ -389,68 +389,55 @@
     display: flex;
     flex-direction: column;
   }
-  .payment-sub span.sum-price {
+  /* .payment-sub span.sum-price {
     font-size: 15px;
   }
   .payment-sub span.sum-count {
     font-size: 13px;
   }
   .paymentList label {
-    font-size: 13px;
+    font-size: 15px;
   }.paymentInfo .paymentMember>label {
-    font-size: 11px;
-  }
+    font-size: 12px;
+  } */
   .paymentList-right {
     padding-top: 0 !important;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .paymentList {
-  
-  }
-  .paymentList .paymentList-left .paymentItem-con {
-    display: flex;
-    gap: 0;
-  }
-  .paymentList .paymentList-left .paymentItem-con .paymentItemList {
-    width: 60%;
-  }
-  .paymentItem-con .payment {
-    width: 40%;
-  }
-  .paymentList .paymentList-left .paymentItem-con .payment .payment-sub .pricej {
-    font-family: 'KBO Dia Gothic_light';
-    display: flex;
-    flex-direction: column;
-  
-    justify-content: center;
-  
-    gap: 1.5vmin;
-  }
-  .payment-sub span.sum-price {
-    font-size: 14px;
+  .pricej span.sum-price {
+    font-size: 13px !important;
   }
   .payment-sub span.sum-count {
     font-size: 12px;
   }
   .paymentList label {
-    font-size: 11px;
+    font-size: 13px !important;
   }
   .paymentList h3 {
     font-size: 14px !important;
   }
-  .paymentList h4 {
-    font-size: 12px !important;
+  .paymentResult .ordererInfo h4 {
+    font-size: 13px !important;
   }
-  .paymentList span {
-    font-size: 12px ;
+  .paymentResult .paymentInfo h4 {
+    font-size: 13px !important;
+  }
+  .paymentResult .ordererInfo span {
+    font-size: 13px;
+  }
+  .paymentResult .paymentInfo span {
+    font-size: 13px;
+  }
+  .paymentResult span.sum-price {
+    font-size: 13px !important;
   }
   span.top-price {
     font-size: 10px !important;
   }
   .paymentInfo .paymentMember>label {
-    font-size: 9px;
+    font-size: 10px !important;
   }
   .paymentResult button {
     font-size: 12px !important;

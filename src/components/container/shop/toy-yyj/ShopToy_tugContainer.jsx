@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import Paging from '../layout-yyj/Paging'
+import Paging from '../../../../layout-yyj/Paging'
 import { addCart } from '../../../../slices/cartSlice'
 import AddToCartModal from '../../cart/AddToCartModal'
 
@@ -13,7 +13,7 @@ const ShopToy_tugContainer = () => {
 
   useEffect(() => {
 
-    fetch(`http://localhost:3001/products`)
+    fetch(`http://192.168.23.215:3001/products`)
       .then((res) => { return res.json() })
       .then((jsonData) => { setToyList(jsonData) })
 
@@ -75,7 +75,12 @@ const ShopToy_tugContainer = () => {
             )
           })}
         </ul>
-        <Paging totalItems={tugList.length} />
+        <Paging 
+          totalItems={tugList.length}
+          currentPage={currentPage}
+          itemsPerPage={itemsPerPage}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
       </div>
       {addCartModal && (
         <AddToCartModal onCart={() => navigate('/cart')} onClose={() => setAddCartModal(false)} />

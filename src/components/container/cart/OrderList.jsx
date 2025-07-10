@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addCart } from '../../../slices/cartSlice'
 import AddToCartModal from './AddToCartModal'
 import { useNavigate } from 'react-router-dom'
+import Paging from '../../../layout-yyj/Paging'
 
 const OrderList = () => {
   const loginUser = useSelector((state) => state.auth.isUser)
@@ -11,6 +12,11 @@ const OrderList = () => {
   const [openIndex, setOpenIndex] = useState([])
 
   const [expandedOrders, setExpandedOrders] = useState([])
+
+  const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 5
+    const start = (currentPage - 1) * itemsPerPage
+    const pagedItems = myOrders.slice(start, start + itemsPerPage)
   
   const toggleOrderItems = (orderIdx) => {
     setExpandedOrders(prev => {
@@ -26,7 +32,7 @@ const OrderList = () => {
   useEffect(() => {
     const fetchMyOrders = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/orders')
+        const res = await axios.get('http://192.168.23.215:3001/orders')
         const myOrders = res.data.filter(order => order.userId === loginUser.id)
         setMyOrders(myOrders)
       } catch(error) {
@@ -78,7 +84,9 @@ const OrderList = () => {
                       <ul>
                         {(isOpen ? order.paymentResult : order.paymentResult.slice(0, 1)).map((item, i) => (
                           <li key={i}>
-                            <img src={`/images/${item.img}`} alt={item.img} />
+                            <div className="od-img">
+                              <img src={`/images/${item.img}`} alt={item.img} />
+                            </div>
                               <div className="title">
                                 <p className='title'>{item.title}</p>
                                 <div className="title-detail">
@@ -106,6 +114,12 @@ const OrderList = () => {
           )}
         </div>
       </div>
+        <Paging 
+          totalItems={myOrders.length}
+          currentPage={currentPage}
+          itemsPerPage={itemsPerPage}
+          onPageChange={(page) => setCurrentPage(page)} 
+        />
       {addCartModal && (
         <AddToCartModal onCart={() => navigate('/cart')} onClose={() => setAddCartModal(false)}/>
       )}

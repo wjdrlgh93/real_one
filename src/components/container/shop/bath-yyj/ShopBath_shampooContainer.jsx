@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import Paging from '../layout-yyj/Paging'
+import Paging from '../../../../layout-yyj/Paging'
 import { addCart } from '../../../../slices/cartSlice'
 
 const ShopBath_shampooContainer = () => {
@@ -13,7 +13,7 @@ const ShopBath_shampooContainer = () => {
 
   useEffect(() => {
 
-    fetch(`http://localhost:3001/products`)
+    fetch(`http://192.168.23.215:3001/products`)
       .then((res) => res.json())
       .then(jsonData => setBathList(jsonData))
     // .catch(err => console.log(err))
@@ -70,7 +70,12 @@ const ShopBath_shampooContainer = () => {
             )
           })}
         </ul>
-        <Paging totalItems={shampooList.length} />
+        <Paging 
+            totalItems={shampooList.length}
+            currentPage={currentPage}
+            itemsPerPage={itemsPerPage}
+            onPageChange={(page) => setCurrentPage(page)}
+        />
       </div>
     </>
   )
