@@ -545,11 +545,20 @@
     },
     {
       "id": "10",
-      "userId": "15",
-      "userName": "ㅣㅣ",
-      "userEmail": "a5",
-      "paymentMethod": "카카오페이",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "무통장입금",
       "paymentResult": [
+        {
+          "id": "8",
+          "title": "PatchWorkPet 토끼 인형",
+          "price": 12300,
+          "img": "toyStuffedRabbit.jpg",
+          "hoverImg": "toyStuffedRabbitHover.jpg",
+          "count": 2,
+          "checked": true
+        },
         {
           "id": "118",
           "category": "desert",
@@ -562,13 +571,40 @@
           "checked": true
         }
       ],
-      "paymentAmount": 4500,
-      "shop": "도봉방학역점",
-      "date": "2025.07.10 11:39:29",
+      "paymentAmount": 29100,
+      "shop": "쌍문점",
+      "date": "2025.07.10 10:37:04",
       "orderer": {
-        "userName": "ㅣㅣ",
-        "userEmail": "a5",
-        "address": "ㅣㅣ"
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "11",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "무통장입금",
+      "paymentResult": [
+        {
+          "id": "89",
+          "category": "food",
+          "sub": "dog",
+          "img": "DogFood3.png",
+          "title": "하루한그릇",
+          "size": "어덜트(1~7세)",
+          "price": 18500,
+          "count": 1
+        }
+      ],
+      "paymentAmount": 18500,
+      "shop": "의정부 민락동점",
+      "date": "2025.07.10 10:37:04",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
       }
     }
   ],
