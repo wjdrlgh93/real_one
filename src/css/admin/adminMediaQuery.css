@@ -221,4 +221,20 @@
     .adminIndex .menu {
         padding: 15px;
     }
+
+
+    /* 상품목록 모달  */
+    .itemList-modal {
+        width: 90%;
+        height: 65%;
+
+    }
+
+    .adminshopList-con td {
+        padding: 0.5vw;
+        word-break: normal;
+        /* font-size: 10px; */
+    }
+
+    .itemModal-li-img {}
 }
