@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
-import Header from '../../../common/Header'
-import Footer from '../../../common/Footer'
+import Header from '../components/common/Header'
+import Footer from '../components/common/Footer'
 
 
 const BathLayout = () => {

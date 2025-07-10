@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { allCheckedFalse, allCheckedTrue, checkedChange, decreaseCount, deleteCart, increaseCount,setPaymentItems } from '../../../slices/cartSlice'
 import { useNavigate } from 'react-router-dom'
-import LoginModalYyj from '../shop/layout-yyj/LoginModalYyj'
+import LoginModalYyj from '../../../layout-yyj/LoginModalYyj'
 
 
 const CartList = () => {

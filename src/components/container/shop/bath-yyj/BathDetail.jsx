@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { addCart, setPaymentItems } from '../../../../slices/cartSlice'
 import axios from 'axios'
-import ShopDetailLayout from '../layout-yyj/ShopDetailLayout'
+import ShopDetailLayout from '../../../../layout-yyj/ShopDetailLayout'
 
 const BathDetail = () => {
   const param = useParams()

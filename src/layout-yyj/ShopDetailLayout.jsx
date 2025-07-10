@@ -1,5 +1,5 @@
 import React from 'react'
-import AddToCartModal from '../../cart/AddToCartModal'
+import AddToCartModal from '../components/container/cart/AddToCartModal'
 import { useNavigate } from 'react-router-dom'
 import ImageSlider from './ImageSlider'
 
