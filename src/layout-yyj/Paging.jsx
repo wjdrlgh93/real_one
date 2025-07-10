@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { nextPage, prevPage, setPage } from '../../../../slices/pagingSlice'
+import { nextPage, prevPage, setPage } from '../slices/pagingSlice'
 
 const Paging = ({totalItems, currentPage, itemsPerPage, onPageChange}) => {
   // const dispatch = useDispatch()
