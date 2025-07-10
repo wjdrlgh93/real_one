@@ -67,7 +67,7 @@ const Header = () => {
                 </li>
               )}
               <li>
-                <Link to={"/payment"}>주문내역</Link>
+                <Link to={"/paymentresult"}>주문내역</Link>
               </li>
               <li className="headerCart">
                 {items.length > 0 && <span className="cart">{items.length}</span>}

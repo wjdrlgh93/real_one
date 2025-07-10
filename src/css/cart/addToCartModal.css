@@ -23,7 +23,8 @@
   justify-content: space-between;
   align-items: center;
   
-  border: 0.1px solid #bfbfc0;
+  border: 0.1px solid #aaaaab;
+  box-shadow: 2px #aaaaab;
   border-radius: 10px;
   overflow: hidden;
 }

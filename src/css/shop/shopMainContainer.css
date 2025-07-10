@@ -91,10 +91,11 @@
 }
 
 html, body, #root {
-  min-height: 100vh !important;
-  height: auto !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
+  min-height: 100vh;
+  height: auto;
+  /* overflow-y: auto !important; */
+  /* overflow-x: hidden; */
+  /* sticky가 안 되는 관계로 불가피하게 주석 처리합니다. 없이도 잘 작동돼요 죄송해요 */
 }
 
 @media (max-width: 640px) {
