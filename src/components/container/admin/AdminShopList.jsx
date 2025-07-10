@@ -7,7 +7,7 @@ import { Map } from 'react-kakao-maps-sdk';
 const AdminShopList = () => {
 
 
-    const [shoplist, setshoplist] = useState()
+    const [shoplist, setshoplist] = useState([])
     const [modalOpen, setModalOpen] = useState(false);
     // for modalSelectMap
     const [selectedShop, setSelectedShop] = useState(null);
@@ -15,6 +15,29 @@ const AdminShopList = () => {
 
     const modalBackground = useRef();
     const mapRef = useRef(null);
+
+    //paging 
+    //CurrentPage
+    const [currentPage, setCurrentPage] = useState(1);
+    // Item Count Per Page 
+    const itemsPerPage = 5;
+
+    const totalPages = Math.ceil(shoplist.length / itemsPerPage)
+    //Click Handler 
+    const handleClick = (page) => {
+        setCurrentPage(page)
+    }
+
+
+    // map으로 목록을 쏴주자 
+    const getCurrentItems = () => {
+        // 한페이지의 시작 인덱스
+        const start = (currentPage - 1) * itemsPerPage;
+        // 가져올 끝 인덱스
+        const end = start + itemsPerPage;
+        // 한페이당 가져올 아이템수
+        return shoplist.slice(start, end);
+    };
 
 
 
@@ -101,25 +124,47 @@ const AdminShopList = () => {
                         <th>팩스</th>
                         <th>보기</th>
                     </tr>
-                    {shoplist && shoplist.map(el => {
-                        return (
-                            <tr>
-                                <td>{el.id}</td>
-                                <td>{el.name}</td>
-                                <td>{el.address}</td>
-                                <td>{el.phone}</td>
-                                <td>{el.fax}</td>
-                                <td className={'modal-td'}
-                                    onClick={() => {
-                                        setModalOpen(true)
-                                        setSelectedShop(el)
-                                        // mapRef.current.relayout();
-                                    }}>Detail</td>
-                            </tr>
-                        )
-                    })}
+                    {
+                        // shoplist && shoplist.map(el => {
+                        getCurrentItems().map((el, idx) => {
+                            return (
+                                <tr>
+                                    <td>{el.id}</td>
+                                    <td>{el.name}</td>
+                                    <td>{el.address}</td>
+                                    <td>{el.phone}</td>
+                                    <td>{el.fax}</td>
+                                    <td className={'modal-td'}
+                                        onClick={() => {
+                                            setModalOpen(true)
+                                            setSelectedShop(el)
+                                            // mapRef.current.relayout();
+                                        }}>Detail</td>
+                                </tr>
+                            )
+                        })}
                 </tbody>
             </table >
+            <div className="bottom">
+                {/* Preview Page */}
+                <button onClick={() => handleClick(currentPage - 1)} disabled={currentPage === 1}>
+                    &lt; Prev
+                </button>
+                {[...Array(totalPages)].map((_, idx) => {
+                    // idx Start from 0
+                    const page = idx + 1;
+                    return (
+                        <button
+                            key={page}
+                            onClick={() => handleClick(page)}
+                        >{page}</button>
+                    );
+                })}
+                {/* after ... page */}
+                <button onClick={() => handleClick(currentPage + 1)} disabled={currentPage === totalPages}>
+                    Next &gt;</button>
+
+            </div>
             {
                 modalOpen && selectedShop &&
                 <div className={'modal-container'} ref={modalBackground} onClick={e => {

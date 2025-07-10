@@ -52,6 +52,10 @@
     padding: 10px;
 }
 
+.LineC-con #text {
+    padding: 5px;
+}
+
 .LineC-con canvas {
 
     height: 100% !important;

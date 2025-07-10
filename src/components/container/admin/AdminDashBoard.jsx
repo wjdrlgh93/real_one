@@ -30,7 +30,7 @@ const AdminDashBoard = () => {
             </section >
             <div className='LineC'>
                 <div className='LineC-con'>
-                    카테고리 별 매출
+                    월 매출 현황
                     <LinChart />
                 </div>
                 <div className="PieChart">
