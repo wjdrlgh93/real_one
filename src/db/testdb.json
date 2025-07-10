@@ -116,78 +116,6 @@
       "age": "31",
       "address": "부산 중구",
       "role": "ROLE_MEMBER"
-    },
-    {
-      "id": "14",
-      "userEmail": "q@email.com",
-      "userPw": "11",
-      "userName": "ㅣㅣ",
-      "age": "11",
-      "address": "ㅣㅣ",
-      "role": "ADMIN"
-    },
-    {
-      "id": "15",
-      "userEmail": "q1",
-      "userPw": "11",
-      "userName": "ㅣㅣ",
-      "age": "11",
-      "address": "ㅣㅣ",
-      "role": "ADMIN"
-    },
-    {
-      "id": "16",
-      "userEmail": "a2",
-      "userPw": "11",
-      "userName": "ㅣㅣ",
-      "age": "11",
-      "address": "ㅣㅣ",
-      "role": "ADMIN"
-    },
-    {
-      "id": "14",
-      "userEmail": "s1@email.com",
-      "userPw": "11",
-      "userName": "홍길동",
-      "age": "11",
-      "address": "서울",
-      "role": "ADMIN"
-    },
-    {
-      "id": "15",
-      "userEmail": "a5",
-      "userPw": "11",
-      "userName": "ㅣㅣ",
-      "age": "11",
-      "address": "ㅣㅣ",
-      "role": "ADMIN"
-    },
-    {
-      "id": "16",
-      "userEmail": "a3@email.com",
-      "userPw": "111",
-      "userName": "오아나",
-      "age": "25",
-      "address": "서울시 노원구",
-      "role": "ADMIN"
-    },
-    {
-      "id": "17",
-      "userEmail": "a5@11",
-      "userPw": "11",
-      "userName": "홍길동",
-      "age": "11",
-      "address": "서울",
-      "role": "ADMIN"
-    },
-    {
-      "id": "18",
-      "userEmail": "a5@112",
-      "userPw": "11",
-      "userName": "홍길동",
-      "age": "11",
-      "address": "서울",
-      "role": "ROLE_MEMBER"
     }
   ],
   "shopList": [
@@ -590,10 +518,7 @@
       "price": 4900,
       "img": "ledball.jpg",
       "hoverImg": "ledBallHover.jpg",
-      "cover": "/images/ledball.jpg",
-      "price": 3700,
-      "img": "toyBallLed.jpg",
-      "hoverImg": "toyBallLedHover.jpg"
+      "cover": "/images/ledball.jpg"
     },
     {
       "id": "2",
@@ -604,9 +529,6 @@
       "img": "tugRound.jpg",
       "hoverImg": "",
       "cover": "/images/tugRound.jpg"
-      "price": 2600,
-      "img": "toyTugRound.jpg",
-      "hoverImg": "toyTugRoundHover.jpg"
     },
     {
       "id": "3",
@@ -617,8 +539,6 @@
       "img": "redBall.jpg",
       "hoverImg": "",
       "cover": "/images/redBall.jpg"
-      "img": "toyBallRed.jpg",
-      "hoverImg": ""
     },
     {
       "id": "4",
@@ -629,8 +549,6 @@
       "img": "tennisBall.jpg",
       "hoverImg": "tennisBallHover.jpg",
       "cover": "/images/tennisBall.jpg"
-      "img": "toyBallTennis.jpg",
-      "hoverImg": "toyBallTennisHover.jpg"
     },
     {
       "id": "5",
@@ -641,9 +559,6 @@
       "img": "stuffedPig.jpg",
       "hoverImg": "stuffedPigHover.jpg",
       "cover": "/images/stuffedPig.jpg"
-      "price": 5900,
-      "img": "toyStuffedPig.jpg",
-      "hoverImg": "toyStuffedPigHover.jpg"
     },
     {
       "id": "6",
@@ -654,8 +569,6 @@
       "img": "colorBallSet.jpg",
       "hoverImg": "",
       "cover": "/images/colorBallSet.jpg"
-      "img": "toyBallColourSet.jpg",
-      "hoverImg": "toyBallColourSetHover.jpg"
     },
     {
       "id": "7",
@@ -666,19 +579,11 @@
       "img": "",
       "hoverImg": "",
       "cover": "/images/tugRound.jpg"
-      "price": 14900,
-      "img": "toyStuffedCaterpillar.jpg",
-      "hoverImg": "toyStuffedCaterpillarHover.jpg"
     },
     {
       "id": "8",
       "title": "PatchWorkPet 토끼 인형",
       "category": "toy",
-      "sub": "공",
-      "price": 2300,
-      "img": "yellowBall.png",
-      "hoverImg": "",
-      "cover": "/images/yellowBall.jpg"
       "sub": "인형",
       "price": 12300,
       "img": "toyStuffedRabbit.jpg",
@@ -693,8 +598,6 @@
       "img": "ropeBall.jpg",
       "hoverImg": "",
       "cover": "/images/ropeBall.jpg"
-      "img": "toyBallRope.jpg",
-      "hoverImg": ""
     },
     {
       "id": "10",
@@ -705,9 +608,6 @@
       "img": "",
       "hoverImg": "",
       "cover": "/images/tugRound.jpg"
-      "price": 12900,
-      "img": "toyStuffedUnicorn.jpg",
-      "hoverImg": "toyStuffedUnicornHover.jpg"
     },
     {
       "id": "11",
@@ -718,8 +618,6 @@
       "img": "",
       "hoverImg": "",
       "cover": "/images/tugRound.jpg"
-      "img": "toyBallTreat.jpg",
-      "hoverImg": "toyBallTreatHover.jpg"
     },
     {
       "id": "12",
@@ -730,9 +628,6 @@
       "img": "tugRYB.jpg",
       "hoverImg": "",
       "cover": "/images/tugRYB.jpg"
-      "price": 3900,
-      "img": "toyTugRYB.jpg",
-      "hoverImg": ""
     },
     {
       "id": "13",
@@ -743,8 +638,6 @@
       "img": "soundBall.jpg",
       "hoverImg": "",
       "cover": "/images/soundBall.jpg"
-      "img": "toyBallSound.jpg",
-      "hoverImg": ""
     },
     {
       "id": "14",
@@ -755,9 +648,6 @@
       "img": "tugPig.jpg",
       "hoverImg": "tugPigHover.jpg",
       "cover": "/images/tugPig.jpg"
-      "price": 12500,
-      "img": "toyTugTriangle.jpg",
-      "hoverImg": "toyTugTriangleHover.jpg"
     },
     {
       "id": "15",
@@ -765,10 +655,7 @@
       "category": "toy",
       "sub": "터그",
       "price": 4900,
-      "img": "",
-      "hoverImg": "",
-      "cover": "/images/tugRound.jpg"
-      "price": 7700,
+      "cover": "/images/tugRound.jpg",
       "img": "toyTugYellow.jpg",
       "hoverImg": "toyTugYellowHover.jpg"
     },
@@ -778,10 +665,7 @@
       "category": "toy",
       "sub": "공",
       "price": 9800,
-      "img": "",
-      "hoverImg": "",
-      "cover": "/images/tugRound.jpg"
-      "price": 4800,
+      "cover": "/images/tugRound.jpg",
       "img": "toyBallSoccer.jpg",
       "hoverImg": "toyBallSoccerHover.jpg"
     },
@@ -790,11 +674,8 @@
       "title": "PatchWorkPet 홍학 인형",
       "category": "toy",
       "sub": "인형",
-      "price": 4900,
-      "img": "",
-      "hoverImg": "",
-      "cover": "/images/tugRound.jpg"
       "price": 13900,
+      "cover": "/images/tugRound.jpg",
       "img": "toyStuffedFlamingo.jpg",
       "hoverImg": "toyStuffedFlamingoHover.jpg"
     },
@@ -805,10 +686,7 @@
       "sub": "샴푸",
       "price": 7600,
       "img": "oatmealShampoo.jpg",
-      "hoverImg": "",
       "cover": "/images/oatmealShampoo.jpg"
-      "img": "bathShampooOatmea.jpg",
-      "hoverImg": ""
     },
     {
       "id": "19",

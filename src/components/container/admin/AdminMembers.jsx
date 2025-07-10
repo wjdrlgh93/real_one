@@ -106,7 +106,7 @@ const AdminMembers = () => {
                 }
                 alert(`Delete Member`)
                 const res = await axios.delete(`${dataURL}/${memberId}`)
-                navigate(`/admin/members`)
+                navigate(`/admin`)
             } catch (err) { }
         }
         deleteAxiosFn(memberObj.id)
