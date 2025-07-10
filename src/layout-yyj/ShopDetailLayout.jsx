@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AddToCartModal from '../components/container/cart/AddToCartModal'
 import { useNavigate } from 'react-router-dom'
 import ImageSlider from './ImageSlider'
@@ -6,6 +6,10 @@ import ImageSlider from './ImageSlider'
 
 const ShopDetailLayout = (props) => {
 
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
+  
   const navigate = useNavigate()
 
   return (

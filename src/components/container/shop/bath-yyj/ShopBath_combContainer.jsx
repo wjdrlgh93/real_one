@@ -54,10 +54,10 @@ const ShopBath_combContainer = () => {
         <ul>
           {pagedItems.map((el) => {
             return (
-              <li>
+              <li key={el.id}>
                 <div className="top" onMouseEnter={el.hoverImg ? () => setIsHovered(el.id) : undefined} onMouseLeave={el.hoverImg ? () => setIsHovered(null) : undefined}>
                   <Link to={`/shop/bath/detail/${el.id}`}>
-                    <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/imgaes/${el.img}`} alt={el.title} />
+                    <img src={el.hoverImg && isHovered === el.id ? `/images/${el.hoverImg}` : `/images/${el.img}`} alt={el.title} />
                   </Link>
                   <div className="cartIcon" onClick={() => addToCart(el)}>
                     <img src="/images/cart.png" alt="addToCart" />
