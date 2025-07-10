@@ -603,7 +603,7 @@
       "price": 4900,
       "img": "tugRound.jpg",
       "hoverImg": "",
-      "cover": "/images/tugRound.jpg"
+      "cover": "/images/tugRound.jpg",
       "price": 2600,
       "img": "toyTugRound.jpg",
       "hoverImg": "toyTugRoundHover.jpg"
@@ -616,7 +616,7 @@
       "price": 1900,
       "img": "redBall.jpg",
       "hoverImg": "",
-      "cover": "/images/redBall.jpg"
+      "cover": "/images/redBall.jpg",
       "img": "toyBallRed.jpg",
       "hoverImg": ""
     },
@@ -628,7 +628,7 @@
       "price": 1600,
       "img": "tennisBall.jpg",
       "hoverImg": "tennisBallHover.jpg",
-      "cover": "/images/tennisBall.jpg"
+      "cover": "/images/tennisBall.jpg",
       "img": "toyBallTennis.jpg",
       "hoverImg": "toyBallTennisHover.jpg"
     },
@@ -640,7 +640,7 @@
       "price": 4900,
       "img": "stuffedPig.jpg",
       "hoverImg": "stuffedPigHover.jpg",
-      "cover": "/images/stuffedPig.jpg"
+      "cover": "/images/stuffedPig.jpg",
       "price": 5900,
       "img": "toyStuffedPig.jpg",
       "hoverImg": "toyStuffedPigHover.jpg"
@@ -653,7 +653,7 @@
       "price": 6000,
       "img": "colorBallSet.jpg",
       "hoverImg": "",
-      "cover": "/images/colorBallSet.jpg"
+      "cover": "/images/colorBallSet.jpg",
       "img": "toyBallColourSet.jpg",
       "hoverImg": "toyBallColourSetHover.jpg"
     },
@@ -665,7 +665,7 @@
       "price": 4900,
       "img": "",
       "hoverImg": "",
-      "cover": "/images/tugRound.jpg"
+      "cover": "/images/tugRound.jpg",
       "price": 14900,
       "img": "toyStuffedCaterpillar.jpg",
       "hoverImg": "toyStuffedCaterpillarHover.jpg"
@@ -678,7 +678,7 @@
       "price": 2300,
       "img": "yellowBall.png",
       "hoverImg": "",
-      "cover": "/images/yellowBall.jpg"
+      "cover": "/images/yellowBall.jpg",
       "sub": "인형",
       "price": 12300,
       "img": "toyStuffedRabbit.jpg",
@@ -692,7 +692,7 @@
       "price": 2500,
       "img": "ropeBall.jpg",
       "hoverImg": "",
-      "cover": "/images/ropeBall.jpg"
+      "cover": "/images/ropeBall.jpg",
       "img": "toyBallRope.jpg",
       "hoverImg": ""
     },
@@ -704,7 +704,7 @@
       "price": 4900,
       "img": "",
       "hoverImg": "",
-      "cover": "/images/tugRound.jpg"
+      "cover": "/images/tugRound.jpg",
       "price": 12900,
       "img": "toyStuffedUnicorn.jpg",
       "hoverImg": "toyStuffedUnicornHover.jpg"
@@ -717,7 +717,7 @@
       "price": 5000,
       "img": "",
       "hoverImg": "",
-      "cover": "/images/tugRound.jpg"
+      "cover": "/images/tugRound.jpg",
       "img": "toyBallTreat.jpg",
       "hoverImg": "toyBallTreatHover.jpg"
     },
@@ -729,7 +729,7 @@
       "price": 4900,
       "img": "tugRYB.jpg",
       "hoverImg": "",
-      "cover": "/images/tugRYB.jpg"
+      "cover": "/images/tugRYB.jpg",
       "price": 3900,
       "img": "toyTugRYB.jpg",
       "hoverImg": ""
