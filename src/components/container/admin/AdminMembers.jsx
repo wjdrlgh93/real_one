@@ -54,7 +54,7 @@ const AdminMembers = () => {
     useEffect(() => {
         const onAdminMemberListFn = async (memberId) => {
             // get Member match by User
-            const dataURL = `http://192.168.23.215:3001/members`
+            const dataURL = `http://localhost:3001/members`
             try {
                 const res = await axios.get(`${dataURL}`)
                 const res2 = await axios.get(`${dataURL}?id=${memberId}`)
@@ -71,7 +71,7 @@ const AdminMembers = () => {
 
     const updateOkFn = async (e) => {
 
-        const dataURL = `http://192.168.23.215:3001/members`
+        const dataURL = `http://localhost:3001/members`
 
         const updateAxiosFn = async (updateData) => {
             try {
@@ -94,7 +94,7 @@ const AdminMembers = () => {
     }
 
     const deleteOkFn = (e) => {
-        const dataURL = `http://192.168.23.215:3001/members`
+        const dataURL = `http://localhost:3001/members`
 
         const deleteAxiosFn = async (memberId) => {
             try {

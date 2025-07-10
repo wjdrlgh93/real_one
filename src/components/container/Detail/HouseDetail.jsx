@@ -14,7 +14,7 @@ function HouseDetail() {
   useEffect(() => {
     if (!id) return;
 
-    fetch(`http://192.168.23.215:3001/products/${id}`)
+    fetch(`http://localhost:3001/products/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error('데이터를 불러오는 데 실패했습니다.');
         return res.json();
@@ -152,7 +152,7 @@ function HouseDetailTabs({ item }) {
   useEffect(() => {
     if (!item) return;
 
-    fetch(`http://192.168.23.215:3001/reviews?productId=${item.id}`)
+    fetch(`http://localhost:3001/reviews?productId=${item.id}`)
       .then(res => res.json())
       .then(data => setReviews(data))
       .catch(err => console.error('후기 로딩 실패:', err));
@@ -172,7 +172,7 @@ function HouseDetailTabs({ item }) {
       return;
     }
 
-    fetch(`http://192.168.23.215:3001/reviews`, {
+    fetch(`http://localhost:3001/reviews`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
