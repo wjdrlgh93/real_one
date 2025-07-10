@@ -14,7 +14,7 @@ const ShopToy_stuffedContainer = () => {
 
   useEffect(() => {
 
-    fetch(`http://192.168.23.215:3001/products`)
+    fetch(`http://localhost:3001/products`)
       .then((res) => { return res.json() })
       .then((jsonData) => { setToyList(jsonData) })
 
