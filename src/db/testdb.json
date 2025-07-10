@@ -608,9 +608,9 @@
       "category": "toy",
       "sub": "공",
       "price": 4900,
-      "img": "ledball.jpg",
+      "img": "toyBallLed.jpg",
       "hoverImg": "ledBallHover.jpg",
-      "cover": "/images/ledball.jpg"
+      "cover": "/images/toyBallLed.jpg"
     },
     {
       "id": "2",
