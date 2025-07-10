@@ -96,7 +96,7 @@ const AdminMembers = () => {
 
         const deleteAxiosFn = async (memberId) => {
             try {
-                const res1 = await axios.get(`{dataURL}`)  // Index Search
+                const res1 = await axios.get(`${dataURL}`)  // Index Search
                 const num = res1.data.findIndex(el => {
                     return el.id === memberObj.id
                 })
@@ -212,7 +212,7 @@ const AdminMembers = () => {
 
 
                         <button className={'modal-btn'} onClick={updateOkFn}>수정</button>
-                        <button className={'modal-btn'}>삭제</button><br />
+                        <button className={'modal-btn'} onClick={deleteOkFn}>삭제</button><br />
                         <button className={'modal-close-btn'} onClick={() => setModalOpen(false)}>
                             닫기
                         </button>

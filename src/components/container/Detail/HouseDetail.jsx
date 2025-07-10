@@ -248,18 +248,18 @@ function HouseDetailTabs({ item }) {
           <>
             <div className="review-con">
               <div className="review-star">
-                  <select
-                    value={newReview.rating}
-                    onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required>
-                    <option value={0}>-평점선택-</option>
-                    <option value={1}>★</option>
-                    <option value={2}>★★</option>
-                    <option value={3}>★★★</option>
-                    <option value={4}>★★★★</option>
-                    <option value={5}>★★★★★</option>
-                  </select>
-      
+                <select
+                  value={newReview.rating}
+                  onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
+                  required>
+                  <option value={0}>-평점선택-</option>
+                  <option value={1}>★</option>
+                  <option value={2}>★★</option>
+                  <option value={3}>★★★</option>
+                  <option value={4}>★★★★</option>
+                  <option value={5}>★★★★★</option>
+                </select>
+
 
                 <div className="review-search">
                   <input
@@ -346,18 +346,18 @@ function HouseDetailTabs({ item }) {
           <>
             <div className="review-con">
               <div className="review-star">
-                  <select
-                    value={newReview.rating}
-                    onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
-                    required>
-                    <option value={0}>-전체-</option>
-                    <option value={1}>불량상품 문의</option>
-                    <option value={2}>사이즈 문의</option>
-                    <option value={3}>색상 문의</option>
-                    <option value={4}>재고 문의</option>
-                    <option value={5}>기타 문의</option>
-                  </select>
-                   
+                <select
+                  value={newReview.rating}
+                  onChange={(e) => setNewReview({ ...newReview, rating: parseInt(e.target.value) })}
+                  required>
+                  <option value={0}>-전체-</option>
+                  <option value={1}>불량상품 문의</option>
+                  <option value={2}>사이즈 문의</option>
+                  <option value={3}>색상 문의</option>
+                  <option value={4}>재고 문의</option>
+                  <option value={5}>기타 문의</option>
+                </select>
+
                 <div className="review-search">
                   <input
                     type="text"

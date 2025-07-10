@@ -22,7 +22,8 @@ const ProductDetail = () => {
 
   useEffect(() => {
     const productURL = `http://localhost:3001/products`
-    
+
+
     const productFn = async (id) => {
       try {
         const res = await axios.get(`${productURL}?id=${param.id}`)

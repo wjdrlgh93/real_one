@@ -281,7 +281,7 @@ const AdminProducts = () => {
                                     onChange={onInputchangeFn} />
                             </li>
                             <li className='itemModal-li-img'>
-                                {/* <img src="" alt="ITEMIMAGE" /> */}
+                                <img src={itemListObj.cover} alt="IMAGE" />
                             </li>
                         </ul>
                     </div>

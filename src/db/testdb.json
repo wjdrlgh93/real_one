@@ -61,7 +61,7 @@
       "userName": "정기호 ",
       "age": "33",
       "address": "경기도 의정부시 ",
-      "role": "ROLE_MEMBER"
+      "role": "ADMIN"
     },
     {
       "id": "8",
@@ -587,6 +587,10 @@
       "title": "LuckyOne led Ball 장난감",
       "category": "toy",
       "sub": "공",
+      "price": 4900,
+      "img": "ledball.jpg",
+      "hoverImg": "ledBallHover.jpg",
+      "cover": "/images/ledball.jpg",
       "price": 3700,
       "img": "toyBallLed.jpg",
       "hoverImg": "toyBallLedHover.jpg"
@@ -596,6 +600,10 @@
       "title": "love dog 원형 터그 장난감",
       "category": "toy",
       "sub": "터그",
+      "price": 4900,
+      "img": "tugRound.jpg",
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
       "price": 2600,
       "img": "toyTugRound.jpg",
       "hoverImg": "toyTugRoundHover.jpg"
@@ -606,6 +614,9 @@
       "category": "toy",
       "sub": "공",
       "price": 1900,
+      "img": "redBall.jpg",
+      "hoverImg": "",
+      "cover": "/images/redBall.jpg"
       "img": "toyBallRed.jpg",
       "hoverImg": ""
     },
@@ -615,6 +626,9 @@
       "category": "toy",
       "sub": "공",
       "price": 1600,
+      "img": "tennisBall.jpg",
+      "hoverImg": "tennisBallHover.jpg",
+      "cover": "/images/tennisBall.jpg"
       "img": "toyBallTennis.jpg",
       "hoverImg": "toyBallTennisHover.jpg"
     },
@@ -623,6 +637,10 @@
       "title": "HelloDog 돼지 인형",
       "category": "toy",
       "sub": "인형",
+      "price": 4900,
+      "img": "stuffedPig.jpg",
+      "hoverImg": "stuffedPigHover.jpg",
+      "cover": "/images/stuffedPig.jpg"
       "price": 5900,
       "img": "toyStuffedPig.jpg",
       "hoverImg": "toyStuffedPigHover.jpg"
@@ -633,6 +651,9 @@
       "category": "toy",
       "sub": "공",
       "price": 6000,
+      "img": "colorBallSet.jpg",
+      "hoverImg": "",
+      "cover": "/images/colorBallSet.jpg"
       "img": "toyBallColourSet.jpg",
       "hoverImg": "toyBallColourSetHover.jpg"
     },
@@ -641,6 +662,10 @@
       "title": "PatchWorkPet 애벌레 인형",
       "category": "toy",
       "sub": "인형",
+      "price": 4900,
+      "img": "",
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
       "price": 14900,
       "img": "toyStuffedCaterpillar.jpg",
       "hoverImg": "toyStuffedCaterpillarHover.jpg"
@@ -649,6 +674,11 @@
       "id": "8",
       "title": "PatchWorkPet 토끼 인형",
       "category": "toy",
+      "sub": "공",
+      "price": 2300,
+      "img": "yellowBall.png",
+      "hoverImg": "",
+      "cover": "/images/yellowBall.jpg"
       "sub": "인형",
       "price": 12300,
       "img": "toyStuffedRabbit.jpg",
@@ -660,6 +690,9 @@
       "category": "toy",
       "sub": "공",
       "price": 2500,
+      "img": "ropeBall.jpg",
+      "hoverImg": "",
+      "cover": "/images/ropeBall.jpg"
       "img": "toyBallRope.jpg",
       "hoverImg": ""
     },
@@ -668,6 +701,10 @@
       "title": "PatchWorkPet 유니콘 인형",
       "category": "toy",
       "sub": "인형",
+      "price": 4900,
+      "img": "",
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
       "price": 12900,
       "img": "toyStuffedUnicorn.jpg",
       "hoverImg": "toyStuffedUnicornHover.jpg"
@@ -678,6 +715,9 @@
       "category": "toy",
       "sub": "공",
       "price": 5000,
+      "img": "",
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
       "img": "toyBallTreat.jpg",
       "hoverImg": "toyBallTreatHover.jpg"
     },
@@ -686,6 +726,10 @@
       "title": "알록 터그 장난감",
       "category": "toy",
       "sub": "터그",
+      "price": 4900,
+      "img": "tugRYB.jpg",
+      "hoverImg": "",
+      "cover": "/images/tugRYB.jpg"
       "price": 3900,
       "img": "toyTugRYB.jpg",
       "hoverImg": ""
@@ -696,6 +740,9 @@
       "category": "toy",
       "sub": "공",
       "price": 2600,
+      "img": "soundBall.jpg",
+      "hoverImg": "",
+      "cover": "/images/soundBall.jpg"
       "img": "toyBallSound.jpg",
       "hoverImg": ""
     },
@@ -704,6 +751,10 @@
       "title": "WildOne 트라이앵글 터그",
       "category": "toy",
       "sub": "터그",
+      "price": 4900,
+      "img": "tugPig.jpg",
+      "hoverImg": "tugPigHover.jpg",
+      "cover": "/images/tugPig.jpg"
       "price": 12500,
       "img": "toyTugTriangle.jpg",
       "hoverImg": "toyTugTriangleHover.jpg"
@@ -713,6 +764,10 @@
       "title": "Playology 꼬임 터그 장난감",
       "category": "toy",
       "sub": "터그",
+      "price": 4900,
+      "img": "",
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
       "price": 7700,
       "img": "toyTugYellow.jpg",
       "hoverImg": "toyTugYellowHover.jpg"
@@ -722,6 +777,10 @@
       "title": "플레이독 고무 축구공",
       "category": "toy",
       "sub": "공",
+      "price": 9800,
+      "img": "",
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
       "price": 4800,
       "img": "toyBallSoccer.jpg",
       "hoverImg": "toyBallSoccerHover.jpg"
@@ -731,6 +790,10 @@
       "title": "PatchWorkPet 홍학 인형",
       "category": "toy",
       "sub": "인형",
+      "price": 4900,
+      "img": "",
+      "hoverImg": "",
+      "cover": "/images/tugRound.jpg"
       "price": 13900,
       "img": "toyStuffedFlamingo.jpg",
       "hoverImg": "toyStuffedFlamingoHover.jpg"
@@ -741,6 +804,9 @@
       "category": "bath",
       "sub": "샴푸",
       "price": 7600,
+      "img": "oatmealShampoo.jpg",
+      "hoverImg": "",
+      "cover": "/images/oatmealShampoo.jpg"
       "img": "bathShampooOatmea.jpg",
       "hoverImg": ""
     },
