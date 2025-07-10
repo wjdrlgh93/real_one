@@ -30,7 +30,7 @@ const OrderList = () => {
         const myOrders = res.data.filter(order => order.userId === loginUser.id)
         setMyOrders(myOrders)
       } catch(error) {
-        console.error('결제 내역 불러오기 실패: ', error)
+        console.error('결제 내역 불러오기 실패 : ', error)
       }
     }
     if (loginUser) {
