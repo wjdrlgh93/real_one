@@ -7,9 +7,7 @@
   /* overflow-y: scroll;
   overflow: visible; */
   display: flex;
-  justify-content: center;
-
-  
+  justify-content: center;  
 }
 .cartList .cartList-con {
   flex: 0 1 1600px;
@@ -202,7 +200,7 @@
   letter-spacing: 0.1rem;
 }
 
-.payment-sub .order-result >button:hover {
+.payment .order-result >button:hover {
   background-color: #FADA7A;
   cursor: pointer;
 

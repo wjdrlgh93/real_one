@@ -22,10 +22,11 @@
   
 }
 
-.detailLayout .detail-con .left img {
-  width: 80%;
-  display: block;
+.detailLayout .detail-con .left .imageSlider {
+  width: 100%;
   border-radius: 10px;
+  overflow: hidden;
+  display: block;
 }
 
 .detailLayout .detail-con .right {

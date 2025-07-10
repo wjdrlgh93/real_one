@@ -6,6 +6,7 @@ import AddToCartModal from '../../cart/AddToCartModal'
 import { addCart } from '../../../../slices/cartSlice'
 
 const ShopToy_ballContainer = () => {
+  // const [currentPage, setCurrentPage] = useState(1)
 
   const [toyList, setToyList] = useState([])
 
@@ -32,7 +33,8 @@ const ShopToy_ballContainer = () => {
 
   const [isHovered, setIsHovered] = useState(null)
 
-  const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 6
   const start = (currentPage - 1) * itemsPerPage
   const pagedItems = ballList.slice(start, start + itemsPerPage)
 
