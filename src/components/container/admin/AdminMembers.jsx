@@ -96,7 +96,7 @@ const AdminMembers = () => {
 
         const deleteAxiosFn = async (memberId) => {
             try {
-                const res1 = await axios.get(`{dataURL}`)  // Index Search
+                const res1 = await axios.get(`${dataURL}`)  // Index Search
                 const num = res1.data.findIndex(el => {
                     return el.id === memberObj.id
                 })
