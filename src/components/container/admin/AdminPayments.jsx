@@ -10,6 +10,31 @@ const AdminPayments = () => {
     const [modalOpen, setModalOpen] = useState(false);
 
 
+
+    //paging 
+    //CurrentPage
+    const [currentPage, setCurrentPage] = useState(1);
+    // Item Count Per Page
+    const itemsPerPage = 10;
+
+    const totalPages = Math.ceil(paymentList.length / itemsPerPage);
+    // Click Handler 
+    const handleClick = (page) => {
+        setCurrentPage(page);
+    }
+
+
+    // 이걸이용해서 map으로 목록을 쏴주자 
+    const getCurrentItems = () => {
+        // 한페이지의 시작 인덱스
+        const start = (currentPage - 1) * itemsPerPage;
+        // 가져올 끝 인덱스
+        const end = start + itemsPerPage;
+        // 한페이당 가져올 아이템수
+        return paymentList.slice(start, end);
+    };
+
+
     const modalBackground = useRef();
 
     useEffect(() => {
@@ -22,6 +47,7 @@ const AdminPayments = () => {
 
                 setPaymentList(res.data)
                 setPayListObj(res2.data[0])
+
 
                 console.log(payListObj)
 
@@ -52,7 +78,8 @@ const AdminPayments = () => {
                                 <th>보기</th>
                             </tr>
                             {
-                                paymentList && paymentList.map((el, idx) => {
+                                // paymentList && paymentList.map((el, idx) => {
+                                getCurrentItems().map((el, idx) => {
                                     return (
                                         <tr>
                                             <td>{el.id}</td>
@@ -73,6 +100,26 @@ const AdminPayments = () => {
                             }
                         </tbody>
                     </table>
+                    <div className="bottom">
+                        {/* Preview Page */}
+                        <button onClick={() => handleClick(currentPage - 1)} disabled={currentPage === 1}>
+                            &lt; Prev
+                        </button>
+                        {[...Array(totalPages)].map((_, idx) => {
+                            // idx Start from 0
+                            const page = idx + 1;
+                            return (
+                                <button
+                                    key={page}
+                                    onClick={() => handleClick(page)}
+                                >{page}</button>
+                            );
+                        })}
+                        {/* after ... page */}
+                        <button onClick={() => handleClick(currentPage + 1)} disabled={currentPage === totalPages}>
+                            Next &gt;</button>
+
+                    </div>
                     {
                         modalOpen && selectedPay &&
                         <div className={'modal-container'} ref={modalBackground} onClick={e => {

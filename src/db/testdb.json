@@ -507,6 +507,98 @@
         "userEmail": "a5@112",
         "address": "서울"
       }
+    },
+    {
+      "id": "9",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "휴대폰",
+      "paymentResult": [
+        {
+          "id": "120",
+          "category": "desert",
+          "sub": "DogDesert",
+          "img": "DogDesert3.png",
+          "title": "바삭댕",
+          "size": "어덜트(1~7세)",
+          "price": 6500,
+          "count": 6,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 39000,
+      "shop": "쌍문점",
+      "date": "2025.07.10 10:36:32",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "10",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "무통장입금",
+      "paymentResult": [
+        {
+          "id": "8",
+          "title": "PatchWorkPet 토끼 인형",
+          "price": 12300,
+          "img": "toyStuffedRabbit.jpg",
+          "hoverImg": "toyStuffedRabbitHover.jpg",
+          "count": 2,
+          "checked": true
+        },
+        {
+          "id": "118",
+          "category": "desert",
+          "sub": "DogDesert",
+          "img": "DogDesert1.png",
+          "title": "멍다귀",
+          "size": "어덜트(1~7세)",
+          "price": 4500,
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 29100,
+      "shop": "쌍문점",
+      "date": "2025.07.10 10:37:04",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "11",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "무통장입금",
+      "paymentResult": [
+        {
+          "id": "89",
+          "category": "food",
+          "sub": "dog",
+          "img": "DogFood3.png",
+          "title": "하루한그릇",
+          "size": "어덜트(1~7세)",
+          "price": 18500,
+          "count": 1
+        }
+      ],
+      "paymentAmount": 18500,
+      "shop": "의정부 민락동점",
+      "date": "2025.07.10 10:37:04",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
     }
   ],
   "products": [

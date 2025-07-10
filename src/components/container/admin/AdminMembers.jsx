@@ -18,6 +18,8 @@ const AdminMembers = () => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 10;
+
+    // if you use Category Function 
     const filteredList = selectedCategory === 'all'
         ? memberList
         : memberList.filter(item => item.category === selectedCategory);
