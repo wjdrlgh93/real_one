@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { logOutUserFn, loginUserFn } from "../../slices/authSlice";
@@ -9,7 +9,8 @@ const Header = () => {
   const location = useLocation(); // 현재 URL 경로 가져오기
 
   const isLogin = useSelector((state) => state.auth.isLogin);
-  const user = useSelector((state) => state.auth.user);
+  const user = useSelector((state) => state.auth.isUser);
+  const admin = useSelector((state) => state.auth.admin);
 
   useEffect(() => {
     const storedLogin = localStorage.getItem("isLoggedIn") === "1";
@@ -51,18 +52,13 @@ const Header = () => {
               LOGOUT
             </Link>
          </li>
-         <li>
+            <li>
                 <Link to={"/payment"}>주문내역</Link>
               </li>
-          {user?.role === "admin" && (
-           <>
+          {user?.role?.toLowerCase() === "admin" && (
              <li>
             <Link to={"/admin"}>회원목록</Link>
             </li>
-             <li>
-            <Link to={"/admin"}>ADMIN</Link>
-          </li>
-          </>
          )}
   </>
               ) : (
