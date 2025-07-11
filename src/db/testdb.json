@@ -606,6 +606,58 @@
         "userEmail": "mario115@naver.com",
         "address": "경기도 의정부시 "
       }
+    },
+    {
+      "id": "12",
+      "userId": "3",
+      "userName": "탕후루",
+      "userEmail": "a1@email.com",
+      "paymentMethod": "카카오페이",
+      "paymentResult": [
+        {
+          "id": "3",
+          "title": "우프 강아지 토이볼 레드",
+          "price": 1900,
+          "img": "toyBallRed.jpg",
+          "hoverImg": "",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 1900,
+      "shop": "도봉방학역점",
+      "date": "2025.07.11 09:51:27",
+      "orderer": {
+        "userName": "탕후루",
+        "userEmail": "a1@email.com",
+        "address": "서울시 노원구"
+      }
+    },
+    {
+      "id": "13",
+      "userId": "16",
+      "userName": "오아나",
+      "userEmail": "a3@email.com",
+      "paymentMethod": "계좌이체",
+      "paymentResult": [
+        {
+          "id": "1",
+          "title": "LuckyOne led Ball 장난감",
+          "price": 3700,
+          "img": "toyBallLed.jpg",
+          "hoverImg": "toyBallLedHover.jpg",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 3700,
+      "shop": "쌍문점",
+      "date": "2025.07.11 10:02:42",
+      "orderer": {
+        "userName": "오아나",
+        "userEmail": "a3@email.com",
+        "address": "서울시 노원구"
+      }
     }
   ],
   "products": [

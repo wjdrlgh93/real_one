@@ -25,7 +25,7 @@ const ShopDetailLayout = (props) => {
           <div className="right-con">
             <h2>{props.title}</h2>
             <div className="pricej">
-              <span className='pricej'>{props.price}원</span>
+              <span className='pricew'>{props.price}원</span>
               <div className="countButton">
                 <button onClick={props.onDecrease}>－</button>
                 <span className='count'>{props.count}</span>
@@ -35,9 +35,12 @@ const ShopDetailLayout = (props) => {
             <div className="total">
               <div className="total-con">
                 <span>합계: ￦{props.count * props.price}</span>
-                <button className="payment" onClick={props.payDirect}>바로 결제</button>
               </div>
-              <button className='addCart' onClick = {props.onAddToCart}>Add to Cart</button>
+              <div className='total-btn'>
+
+                <button className="payment" onClick={props.payDirect}>바로 결제</button>
+                <button className='addCart' onClick = {props.onAddToCart}>Add to Cart</button>
+              </div>
             </div>
           </div>
         </div>
