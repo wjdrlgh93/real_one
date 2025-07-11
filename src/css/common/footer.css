@@ -4,6 +4,7 @@
   background-color: #5c5c5c;
   color: #f1f1f1;
   padding: 20px 1px;
+  box-sizing: border-box;
 
   /* border: 1px solid;
   box-sizing: border-box; */
@@ -23,8 +24,8 @@
 }
 
 .footer-con {
-  flex: 2 1 1;
-  min-width: 200px;
+  /* flex: 2 1 1;
+  min-width: 200px; */
 
   /* border: 1px solid;
   box-sizing: border-box; */
@@ -56,6 +57,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .social li {
@@ -76,6 +78,12 @@
 }
 
 @media (max-width: 640px) {
+
+  .footer{
+    padding:5vw 2vw;
+    box-sizing: border-box;
+  }
+  
   .footer-top {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -117,18 +125,25 @@
 }
 
 @media (max-width: 360px) {
+  .footer{
+    padding:5vw 2vw;
+    box-sizing: border-box;
+  }
+  
   .footer-top {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 0 8px;
+    gap: 1vw;
+    padding:1vw;
     justify-items: start; /* 텍스트 왼쪽 정렬 */
     max-width: 100%;
+    box-sizing: border-box;
   }
 
   .footer-con {
-    padding: 0.5vw 4px;
+    padding: 0.5vw;
     font-size: 10px;      /* 글자 크기 줄임 */
     margin-bottom: 12px;  /* 요소간 간격 조절 */
+    box-sizing: border-box;
   }
 
   .footer-con h3 {
@@ -139,13 +154,14 @@
   .footer-con p,
   .footer-con li,
   .footer-con a {
-    font-size: 10px;
+    font-size: 8px;
     line-height: 1.4;
     margin-bottom: 6px;
   }
 
   .footer-bottom {
     padding: 8px 10px;
+    box-sizing: border-box;
   }
 
   .footer-bottom p {
