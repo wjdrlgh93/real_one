@@ -125,6 +125,33 @@
       "age": "11",
       "address": "11",
       "role": "ADMIN"
+    },
+    {
+      "id": "14",
+      "userEmail": "567@email.com",
+      "userPw": "1234",
+      "userName": "1234",
+      "age": "1234",
+      "address": "1234",
+      "role": "ADMIN"
+    },
+    {
+      "id": "14",
+      "userEmail": "77777@email.com",
+      "userPw": "1234",
+      "userName": "1234",
+      "age": "1234",
+      "address": "1234",
+      "role": "ADMIN"
+    },
+    {
+      "id": "14",
+      "userEmail": "888@email.com",
+      "userPw": "1234",
+      "userName": "1234",
+      "age": "1234",
+      "address": "1234",
+      "role": "ADMIN"
     }
   ],
   "shopList": [
@@ -769,6 +796,58 @@
         "userEmail": "a4@email.com",
         "address": "11"
       }
+    },
+    {
+      "id": "17",
+      "userId": "16",
+      "userName": "오아나",
+      "userEmail": "a3@email.com",
+      "paymentMethod": "신용/체크카드",
+      "paymentResult": [
+        {
+          "id": "18",
+          "title": "포에버 오트밀 샴푸",
+          "price": 7600,
+          "img": "bathShampooOatmeal.jpg",
+          "hoverImg": "",
+          "count": 4,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 30400,
+      "shop": "북서울꿈의숲점",
+      "date": "2025.07.11 12:54:10",
+      "orderer": {
+        "userName": "오아나",
+        "userEmail": "a3@email.com",
+        "address": "서울시 노원구"
+      }
+    },
+    {
+      "id": "18",
+      "userId": "16",
+      "userName": "오아나",
+      "userEmail": "a3@email.com",
+      "paymentMethod": "계좌이체",
+      "paymentResult": [
+        {
+          "id": "13",
+          "title": "포포펫 삑삑이 장난감 공",
+          "price": 2600,
+          "img": "toyBallSound.jpg",
+          "hoverImg": "",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 2600,
+      "shop": "쌍문점",
+      "date": "2025.07.11 16:30:05",
+      "orderer": {
+        "userName": "오아나",
+        "userEmail": "a3@email.com",
+        "address": "서울시 노원구"
+      }
     }
   ],
   "products": [
@@ -929,7 +1008,7 @@
       "sub": "공",
       "price": 9800,
       "img": "toyBallSoccer.jpg",
-      "hoverImg": "toyBallSoccerHoverjpg",
+      "hoverImg": "toyBallSoccerHover.jpg",
       "cover": "/images/toyBallSoccer.jpg"
     },
     {

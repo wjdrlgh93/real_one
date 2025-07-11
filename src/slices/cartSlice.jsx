@@ -99,6 +99,9 @@ const cartSlice = createSlice({
   }
 })
 
+export const {deleteCart, addCart, increaseCount, decreaseCount, deleteAllCart, deleteItem, checkedChange, allCheckedFalse, allCheckedTrue, setPaymentItems, clearCart, removePaidItems } = cartSlice.actions
+export default cartSlice
+
 export const asyncAdminCartsFetch = createAsyncThunk('cart/asyncAdminCartsFetch',
   async () => {
     // const res = await axios.get(`${API_SERVER_HOST}/payment`)
@@ -108,6 +111,3 @@ export const asyncAdminCartsFetch = createAsyncThunk('cart/asyncAdminCartsFetch'
     // return data
   }
 )
-
-export const {deleteCart, addCart, increaseCount, decreaseCount, deleteAllCart, deleteItem, checkedChange, allCheckedFalse, allCheckedTrue, setPaymentItems, clearCart, removePaidItems } = cartSlice.actions
-export default cartSlice
