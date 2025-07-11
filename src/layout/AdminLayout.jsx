@@ -38,9 +38,9 @@ const AdminLayout = () => {
 
     }, [])
 
-    // if (!storedUserLoggedInformation) {
-    //     return <Navigate to="/auth" replace />;
-    // }
+    if (!storedUserLoggedInformation) {
+        return <Navigate to="/auth" replace />;
+    }
 
 
     return (
