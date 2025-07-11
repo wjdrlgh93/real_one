@@ -116,6 +116,15 @@
       "age": "31",
       "address": "부산 중구",
       "role": "ROLE_MEMBER"
+    },
+    {
+      "id": "14",
+      "userEmail": "a4@email.com",
+      "userPw": "11",
+      "userName": "11",
+      "age": "11",
+      "address": "11",
+      "role": "ADMIN"
     }
   ],
   "shopList": [
@@ -650,6 +659,115 @@
         "userName": "오아나",
         "userEmail": "a3@email.com",
         "address": "서울시 노원구"
+      }
+    },
+    {
+      "id": "14",
+      "userId": "16",
+      "userName": "오아나",
+      "userEmail": "a3@email.com",
+      "paymentMethod": "신용/체크카드",
+      "paymentResult": [
+        {
+          "id": "19",
+          "title": "Firm 털 제거 슬리커",
+          "price": 9800,
+          "img": "bathCombFirmSliker.jpg",
+          "hoverImg": "bathCombFirmSlikerHover.jpg",
+          "count": 2,
+          "checked": true
+        },
+        {
+          "id": "5",
+          "title": "HelloDog 돼지 인형",
+          "price": 5900,
+          "img": "toyStuffedPig.jpg",
+          "hoverImg": "toyStuffedPigHover.jpg",
+          "count": 1,
+          "checked": true
+        },
+        {
+          "id": "22",
+          "title": "Sped 나무 손잡이 빗",
+          "price": 4500,
+          "img": "bathCombWooden.jpg",
+          "hoverImg": "bathCombWoodenHover.jpg",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 30000,
+      "shop": "북서울꿈의숲점",
+      "date": "2025.07.11 11:34:38",
+      "orderer": {
+        "userName": "오아나",
+        "userEmail": "a3@email.com",
+        "address": "서울시 노원구"
+      }
+    },
+    {
+      "id": "15",
+      "userId": "16",
+      "userName": "오아나",
+      "userEmail": "a3@email.com",
+      "paymentMethod": "계좌이체",
+      "paymentResult": [
+        {
+          "id": "119",
+          "category": "desert",
+          "sub": "DogDesert",
+          "img": "DogDesert2.png",
+          "title": "꿀멍바",
+          "size": "어덜트(1~7세)",
+          "price": 5800,
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 5800,
+      "shop": "의정부 민락동점",
+      "date": "2025.07.11 11:34:38",
+      "orderer": {
+        "userName": "오아나",
+        "userEmail": "a3@email.com",
+        "address": "서울시 노원구"
+      }
+    },
+    {
+      "id": "16",
+      "userId": "14",
+      "userName": "11",
+      "userEmail": "a4@email.com",
+      "paymentMethod": "휴대폰",
+      "paymentResult": [
+        {
+          "id": "119",
+          "category": "desert",
+          "sub": "DogDesert",
+          "img": "DogDesert2.png",
+          "title": "꿀멍바",
+          "size": "어덜트(1~7세)",
+          "price": 5800,
+          "count": 1,
+          "checked": true
+        },
+        {
+          "id": "2",
+          "title": "love dog 원형 터그 장난감",
+          "price": 2600,
+          "img": "toyTugRound.jpg",
+          "hoverImg": "toyTugRoundHover.jpg",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 8400,
+      "shop": "쌍문점",
+      "date": "2025.07.11 11:57:32",
+      "orderer": {
+        "userName": "11",
+        "userEmail": "a4@email.com",
+        "address": "11"
       }
     }
   ],

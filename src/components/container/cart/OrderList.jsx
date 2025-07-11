@@ -37,7 +37,7 @@ const OrderList = () => {
   useEffect(() => {
     const fetchMyOrders = async () => {
       try {
-        const res = await axios.get('http://localhost:3001/orders')
+        const res = await axios.get('http://192.168.23.215:3001/orders')
         const myOrders = res.data.filter(order => order.userId === loginUser.id)
         setMyOrders(myOrders)
       } catch(error) {

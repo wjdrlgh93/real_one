@@ -1,7 +1,7 @@
 .orderList {
   width: 100%;
   min-height: 100vh;
-  padding-bottom: px;
+  padding-bottom: 3vh;
   display: flex;
   justify-content: center;
 }
@@ -43,7 +43,7 @@
   display: flex;
   gap: 3vw;
 }
-.order-items .title {
+.order-items ul li .title {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,6 +103,9 @@
   background-color: #97bbe2;
   color: #ffffff;
 }
+.paging-yj {
+  padding-bottom: 3vh;
+}
 
 @media screen and (max-width: 768px) {
   .order-info p {
@@ -116,5 +119,8 @@
   }
   button {
     font-size: 12px;
+  }
+  .order-items .title-detail {
+    width: 60vw
   }
 }
