@@ -36,6 +36,10 @@ const paymentPre = {
 
 const OrderPayment = () => {
 
+  useEffect(() => {
+    window.scrollTo(0,0)
+  },[])
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
 

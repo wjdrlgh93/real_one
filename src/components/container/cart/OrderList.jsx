@@ -7,6 +7,11 @@ import { useNavigate } from 'react-router-dom'
 import Paging from '../../../layout-yyj/Paging'
 
 const OrderList = () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  },[])
+
   const loginUser = useSelector((state) => state.auth.isUser)
   const [myOrders, setMyOrders] = useState([])
   const [openIndex, setOpenIndex] = useState([])

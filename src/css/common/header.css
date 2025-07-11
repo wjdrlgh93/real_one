@@ -53,6 +53,8 @@
 .header .nav-top .top-gnb ul li {
     transition: 0.3s;
     color: black;
+}
+.header .nav-top .top-gnb ul li.headerCart {
     position: relative;
 }
 .header .nav-top .top-gnb ul li span.cart{
@@ -60,7 +62,7 @@
     height: 14px;
     position: absolute;
     top: 2.5px;
-    left: 33px;
+    right: 6px;
 
     background-color: #578FCA;
     border-radius: 50%;
@@ -75,6 +77,8 @@
     font-size: x-small;
     font-weight: bolder;
     color: #ffffff;
+
+    text-align: center;
 }
 
 .header .nav-top .top-gnb ul li a {
@@ -176,6 +180,13 @@
 
     .header .nav-bottom .nav-bottom-con .main-gnb {
         width: 90%;
+    }
+
+    .header .nav-top .top-gnb ul li span.cart {
+        width: 12px;
+        height: 12px;
+
+        font-size: 9px;
     }
 
 

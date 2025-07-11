@@ -388,6 +388,7 @@
 
     display: flex;
     flex-direction: column;
+    padding: 4vmin;
   }
   /* .payment-sub span.sum-price {
     font-size: 15px;
@@ -406,6 +407,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .pricej {
+    display: flex;
+    flex-direction: column;
+  }
   .pricej span.sum-price {
     font-size: 13px !important;
   }
@@ -414,6 +419,9 @@
   }
   .paymentList label {
     font-size: 13px !important;
+  }
+  .paymentItem-con span {
+    font-size: 12px;
   }
   .paymentList h3 {
     font-size: 14px !important;
