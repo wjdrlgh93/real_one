@@ -130,7 +130,7 @@ const OrderPayment = () => {
   useEffect(() => {
     const fetchShopList = async () => {
       try {
-        const res = await axios.get('http://192.168.23.215:3001/shopList')
+        const res = await axios.get('http://localhost:3001/shopList')
         setShopList(res.data)
       } catch (error) {
         console.error('매장 리스트 로딩 실패: ', error)
@@ -196,7 +196,7 @@ const OrderPayment = () => {
     try {
 
 
-      const dataURL = `http://192.168.23.215:3001/orders`
+      const dataURL = `http://localhost:3001/orders`
       const resAPI = await getOrdersSeletorApi()
 
 
@@ -220,7 +220,7 @@ const OrderPayment = () => {
         orderer: ordererInfo
       };
 
-      await axios.post('http://192.168.23.215:3001/orders', newOrder)
+      await axios.post('http://localhost:3001/orders', newOrder)
 
 
       dispatch(removePaidItems(), newId);
