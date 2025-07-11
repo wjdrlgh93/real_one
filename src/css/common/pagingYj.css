@@ -34,3 +34,7 @@
 .paging-yj button.active:hover {
   background-color: #fad668;
 }
+
+button:disabled:hover {
+  background-color: #77a0cd;
+}

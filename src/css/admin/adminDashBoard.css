@@ -19,6 +19,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 
 
     /* gap: 10px; */
@@ -48,6 +50,10 @@
 
     font-size: 22px;
     padding: 10px;
+}
+
+.LineC-con #text {
+    padding: 5px;
 }
 
 .LineC-con canvas {

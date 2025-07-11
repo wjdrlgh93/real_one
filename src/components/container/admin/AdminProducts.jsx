@@ -199,7 +199,7 @@ const AdminProducts = () => {
                 <button onClick={() => handleClick(currentPage + 1)} disabled={currentPage === totalPages}>
                     Next &gt;</button>
 
-                <div className="bottom-con">
+                <div className="bottom-search-con">
                     <input className="search" placeholder="Search..."
                         value={searchItem} onChange={handlerSearchChange} />
 
@@ -281,7 +281,7 @@ const AdminProducts = () => {
                                     onChange={onInputchangeFn} />
                             </li>
                             <li className='itemModal-li-img'>
-                                {/* <img src="" alt="ITEMIMAGE" /> */}
+                                <img src={itemListObj.cover} alt="IMAGE" />
                             </li>
                         </ul>
                     </div>

@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { nextPage, prevPage, setPage } from '../../../../slices/pagingSlice'
+import { nextPage, prevPage, setPage } from '../slices/pagingSlice'
 
-const Paging = ({totalItems}) => {
-  const dispatch = useDispatch()
-  const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+const Paging = ({totalItems, currentPage, itemsPerPage, onPageChange}) => {
+  // const dispatch = useDispatch()
+  // const { currentPage, itemsPerPage } = useSelector((state) => state.paging)
+  const handlePageClick = (page) => {
+    window.scrollTo(0,0)
+    onPageChange(page)    
+  }
+
   const totalPages = Math.ceil(totalItems / itemsPerPage)
 
   const groupSize = 2
@@ -20,8 +25,9 @@ const Paging = ({totalItems}) => {
   
   return (
     <div className="paging-yj">
-      <button onClick={() => dispatch(prevPage())} >
-      {/* disabled={currentPage === 1} */}
+      <button onClick={() => handlePageClick(currentPage - 1)} 
+      disabled={currentPage === 1}
+      >
         이전
       </button>
 
@@ -29,7 +35,7 @@ const Paging = ({totalItems}) => {
         page <= totalPages && (
           <button
             key={page}
-            onClick={() => dispatch(setPage(page))}
+            onClick={() => handlePageClick(page)}
             className={currentPage === page ? 'active' : 'nonActive'}
           >
             {page}    
@@ -37,8 +43,9 @@ const Paging = ({totalItems}) => {
         )
       ))}
 
-      <button onClick={() => dispatch(nextPage(totalPages))} >
-      {/* disabled={currentPage === totalPages} */}
+      <button onClick={() => handlePageClick(currentPage + 1)}
+      disabled={currentPage === totalPages}
+      >
         다음
       </button>
     </div>

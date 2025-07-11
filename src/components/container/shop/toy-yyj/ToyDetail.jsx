@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { addCart, decreaseCount, increaseCount } from '../../../../slices/cartSlice'
-import ShopDetailLayout from '../layout-yyj/ShopDetailLayout'
+import ShopDetailLayout from '../../../../layout-yyj/ShopDetailLayout'
 import { setPaymentItems } from '../../../../slices/cartSlice'
 
 
@@ -22,7 +22,8 @@ const ProductDetail = () => {
 
   useEffect(() => {
     const productURL = `http://localhost:3001/products`
-    
+
+
     const productFn = async (id) => {
       try {
         const res = await axios.get(`${productURL}?id=${param.id}`)

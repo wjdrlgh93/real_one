@@ -91,7 +91,8 @@ const AuthJoin = () => {
 
     const onJoinFn = (e) => {
         e.preventDefault();
-        const dataURL = `http://localhost:3000/members`
+        const dataURL = `http://localhost:3001/members`
+
         if (!join.userEmail) {
             alert("이메일을 입력해 주세요.");
             return;

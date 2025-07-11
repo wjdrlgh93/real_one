@@ -18,8 +18,8 @@ const ShopHouse = lazy(() => import(`../components/container/shop/ShopHouseConta
 const ShopFashion = lazy(() => import(`../components/container/shop/ShopFashionContainer`))
 
 // yj
-const ToyLayout = lazy(() => import('../components/container/shop/layout-yyj/ToyLayout'))
-const BathLayout = lazy(() => import('../components/container/shop/layout-yyj/BathLayout'))
+const ToyLayout = lazy(() => import('../layout-yyj/ToyLayout'))
+const BathLayout = lazy(() => import('../layout-yyj/BathLayout'))
 // yj-상세정보
 const ToyDetail = lazy(() => import(`../components/container/shop/toy-yyj/ToyDetail`))
 const BathDetail = lazy(() => import('../components/container/shop/bath-yyj/BathDetail'))

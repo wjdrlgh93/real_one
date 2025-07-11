@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 
 
 const ToyLayout = () => {
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
+
   return (
     <>
     

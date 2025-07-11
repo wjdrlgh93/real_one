@@ -15,9 +15,11 @@ localStroge >> isLoggedIn 1 일때 로그인
 - 아니면 단순히 로직 이슈인가?
 
 
+json-server --watch  ./src/db/testdb.json    --port  3001
+
 반응형 // 끝
 
-PPT 
+PPT  절반쯤함 
 
 프로덕트 목록에서 이미지 추가하기 
 
