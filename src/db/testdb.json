@@ -152,6 +152,15 @@
       "age": "1234",
       "address": "1234",
       "role": "ADMIN"
+    },
+    {
+      "id": "15",
+      "userEmail": "q@email.com",
+      "userPw": "111",
+      "userName": "아아나",
+      "age": "25",
+      "address": "서울",
+      "role": "ADMIN"
     }
   ],
   "shopList": [
@@ -847,6 +856,32 @@
         "userName": "오아나",
         "userEmail": "a3@email.com",
         "address": "서울시 노원구"
+      }
+    },
+    {
+      "id": "19",
+      "userId": "15",
+      "userName": "아아나",
+      "userEmail": "q@email.com",
+      "paymentMethod": "신용/체크카드",
+      "paymentResult": [
+        {
+          "id": "5",
+          "title": "HelloDog 돼지 인형",
+          "price": 5900,
+          "img": "toyStuffedPig.jpg",
+          "hoverImg": "toyStuffedPigHover.jpg",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 5900,
+      "shop": "북서울꿈의숲점",
+      "date": "2025.07.11 17:30:56",
+      "orderer": {
+        "userName": "아아나",
+        "userEmail": "q@email.com",
+        "address": "서울"
       }
     }
   ],
