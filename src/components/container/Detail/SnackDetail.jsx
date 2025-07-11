@@ -251,6 +251,7 @@ function HouseDetailTabs({ item }) {
          {activeTab === 'review' && (
           <>
             <div className="review-con">
+            <h4>후기 작성</h4>
               <div className="review-star">
                   <select
                     value={newReview.rating}
@@ -284,7 +285,6 @@ function HouseDetailTabs({ item }) {
 
               {isLoggedIn ? (
                 <>
-                  <h4>후기 작성</h4>
                   <form onSubmit={handleSubmit}>
                     <div className="review-con-top">
                       <input
@@ -349,6 +349,7 @@ function HouseDetailTabs({ item }) {
         {activeTab === 'qna' && (
           <>
             <div className="review-con">
+            <h4>상품문의 작성</h4>
               <div className="review-star">
                   <select
                     value={newReview.rating}
@@ -381,7 +382,6 @@ function HouseDetailTabs({ item }) {
 
               {isLoggedIn ? (
                 <>
-                  <h4>상품문의 작성</h4>
                   <form onSubmit={handleSubmit}>
                     <div className="review-con-top">
                       <input

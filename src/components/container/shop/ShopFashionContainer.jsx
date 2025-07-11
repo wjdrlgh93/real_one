@@ -153,12 +153,6 @@ function FashionList() {
             <p>{selectedItem.size?.toLocaleString()}</p>
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
 
-            <div className="modal-bottom-left">
-              <button onClick={() => navigate('/admin/shop_list')} className="admin-button">
-                주문처로 이동
-              </button>
-            </div>
-
             <div className="modal-bottom-right">
               <div
                 className="cart"
