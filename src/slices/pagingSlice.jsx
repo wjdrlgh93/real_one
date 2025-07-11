@@ -1,12 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import React from 'react'
 
 const initialState = {
   currentPage: 1,
   itemsPerPage: 6
 }
 const pagingSlice = createSlice({
-  name: 'pagin',
+  name: 'paging',
   initialState,
   reducers: {
     setPage(state, action) {

@@ -679,7 +679,10 @@
       "sub": "인형",
       "price": 12300,
       "img": "toyStuffedRabbit.jpg",
-      "hoverImg": "toyStuffedRabbitHover.jpg"
+
+      "hoverImg": "toyStuffedRabbitHover.jpg",
+      "cover": "/images/toyStuffedRabbit.jpg"
+
     },
     {
       "id": "9",
@@ -782,124 +785,143 @@
     },
     {
       "id": "19",
-      "title": "쉐드킬러 털 제거 브러쉬",
+      "title": "Firm 털 제거 슬리커",
       "category": "bath",
       "sub": "브러시",
       "price": 9800,
-      "img": "",
-      "hoverImg": ""
+      "img": "bathCombFirmSliker.jpg",
+      "hoverImg": "bathCombFirmSlikerHover.jpg",
+      "cover": "/images/bathCombFirmSliker.jpg"
     },
     {
       "id": "20",
-      "title": "하너디 소프트 브러쉬",
+      "title": "Maxipin 소프트 브러쉬",
       "category": "bath",
       "sub": "브러시",
       "price": 12000,
-      "img": ""
+      "img": "bathCombMaxipin.jpg",
+      "hoverImg": "",
+      "cover": "/images/bathCombMaxipin.jpg"
     },
     {
       "id": "21",
-      "title": "하이솝 모이스쳐 샴푸",
+      "title": "PawNaturel 무향 샴푸",
       "category": "bath",
       "sub": "샴푸",
-      "price": 6300,
-      "img": "",
-      "hoverImg": ""
+      "price": 10300,
+      "img": "bathShampooPawNaturel.jpg",
+      "hoverImg": "",
+      "cover": "/images/bathShampooPawNaturel.jpg"
     },
     {
       "id": "22",
-      "title": "러브독 얼굴 빗",
+      "title": "Sped 나무 손잡이 빗",
       "category": "bath",
       "sub": "브러시",
       "price": 4500,
-      "img": "",
-      "hoverImg": ""
+      "img": "bathCombWooden.jpg",
+      "hoverImg": "bathCombWoodenHover.jpg",
+      "cover": "/images/bathCombWooden.jpg"
     },
     {
       "id": "23",
-      "title": "포에버 베이비 파우더향 샴푸",
+      "title": "BrightWhite 복숭아향 샴푸",
       "category": "bath",
       "sub": "샴푸",
       "price": 7600,
-      "img": "",
-      "hoverImg": ""
+      "img": "bathShampooBrightPeach.jpg",
+      "hoverImg": "",
+      "cover": "/images/bathShampooBrightPeach.jpg"
     },
     {
       "id": "24",
-      "title": "힐링도그 오가닉 샴푸",
+      "title": "BioGroom 오가닉 눈물 샴푸",
       "category": "bath",
       "sub": "샴푸",
-      "price": 8500,
-      "img": "",
-      "hoverImg": ""
+      "price": 16500,
+      "img": "bathShampooBioGroomTear.jpg",
+      "hoverImg": "",
+      "cover": "/images/bathShampooBioGroomTear.jpg"
     },
     {
       "id": "25",
-      "title": "해피캣 직모 부드러운 빗",
+      "title": "Sprenger 강아지 빗",
       "category": "bath",
       "sub": "브러시",
-      "price": 4900,
-      "img": "",
-      "hoverImg": ""
+      "price": 5700,
+      "img": "bathCombSprenger.jpg",
+      "hoverImg": "bathCombSprengerHover.jpg",
+      "cover": "/images/bathCombSprenger.jpg"
     },
     {
       "id": "26",
-      "title": "룰루도기 스마일 참빗",
+      "title": "Groomers 콤비네이션 미용 빗",
       "category": "bath",
       "sub": "브러시",
-      "price": 4900,
-      "img": "",
-      "hoverImg": ""
+      "price": 4700,
+      "img": "bathCombGroomers.jpg",
+      "hoverImg": "",
+      "cover": "/images/bathCombGroomers.jpg"
     },
     {
       "id": "27",
-      "title": "러브독 미용 빗",
+      "title": "Coastal Safari 강아지 빗",
       "category": "bath",
       "sub": "브러시",
-      "price": 5200,
-      "img": "",
-      "hoverImg": ""
+      "price": 11200,
+      "img": "bathCombCoastal.jpg",
+      "hoverImg": "bathCombCoastalHover.jpg",
+      "cover": "/images/bathCombCoastal.jpg"
     },
     {
       "id": "28",
-      "title": "하이솝 카밍 샴푸",
+      "title": "Cristine 피부 진정 오트밀 샴푸",
       "category": "bath",
       "sub": "샴푸",
       "price": 6300,
-      "img": "",
-      "hoverImg": ""
+      "img": "bathShampooCalmingOatmeal.jpg",
+      "hoverImg": "",
+      "cover": "/images/bathShampooCalmingOatmeal.jpg"
     },
     {
       "id": "29",
-      "title": "룰로도기 스마일 슬리커 브러쉬",
+      "title": "Maxipin 브러쉬 세트",
       "category": "bath",
       "sub": "브러시",
-      "price": 6300,
-      "img": "",
-      "hoverImg": ""
+      "price": 15300,
+      "img": "bathCombMaxipinBrush.jpg",
+      "hoverImg": "bathCombMaxipinBrushHover.jpg",
+      "cover": "/images/bathCombMaxipinBrush.jpg"
     },
     {
       "id": "30",
-      "title": "헬로독 슬리커",
+      "title": "WeLoveDoodles 콤비 빗 세트",
       "category": "bath",
       "sub": "브러시",
-      "price": 8300,
-      "img": "",
-      "hoverImg": ""
+      "price": 17800,
+      "img": "bathCombWe.jpg",
+      "hoverImg": "bathCombWeHover.jpg",
+      "cover": "/images/bathCombWe.jpg"
     },
     {
       "id": "31",
-      "title": "마이펫 해피바스 로즈샴푸",
+      "title": "VermontSoap 라벤더향 샴푸",
       "category": "bath",
       "price": "12000",
-      "sub": "삼푸"
+      "sub": "샴푸",
+      "img": "bathShampooVermontSoapLavender.jpg",
+      "hoverImg": "",
+      "cover": "/images/bathShampooVermontSoapLavender.jpg"
     },
     {
       "id": "32",
-      "title": "샴푸1",
+      "title": "VermontSoap 시트러스 샴푸",
       "category": "bath",
       "price": "12300",
-      "sub": "삼푸"
+      "sub": "샴푸",
+      "img": "bathShampooVermontSoapCitrus.jpg",
+      "hoverImg": "",
+      "cover": "/images/bathShampooVermontSoapCitrus.jpg"
     },
     {
       "id": "33",
