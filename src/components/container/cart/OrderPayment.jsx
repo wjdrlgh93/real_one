@@ -139,18 +139,9 @@ const OrderPayment = () => {
     fetchShopList()
   }, [])
 
-  // const toggleStore = (id) => {
-  //   setSelectedStore(prev =>
-  //     prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
-  //   )
-  // }
-
   const selectedStore = (id) => {
     setSelectStore(id)
   }
-  // const showMap = (id) => {
-  //   setMapVisibleId(prev => (prev === id ? null : id))
-  // }
 
   const showMap = (store) => {
     setSelectedShop(store)
@@ -214,10 +205,10 @@ const OrderPayment = () => {
         .map(item => parseInt(item.id, 10))
         .filter(id => !isNaN(id));
       const maxId = numericIds.length > 0 ? Math.max(...numericIds) : 0;
-      const newId = (maxId + 1).toString(); // ✅ 새로운 ID 먼저 생성
+      const newId = (maxId + 1).toString();
 
       const newOrder = {
-        id: newId, // ✅ 먼저 넣기
+        id: newId,
         userId: loginUser.id,
         userName: loginUser.userName,
         userEmail: loginUser.userEmail,
@@ -411,13 +402,8 @@ const OrderPayment = () => {
                     <button onClick={() => showMap(store)}>
                       지도 보기
                     </button>
-                    {/* {mapVisibleId === store.id && (<div>
-                      <KakaoMapCustom lat={store.x} lng={store.y}/>
-                    <p>{store.address}</p>
-                    </div>
-                  )} */}
+                    
                   </li>
-
                 ))}
               </ul>
               {selectedShop && (

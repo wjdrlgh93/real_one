@@ -176,7 +176,9 @@
 
 
 @media screen and (max-width:1200px)  {
-  
+  .right-con>h2 {
+    font-size: 22px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {

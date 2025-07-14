@@ -47,7 +47,7 @@ const ImageSlider = ({images = [], imageSlideInterval = 3000}) => {
             {images.map((img, idx) => (
               <li
                 key={idx}
-                // style={{background: `url(${img}) no-repeat 50%/cover`}}
+                
               >
                 <img src={img} alt={`slide-${idx}`} />
               </li>
