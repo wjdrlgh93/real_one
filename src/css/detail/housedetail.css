@@ -240,14 +240,26 @@
   width: 200px;
   height: 19px;
   text-align: center;
+  padding: 12px 14px;
 }
 
 .review-star .review-search {
   padding: 0 auto;
-  
 }
 
+.review-search .search-submit-button {
+  padding: 6px 14px;
+  background-color: #E25822;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
 
+.review-search .search-submit-button:hover {
+  background-color: #c14719;
+}
 
 .review-con h4 {
   margin-bottom: 10px;
@@ -274,6 +286,22 @@
   font-size: 16px;
   resize: vertical; 
   margin-top: 5px;
+}
+
+.review-con-top .submit-button {
+  align-self: flex-end;
+  padding: 10px 20px;
+  background-color: #E25822;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.review-con-top .submit-button:hover {
+  background-color: #c14719;
 }
 
 .review-con-bottom .reviews {

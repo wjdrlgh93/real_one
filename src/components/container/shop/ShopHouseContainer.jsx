@@ -143,10 +143,10 @@ function HouseList() {
 
             <div className="modal-bottom-right">
               <div
-                className="cart"
-                onClick={() => navigate(`/shop/house/${selectedItem.id}`)}
+                className="see"
+                onClick={() => navigate(`/shop/food/${selectedItem.id}`)}
                 style={{ cursor: 'pointer' }}>
-                <img src="/images/cart.png" alt="상세보기로 이동" />
+                <img src="/images/see.png" alt="상세보기로 이동" />
 
               </div>
             </div>

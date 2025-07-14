@@ -69,7 +69,7 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .pagination button {
@@ -178,26 +178,6 @@
   padding: 1vw;
 }
 
-
-.ShopFashionContainer .modal .modal-bottom-left ,
-.modal .modal-bottom-left {
-
-  position: absolute;
-  bottom: 5px;
-  left: 20px;
-}
-
-.ShopFashionContainer .modal .modal-bottom-left .admin-button ,
-.modal .modal-bottom-left .admin-button {
-  padding: 0.5rem 1rem;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
 .ShopFashionContainer .modal .modal-bottom-right ,
 .modal .modal-bottom-right {
   position: absolute;
@@ -208,9 +188,10 @@
 }
 
 .ShopFashionContainer .modal .modal-bottom-right .cart img ,
-.modal .modal-bottom-right .cart img {
-  width: 100%;
-  height: 100%;
+.modal .modal-bottom-right .see img {
+  margin-top: 5px;
+  width: 70%;
+  height: 70%;
 }
 
 
@@ -274,7 +255,7 @@
   }
 
   .ShopFashionContainer .ShopFashionSearch input[type="text"] {
-    width: 100%; 
+    /* width: 100%; */
   }
 
   .ShopFashionContainer .ShopFashionSearch .submit-button {
@@ -350,4 +331,20 @@
     padding: 6px 12px;
     border-radius: 4px;
   }
+
+  .pagination {
+    justify-content: center;
+    /* flex-wrap: wrap; 줄바꿈 허용하되 최대한 한 줄 유지 */
+    gap: 4px;        /* 버튼 사이 간격 축소 */
+    padding: 5px 0;
+    flex-wrap: nowrap !important;
+  }
+
+  .pagination button {
+    padding: 4px 6px;        /* 버튼 내부 여백 줄이기 */
+    font-size: 12px;         /* 글자 크기 줄이기 */
+    min-width: 28px;         /* 버튼 최소 너비 줄이기 */
+    border-radius: 4px;
+  }
+
 }

@@ -2055,6 +2055,24 @@
       "type": "qna",
       "productId": "89",
       "time": "2025-07-09T06:01:20.212Z"
+    },
+    {
+      "id": "c26f",
+      "author": "천승우",
+      "content": "맛있어요~",
+      "rating": 5,
+      "type": "review",
+      "productId": "87",
+      "time": "2025-07-14T01:11:18.271Z"
+    },
+    {
+      "id": "272f",
+      "author": "천승우",
+      "content": "상품이 좋아요~",
+      "rating": 1,
+      "type": "qna",
+      "productId": "87",
+      "time": "2025-07-14T01:11:31.654Z"
     }
   ],
   "sales": [
