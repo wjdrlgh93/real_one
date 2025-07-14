@@ -119,6 +119,7 @@
     },
     {
       "id": "14",
+
       "userEmail": "345@email.com",
       "userPw": "1234",
       "userName": "1234",
@@ -151,6 +152,7 @@
       "userName": "1234",
       "age": "1234",
       "address": "1234",
+
       "role": "ADMIN"
     }
   ],
@@ -1954,6 +1956,13 @@
       "title": "하루냥디저트",
       "size": "시니어(7세이상)",
       "price": 4700
+    },
+    {
+      "id": "138",
+      "title": "해피펫 포근수건",
+      "category": "bath",
+      "price": "20000",
+      "sub": "수건"
     }
   ],
   "reviews": [
@@ -2055,6 +2064,15 @@
       "type": "qna",
       "productId": "89",
       "time": "2025-07-09T06:01:20.212Z"
+    },
+    {
+      "id": "e56f",
+      "author": "정기호 ",
+      "content": "우리 애기들이 좋아해요",
+      "rating": 5,
+      "type": "review",
+      "productId": "119",
+      "time": "2025-07-11T02:14:38.541Z"
     }
   ],
   "sales": [
