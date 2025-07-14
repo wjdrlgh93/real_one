@@ -119,7 +119,6 @@
     },
     {
       "id": "14",
-
       "userEmail": "345@email.com",
       "userPw": "1234",
       "userName": "1234",
@@ -152,7 +151,6 @@
       "userName": "1234",
       "age": "1234",
       "address": "1234",
-
       "role": "ADMIN"
     }
   ],
@@ -875,6 +873,136 @@
         "userName": "아아나",
         "userEmail": "q@email.com",
         "address": "서울"
+      }
+    },
+    {
+      "id": "20",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "카카오페이",
+      "paymentResult": [
+        {
+          "id": "119",
+          "category": "desert",
+          "sub": "DogDesert",
+          "img": "DogDesert2.png",
+          "title": "꿀멍바",
+          "size": "어덜트(1~7세)",
+          "price": 5800,
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 5800,
+      "shop": "쌍문점",
+      "date": "2025.07.14 11:00:14",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "21",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "신용/체크카드",
+      "paymentResult": [
+        {
+          "id": "92",
+          "category": "food",
+          "sub": "dog",
+          "img": "DogFood6.png",
+          "title": "멍멍푸드",
+          "size": "어덜트(1~7세)",
+          "price": 10500,
+          "count": 1,
+          "checked": true
+        },
+        {
+          "id": "20",
+          "title": "Maxipin 소프트 브러쉬",
+          "price": 12000,
+          "img": "bathCombMaxipin.jpg",
+          "hoverImg": "",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 22500,
+      "shop": "도봉방학역점",
+      "date": "2025.07.14 11:24:42",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "22",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "휴대폰",
+      "paymentResult": [
+        {
+          "id": "135",
+          "category": "desert",
+          "sub": "CatDesert",
+          "img": "CatDesert8.png",
+          "title": "포근냥스낵",
+          "size": "시니어(7세이상)",
+          "price": 5500,
+          "count": 3,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 16500,
+      "shop": "북서울꿈의숲점",
+      "date": "2025.07.14 11:27:25",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
+      }
+    },
+    {
+      "id": "23",
+      "userId": "7",
+      "userName": "정기호 ",
+      "userEmail": "mario115@naver.com",
+      "paymentMethod": "휴대폰",
+      "paymentResult": [
+        {
+          "id": "88",
+          "category": "food",
+          "sub": "dog",
+          "img": "DogFood2.png",
+          "title": "행복한식사",
+          "size": "어덜트(1~7세)",
+          "price": 14900,
+          "count": 4,
+          "checked": true
+        },
+        {
+          "id": "19",
+          "title": "Firm 털 제거 슬리커",
+          "price": 9800,
+          "img": "bathCombFirmSliker.jpg",
+          "hoverImg": "bathCombFirmSlikerHover.jpg",
+          "count": 1,
+          "checked": true
+        }
+      ],
+      "paymentAmount": 69400,
+      "shop": "별내 별가람점",
+      "date": "2025.07.14 11:30:30",
+      "orderer": {
+        "userName": "정기호 ",
+        "userEmail": "mario115@naver.com",
+        "address": "경기도 의정부시 "
       }
     }
   ],
