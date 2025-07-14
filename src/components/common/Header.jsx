@@ -52,8 +52,8 @@ const Header = () => {
               LOGOUT
             </Link>
          </li>
-            <li>
-                <Link to={"/payment"}>주문내역</Link>
+         <li>
+                <Link to={"/paymentresult"}>주문내역</Link>
               </li>
           {user?.role?.toLowerCase() === "admin" && (
              <li>

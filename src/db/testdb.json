@@ -877,6 +877,7 @@
     },
     {
       "id": "20",
+
       "userId": "7",
       "userName": "정기호 ",
       "userEmail": "mario115@naver.com",
@@ -901,10 +902,12 @@
         "userName": "정기호 ",
         "userEmail": "mario115@naver.com",
         "address": "경기도 의정부시 "
+
       }
     },
     {
       "id": "21",
+
       "userId": "7",
       "userName": "정기호 ",
       "userEmail": "mario115@naver.com",
@@ -992,10 +995,12 @@
           "price": 9800,
           "img": "bathCombFirmSliker.jpg",
           "hoverImg": "bathCombFirmSlikerHover.jpg",
+
           "count": 1,
           "checked": true
         }
       ],
+
       "paymentAmount": 69400,
       "shop": "별내 별가람점",
       "date": "2025.07.14 11:30:30",

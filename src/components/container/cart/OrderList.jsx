@@ -38,7 +38,10 @@ const OrderList = () => {
     const fetchMyOrders = async () => {
       try {
         const res = await axios.get('http://localhost:3001/orders')
-        const myOrders = res.data.filter(order => order.userId === loginUser.id)
+        let myOrders = res.data.filter(order => order.userId === loginUser.id)
+
+        myOrders = myOrders.sort((a,b) => new Date(b.date) - new Date(a.date))
+
         setMyOrders(myOrders)
       } catch(error) {
         console.error('결제 내역 불러오기 실패 : ', error)
@@ -72,7 +75,7 @@ const OrderList = () => {
             <p>주문 내역이 없습니다.</p>
           ): (
             <ul>
-              {myOrders.map((order, idx) => {
+              {pagedItems.map((order, idx) => {
                 const isOpen = expandedOrders.findIndex(i => i ===idx) !== -1
 
                 return (
