@@ -29,24 +29,25 @@
 /* Detail */
 @import url(css/detail/housedetail.css);
 @import url(css/detail/fashiondetail.css);
+@import url(css/detail/text-draw.css);
 
 
 @font-face {
-    font-family: 'KBO Dia Gohtic_bold';
-    src: url('./font/KBO Dia Gothic_bold.ttf')
-    format('truetype');
-  }
+  font-family: 'KBO Dia Gohtic_bold';
+  src: url('./font/KBO Dia Gothic_bold.ttf') format('truetype');
+}
+
 @font-face {
-    font-family: 'KBO Dia Gothic_light';
-    src: url('./font/KBO Dia Gothic_light.ttf')
-    format('truetype');
-  }
+  font-family: 'KBO Dia Gothic_light';
+  src: url('./font/KBO Dia Gothic_light.ttf') format('truetype');
+}
+
 @font-face {
-    font-family: "KBO Dia Gothic_medium";
-    font-weight: normal;
-    src: url("./font/KBO\ Dia\ Gothic_medium.ttf") format("truetype");
+  font-family: "KBO Dia Gothic_medium";
+  font-weight: normal;
+  src: url("./font/KBO\ Dia\ Gothic_medium.ttf") format("truetype");
 }
 
 body {
-    font-family: "KBO Dia Gothic_medium";
+  font-family: "KBO Dia Gothic_medium";
 }
