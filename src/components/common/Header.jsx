@@ -57,7 +57,7 @@ const Header = () => {
               </li>
           {user?.role?.toLowerCase() === "admin" && (
              <li>
-            <Link to={"/admin"}>회원목록</Link>
+            <Link to={"/admin"}>관리자페이지</Link>
             </li>
          )}
   </>

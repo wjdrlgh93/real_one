@@ -143,6 +143,15 @@
       "age": "1234",
       "address": "1234",
       "role": "ADMIN"
+    },
+    {
+      "id": "17",
+      "userEmail": "709@email.com",
+      "userPw": "1234",
+      "userName": "1234",
+      "age": "1234",
+      "address": "1234",
+      "role": "ADMIN"
     }
   ],
   "shopList": [
