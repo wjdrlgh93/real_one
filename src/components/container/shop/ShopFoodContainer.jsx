@@ -133,20 +133,18 @@ function FoodList() {
               title={`상세보기`}
               alt={selectedItem.title}
               style={{ cursor: 'pointer' }}
+              onClick={() => navigate(`/shop/food/${selectedItem.id}`)}/>
 
-              onClick={() => navigate(`/shop/food/${selectedItem.id}`)}
-
-            />
             <h2>{selectedItem.title}</h2>
             <p>{selectedItem.size?.toLocaleString()}</p>
             <p>가격: {selectedItem.price.toLocaleString()}원</p>
 
             <div className="modal-bottom-right">
               <div
-                className="cart"
+                className="see"
                 onClick={() => navigate(`/shop/food/${selectedItem.id}`)}
                 style={{ cursor: 'pointer' }}>
-                <img src="/images/cart.png" alt="상세보기로 이동" />
+                <img src="/images/see.png" alt="상세보기로 이동" />
 
               </div>
             </div>

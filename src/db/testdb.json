@@ -2386,31 +2386,22 @@
       "time": "2025-07-09T06:01:20.212Z"
     },
     {
-      "id": "e56f",
-      "author": "정기호 ",
-      "content": "우리 애기들이 좋아해요",
+      "id": "c26f",
+      "author": "천승우",
+      "content": "맛있어요~",
       "rating": 5,
       "type": "review",
-      "productId": "119",
-      "time": "2025-07-11T02:14:38.541Z"
+      "productId": "87",
+      "time": "2025-07-14T01:11:18.271Z"
     },
     {
-      "id": "a2f4",
-      "author": "정기호 ",
-      "content": "우리 애들한테 달아줬더니 너무 이뻐요",
-      "rating": 4,
-      "type": "review",
-      "productId": "56",
-      "time": "2025-07-14T03:30:16.809Z"
-    },
-    {
-      "id": "f0f0",
-      "author": "정기호 ",
-      "content": "아이들 간식으로 너무 좋아요",
-      "rating": 4,
-      "type": "review",
-      "productId": "119",
-      "time": "2025-07-14T03:35:08.080Z"
+      "id": "272f",
+      "author": "천승우",
+      "content": "상품이 좋아요~",
+      "rating": 1,
+      "type": "qna",
+      "productId": "87",
+      "time": "2025-07-14T01:11:31.654Z"
     }
   ],
   "sales": [
