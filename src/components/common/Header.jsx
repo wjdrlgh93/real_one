@@ -52,7 +52,7 @@ const Header = () => {
             </Link>
          </li>
          <li>
-                <Link to={"/payment"}>주문내역</Link>
+                <Link to={"/paymentresult"}>주문내역</Link>
               </li>
           {user?.role === "admin" && (
            <>

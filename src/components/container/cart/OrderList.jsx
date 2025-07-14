@@ -72,7 +72,7 @@ const OrderList = () => {
             <p>주문 내역이 없습니다.</p>
           ): (
             <ul>
-              {myOrders.map((order, idx) => {
+              {pagedItems.map((order, idx) => {
                 const isOpen = expandedOrders.findIndex(i => i ===idx) !== -1
 
                 return (
