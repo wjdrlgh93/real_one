@@ -119,20 +119,40 @@
     },
     {
       "id": "14",
-      "userEmail": "a111@email.com",
-      "userPw": "a111",
-      "userName": "JJJ",
-      "age": "19",
-      "address": "서울 노원구 ",
-      "role": "ROLE_MEMBER"
+
+      "userEmail": "345@email.com",
+      "userPw": "1234",
+      "userName": "1234",
+      "age": "1234",
+      "address": "1234",
+      "role": "ADMIN"
     },
     {
       "id": "15",
-      "userEmail": "a222@email.com",
-      "userPw": "112233",
-      "userName": "33",
-      "age": "22",
-      "address": "경기도 양주시 ",
+      "userEmail": "890@email.com",
+      "userPw": "1234",
+      "userName": "1234",
+      "age": "1234",
+      "address": "1234",
+      "role": "ADMIN"
+    },
+    {
+      "id": "16",
+      "userEmail": "790@email.com",
+      "userPw": "1234",
+      "userName": "1234",
+      "age": "1234",
+      "address": "1234",
+      "role": "ADMIN"
+    },
+    {
+      "id": "17",
+      "userEmail": "709@email.com",
+      "userPw": "1234",
+      "userName": "1234",
+      "age": "1234",
+      "address": "1234",
+
       "role": "ADMIN"
     }
   ],
