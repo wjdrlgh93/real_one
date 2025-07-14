@@ -44,11 +44,12 @@ video {
     color: rgb(255, 255, 255);
     font-family: "Alumni Sans SC", sans-serif;
     font-optical-sizing: auto;
-    font-size: 5rem;
+    font-size: 8rem;
 
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
+
     transform: translate(-50%, 50%);
 
 }
@@ -59,7 +60,10 @@ video {
 
 .index .index-con a:hover {
     color: #828282;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    font-size: 9rem;
+    transition: font-size 0.3s ease;
+
 }
 
 .index .index-title {
