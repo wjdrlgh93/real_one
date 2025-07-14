@@ -42,33 +42,34 @@ const Header = () => {
           <h1 className="logo">
             <Link to={"/"}>HOME</Link>
           </h1>
-
           <div className="top-gnb">
             <ul>
-              {isLogin ? (
-                <>
-                  <li>
-                    <Link to="#" onClick={handleLogout}>
-                      LOGOUT
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to={"/admin"}>회원목록</Link>
-                  </li>
-                  {user?.role === "admin" && (
-                    <li>
-                      <Link to={"/admin"}>ADMIN</Link>
-                    </li>
-                  )}
-                </>
+            {isLogin ? (
+            <>
+            <li>
+            <Link to="#" onClick={handleLogout}>
+              LOGOUT
+            </Link>
+         </li>
+         <li>
+                <Link to={"/payment"}>주문내역</Link>
+              </li>
+          {user?.role === "admin" && (
+           <>
+             <li>
+            <Link to={"/admin"}>회원목록</Link>
+            </li>
+             <li>
+            <Link to={"/admin"}>ADMIN</Link>
+          </li>
+          </>
+         )}
+  </>
               ) : (
                 <li>
                   <Link to={"/auth"}>LOGIN / 회원가입</Link>
                 </li>
               )}
-              <li>
-                <Link to={"/paymentresult"}>주문내역</Link>
-              </li>
               <li className="headerCart">
                 {items.length > 0 && <span className="cart">{items.length}</span>}
                 <Link to={"/cart"}>
