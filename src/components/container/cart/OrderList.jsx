@@ -38,7 +38,10 @@ const OrderList = () => {
     const fetchMyOrders = async () => {
       try {
         const res = await axios.get('http://localhost:3001/orders')
-        const myOrders = res.data.filter(order => order.userId === loginUser.id)
+        let myOrders = res.data.filter(order => order.userId === loginUser.id)
+
+        myOrders = myOrders.sort((a,b) => new Date(b.date) - new Date(a.date))
+
         setMyOrders(myOrders)
       } catch(error) {
         console.error('결제 내역 불러오기 실패 : ', error)

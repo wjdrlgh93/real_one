@@ -3,8 +3,6 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { allCheckedFalse, allCheckedTrue, checkedChange, decreaseCount, deleteCart, increaseCount,setPaymentItems } from '../../../slices/cartSlice'
 import { useNavigate } from 'react-router-dom'
-import LoginModalYyj from '../../../layout-yyj/LoginModalYyj'
-
 
 const CartList = () => {
 
@@ -20,7 +18,8 @@ const CartList = () => {
 
   console.log(cartItems)
   
-  const checkedList = cartItems.filter((item) => item.checked === true)
+  const checkedList = 
+  cartItems.filter((item) => item.checked === true)
 
   // const isAllCheck = (checked) => {
   //   if(checked) {
@@ -75,7 +74,6 @@ const CartList = () => {
 
   // 로그인 여부
   const isLogin = useSelector(state => state.auth.isLogin)
-  const [loginModal, setLoginModal] = useState(false)
 
   const payBtn = () => {
     // if (!isLogin) {
@@ -119,7 +117,8 @@ const CartList = () => {
                             <input 
                             type="checkbox"
                             checked={el.checked} 
-                            onChange={() => dispatch(checkedChange(el.id))}
+                            onChange={() => 
+                            dispatch(checkedChange(el.id))}
                             />
                           </div>
                           <img src={`/images/${el.img}`} alt={el.img} />

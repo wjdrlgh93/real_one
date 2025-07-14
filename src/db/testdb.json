@@ -119,7 +119,6 @@
     },
     {
       "id": "14",
-
       "userEmail": "345@email.com",
       "userPw": "1234",
       "userName": "1234",
@@ -152,7 +151,6 @@
       "userName": "1234",
       "age": "1234",
       "address": "1234",
-
       "role": "ADMIN"
     }
   ],
